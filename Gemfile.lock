@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    blog (0)
+    blog (1.0.0)
       dotenv
       jekyll (~> 3.5.0)
       jekyll-authors
