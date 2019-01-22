@@ -1,0 +1,20 @@
+---
+layout: default
+title: Fast Ruby Blog
+cover: false
+meta:
+  description: "Articles about Software Development, Performance and Ruby and Rails Upgrades by the Ombu Labs team"
+---
+
+<main id="content" class="content" role="main">
+  <div class="extra-pagination inner">
+    {%- include pagination.html -%}
+  </div>
+
+  {%- for post in paginator.posts -%}
+    {%- include post_excerpt.html -%}
+  {%- endfor -%}
+
+  {%- include pagination.html -%}
+  {%- include site_footer.html -%}
+</main>

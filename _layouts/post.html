@@ -1,0 +1,63 @@
+---
+layout: default
+disqus: true
+archive: false
+post_class: post-template
+---
+
+<main class="content post-layout" role="main">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <section class="post-meta">
+        {%- assign post = page -%}
+        {%- include post_meta.html -%}
+      </section>
+    </header>
+
+    <section class="post-content">
+      {{ content }}
+    </section>
+
+    {%- if page.archive -%}
+      <section class="archive">
+        <h5>Archive</h5>
+        <ul>
+          {%- for post in site.posts -%}
+              <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </section>
+    {%- endif -%}
+
+    <footer class="post-footer">
+      {%- if page.author -%}
+        {%- assign author = site.authors[page.author] -%}
+        <figure class="author-image">
+          {%- if author.gravatar -%}
+            <a class="img" href="{{ page.baseurl }}" style="background-image: url(//2.gravatar.com/avatar/{{ author.gravatar }}?s=50)">
+            <span class="hidden">{{author.display_name}}'s Picture</span></a>
+          {%- else -%}
+            <a class="img" href="{{ page.baseurl }}" style="background-image: url({{ page.baseurl }}/assets/images/profile.png)">
+            <span class="hidden"></span></a>
+          {%- endif -%}
+        </figure>
+        <section class="author">
+          <h4> {{ author.display_name }} </h4>
+          <p>
+            We are the Fast Ruby. Check us out at <a href="https://www.fastruby.io">www.fastruby.io</a>
+          </p>
+        </section>
+      {%- endif -%}
+
+      <!-- Share links section -->
+      {%- include share.html -%}
+
+      <!-- Disqus comments -->
+      {%- include disqus.html -%}
+
+    </footer>
+
+  </article>
+  {%- include site_footer.html -%}
+</main>
