@@ -1,12 +1,12 @@
   <article class="post">
-    <header class="post-header">
+    <div class="post-header">
       <h2 class="post-title">
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
-    </header>
-    <footer class="post-meta">
+    </div>
+    <div class="post-meta">
       {%- include post_meta.html -%}
-    </footer>
+    </div>
     <section class="post-excerpt">
       {{ post.excerpt | markdownify }} <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Read more &raquo;</a>
     </section>

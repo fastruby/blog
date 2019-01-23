@@ -2,11 +2,10 @@
 layout: default
 ---
 
-<h2 class="category-name">Articles about <span class="tag">{{ page.category | titleize | replace: '-',' ' }}</span></h2>
-
 <main id="content" class="content category">
+  <h2 class="category-name">Articles about <span class="tag">{{ page.category | titleize | replace: '-',' ' }}</span></h2>
+
   {%- for post in site.categories[page.category] -%}
     {%- include post_excerpt.html -%}
   {%- endfor -%}
-  {%- include site_footer.html -%}
 </main>

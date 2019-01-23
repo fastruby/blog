@@ -7,13 +7,13 @@ post_class: post-template
 
 <main id="content" class="post-layout" role="main">
   <article class="post">
-    <header class="post-header">
+    <div class="post-header">
       <h1 class="post-title">{{ page.title }}</h1>
       <section class="post-meta">
         {%- assign post = page -%}
         {%- include post_meta.html -%}
       </section>
-    </header>
+    </div>
 
     <section class="post-content">
       {{ content }}
@@ -30,7 +30,7 @@ post_class: post-template
       </section>
     {%- endif -%}
 
-    <footer class="post-footer">
+    <div class="post-footer">
       {%- if page.author -%}
         {%- assign author = site.authors[page.author] -%}
         <figure class="author-image">
@@ -56,8 +56,7 @@ post_class: post-template
       <!-- Disqus comments -->
       {%- include disqus.html -%}
 
-    </footer>
+    </div>
 
   </article>
-  {%- include site_footer.html -%}
 </main>
