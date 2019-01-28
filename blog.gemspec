@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/fastruby/blog"
   s.license     = "MIT"
 
-  s.add_dependency('rake', '~> 12.0')
-  s.add_dependency('jekyll', '~> 3.5.0')
+  s.add_dependency('rake', '~> 12.3')
+  s.add_dependency('jekyll', '~> 3.6.3')
   s.add_dependency('jekyll-categories')
   s.add_dependency('jekyll-authors')
   s.add_dependency('jekyll-titleize')
