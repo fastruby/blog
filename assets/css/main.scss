@@ -1,0 +1,27 @@
+---
+# DO NOT REMOVE. Needed for SASS support. http://jekyllrb.com/docs/assets/
+---
+
+/* We need to add display:inline in order to align the '>>' of the 'read more' link */
+.post-excerpt p {
+	display:block;
+}
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+	"syntax"
+;
+
+#sidebar {
+  width: 25%;
+  float: left;
+}
+
+#content {
+  width: 75%;
+  float: left;
+}
+
+h2.category-name{
+	margin-left: 120px;
+}

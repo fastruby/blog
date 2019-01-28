@@ -1,0 +1,7 @@
+.byebug_history
+.ruby-version
+.sass-cache
+.bundle
+.DS_Store
+_site
+.env

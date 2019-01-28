@@ -1,0 +1,69 @@
+name: Fast Ruby Blog
+description: Ruby on Rails Upgrades
+meta_description: "It's about time you upgrade your Rails version"
+
+markdown: redcarpet
+highlighter: pygments
+logo: true
+paginate: 15
+baseurl: /blog
+domain_name: 'https://fastruby.io'
+permalink: none
+category_dir: 'tags'
+excerpt_separator: "<!--more-->"
+author_title_prefix: "Articles by "
+timezone: America/New_York
+
+# Details for the RSS feed generator
+url:            'https://fastruby.io/'
+author:         'OmbuLabs'
+feed:
+  path: rss.xml
+
+exclude: [vendor]
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+
+sass:
+  style: compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      is_post: true
+
+authors:
+  etagwerker:
+    display_name: Ernesto Tagwerker
+    gravatar: 9299203e7e9b9ae35e39eb66f3155f15
+    email: ernesto@ombulabs.com
+    twitter: etagwerker
+    github: etagwerker
+  mauro-oto:
+    display_name: Mauro Otonelli
+    gravatar: 350875eb8fce8553e12040c5a1f5d5d0
+    email: mauro@ombulabs.com
+    twitter: mauro_oto
+    github: mauro-oto
+  luciano:
+    display_name: Luciano Becerra
+    gravatar: 9219f1f8634fafcbed16e72a0bb5a414
+    email: luciano@ombulabs.com
+    twitter: lubc32
+    github: lubc
+  emily:
+    display_name: Emily Cohen
+    gravatar: 1abbc4d93954d2df607cc3ec7fa9f418
+    email: emily@ombulabs.com
+    twitter:
+    github: ercohen14
+  cleiviane:
+    display_name: Cleiviane Costa
+    gravatar: db42db5ca02074d39438c612433f2209
+    email: cleiviane@ombulabs.com
+    twitter:
+    github: cleivianecosta

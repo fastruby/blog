@@ -1,6 +1,6 @@
-# Fastruby Blog
+# Fast Ruby Blog
 
-Blog for the Fastruby service using Jekyll as the blog-engine.
+Blog for the Fast Ruby using Jekyll as the blog-engine.
 
 ## Installation
 
