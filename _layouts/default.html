@@ -49,9 +49,10 @@
 
   <link rel="stylesheet" type="text/css" href="/assets/application.css" />
   <!-- Customization  -->
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css" />
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css" />
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/assets/fastruby_blog/application.css" />
 </head>
 <body class="{%- if page.post_class -%}{{page.post_class}}{%- else -%}home-template{%- endif -%}">
   <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{%- endif -%}">
@@ -62,16 +63,12 @@
         </a>
       {%- endif -%}
       <a class="back-button icon-arrow-left"
-        href="{%- if page.url == '/index.html' -%}{{ site.domain_name }}{%- else -%}{{ site.baseurl }}{%- endif -%}">Home</a>
-      <a class="subscribe-button icon-feed" href="{{ site.baseurl }}/rss.xml">Subscribe</a>
+        href="{%- if page.url == '/index.html' -%}{{ site.domain_name }}{%- else -%}{{ site.baseurl }}{%- endif -%}"><span>Home</span></a>
+      <a class="subscribe-button icon-feed" href="{{ site.baseurl }}/rss.xml"><span>Subscribe</span></a>
     </nav>
     <div class="vertical">
       <div class="main-header-content inner">
-        <h1 class="page-title logo"><a href="{{ site.baseurl }}">{{ site.name }}</a></h1>
-        <h2 class="page-description slogan">
-          {%- if site.description -%} {{ site.description }} {%- endif -%}
-          {%- if page.about -%} <a href='https://www.fastruby.io'> About us </a> {%- endif -%}
-        </h2>
+        <h1 class="page-title"><a href="{{ site.baseurl }}">{{ site.name }}</a></h1>
       </div>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>

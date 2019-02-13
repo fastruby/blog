@@ -48,4 +48,21 @@
         });
 
     };
+
+    $document.scroll(function(){
+
+        var headerHeight = $(".main-header").outerHeight();
+        var scrollTop = $(document).scrollTop();
+        var viewportWidth = $(document).width();
+      
+        if(scrollTop >= headerHeight && viewportWidth >= 768){
+            $(".main-header").addClass("fixed");
+        }else if(viewportWidth < 768){
+            $(".main-header").addClass("fixed");
+        }else if(scrollTop === 0){
+            $(".main-header").removeClass("fixed");
+        }
+      
+    })
+    
 })(jQuery);
