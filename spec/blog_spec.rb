@@ -4,7 +4,7 @@ require 'nokogiri'
 # Adapted from https://gist.github.com/thbar/10be2ea924b81f78d24ab800461bfee3
 RSpec.describe 'Fast Ruby Blog' do
   describe 'tests' do
-    let(:post) { 'jekyll/update/welcome-to-jekyll.html' }
+    let(:post) { '/rails/upgrades/case-study/upgrading-a-monolith.html' }
     let(:file_path) { "_site/#{post}" }
     let(:url) { "https://fastruby.io/blog/#{post}" }
 
@@ -25,8 +25,8 @@ RSpec.describe 'Fast Ruby Blog' do
       end
       expect(data['twitter:card']).to eq 'summary'
       expect(data['twitter:site']).to eq '@fastrubyio'
-      expect(data['twitter:title']).to eq 'Welcome to Jekyll! - Ruby on Rails Upgrades'
-      expect(data['twitter:description']).to start_with('You’ll find this post in your _posts directory')
+      expect(data['twitter:title']).to eq 'Upgrading a Huge Monolith From Rails 4.0 to Rails 5.1 - Ruby on Rails Upgrades'
+      expect(data['twitter:description']).to start_with('We recently collaborated with Power Home Remodeling on a Rails upgrade')
       expect(data['twitter:image:src']).to eq 'https://fastruby.io/blog/assets/images/profile.png'
     end
 
@@ -48,12 +48,12 @@ RSpec.describe 'Fast Ruby Blog' do
       expect(links.size).to eq 2
       expect(links[0].to_h).to eq({
         'type' => 'application/atom+xml',
-        'href' => 'https://fastruby.io//blog/rss.xml',
+        'href' => 'https://fastruby.io/blog/rss.xml',
         'rel' => 'self'
       })
       expect(links[1].to_h).to eq({
         'type' => 'text/html',
-        'href' => 'https://fastruby.io//blog/',
+        'href' => 'https://fastruby.io/blog/',
         'rel' => 'alternate'
       }, )
     end
