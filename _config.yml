@@ -15,7 +15,7 @@ author_title_prefix: "Articles by "
 timezone: America/New_York
 
 # Details for the RSS feed generator
-url:            'https://fastruby.io/'
+url:            'https://fastruby.io'
 author:         'OmbuLabs'
 feed:
   path: rss.xml
