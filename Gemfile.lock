@@ -12,6 +12,7 @@ PATH
       pygments.rb
       rake (~> 12.3)
       redcarpet
+      rspec
       sitemap_generator
 
 GEM
@@ -157,4 +158,4 @@ DEPENDENCIES
   rspec
 
 BUNDLED WITH
-   1.17.2
+   1.17.3
