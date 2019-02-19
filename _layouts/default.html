@@ -63,7 +63,7 @@
         </a>
       {%- endif -%}
       <a class="back-button icon-arrow-left"
-        href="{%- if page.url == '/index.html' -%}{{ site.domain_name }}{%- else -%}{{ site.baseurl }}{%- endif -%}"><span>Home</span></a>
+        href="{%- if page.url == '/' -%}{{ site.domain_name }}{%- else -%}{{ site.baseurl }}{%- endif -%}"><span>Home</span></a>
       <a class="subscribe-button icon-feed" href="{{ site.baseurl }}/rss.xml"><span>Subscribe</span></a>
     </nav>
     <div class="vertical">
@@ -79,7 +79,7 @@
     </div>
 
     {%- include site_footer.html -%}
-    
+
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/assets/js/index.js"></script>
