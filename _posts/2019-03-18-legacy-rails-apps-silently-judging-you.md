@@ -28,7 +28,7 @@ works for us.
 ## Dependency Archeology
 
 A good way to get started is to find out _how_ outdated an application really is.
-You can easily do this with [Bunder](https://bundler.io/)'s `bundle outdated`:
+You can easily do this with [Bundler](https://bundler.io/)'s `bundle outdated`:
 
 ```
 $ bundle outdated
