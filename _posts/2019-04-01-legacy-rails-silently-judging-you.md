@@ -16,12 +16,12 @@ If you have been working with Rails for a few years, you have seen your
 fair share of shiny new applications, well-maintained and poorly-maintained
 legacy applications. This post is about **Legacy Rails applications**
 
+<!--more-->
+
 So let's start judging them! _Are they in good shape? Should we upgrade them to
 a more recent version of Rails? Should we re-write them?_
 
 <img src="/blog/assets/images/judging.gif" alt="Judging You" class="half-img">
-
-<!--more-->
 
 How can you judge the **quality** of a Rails application? Here is a process that
 works for us.
