@@ -1,7 +1,7 @@
 {%- assign author = site.authors[post.author] -%}
 {%- include author.html -%}
 {%- assign categories = post.categories -%} {%- include category_links.html -%}
-
+<br/>
 <time class="post-date" datetime="{{ post.date | date:'%Y-%m-%d' }}">
-  {{ post.date | date_to_string }}
+  {{ post.date | date: '%B %-d, %Y' }}
 </time>
