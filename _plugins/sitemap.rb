@@ -1,24 +1,27 @@
 require 'sitemap_generator'
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  unless site.config["watch"]
-    puts "Generating sitemap.xml.gz"
+  opts = {
+    create_index: false,
+    default_host: 'https://fastruby.io/blog',
+    compress: false,
+    public_path: '/tmp',
+    sitemaps_path: '',
+    sitemaps_host: site.config['fog_url']
+  }
 
-    files = []
-    Dir['_site/**/*.html'].each do |page|
-      files << File.new(page)
+  files = []
+  Dir['_site/**/*.html'].each do |page|
+    files << File.new(page)
+  end
+
+  SitemapGenerator::Sitemap.create opts do
+    puts "Generating sitemap for the blog. The file will be uploaded to #{ENV['FOG_URL']}"
+    files.each do |file|
+      file = file.path.sub(/^_site/,'')
+      puts "Adicionando: #{file}"
+      add file, changefreq: 'weekly'
     end
-
-    SitemapGenerator::Sitemap.default_host = site.config['url'] + "/blog"
-    public_path = Dir.pwd.end_with?("blog") ? "_site" : "public/blog"
-    SitemapGenerator::Sitemap.public_path = public_path
-    SitemapGenerator::Sitemap.create compress: false do
-      files.each do |file|
-        add file.path.sub(/^_site/,''), changefreq: 'weekly'
-      end
-    end
-
-    puts "Generated sitemap.xml.gz"
   end
 
   puts "Running tests..."
