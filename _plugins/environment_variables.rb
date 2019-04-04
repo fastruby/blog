@@ -12,10 +12,10 @@ module Jekyll
 
       site.config["update_sitemap"] = ENV['UPDATE_SITEMAP'] == "true"
 
-      site.config['fog_provider'] = ENV['FOG_PROVIDER']
-      site.config['fog_directory'] = ENV['FOG_DIRECTORY']
-      site.config['fog_region'] = ENV['FOG_REGION']
-      site.config['fog_url'] = ENV['FOG_URL']
+      site.config['fog_provider'] = ENV['BLOG_FOG_PROVIDER']
+      site.config['fog_directory'] = ENV['BLOG_FOG_DIRECTORY']
+      site.config['fog_region'] = ENV['BLOG_FOG_REGION']
+      site.config['fog_url'] = ENV['BLOG_FOG_URL']
       site.config['fog_store_dir'] = ENV['BLOG_FOG_STORE_DIR']
 
       site.config['aws_bucket_url'] = ENV['S3_BUCKET_URL']
