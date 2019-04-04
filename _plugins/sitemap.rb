@@ -14,7 +14,9 @@ Jekyll::Hooks.register :site, :post_write do |site|
     SitemapGenerator::Sitemap.create opts do
       puts "Generating sitemap for the blog. The file will be uploaded to #{site.config['fog_url']}"
 
-      files = Dir['blog/_site/**/*.html']
+      files = Dir['public/blog/**/*.html']
+      puts "Files: #{files.size}"
+
       files.each do |page|
         file = File.new(page).path.gsub('_site/','')
         puts "Adicionando: #{file}"
@@ -24,9 +26,6 @@ Jekyll::Hooks.register :site, :post_write do |site|
   end
 
   puts "Running tests..."
-  system "ls -la spec"
-  puts "Listing public"
-  system "ls -la public"
   system "bundle exec rspec spec/blog_spec.rb"
   puts "All done!"
 end
