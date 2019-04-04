@@ -31,6 +31,7 @@ RSpec.describe 'Fast Ruby Blog' do
     end
 
     it 'generates the sitemap with correct domain name' do
+      pending
       doc = Nokogiri::XML(IO.read('_site/sitemap.xml'))
       url = doc.xpath('/aws:urlset/aws:url/aws:loc', 'aws' => 'http://www.sitemaps.org/schemas/sitemap/0.9')[0]
       expect(url.text).to eq 'https://fastruby.io/blog'

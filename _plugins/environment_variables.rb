@@ -10,6 +10,8 @@ module Jekyll
       site.config['google_analytics'] = ENV['GOOGLE_ANALYTICS_ID']
       site.config['disqus_shortname'] = ENV['DISQUS_SHORTNAME']
 
+      site.config["update_sitemap"] = ENV['UPDATE_SITEMAP'] == "true"
+
       site.config['fog_provider'] = ENV['FOG_PROVIDER']
       site.config['fog_directory'] = ENV['FOG_DIRECTORY']
       site.config['fog_region'] = ENV['FOG_REGION']
