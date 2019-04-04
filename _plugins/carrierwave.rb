@@ -17,6 +17,7 @@ module Jekyll
           :aws_secret_access_key  => site.config['aws_secret_access_key'],
         }
         config.fog_directory  = site.config['fog_directory']
+        config.store_dir  = site.config['fog_store_dir']
       end
     end
   end
