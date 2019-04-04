@@ -24,6 +24,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
   end
 
   puts "Running tests..."
+  system "ls -la"
   system "bundle exec rspec spec/blog_spec.rb"
   puts "All done!"
 end
