@@ -6,9 +6,9 @@ categories: ["rails", "upgrades"]
 author: "mauro-oto"
 ---
 
-_This article is part of our Upgrade Rails series. To see more of them, [click here](https://www.ombulabs.com/blog/tags/upgrades)_.
+_This article is part of our Upgrade Rails series. To see more of them, [click here](https://fastruby.io/blog/tags/upgrades)_.
 
-A [previous post](https://www.ombulabs.com/blog/rails/tips-for-upgrading-rails-3-2-to-4.html)
+A [previous post](https://fastruby.io/blog/rails/tips-for-upgrading-rails-3-2-to-4.html)
 covered some general tips to take into account for this migration. This article
 will try to go a bit more in depth. We will first go from 3.2 to 4.0, then to
 4.1 and finally to 4.2. Depending on the complexity of your app, a Rails upgrade

@@ -6,7 +6,7 @@ categories: ["rails", "upgrades"]
 author: "mauro-oto"
 ---
 
-_This article is part of our Upgrade Rails series. To see more of them, [click here](https://www.ombulabs.com/blog/tags/upgrades)_.
+_This article is part of our Upgrade Rails series. To see more of them, [click here](https://fastruby.io/blog/tags/upgrades)_.
 
 This article will cover the most important aspects that you need to know to get
 your [Ruby on Rails](http://rubyonrails.org/) application from [version 5.0](http://guides.rubyonrails.org/5_0_release_notes.html) to [5.1](http://guides.rubyonrails.org/5_1_release_notes.html).
@@ -67,7 +67,7 @@ config.public_file_server.headers = "public, max-age=3600"
 <h3 id="active-record">4.1. ActiveRecord</h2>
 
 - The `raise_in_transactional_callbacks` option is now removed. It was
-already deprecated and covered in a [previous upgrade](https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-1-to-4-2.html).
+already deprecated and covered in a [previous upgrade](https://fastruby.io/blog/rails/upgrades/upgrade-rails-from-4-1-to-4-2.html).
 
 - Also removed was `use_transactional_fixtures`, which was [replaced by](https://github.com/rails/rails/pull/19282)
 `use_transactional_tests`.

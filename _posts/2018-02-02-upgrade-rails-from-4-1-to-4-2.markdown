@@ -6,7 +6,7 @@ categories: ["rails", "upgrades"]
 author: "mauro-oto"
 ---
 
-_This article is part of our Upgrade Rails series. To see more of them, [click here](https://www.ombulabs.com/blog/tags/upgrades)_.
+_This article is part of our Upgrade Rails series. To see more of them, [click here](https://fastruby.io/blog/tags/upgrades)_.
 
 This article will cover the most important aspects that you need to know to get
 your [Ruby on Rails](http://rubyonrails.org/) application from [version 4.1](http://guides.rubyonrails.org/4_1_release_notes.html) to [4.2](http://guides.rubyonrails.org/4_2_release_notes.html).

@@ -150,7 +150,7 @@ about [Writing Fast Ruby](https://speakerdeck.com/sferik/writing-fast-ruby): [ht
 great tips for improving performance in your Ruby application or library.
 
 And, if you need help improving the
-[performance](https://www.ombulabs.com/blog/tags/performance) of your Rails
-application, [get in touch](https://www.ombulabs.com/contact)! We are constantly
+[performance](https://fastruby.io/blog/tags/performance) of your Rails
+application, [get in touch](https://fastruby.io/#contact-us)! We are constantly
 looking for new projects and opportunities to improve your
-[Rails](https://www.ombulabs.com/blog/tags/rails) performance.
+[Rails](https://fastruby.io/blog/tags/rails) performance.
