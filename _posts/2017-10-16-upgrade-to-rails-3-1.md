@@ -6,7 +6,7 @@ categories: ["rails", "upgrades"]
 author: "luciano"
 ---
 
-This is the second article of our [Upgrade Rails series](https://www.ombulabs.com/blog/tags/upgrades). We will be covering the most important aspects that you need to know to update your [Ruby on Rails](http://rubyonrails.org/) application from [version 3.0](http://guides.rubyonrails.org/3_0_release_notes.html) to [3.1](http://guides.rubyonrails.org/3_1_release_notes.html). If you are in an older version, you can take a look at our [previous article](https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3.html).
+This is the second article of our [Upgrade Rails series](https://fastruby.io/blog/tags/upgrades). We will be covering the most important aspects that you need to know to update your [Ruby on Rails](http://rubyonrails.org/) application from [version 3.0](http://guides.rubyonrails.org/3_0_release_notes.html) to [3.1](http://guides.rubyonrails.org/3_1_release_notes.html). If you are in an older version, you can take a look at our [previous article](https://fastruby.io/blog/rails/upgrades/upgrade-to-rails-3.html).
 
 <!--more-->
 
@@ -136,4 +136,4 @@ config.static_cache_control = "public, max-age=3600"
 ```
 
 <h2 id="next-steps">7. Next steps</h2>
-After you get your application properly running in Rails 3.1, you will probably want to keep working on this Rails upgrade journey. So don't forget to check our complete [Rails upgrade series](https://www.ombulabs.com/blog/tags/upgrades) to make that easy.
+After you get your application properly running in Rails 3.1, you will probably want to keep working on this Rails upgrade journey. So don't forget to check our complete [Rails upgrade series](https://fastruby.io/blog/tags/upgrades) to make that easy.

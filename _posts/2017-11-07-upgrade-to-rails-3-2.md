@@ -6,7 +6,7 @@ categories: ["rails", "upgrades"]
 author: "luciano"
 ---
 
-This is the third article of our [Upgrade Rails series](https://www.ombulabs.com/blog/tags/upgrades). We will be covering the most important aspects that you need to know to update your [Ruby on Rails](http://rubyonrails.org/) application from [version 3.1](http://guides.rubyonrails.org/3_1_release_notes.html) to [3.2](http://guides.rubyonrails.org/3_2_release_notes.html).
+This is the third article of our [Upgrade Rails series](https://fastruby.io/blog/tags/upgrades). We will be covering the most important aspects that you need to know to update your [Ruby on Rails](http://rubyonrails.org/) application from [version 3.1](http://guides.rubyonrails.org/3_1_release_notes.html) to [3.2](http://guides.rubyonrails.org/3_2_release_notes.html).
 
 <!--more-->
 
@@ -70,4 +70,4 @@ end
 Rails 3.2 deprecates `vendor/plugins`, and it's the last Rails version that support it. If your plan is to migrate to Rails 4 in the future, you can start replacing any plugins by extracting them to gems and adding them to your `Gemfile`, or you can move them into `lib/my_plugin/*`. We cover this topic in depth in our Rails 4.0 upgrade guide.
 
 <h2 id="next-steps">7. Next steps</h2>
-After you get your application properly running in Rails 3.2, you will probably want to keep working on this Rails upgrade journey. So don't forget to check our complete [Rails upgrade series](https://www.ombulabs.com/blog/tags/upgrades) to make that easy.
+After you get your application properly running in Rails 3.2, you will probably want to keep working on this Rails upgrade journey. So don't forget to check our complete [Rails upgrade series](https://fastruby.io/blog/tags/upgrades) to make that easy.

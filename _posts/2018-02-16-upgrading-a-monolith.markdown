@@ -20,4 +20,4 @@ We executed a **full upgrade of the application from Rails 4.0 to 5.1** and prep
 
 According to Ben, “Ombu augmented our in-house team with a specific capacity for the upgrade project, **enabling our other developers to retain focus on direct business goals**.” [Ombu Labs](https://www.ombulabs.com)' exclusive focus on the Rails upgrade allowed the developers at [Power Home Remodeling](https://powerhrg.com) to continue their work on features and other goals without distractions. In the end, [Power Home Remodeling](https://powerhrg.com) received an application with up-to-date Rails versions and was able to make progress on their other work as well.
 
-For more information about upgrading your Rails application, check out our "[Upgrade Rails Series](https://www.ombulabs.com/blog/tags/upgrades)", a series of do-it-yourself guides to upgrading Rails.
+For more information about upgrading your Rails application, check out our "[Upgrade Rails Series](https://fastruby.io/blog/tags/upgrades)", a series of do-it-yourself guides to upgrading Rails.

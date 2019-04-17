@@ -30,4 +30,4 @@ Ernesto: Okay, and lastly, on a scale from 1-10, how much would you like to work
 
 Ryan: I think that for the right project, I would say a 10.
 
-For more information about upgrading your Rails application, check out our "[Upgrade Rails Series](https://www.ombulabs.com/blog/tags/upgrades)", a series of do-it-yourself guides to upgrading Rails.
+For more information about upgrading your Rails application, check out our "[Upgrade Rails Series](https://fastruby.io/blog/tags/upgrades)", a series of do-it-yourself guides to upgrading Rails.

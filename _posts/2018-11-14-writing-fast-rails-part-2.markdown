@@ -6,7 +6,7 @@ categories: ["rails", "performance"]
 author: "luciano"
 ---
 
-Some time ago we wrote a couple of [Tips for Writing Fast Rails](https://www.ombulabs.com/blog/performance/rails/writing-fast-rails.html). It was about time we wrote part two so here it is!
+Some time ago we wrote a couple of [Tips for Writing Fast Rails](https://fastruby.io/blog/performance/rails/writing-fast-rails.html). It was about time we wrote part two so here it is!
 
 <!--more-->
 
