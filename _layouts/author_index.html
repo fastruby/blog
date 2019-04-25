@@ -1,15 +1,19 @@
 ---
 layout: default
 ---
-
-{%- assign author = site.authors[page.author] -%}
-<h2 class="author-name">Articles by <span class="tag">{{ author.display_name }}</span>
-</h2>
-<h3 class="author-description"><a href="http://twitter.com/{{author.twitter}}"
-                                  title="{{author.display_name}} on Twitter"
-                                  target="_blank">Follow @{{ page.author }} on Twitter</a></h3>
-
 <main id="content" class="content category">
+  <div class="category-tag">
+    {%- assign author = site.authors[page.author] -%}
+    <div class="category-name">
+      <h2 class="author-name">Articles by <span class="tag">{{ author.display_name }}</span></h2>
+    </div>
+    <div class="category-description">
+      {%- if author.twitter -%}
+        <h3><a href="http://twitter.com/{{author.twitter}}"
+          title="{{author.display_name}} on Twitter" target="_blank">Follow @{{ page.author }} on Twitter</a></h3>
+      {%- endif -%}
+    </div>
+  </div>
   {%- for post in site.posts -%}
     {%- if post.author == page.author -%}
       {%- include post_excerpt.html -%}
