@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Compatibility Table"
-date: 2019-04-26 10:00:00
+title:  "Ruby & Rails Compatibility Table"
+date: 2019-04-26 13:00:00
 categories: ["ruby", "rails", "versions"]
 author: "etagwerker"
 ---
