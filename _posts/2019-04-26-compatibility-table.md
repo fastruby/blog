@@ -16,10 +16,10 @@ Rails we have ran into a lot of these combinations.
 <table id="ruby-rails-compatibility">
   <thead>
     <tr>
-      <td>Rails<br/>Version</td>
-      <td>Required<br/>Ruby<br/>Version</td>
+      <td><a href="https://rubygems.org/gems/rails/versions" style="color: white"> Rails<br/> Version </a></td>
+      <td><a href="https://www.ruby-lang.org/en/downloads/releases/" style="color: white"> Required<br/>Ruby<br/>Version</a></td>
       <td>Recommended<br/>Ruby<br/>Version</td>
-      <td>Required<br/>Rubygems<br/>Version</td>
+      <td><a href="https://rubygems.org/gems/rubygems-update/versions" style="color: white"> Required<br/>Rubygems<br/>Version </a></td>
       <td><a href="https://guides.rubyonrails.org/maintenance_policy.html" style="color: white"> Status </a></td>
     </tr>
   </thead>
