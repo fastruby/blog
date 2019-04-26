@@ -38,10 +38,10 @@ Done installing documentation for ten_years_rails after 0 seconds
 1 gem installed
 ```
 
-_Warning: `ten_years_rails` requires Ruby 2.3 or higher. You can find a manual
-workaround below._
+**Warning**: `ten_years_rails` requires Ruby 2.3 or higher. You can find a manual
+workaround [below](#workaround).
 
-Now that I can use that gem, I will init my `Gemfile.next` file like this:
+Now that I can use that gem, I will initialize my `Gemfile.next` file like this:
 
 ```
 $ next --init
@@ -62,6 +62,8 @@ end
 
 That command creates a `Gemfile.next` symlink to my `Gemfile` and adds an util
 method to my `Gemfile`:
+
+<div id="workaround" />
 
 ```ruby
 # Gemfile
@@ -142,8 +144,8 @@ Here is the configuration that you could use for dual booting in Circle CI:
 A few notes about this configuration:
 
 - It's using Ruby 2.6 and a Postgres database
-- It's using Circle CI's API version 2.0
-- It has a lot of duplication (there is probably a way to DRY it)
+- It's using [Circle CI's API version 2.0](https://circleci.com/docs/2.0/)
+- It has a lot of duplication (there is probably a way to [DRY](http://wiki.c2.com/?DontRepeatYourself) it)
 - The key is to configure a workflow with two jobs (one for Rails 5.2 and
   another one for Rails 6.0) like this:
 
@@ -181,7 +183,11 @@ gemfile:
 ## Start Fixing The Rails 6.0 Test Suite
 
 Now that you have your test suite running in both Rails 5.2 and Rails 6.0, you
-can start tweaking your code and dependencies to work with both gemfiles.
+can start tweaking your code and dependencies to work with both gemfiles. There
+will be two big hurdles:
+
+1. Getting Bundler to bundle your dependencies
+2. Getting your test suite to pass
 
 ## Final Remarks
 
