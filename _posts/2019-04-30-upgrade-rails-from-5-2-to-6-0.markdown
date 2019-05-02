@@ -100,7 +100,7 @@ which provides an overview of the changes in a basic Rails app between 5.2.x and
 
 <h3 id="webpacker">6. Webpacker</h3>
 
-[Webpacker](https://github.com/rails/webpacker) is [now](https://github.com/rails/rails/pull/33079) default JavaScript compiler for Rails 6. You can still manage your JavaScript using the [Asset Pipeline](https://guides.rubyonrails.org/asset_pipeline.html) but it might be a good idea to start migrating to Webpack.
+[Webpacker](https://github.com/rails/webpacker) is [now](https://github.com/rails/rails/pull/33079) the default JavaScript compiler for Rails 6. You can still manage your JavaScript using the [Asset Pipeline](https://guides.rubyonrails.org/asset_pipeline.html) but it might be a good idea to start migrating to Webpack.
 
 There is a really good screencast that explains everything about it: [How to Use Javascript via Webpacker in Rails 6](https://www.youtube.com/watch?v=Hz8d6zPDSrk)
 
