@@ -50,7 +50,7 @@ which provides an overview of the changes in a basic Rails app between 5.2.x and
 
 <h3 id="removals">5. Removals</h3>
 
-<h4 id="railties">Railties</h4>
+<h5 id="railties">Railties</h5>
 
 - [Remove deprecated](https://github.com/rails/rails/commit/4d51efe24e461a2a3ed562787308484cd48370c7) `after_bundle` helper inside plugins templates.
 
@@ -62,19 +62,19 @@ which provides an overview of the changes in a basic Rails app between 5.2.x and
 
 - [Remove deprecated](https://github.com/rails/rails/commit/46ac5fe69a20d4539a15929fe48293e1809a26b0) `config.secret_token`.
 
-<h4 id="action-pack">Action Pack</h4>
+<h5 id="action-pack">Action Pack</h5>
 
 - [Remove deprecated](https://github.com/rails/rails/commit/e70d3df7c9b05c129b0fdcca57f66eca316c5cfc) `fragment_cache_key` helper in favor of `combined_fragment_cache_key`.
 
 - [Remove deprecated](https://github.com/rails/rails/commit/13ddc92e079e59a0b894e31bf5bb4fdecbd235d1) methods in `ActionDispatch::TestResponse: #success?` in favor of `#successful?`, `#missing?` in favor of `#not_found?`, `#error?` in favor of `#server_error`?
 
-<h4 id="action-view">Action View</h4>
+<h5 id="action-view">Action View</h5>
 
 - [Remove deprecated](https://github.com/rails/rails/commit/60c8a03c8d1e45e48fcb1055ba4c49ed3d5ff78f) `image_alt` helper.
 
 - [Remove](https://github.com/rails/rails/commit/5c5ddd69b1e06fb6b2bcbb021e9b8dae17e7cb31) an empty `RecordTagHelper` module from which the functionality was already moved to the `record_tag_helper` gem.
 
-<h4 id="active-record">Active Record</h4>
+<h5 id="active-record">Active Record</h5>
 
 - [Remove deprecated](https://github.com/rails/rails/commit/6c745b0c5152a4437163a67707e02f4464493983) `#set_stat` from the transaction object.
 
@@ -108,7 +108,6 @@ There is a really good screencast that explains everything about it: [How to Use
 
 Rails 6 [adds support](https://github.com/rails/rails/pull/33521) for multi environment credentials. That means that now you can run `rails credentials:edit --environment staging` and it will create a `config/credentials/staging.yml.enc` file where you can store your encrypted credentials for staging (or whatever environment you want).
 Rails will know which credential file should use based on the format of the file. Also, if you create an environment credential file, it will take precedence over the default `config/credentials.yml.enc`.
-
 
 <h3 id="next-steps">8. Next steps</h3>
 
