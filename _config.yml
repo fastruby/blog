@@ -24,6 +24,7 @@ exclude: [vendor]
 plugins:
   - jekyll-paginate
   - jekyll-feed
+  - jekyll-last-modified-at
 
 sass:
   style: compressed
