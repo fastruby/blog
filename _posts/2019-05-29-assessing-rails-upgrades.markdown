@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Is this Rails Upgrade Project a good fit?"
-date: 2019-05-23 15:00:00
+title: "Is This Rails Upgrade Project a Good Fit?"
+date: 2019-05-29 15:00:00
 categories: ["rails", "upgrades"]
 author: "emily"
 ---
@@ -27,6 +27,6 @@ These questions help us get an idea of the scope and level of risk of the Rails 
 
 Based on the information from these initial [FastRuby.io](https://fastruby.io) calls, we can determine whether or not the Rails upgrade project is a good fit for the team.
 
-If the project is a good fit for us, we direct our leads to purchase [The Roadmap](https://fastruby.io/roadmap). All of our clients purchase this initial assessment to get an idea of the state of their project. After they receive the Roadmap Report, some clients decide to use the roadmap to work on a Rails upgrade on their own and others decide to work with us on their upgrade project.
+If the project is a good fit for us, we direct our leads to purchase [The Roadmap's report](https://fastruby.io/roadmap). All of our clients purchase this initial assessment to get an idea of the state of their project. After they receive the Roadmap Report, some clients decide to use the roadmap to work on a [Rails upgrade](https://fastruby.io/blog/tags/upgrades) on their own and others decide to work with us on their upgrade project.
 
 [Rails 6.0 is right around the corner](https://fastruby.io/blog/rails/upgrades/upgrade-rails-from-5-2-to-6-0.html). If you don't have the time to upgrade your Rails app, check out [FastRuby.io](https://fastruby.io) and schedule a call with us.
