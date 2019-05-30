@@ -15,7 +15,7 @@ layout: default
     </div>
   </div>
   {%- for post in site.posts -%}
-    {%- if post.author == page.author -%}
+    {%- if post.author == page.author or post.authors contains page.author -%}
       {%- include post_excerpt.html -%}
     {%- endif -%}
   {%- endfor -%}
