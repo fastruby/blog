@@ -1,5 +1,6 @@
 {%- if author -%}
   {%- if author.gravatar -%}
+  <span class="author-info">
     <img class="author-thumb" src="//2.gravatar.com/avatar/{{ author.gravatar }}?s=50" alt="{{ author.display_name }}" nopin="nopin" />
   {%- else -%}
     <img class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
@@ -8,6 +9,7 @@
      title="Articles by {{ author.display_name}}">
      {{ author.display_name }}
   </a>
+  </span>
 {%- endif -%}
 
 {%- if authors -%}
