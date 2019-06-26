@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Upgrade Rails 101: The Roadmap to Smooth Upgrades"
-date: 2019-06-19 10:00:00
+date: 2019-06-26 10:01
 categories: ["RailsConf"]
 authors: ["etagwerker"]
 ---
@@ -19,12 +19,12 @@ Here are a few lessons learned from running such an ambitious workshop.
 
 I believe the scope was way too ambitious. I pitched the workshop as an opportunity
 to bring *any* Rails application and leave with a [roadmap to upgrade](https://fastruby.io/roadmap)
-to the next version of Rails. As if that had not been enough, I also told attendees
+to the next version of Rails. As if that was not enough, I told attendees
 that they could use a sample, open source application to practice our steps to
-upgrade.
+upgrade: [https://github.com/alphagov/e-petitions](https://github.com/alphagov/e-petitions)
 
-I should have stuck to the sample application. As the workshop went on, I found
-myself addressing issues regarding random applications **and** the sample
+I should have used *only* the sample application. As the workshop went on, I found
+myself addressing issues regarding random Rails applications **and** the sample
 application.
 
 ## All Environments Are Different
@@ -39,21 +39,36 @@ have been something like "just run `docker-compose up`" and done.
 
 ## More Details
 
-When describing the steps to create the Rails upgrade roadmap, I should have
-provided even more detail for every step. For people that were stuck in a step,
+When describing the steps to create the [Rails upgrade roadmap](https://fastruby.io/roadmap),
+I should have provided even more detail for every step. For people that were stuck in a step,
 I could have had branches on my sample Git repository. For each step, I could
 have had a checklist to make sure that the attendees got to a stage that would
-not block them moving forward.
+not stop them moving forward.
+
+## Results
+
+I'm very happy with the feedback I received after the workshop. It was a great
+experience and I plan to keep conducting this workshop in other conferences.
+There is certainly room for improvement and I'm sure the next iteration will be
+even better than the first one.
+
+I will be conducting a new instance of the workshop in the next
+[Southeast Ruby](https://southeastruby.com). I hope attendees will learn from
+our experience and avoid typical mistakes.
 
 ## Reference
 
-You can find the slides to my workshop over here: [https://speakerdeck.com/etagwerker/railsconf-2019-upgrade-rails-101-workshop](https://speakerdeck.com/etagwerker/railsconf-2019-upgrade-rails-101-workshop). Unfortunately this time the workshops were not recorded, so I won't be
+Here are the slides from my workshop:
+
+<script async class="speakerdeck-embed" data-id="98e4c8ff073a49b093f759440726ab8a" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+<br/>Unfortunately this time the workshops were not recorded, so I won't be
 able to share a video with my presentation. You can find the companion page for
 my workshop over here: [https://fastruby.io/upgrade](https://fastruby.io/upgrade).
 
 Finally, if you are interested in upgrading from Rails 2.3 all the way to Rails 5.2
 you can read all of our articles from our [Rails Upgrades series](https://fastruby.io/blog/tags/upgrades).
 
-This workshop is a by-product of our commercial offering: [The Roadmap](https://fastruby.io/roadmap).
+This workshop is a by-product of our productized service: [The Roadmap](https://fastruby.io/roadmap).
 I wouldn't have been able to conduct it without the support by the team at
-[Ombu Labs](https://www.ombulabs.com). Thank you all! 
+[Ombu Labs](https://www.ombulabs.com). Thank you all!
