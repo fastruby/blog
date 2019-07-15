@@ -52,7 +52,9 @@ end
 
 ## Conclusion
 
-It is a good practice to always use `find_each`, even when there are not many records on the table. That way if the table does grow significantly, you don't have to worry about this issue in the future.
+As long as the objects are not loaded into memory yet, it is a good practice to always use `find_each`, even when there are not many records on the table. That way if the table does grow significantly, you don't have to worry about this issue in the future.
+
+If you want to detect other performance issues that you may have in your app, consider using the [performance extension](https://github.com/rubocop-hq/rubocop-performance) for [Rubocop](https://github.com/rubocop-hq/rubocop).
 
 Finally, if you need help improving the performance of your Rails
 application, [get in touch with us!](https://fastruby.io/#contact-us) We are constantly looking for new projects and opportunities to help improve the performance of Rails apps.
