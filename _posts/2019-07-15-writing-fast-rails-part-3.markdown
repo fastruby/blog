@@ -6,7 +6,7 @@ categories: ["rails", "performance"]
 author: "luciano"
 ---
 
-Here we continue with the [series](https://fastruby.io/blog/tags/performance) of articles where we talk how minor adjustments in the code can lead to major performance improvements.
+Here we continue with the [series](https://fastruby.io/blog/tags/performance) of articles where we talk about how minor adjustments in the code can lead to major performance improvements.
 
 In this article we'll focus on the use of [ActiveRecord::Batches#find_each](https://api.rubyonrails.org/classes/ActiveRecord/Batches.html#method-i-find_each) when it comes to iterations across a large number of records.
 
@@ -22,7 +22,7 @@ Product.all.each do |product|
 end
 ```
 
-The problem with that code is that `Product.all` initialize all the records at once and loads them into memory. This can lead to major memory usage issues in your app.
+The problem with that code is that `Product.all` initializes all the records at once and loads them into memory. This can lead to major memory usage issues in your app.
 
 To be clear, the problem there is not the `.all` but the amount of records that it loads. If you try to iterate a scope like `Product.where(status: :active)` that still loads a huge amount of records, it will lead to the same issues.
 
@@ -52,7 +52,7 @@ end
 
 ## Conclusion
 
-It is a good practice to always use `find_each`, even though there are not many records on the table. That way if the table grow significantly, you don't have to worry about this issue.
+It is a good practice to always use `find_each`, even when there are not many records on the table. That way if the table does grow significantly, you don't have to worry about this issue in the future.
 
 Finally, if you need help improving the performance of your Rails
-application, [get in touch with us!](https://fastruby.io/#contact-us) We are constantly looking for new projects and opportunities to help you improve the performance of your Rails app.
+application, [get in touch with us!](https://fastruby.io/#contact-us) We are constantly looking for new projects and opportunities to help improve the performance of Rails apps.
