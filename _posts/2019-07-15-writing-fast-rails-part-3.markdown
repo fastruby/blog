@@ -34,7 +34,7 @@ Product.find_each do |product|
 end
 ```
 
-To set a custom batch size you can use the `batch_size` flag:
+To set a custom batch size you can use the `batch_size` option:
 
 ```
 Product.find_each(batch_size: 200) do |product|
