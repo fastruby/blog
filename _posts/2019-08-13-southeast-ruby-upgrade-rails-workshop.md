@@ -20,7 +20,7 @@ for all of our client projects. This year I had the opportunity to share our
 process in a series of workshops:
 [Upgrade Rails 101: The Roadmap to Smooth Upgrades](https://speakerdeck.com/etagwerker/upgrade-rails-101-the-roadmap-to-smooth-upgrades-southeast-ruby-19)
 
-<!-- more -->
+<!--more-->
 
 A couple of weeks ago I ran the latest iteration of our workshop at [Southeast Ruby '19](https://2019.southeastruby.com). I showed what it would look like if we were to upgrade
 the [e-petitions](https://github.com/alphagov/e-petitions) application.
