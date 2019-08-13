@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to Upgrade Any Rails Application Using Docker"
-date: 2019-08-11 15:00
+date: 2019-08-13 12:00
 categories: ["rails", "upgrades"]
 author: "etagwerker"
 ---
