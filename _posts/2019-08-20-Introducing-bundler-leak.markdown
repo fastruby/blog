@@ -12,7 +12,7 @@ In this blog post I will introduce `bundler-leak` -- A bundler plugin to find kn
 
 The [`bundler-leak`](https://github.com/rubymem/bundler-leak) plugin is a fork of the famous [`bundler-audit`](https://github.com/rubysec/bundler-audit) plugin.
 
-As bundler audit, bundler leak works in conjuction of a couple of projects. The first one is what we called the [ruby-mem-advisory-db](https://github.com/rubymem/ruby-mem-advisory-db) a text based database
+Just like `bundler-audit`, `bundler-leak` works thanks to a couple of community-driven, open source projects. The first one is called [ruby-mem-advisory-db](https://github.com/rubymem/ruby-mem-advisory-db): a text-based database
 consisting of gems with known memory leak issues. Bundler leak will compare gems stored in this database against your Gemfile i.e
 
 ```
