@@ -38,5 +38,5 @@ The second project is called [rubymem.com](https://github.com/rubymem/rubymem.co
 </div>
 
 ## Conclusion
-We want to thank you to all who made and contributed to bundler audit, the project on which this plugin is based.
+We want to say thanks to all the contributors who contributed to bundler audit, it was a great inspiration for this plugin! 
 If you want to learn more or contribute to bundler leak check the repository and fill and issue or PR.
