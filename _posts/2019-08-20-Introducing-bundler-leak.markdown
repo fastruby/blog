@@ -31,7 +31,7 @@ Audit a project's Gemfile.lock:
 
 Here is a sample project where you can toy with bundler leak
 
-The last project is called [rubymem.com](https://github.com/ombulabs/rubymem.com) - A web application that will allow you to submit new `leaky gems` to the `ruby-mem-advisory-db`
+The second project is called [rubymem.com](https://github.com/rubymem/rubymem.com): A web application that will allow you to submit new _leaky gems_ to the `ruby-mem-advisory-db`
 
 <div style="text-align: center; width: 500px;">
   <img src="/blog/assets/images/rubymem/rubymem-form.png">
