@@ -6,7 +6,7 @@ categories: ["bundler"]
 author: bronzdoc
 
 ---
-In this blog post I will introduce bundler leak - A bundler plugin to check gems affected by memory leaks in your Gemfile.
+In this blog post I will introduce `bundler-leak` -- A bundler plugin to find known memory leaks in your dependencies.
 
 <!--more-->
 
