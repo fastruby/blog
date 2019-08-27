@@ -29,7 +29,7 @@ Audit a project's Gemfile.lock:
     Unpatched versions found!
 ```
 
-Here is a sample project where you can toy with bundler leak
+Here is a [sample project](https://github.com/rubymem/bundler-leak-sample) where you can toy with bundler leak
 
 The second project is called [rubymem.com](https://github.com/rubymem/rubymem.com): A web application that will allow you to submit new _leaky gems_ to the `ruby-mem-advisory-db`
 
@@ -41,4 +41,4 @@ The second project is called [rubymem.com](https://github.com/rubymem/rubymem.co
 We want to say thanks to all the contributors who contributed to bundler audit, it was a great inspiration for this plugin!
 If you want to learn more or contribute to bundler leak check the repository and submit an issue or PR.
 
-Also thanks to https://github.com/ASoftCo/leaky-gems the project that inspired the `ruby-mem-advisory-db` and all the [contributors](https://github.com/ASoftCo/leaky-gems#contributors)
+Also thanks to https://github.com/ASoftCo/leaky-gems the project that inspired the `ruby-mem-advisory-db` and all their [contributors](https://github.com/ASoftCo/leaky-gems#contributors)
