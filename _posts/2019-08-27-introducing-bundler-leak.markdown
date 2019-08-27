@@ -33,9 +33,7 @@ Here is a [sample project](https://github.com/rubymem/bundler-leak-sample) where
 
 The second project is called [rubymem.com](https://github.com/rubymem/rubymem.com): A web application that will allow you to submit new _leaky gems_ to the `ruby-mem-advisory-db`
 
-<div style="text-align: center; width: 500px;">
-  <img src="/blog/assets/images/rubymem/rubymem-form.png">
-</div>
+<img src="/blog/assets/images/rubymem/rubymem-form.png" alt="rubymem.com">
 
 ## Conclusion
 We want to say thanks to all the contributors who contributed to bundler audit, it was a great inspiration for this plugin!
