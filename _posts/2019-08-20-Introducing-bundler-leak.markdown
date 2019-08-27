@@ -38,5 +38,7 @@ The second project is called [rubymem.com](https://github.com/rubymem/rubymem.co
 </div>
 
 ## Conclusion
-We want to say thanks to all the contributors who contributed to bundler audit, it was a great inspiration for this plugin! 
+We want to say thanks to all the contributors who contributed to bundler audit, it was a great inspiration for this plugin!
 If you want to learn more or contribute to bundler leak check the repository and submit an issue or PR.
+
+Also thanks to https://github.com/ASoftCo/leaky-gems the project that inspired the `ruby-mem-advisory-db` and all the [contributors](https://github.com/ASoftCo/leaky-gems#contributors)
