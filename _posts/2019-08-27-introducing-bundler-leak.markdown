@@ -6,11 +6,11 @@ categories: ["bundler", "memory-leaks"]
 author: bronzdoc
 
 ---
-In this blog post I will introduce `bundler-leak` -- A bundler plugin to find known memory leaks in your dependencies.
+In this blog post I will introduce bundler-leak -- A bundler plugin to find known memory leaks in your dependencies.
 
 <!--more-->
 
-The [`bundler-leak`](https://github.com/rubymem/bundler-leak) plugin is a fork of the famous [`bundler-audit`](https://github.com/rubysec/bundler-audit) plugin.
+The [`bundler-leak`](https://github.com/rubymem/bundler-leak) plugin is a fork of the famous [`bundler-audit`](https://github.com/rubysec/bundler-audit).
 
 Just like `bundler-audit`, `bundler-leak` works thanks to a couple of community-driven, open source projects. The first one is called [ruby-mem-advisory-db](https://github.com/rubymem/ruby-mem-advisory-db): a text-based database
 of gems with known memory leak issues. Bundler Leak will compare gems stored in this database against your Gemfile. For example:
@@ -29,7 +29,7 @@ Audit a project's Gemfile.lock:
     Unpatched versions found!
 ```
 
-Here is a [sample project](https://github.com/rubymem/bundler-leak-sample) where you can toy with bundler leak
+Here is a [sample project](https://github.com/rubymem/bundler-leak-sample) where you can play with bundler leak
 
 The second project is called [rubymem.com](https://github.com/rubymem/rubymem.com): A web application that will allow you to submit new _leaky gems_ to the `ruby-mem-advisory-db`
 
