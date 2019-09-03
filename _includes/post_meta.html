@@ -8,7 +8,7 @@
   Created at: {{ post.date | date: '%B %-d, %Y' }}
 </time>
 <time class="post-date" id="last-modified-at">
-  {% assign last_modified_at = post.last_modified_at | date: '%B %-d, %Y' %}
+  {% assign last_modified_at = post.last_modified_at | date: '%s' | date: '%B %-d, %Y' %}
   {% assign post_date = post.date | date: '%s'| plus: 86400 | date: '%B %-d, %Y'%}
   {% if last_modified_at > post_date %}
     - Updated at: {{ post.last_modified_at | date: '%B %-d, %Y' }}
