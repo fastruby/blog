@@ -9,13 +9,12 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.add_dependency('rake', '~> 12.3')
-  s.add_dependency('jekyll', '~> 3.6.3')
+  s.add_dependency('jekyll', '~> 3.7.4')
   s.add_dependency('jekyll-categories')
   s.add_dependency('jekyll-authors')
   s.add_dependency('jekyll-titleize')
   s.add_dependency('jekyll-paginate')
   s.add_dependency('jekyll-feed')
-  s.add_dependency('jekyll-last-modified-at')
   s.add_dependency('dotenv')
   s.add_dependency('rspec')
 
