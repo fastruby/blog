@@ -1,38 +1,34 @@
 {%- if author -%}
   {%- if author.gravatar -%}
-  <span class="author-info">
+  <p class="author-info">
     <img class="author-thumb" src="//2.gravatar.com/avatar/{{ author.gravatar }}?s=50" alt="{{ author.display_name }}" nopin="nopin" />
-  {%- else -%}
+    {%- else -%}
     <img class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
-  {%- endif -%}
-  <a href="{{ site.baseurl }}/authors/{{ post.author }}"
-     title="Articles by {{ author.display_name}}">
-     {{ author.display_name }}
-  </a>
-  </span>
+    {%- endif -%}
+    <a class="btn-link" href="{{ site.baseurl }}/authors/{{ post.author }}"
+       title="Articles by {{ author.display_name}}">{{ author.display_name }}</a>
+  </p>
 {%- endif -%}
 
 {%- if authors -%}
   {% for author in authors %}
     {%- assign author_info = site.authors[author] -%}
     {%- if author_info.gravatar -%}
-      <span class="author-info">
+      <p class="author-info">
         <img class="author-thumb" src="//2.gravatar.com/avatar/{{ author_info.gravatar }}?s=50" alt="{{ author_info.display_name }}" nopin="nopin" />
     {%- else -%}
         <img class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
     {%- endif -%}
-        <a href="{{ site.baseurl }}/authors/{{ author }}"
-        title="Articles by {{ author_info.display_name}}">
-        {{ author_info.display_name }}
-        </a>
-      </span>
+        <a class="btn-link" href="{{ site.baseurl }}/authors/{{ author }}"
+        title="Articles by {{ author_info.display_name}}">{{ author_info.display_name }}</a>
+      </p>
     {%- if authors.size == 2 -%}
-      {%- unless forloop.last -%}<span>and </span>{%- endunless -%}
+      {%- unless forloop.last -%}<p>and </p>{%- endunless -%}
     {%- else -%}
       {% if forloop.first == true %}
-        {%- unless forloop.last -%}<span>, </span>{%- endunless -%}
+        {%- unless forloop.last -%}<p>, </p>{%- endunless -%}
       {%- else -%}
-        {%- unless forloop.last -%}<span>and </span>{%- endunless -%}
+        {%- unless forloop.last -%}<p>and </p>{%- endunless -%}
       {%- endif -%}
     {%- endif -%}
   {% endfor %}

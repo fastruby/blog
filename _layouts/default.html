@@ -68,7 +68,7 @@
     </nav>
     <div class="vertical">
       <div class="main-header-content inner">
-        <h1 class="page-title"><a href="{{ site.baseurl }}">{{ site.name }}</a></h1>
+        <h2><a href="{{ site.baseurl }}">{{ site.name }}</a></h2>
       </div>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
@@ -76,6 +76,7 @@
     <div id="wrapper">
       {%- include sidebar.html -%}
       {{ content }}
+      {%- include sidebar.html -%}
     </div>
 
     {%- include site_footer.html -%}
