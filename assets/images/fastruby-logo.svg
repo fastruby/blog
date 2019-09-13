@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="83px" height="46px" viewBox="0 0 83 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="site-v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Extra-large:-Desktops---12-col-Copy-2" transform="translate(-162.000000, -57.000000)" fill="#FF0000">
+            <g id="nav" transform="translate(162.000000, 50.000000)">
+                <g id="logo" transform="translate(0.000000, 7.000000)">
+                    <g id="Group" opacity="0.1">
+                        <g id="Path">
+                            <polygon points="42.4005466 0.000223451942 13.5889668 0.000223451942 0 13.7663194 55.9895134 13.7663194"></polygon>
+                            <polygon points="41.9512939 13.7663194 27.9947567 0.000223451942 14.0382195 13.7663194"></polygon>
+                        </g>
+                        <g transform="translate(0.000000, 13.757901)" id="Path">
+                            <polygon points="55.9895134 0.00841796461 27.9947567 31.6305501 0 0.00841796461"></polygon>
+                        </g>
+                    </g>
+                    <g id="Group" opacity="0.2" transform="translate(9.000000, 0.000000)">
+                        <g id="Path">
+                            <polygon points="42.4700285 0.000223451942 13.6188165 0.000223451942 0.0102803231 13.7663194 56.0804238 13.7663194"></polygon>
+                            <polygon points="42.0219879 13.7663194 28.045352 0.000223451942 14.0687162 13.7663194"></polygon>
+                        </g>
+                        <g transform="translate(0.000000, 13.757901)" id="Path">
+                            <polygon points="56.0804238 0.00841796461 28.045352 31.6305501 0.0102803231 0.00841796461"></polygon>
+                        </g>
+                    </g>
+                    <g id="Group" opacity="0.4" transform="translate(18.000000, 0.000000)">
+                        <g id="Path">
+                            <polygon points="42.405027 0.000223451942 13.6049249 0.000223451942 0.0186405647 13.7663194 55.9913114 13.7663194"></polygon>
+                            <polygon points="41.9577801 13.7663194 28.0059039 0.000223451942 14.0540276 13.7663194"></polygon>
+                        </g>
+                        <g transform="translate(0.000000, 13.757901)" id="Path">
+                            <polygon points="55.9913114 0.00841796461 28.0059039 31.6305501 0.0186405647 0.00841796461"></polygon>
+                        </g>
+                    </g>
+                    <g id="Group" transform="translate(27.000000, 0.000000)">
+                        <g id="Path">
+                            <polygon points="42.4024156 0.000223451942 13.6023136 0.000223451942 0.0160291968 13.7663194 55.9887 13.7663194"></polygon>
+                        </g>
+                        <g transform="translate(0.000000, 13.757901)" id="Path">
+                            <polygon points="55.9887 0.00841796461 28.0032925 31.6305501 0.0160291968 0.00841796461"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
