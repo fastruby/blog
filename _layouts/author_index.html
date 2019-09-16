@@ -1,18 +1,14 @@
 ---
 layout: default
 ---
-<main id="content" class="content category">
+<main id="content" class="content category col-xs-12 order-xs-2 col-md-8">
   <div class="category-tag">
     {%- assign author = site.authors[page.author] -%}
-    <div class="category-name">
-      <h2 class="author-name">Articles by <span class="tag">{{ author.display_name }}</span></h2>
-    </div>
-    <div class="category-description">
-      {%- if author.twitter -%}
-        <h3><a href="http://twitter.com/{{author.twitter}}"
-          title="{{author.display_name}} on Twitter" target="_blank">Follow @{{ page.author }} on Twitter</a></h3>
-      {%- endif -%}
-    </div>
+    <h2 class="author-name">Articles by <strong>{{ author.display_name }}</strong></h2>
+    {%- if author.twitter -%}
+    <p><a href="http://twitter.com/{{author.twitter}}"
+      title="{{author.display_name}} on Twitter" target="_blank">Follow @{{ page.author }} on Twitter</a></p>
+  {%- endif -%}
   </div>
   {%- for post in site.posts -%}
     {%- if post.author == page.author or post.authors contains page.author -%}
