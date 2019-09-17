@@ -8,6 +8,7 @@ post_class: post-template
 <main id="content" class="post-layout col-xs-12 order-xs-2 col-md-8" role="main">
   <article class="post">
     <div class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
       <div class="date-info">
         <time datetime="{{ page.date | date:'%Y-%m-%d' }}">
           Created at: {{ page.date | date: '%B %-d, %Y' }}
@@ -20,7 +21,6 @@ post_class: post-template
           {% endif %}
         </time>
       </div>
-      <h1 class="post-title">{{ page.title }}</h1>
       <section class="post-meta">
         {%- include post_meta.html -%}
       </section>
