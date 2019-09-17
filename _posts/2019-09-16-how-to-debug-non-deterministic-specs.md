@@ -242,7 +242,7 @@ So I decide to address this problem in two different ways:
 - Provide a _native_ way to run `MetricFu` within a directory
 - Stop switching directories between scenarios
 
-## MetricFu.with_run_dir
+## `MetricFu.with_run_dir`
 
 I add this utility method:
 
