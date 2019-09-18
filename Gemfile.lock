@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ombulabs/jekyll-last-modified-at
-  revision: 0148d7d530c91df2053a8120d7160ccfb33b799a
+  revision: 83ed8ad70a14fb92b3fea4f807ab99978080b741
   branch: fix/last_modified_date
   specs:
     jekyll-last-modified-at (1.1.0)
@@ -118,7 +118,7 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     redcarpet (3.5.0)
-    rouge (3.10.0)
+    rouge (3.11.0)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
