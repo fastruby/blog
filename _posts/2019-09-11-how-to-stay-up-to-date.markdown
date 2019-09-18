@@ -7,9 +7,8 @@ author: bronzdoc
 ---
 
 An outdated Rails application doesn't happen overnight. In Fastruby.io we work with a lot of clients which have outdated Rails applications and we help them upgrade to a newer Rails version. In this article are some things that you could start doing to avoid going into an outdated project that would be difficult to maintain and migrate later on.
-<!--more-->
 
-We will cover
+<!--more-->
 
 ### Stop monkey patching
 
@@ -20,10 +19,21 @@ In our experience having monkey patched gems when doing an upgrade usually is on
 In Rails you can configure this option, so everytime a deprecation warning occurs you can address it as soon as you can.
 This will help you to fix the issue immediately and be prepared for the next version jump.
 
+You will need to add the following configuration in your `config/environments/test.rb` and `config/environments/test.rb` files.
+
 ```ruby
   # Raise error on deprecation¬
   config.active_support.deprecation = :raise
 ```
+
+### Dual Boot
+
+One of the first things we do at Fastruby.io when we start a new rails upgrade project is to setup a "Dual Boot" Gemfile.
+What this setup will do is to allow you to have two Gemfile.lock's, one for the latest version of Rails and one for your current version of Rails.
+
+With this setup you'll be able to configure your CI to run both versions of Rails and as long as you can "mark" the rails master build job as "optional" and it doesn't block your PR merges, you'll be checking how your test behaves with the latest version of Rails.
+
+We even wrote a [blog post](https://www.fastruby.io/blog/upgrade-rails/dual-boot/dual-boot-with-rails-6-0-beta.html) about this setup, you should check it out.
 
 ### Check for outdated gems
 
