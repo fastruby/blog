@@ -6,7 +6,7 @@ categories: ["bundler", "memory-leaks"]
 author: bronzdoc
 
 ---
-In this blog post I will introduce bundler-leak -- A bundler plugin to find known memory leaks in your dependencies.
+In this blog post I will introduce `bundler-leak` -- A bundler plugin to find known memory leaks in your dependencies.
 
 <!--more-->
 
