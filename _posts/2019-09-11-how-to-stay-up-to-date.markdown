@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to stay up to date with your Rails application
+title: How to Stay Up to Date with Your Rails Application
 date: 2019-08-27 13:56:00
 categories: ["Rails", "Upgrade"]
 author: bronzdoc
