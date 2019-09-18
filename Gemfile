@@ -6,6 +6,7 @@ gem 'jekyll-last-modified-at', git: 'https://github.com/ombulabs/jekyll-last-mod
 
 gem 'rack-contrib'
 gem 'html-proofer'
+gem 'thin'
 
 group :development do
   gem 'foreman'
