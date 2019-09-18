@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'jekyll-last-modified-at'
-
 group :development do
   gem 'foreman'
   gem 'rack-contrib'

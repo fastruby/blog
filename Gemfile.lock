@@ -7,6 +7,7 @@ PATH
       jekyll-authors
       jekyll-categories
       jekyll-feed
+      jekyll-last-modified-at
       jekyll-paginate
       jekyll-titleize
       pygments.rb
@@ -146,7 +147,6 @@ DEPENDENCIES
   byebug
   foreman
   html-proofer
-  jekyll-last-modified-at
   pry
   pry-byebug
   pry-nav
