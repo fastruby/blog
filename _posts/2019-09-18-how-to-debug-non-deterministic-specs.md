@@ -12,7 +12,7 @@ accidentally introduced a [non-deterministic spec](https://martinfowler.com/arti
 (a flaky spec!). I had **no idea** why it was randomly failing. This is an
 article to explain the process I followed to debug this issue.
 
-<!-- more -->
+<!--more-->
 
 The test that I wrote was testing the integration between `metric_fu` and
 [`reek`](https://rubygems.org/gems/reek). When I started I wasn't familiar with
