@@ -5,7 +5,7 @@
           Created at: {{ post.date | date: '%B %-d, %Y' }}
         </time>
         <time id="last-modified-at">
-          - Updated at: {{ post.last_modified_at }}
+          - Updated at: {{ post.last_modified_at | inspect }}
         </time>
       </div>
       <h1>
