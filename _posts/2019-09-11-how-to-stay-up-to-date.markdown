@@ -55,6 +55,6 @@ This is really important...with each major gem update you can potentially break 
 
 ## Conclusion
 
-These are things that we recommend and are not laws. Different projects need different things but we hope you find this list of recommendations helpful.
+These are some recommendations to stay up to date. We hope you find this list of recommendations helpful. What tips do you have to stay up to date? Let me know in the comments section! 
 
 
