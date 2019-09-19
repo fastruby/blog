@@ -14,7 +14,7 @@ An outdated Rails application doesn't happen overnight. In Fastruby.io we work w
 
 In our experience having monkey-patched gems is usually one of the hardest things to deal with. We have to spend hours updating monkey-patched gems to make them compatible with newer Rails APIs. So please keep that in mind before monkey patching Rails core libraries or gems that depend on specific Rails versions.
 
-### Start treating Deprecations warnings as errors.
+### Start treating deprecations warnings as errors
 
 In Rails you can configure this option, so everytime a deprecation warning occurs you can address it as soon as you can.
 This will help you to fix the issue immediately and be prepared for the next version jump.
