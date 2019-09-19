@@ -41,7 +41,7 @@ You can use bundle outdated to check outdated gems in your current bundle. While
 
 ### Automated updates
 [Dependabot](https://dependabot.com/) is a bot that will open a PR in your Github repository whenever a dependency is outdated. Dependabot was adquired by github and it's now free of charge.
-You can still install Dependabot from the GitHub Marketplace until it's integrated into GitHub
+You can still install Dependabot from the Github Marketplace until it's integrated into GitHub
 
 <div style="text-align: center; width: 500px;">
   <img src="/blog/assets/images/dependabot/dependabot.png">
