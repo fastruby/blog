@@ -12,7 +12,7 @@ An outdated Rails application doesn't happen overnight. In Fastruby.io we work w
 
 ### Stop monkey patching
 
-In our experience having monkey patched gems when doing an upgrade usually is one of the hardest things to deal with since work hours have to be put to make the monkey patched gem compatible with the new Rails version. So Have that in mind before dedicating time to monkey patch rails core libraries or gems that depend on an specific rails versions.
+In our experience having monkey-patched gems is usually one of the hardest things to deal with. We have to spend hours updating monkey-patched gems to make them compatible with newer Rails APIs. So please keep that in mind before monkey patching Rails core libraries or gems that depend on specific Rails versions.
 
 ### Start treating Deprecations warnings as errors.
 
