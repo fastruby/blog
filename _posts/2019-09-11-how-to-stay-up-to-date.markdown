@@ -6,7 +6,7 @@ categories: ["Rails", "Upgrades"]
 author: bronzdoc
 ---
 
-An outdated Rails application doesn't happen overnight. In Fastruby.io we work with a lot of clients which have outdated Rails applications and we help them upgrade to a newer Rails version. In this article are some things that you could start doing to avoid going into an outdated project that would be difficult to maintain and migrate later on.
+An outdated Rails application doesn't happen overnight. In FastRuby.io we work with a lot of clients who have outdated Rails applications and we help them upgrade to a newer Rails version. In this article I share some things that you could start doing to avoid falling out of date.
 
 <!--more-->
 
