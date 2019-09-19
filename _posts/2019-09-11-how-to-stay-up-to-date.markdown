@@ -31,7 +31,7 @@ You will need to add the following configuration in your `config/environments/te
 One of the first things we do at Fastruby.io when we start a new rails upgrade project is to setup a "Dual Boot" Gemfile.
 What this setup will do is allow you to have two Gemfile.lock files, one for the latest version of Rails and one for your current version of Rails.
 
-With this setup you'll be able to configure your CI to run both versions of Rails and as long as you can "mark" the rails master build job as "optional" and it doesn't block your PR merges, you'll be checking how your test behaves with the latest version of Rails.
+With this setup you will be able to configure your CI to run both versions of Rails. As long as you "mark" the Rails master build job as "optional" it won't block your PR merges. You will have the chance to see how your test behaves with the latest version of Rails.
 
 We even wrote a [blog post](https://www.fastruby.io/blog/upgrade-rails/dual-boot/dual-boot-with-rails-6-0-beta.html) about this setup, you should check it out.
 
