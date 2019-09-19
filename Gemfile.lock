@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ombulabs/jekyll-last-modified-at
-  revision: 2ccbcc938bfa3477cc10b6232ca2766ef4131308
+  revision: 26d20cdb61ee64088963b333b43492703ce6ea01
   branch: fix/last_modified_date
   specs:
     jekyll-last-modified-at (1.1.0)
