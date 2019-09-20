@@ -111,7 +111,27 @@ task default: %i[
 
 Test coverage is really important, with each major gem update you can potentially break your application, so having a test suite in shape can help you catch errors and fix them as soon as possible.
 
-We use [siimplecov](https://github.com/colszowka/simplecov). Simplecov is a neat tool that can help you to see your test suite coverage percent  integrating directly with rake you can even have a task that can check for a minimum coverage tresholkd is not met.
+We use [siimplecov](https://github.com/colszowka/simplecov). Simplecov is a neat tool that can help you see your test suite coverage percent.
+You could configure simplecov to fail if test coverage don'r met a minimum coverage threshold.
+
+```ruby
+# rails_helper.rb
+
+require 'simplecov'
+
+SimpleCov.start do
+  minimum_coverage ENV['MIN_COVERAGE']
+  add_filter '/spec/'
+end
+
+SimpleCov.at_exit do
+  SimpleCov.result.format!
+  if SimpleCov.result.covered_percent < SimpleCov.minimum_coverage
+    puts "Test coverage #{SimpleCov.result.covered_percent} does not met the minimum coverage #{treshold SimpleCov.minimum_coverage}"
+    exit(1)
+  end
+end
+```
 
 ## Conclusion
 
