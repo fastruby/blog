@@ -111,7 +111,7 @@ task default: %i[
 
 Test coverage is really important, with each major gem update you can potentially break your application, so having a test suite in shape can help you catch errors and fix them as soon as possible.
 
-We use [siimplecov](https://github.com/colszowka/simplecov). Simplecov is a neat tool that can help you see your test suite coverage percent.
+We use [SimpleCov](https://github.com/colszowka/simplecov). SimpleCov is a neat tool that can help you see your test suite coverage percent.
 You could configure SimpleCov to fail if test coverage does not meet a minimum coverage threshold.
 
 ```ruby
