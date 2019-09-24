@@ -26,7 +26,7 @@ You will need to add the following configuration in your `config/environments/te
   config.active_support.deprecation = :raise
 ```
 
-### Dual Boot
+### Dual boot
 
 One of the first things we do at FastRuby.io when we start a new Rails upgrade project is to setup a "Dual Boot" Gemfile.
 What this setup will do is allow you to have two Gemfile.lock files, one for the latest version of Rails and one for your current version of Rails.
