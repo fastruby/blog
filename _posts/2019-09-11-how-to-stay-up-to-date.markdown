@@ -51,7 +51,7 @@ We know not all of you use Github but if it happens that you do use it, dependab
 
 ### Bundler audit
 
-Your application has dependencies. Those dependencies can have security vulnerabilities(CVE's) and malicious persons can take advantage of this.
+Your application has dependencies. Those dependencies can have security vulnerabilities(CVE's) and malicious people can take advantage of this.
 
 A tool that we use to make sure our clients dependencies are free of gems with CVE's is [bundler-audit](https://github.com/rubysec/bundler-audit), bundler-audit will scan your current bundle and will compare it with an internal database of know CVE's. If bundler-audit finds any gem affected by a CVE it will display all the information of the affected gem.
 
