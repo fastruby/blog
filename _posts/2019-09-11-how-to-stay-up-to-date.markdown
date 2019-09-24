@@ -47,7 +47,7 @@ You can still install Dependabot from the Github Marketplace until it's integrat
   <img src="/blog/assets/images/dependabot/dependabot.png">
 </div>
 
-We know not all of you use Github but if it happens that you use it, dependabot would be a really nice adition to your tools to keep you up to date.
+We know not all of you use Github but if it happens that you do use it, dependabot would be a really nice addition to your tools to keep you up to date.
 
 ### Bundler audit
 
