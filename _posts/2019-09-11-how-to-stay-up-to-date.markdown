@@ -94,7 +94,7 @@ Solution: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13
 
 You can integrate bundler audit into your build steps and have it running everytime you run your default task.
 
-For example, this is how it looks if you would integrate it with your default rake task. It will check for CVE's in your bundle first and then will run your test suite.
+For example, this is how it looks if you integrate it with your default rake task. It will check for CVE's in your bundle first and then will run your test suite.
 
 ```ruby
 # Rakefile
