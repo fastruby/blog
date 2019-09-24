@@ -16,7 +16,7 @@ In our experience, having monkey-patched gems is usually one of the hardest thin
 
 ### Start treating deprecations warnings as errors
 
-In Rails you can configure this option, so everytime a deprecation warning occurs you can address it as soon as you can.
+In Rails you can configure this option, so everytime a deprecation warning occurs you can address it as soon as possible.
 This will help you to fix the issue immediately and be prepared for the next version jump.
 
 You will need to add the following configuration in your `config/environments/test.rb` and `config/environments/test.rb` files.
