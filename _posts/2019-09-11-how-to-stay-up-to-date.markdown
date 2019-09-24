@@ -112,7 +112,7 @@ task default: %i[
 Test coverage is really important, with each major gem update you can potentially break your application, so having a test suite in shape can help you catch errors and fix them as soon as possible.
 
 We use [siimplecov](https://github.com/colszowka/simplecov). Simplecov is a neat tool that can help you see your test suite coverage percent.
-You could configure simplecov to fail if test coverage don'r met a minimum coverage threshold.
+You could configure SimpleCov to fail if test coverage does not meet a minimum coverage threshold.
 
 ```ruby
 # rails_helper.rb
