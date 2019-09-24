@@ -7,13 +7,6 @@
         <time datetime="{{ post.date | date:'%Y-%m-%d' }}">
           Created at: {{ post.date | date: '%B %-d, %Y' }}
         </time>
-        <time id="last-modified-at">
-          {% assign last_modified_at = post.last_modified_at | date: '%s' | date: '%B %-d, %Y' %}
-          {% assign post_date = post.date | date: '%s'| plus: 86400 | date: '%B %-d, %Y'%}
-          {% if last_modified_at > post_date %}
-          - Updated at: {{ post.last_modified_at | date: '%B %-d, %Y' }}
-          {% endif %}
-        </time>
       </div>
     </div>
     <div class="post-meta">
