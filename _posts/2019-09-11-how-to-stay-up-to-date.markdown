@@ -135,4 +135,4 @@ end
 
 ## Conclusion
 
-These suggestions are what we recommend and are not laws. Different projects need different things but we hope you find this list of recommendations helpful.
+These suggestions are what we recommend and don't apply to all cases. Different projects need different things, but we hope you find this list of recommendations helpful.
