@@ -107,6 +107,8 @@ task default: %i[
 ]
 ```
 
+We also provide a hosted service of `bundler-audit` that you can use, you can check it out at https://audit.fastruby.io
+
 ### Test coverage
 
 Test coverage is really important, with each major gem update you can potentially break your application, so having a test suite in shape can help you catch errors and fix them as soon as possible.
