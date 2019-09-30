@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Three Awesome Libraries to Assess Code Quality in Ruby"
-date: 2019-09-29 10:56:00
+date: 2019-09-30 10:56:00
 categories: ["ruby", "quality"]
 author: etagwerker
 
@@ -102,9 +102,9 @@ You can play around with a sample report over here:
 
 ## Attractor
 
-This tool is a new tool created by Julian Rubisch. It is certainly simpler than
-MetricFu and RubyCritic, as it only uses churn and complexity to calculate the
-most _painful_ files of your project.
+[This tool](https://github.com/julianrubisch/attractor) is a new tool created
+by Julian Rubisch. It is certainly simpler than MetricFu and RubyCritic, as it
+only uses churn and complexity to calculate the most _painful_ files of your project.
 
 This graph is quite similar to the one I showed you in RubyCritic's overview
 screenshot:
@@ -147,7 +147,7 @@ You can play around with a sample report over here:
 
 Assessing code quality is a tricky subject. Every time you get the opportunity
 to join a project, you should make sure you do the homework to assess whether
-you’re joining a stable project or a dumpster fire. I hope that you find these
+you're joining a stable project or a dumpster fire. I hope that you find these
 tools useful and that you avoid getting stuck in the _tar pit_!
 
 If you are looking for Rails-specific suggestions for judging the quality of an
