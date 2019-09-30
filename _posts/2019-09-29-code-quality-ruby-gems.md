@@ -95,7 +95,7 @@ test, the ones that are most complex:
 <img src="/blog/assets/images/quality/metric-fu-flog.png" alt="MetricFu: Flog report">
 
 MetricFu is definitely more ambitious than Attractor and RubyCritic, but it hasn't
-been actively maintained for years.
+been actively maintained in years.
 
 You can play around with a sample report over here:
 [https://fastruby.github.io/quality/#metric-fu](https://fastruby.github.io/quality/#metric-fu)
