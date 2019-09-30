@@ -46,7 +46,7 @@ the project you're analyzing:
 
 <img src="/blog/assets/images/quality/ruby-critic-overview.png" alt="RubyCritic Overview for alphagov/e-petitions">
 
-With this you can get a quick glimpse of the complexity and churn in all files.
+With this you can get a glimpse of the complexity and churn in all files.
 
 In the next section you can find all the files that have an "F" grade:
 
