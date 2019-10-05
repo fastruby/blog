@@ -13,7 +13,7 @@
     {%- assign list = tags | split: ';' | sort -%}
     {%- for category in list -%}
         <h3 class="tag-name">
-          <a href="{{ site.baseurl }}/tags/{{ category | replace: ' ','-' }}"
+          <a href="{{ site.baseurl }}/tags/{{ category | downcase | replace: ' ','-' }}"
              title="Articles about {{ category | titleize | replace: '-',' ' }}">{{ category | titleize  | replace: '-',' ' }}</a>
         </h3>
     {%- endfor -%}
