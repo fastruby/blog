@@ -18,7 +18,7 @@ Rails project. After writing that article, I found that [RubyCritic](https://git
 was really interesting and its community quite active, so I thought it was a good
 idea to add `SimpleCov` support to it: [https://github.com/whitesmith/rubycritic/pull/319](https://github.com/whitesmith/rubycritic/pull/319)
 
-<!-—more-—>
+<!--more-->
 
 In case you are new to RubyCritic, it is a project that helps you assess code
 quality in a Ruby application by using static code analysis tools such as
