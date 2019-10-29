@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "RubyCritic v4.2.0: Now with SimpleCov Support"
-date: 2019-10-27 18:56:00
+date: 2019-10-29 10:00:00
 categories: ["code-quality", "code-coverage"]
 author: etagwerker
 
