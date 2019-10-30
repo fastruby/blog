@@ -1,11 +1,11 @@
   <article class="post">
     <div class="post-header">
       <h1>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
       </h1>
       <div class="date-info">
-        <time datetime="{{ post.date | date:'%Y-%m-%d' }}">
-          Created at: {{ post.date | date: '%B %-d, %Y' }}
+        <time datetime="{{ page.date | date:'%Y-%m-%d' }}">
+          Created at: {{ page.date | date: '%B %-d, %Y' }}
         </time>
       </div>
     </div>
@@ -13,6 +13,6 @@
       {%- include post_meta.html -%}
     </div>
     <section class="post-excerpt">
-      {{ post.excerpt | markdownify }} <a class="btn" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+      {{ page.excerpt | markdownify }} <a class="btn" href="{{ page.url | prepend: site.baseurl }}">Read more</a>
     </section>
   </article>

@@ -11,7 +11,7 @@ meta:
     {%- include pagination.html -%}
   </div>
 
-  {%- for post in paginator.posts -%}
+  {%- for page in paginator.posts -%}
     {%- include post_excerpt.html -%}
   {%- endfor -%}
 
