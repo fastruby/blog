@@ -1,5 +1,4 @@
-{%- assign author = site.authors[post.author] -%}
-{%- assign authors = post.authors -%}
+{%- assign author = site.authors[page.author] -%}
 {%- include author.html -%}
-{%- assign categories = post.categories -%} 
+{%- assign categories = page.categories -%}
 {%- include category_links.html -%}
