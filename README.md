@@ -13,11 +13,13 @@ To get the blog up and running in a local environment, follow the steps below:
 
 You can then access the blog at localhost:4000 (default port).
 
-By default, the auto-regeneration is enabled, so any changes on HTML, CSS or posts will be auto-regenerated/compiled and viewable by refreshing the browser.  
+By default, the auto-regeneration is enabled, so any changes on HTML, CSS or posts will be auto-regenerated/compiled and viewable by refreshing the browser.
 
 ## Creating a new post
 
-In order to create a new post, you can copy one of the existing posts (.markdown files) in `/_posts/` and change the filename to suit your post by modifying the date and title.
+```shell
+$ bundle exec post:create
+```
 
 After saving the new file to `/_posts/`, you will see the post generated as HTML under `/_site/` and published to your local blog if it's running.
 
@@ -29,7 +31,7 @@ After you're done, simply save the file, and (optionally) run the blog locally i
 
 ## Publishing a post
 
-In order to publish your newly created post, simply create a branch and make a Pull Request. When the branch is merged and deployed, the post will be displayed in the blog.  
+In order to publish your newly created post, simply create a branch and make a Pull Request. When the branch is merged and deployed, the post will be displayed in the blog.
 
 ## Editing a post
 
