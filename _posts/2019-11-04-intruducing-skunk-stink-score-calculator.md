@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Introducing Skunk: Combine Code Quality and Coverage to Calculate a Stink Score"
-date: 2019-10-30 10:00:00
+date: 2019-11-04 10:00:00
 categories: ["code-quality"]
 author: etagwerker
 
 ---
 
-Last week I had the opportunity to speak at [Solidus Conf 2019](https://conf.solidus.io).
+Two weeks ago I had the opportunity to speak at [Solidus Conf 2019](https://conf.solidus.io).
 I presented [Escaping the Tar Pit](https://speakerdeck.com/etagwerker/escaping-the-tar-pit-at-solidus-conf-2019)
 for the first time and I got to talk about a few metrics that we can use to
 quickly [assess code quality](https://www.fastruby.io/blog/ruby/quality/code-quality-ruby-gems.html)
@@ -35,7 +35,7 @@ Rails application. We want to answer these questions:
 
 - Is it a dumpster fire?
 - Are we going to get ourselves stuck in the tar pit?
-- Is it a project that is good enough?
+- Is it a project that is easy to maintain?
 
 [Skunk](https://github.com/fastruby/skunk) is a Ruby gem that will combine code
 quality metrics from [Reek](https://github.com/troessner/reek);
@@ -64,8 +64,8 @@ The `cost` is a combination of smells and complexity:
 - Smells: They come from static code analysis performed by Flog; Flay; and Reek.
 - Complexity: It comes from Flog's total [ABC metric](http://wiki.c2.com/?AbcMetric)
 
-After determining that value Skunk penalizes modules which lack code coverage
-by multiplying their cost by their lack of coverage:
+After determining that the _cost_, Skunk penalizes modules which lack code coverage
+by multiplying their cost by a factor directly related to the lack of coverage:
 
 ```ruby
 module RubyCritic
@@ -105,7 +105,7 @@ module RubyCritic
 end
 ```
 
-After doing all these calculations, we get a Stink Score for the file we are evaluating:
+After doing all these calculations, we get a Stink Score for the files we are evaluating:
 
 ```bash
 $ skunk
@@ -123,7 +123,7 @@ running churn
 .............
 running simple_cov
 .............
-New critique at file:////Users/etagwerker/Projects/fastruby/skunk/tmp/rubycritic/overview.html
+New critique at file:////skunk/tmp/rubycritic/overview.html
 +-----------------------------------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+
 | file                                                | stink_score                | churn_times_cost           | churn                      | cost                       | coverage                   |
 +-----------------------------------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+
@@ -155,7 +155,7 @@ The most important _signals_ here are:
 
 We now know where we stand. We can clearly see the state of the application in
 terms of code coverage and project complexity. We can now answer this question:
-"Which are the most complex files with the least coverage?"
+**"Which are the most complex files with the least coverage?"**
 
 We can use the Stink Score to guide us in our refactoring efforts:
 
@@ -167,24 +167,26 @@ code coverage could I refactor?
 
 ## Caveats
 
-Skunk expects you to have a `.resultset.json` file in the directory that you
-are evaluating. It uses the data within that file to calculate the code coverage
-percentage for each module.
+Skunk expects you to have a `.resultset.json` file in the coverage directory
+within the directory that you are evaluating. It uses the data within that file
+to calculate the code coverage percentage for each module.
 
 That means that you will have to run your test suite with SimpleCov enabled
-before you call `skunk`.
+**before you call `skunk`**.
 
 Total Stink Score is not a useful metric within a single project, as the total
 will continue to grow as you add more features to your application. It is
-certainly a useful metric if you use it to compare two projects.
+certainly a useful metric if you use it to _compare two projects_.
 
 ## Known Issues
 
 The calculation of the Stink Score is not 100% accurate. It is comparing a
-module's code coverage and a module's complexity. It should be method-based:
-It should calculate the complexity of a method, the code coverage of the same
-method, then calculate the Stink Score per method. Finally, the Stink Score of
-a module should be the sum of all the Stink Scores in the module.
+module's code coverage and a module's complexity. It should be a method-based
+calculation: It should calculate the complexity of a method, the code coverage
+of the same method, then calculate the Stink Score per method.
+
+Finally, the Stink Score of a module should be the sum of all the Stink Scores
+in the module.
 
 ## Roadmap
 
@@ -212,14 +214,18 @@ negative way in your team.
 
 I seriously hope that you can use the Stink Score as the compass to move your
 team in the right direction. You should be able to use the Stink Score as a
-compass to gradually pay off technical debt.
+compass to gradually pay off technical debt:
 
-Skunk will show you your location in the map of technical debt. It will also
+- Writing tests which increase code coverage will improve the Stink Score
+- Refactoring complex files will improve the Stink Score
+
+Skunk will show you your location in _the map of technical debt_. It will also
 show you a few paths to take to get to a better place. You will be able to
 prioritize the paths and pick one to pay off technical debt.
 
 What do you think about this new metric for technical debt? Would you use it
-next time you need to evaluate legacy code? Please let me know in the comments
-below or come talk to me at [RubyConf 2019](https://www.rubyconf.org) (I'll
-be speaking about
+next time you need to evaluate legacy code?
+
+Please let me know in the comments below or come talk to me at
+[RubyConf 2019](https://www.rubyconf.org) (I'll be speaking about
 [this topic at the conference](https://www.rubyconf.org/program#session-876))
