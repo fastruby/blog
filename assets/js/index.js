@@ -56,7 +56,7 @@
 
     $document.scroll(function(){
 
-        var headerHeight = $(".main-header").outerHeight();
+        var headerHeight = $("header").outerHeight();
         var scrollTop = $(document).scrollTop();
         var viewportWidth = $(document).width();
 
@@ -69,11 +69,15 @@
         }
         
         if(scrollTop <= headerHeight){
-            $(".main-header").removeClass("fixed");
+            $("header").removeClass("fixed");
         }else if(scrollTop > headerHeight){
-            $(".main-header").addClass("fixed");
+            $("header").addClass("fixed");
         }
       
     })
+
+    $('.navbar-toggler').click(function(){
+        $(this).toggleClass('open');
+    });
     
 })(jQuery);
