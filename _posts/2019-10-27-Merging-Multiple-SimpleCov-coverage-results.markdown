@@ -59,7 +59,7 @@ class SimpleCovMerger
 end
 ```
 
-To use it you'll have to be aware of a couple of parameters.
+To use it you'll have to be aware of a couple of parameters:
 
 * base_dir         - This is the directory where you stored all your `.resultset.json` from your different containers/machines from your CI service
 * ci_project_path  - The path where your project is stored in your CI service
