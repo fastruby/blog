@@ -70,4 +70,4 @@ SimpleCovMerger.report_coverage(base_dir, ci_project_path, project_path)
 ```
 
 # Conclusion
-We hope you'll find this snipet of code helpful for your purposes. Please let us know if you have a better way of any ideas of improving it.
+We hope you'll find this code snippet helpful for your purposes. Please let us know if you have a better way or any ideas for improving it.
