@@ -67,7 +67,7 @@ To use it you'll have to be aware of a couple of parameters:
 * project_path     - The path of the project you are generating a coverage report
 
 ```ruby
-SimpleCovMerger.report_coverage(base_dir, ci_project_path, project_path)
+SimpleCovMerger.report_coverage(base_dir: "./base_dir", ci_project_path: "/home/ubuntu/the_project/", project_path: "/Users/bronzdoc/projects/fastruby/the_project/)
 ```
 
 # Conclusion
