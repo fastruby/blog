@@ -12,9 +12,9 @@ Most of our clients use parallelization in their continuous integration tools. S
 
 <!--more-->
 
-Some of the applications we upgrade are outdated and setups can be difficult, with no documentation, missing steps on how to set it up, etc. Even after the setup, the tests of these applications can take several hours to complete and generate a coverage report.
+Some of the applications we upgrade are outdated and setting them up can be difficult. Sometimes they have no documentation, missing steps on how to set them up, or outdated installation steps. Even after setup, the test suite of these applications can take several hours to complete and generate a coverage report.
 
-So, we have been approaching the problem a little different. Instead of executing the tests and generating the report locally, we rely on their CI configuration to get the coverage data and move on with the estimates. After all, the coverage report is just a metric to give us an idea on how much effort it will take us to complete the upgrade.
+So, we recently decided to take a different approach for this problem. Instead of executing the tests locally and generating the report, we rely on our client's CI configuration to get the coverage data and move on. After all, the coverage report is just a metric to give us an idea on how much effort it will take us to complete the upgrade.
 
 Not everything is rosy, we found a problem with this approach too. Continuous integration services (like Circle CI) allow you to parallelize the execution of any command and a common pattern is to execute different parts of your test suite in different containers. This will make it faster, since now you'll spread the load of your test in different containers. The problem with this is that if you are running [SimpleCov](https://github.com/colszowka/simplecov) it will generate a result for each of your containers. So, to have the full coverage report you'll have to merge all results to generate one final coverage resultset.
 
