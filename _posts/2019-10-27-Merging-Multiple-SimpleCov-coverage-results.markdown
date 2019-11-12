@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Merging-Multiple-SimpleCov-coverage-results
+title: "Merging Multiple SimpleCov Coverage Results"
 date: 2019-10-29 13:56:00
 categories: ["Rails", "Simplecov", "Upgrades"]
 author: bronzdoc
