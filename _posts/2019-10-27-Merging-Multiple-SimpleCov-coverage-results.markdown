@@ -6,7 +6,7 @@ categories: ["Rails", "Simplecov", "Upgrades"]
 author: bronzdoc
 ---
 
-As part of our Roadmap service at [FastRuby.io](https://fastruby.io), we have to analyze the test suite of the application we are upgrading to give a proper estimate on how long it will take us to upgrade. We use [SimpleCov](https://github.com/colszowka/simplecov) for this.
+As part of our [Roadmap](https://www.fastruby.io/roadmap) service at [FastRuby.io](https://fastruby.io), we have to analyze the test suite of the application we are upgrading to give a proper estimate on how long it will take us to upgrade. We use [SimpleCov](https://github.com/colszowka/simplecov) for this.
 
 Most of our clients use parallelization in their continuous integration tools. SimpleCov generates multiple `.resultset.json` files for the same codebase. Our goal was to have a single result for the whole application, so in this blog post we are going to show you how we solved that problem.
 
