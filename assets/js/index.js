@@ -14,12 +14,6 @@
         $postContent.fitVids();
 
         $(".scroll-down").arctic_scroll();
-
-        $(".adv-close").click(function (event) {
-            $("#advertisement").hide();
-            event.preventDefault();
-        });
-
     });
 
     // Arctic Scroll by Paul Adam Davis
@@ -67,17 +61,17 @@
         }else if(scrollTop === 0){
             $(".sidebar-container").removeClass("fixed");
         }
-        
+
         if(scrollTop <= headerHeight){
             $("header").removeClass("fixed");
         }else if(scrollTop > headerHeight){
             $("header").addClass("fixed");
         }
-      
+
     })
 
     $('.navbar-toggler').click(function(){
         $(this).toggleClass('open');
     });
-    
+
 })(jQuery);
