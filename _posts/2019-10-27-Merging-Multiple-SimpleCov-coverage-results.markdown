@@ -23,34 +23,34 @@ We want to share a little script on how to do the merging and generate a complet
 ```ruby
 class SimpleCovMerger
   def self.report_coverage(base_dir:, ci_project_path:, project_path:)
-    new(base_dir: base_dir).merge_results
+    new(base_dir: base_dir, ci_project_path: ci_project_path, project_path: project_path).merge_results
   end
 
-  attr_reader :base_dir, ci_project_path, project_pathj
+  attr_reader :base_dir, :ci_project_path, :project_path
 
-  def initialize(base_dir: ci_project_path:, project_path:)
+  def initialize(base_dir:, ci_project_path:, project_path:)
     @base_dir = base_dir
     @ci_project_path = ci_project_path
     @project_path = project_path
   end
 
   def merge_results
-    results = all_results.map do |file|
+    require "simplecov"
+    require "json"
+
+    results = resultsets.map do |file|
       hash_result = JSON.parse(clean(File.read(file)))
       SimpleCov::Result.from_hash(hash_result)
     end
 
     result = SimpleCov::ResultMerger.merge_results(*results)
 
-    result.command_name = "RSpec"
     SimpleCov::ResultMerger.store_result(result)
-
-    result.format!
   end
 
   private
 
-  def all_results
+  def resultsets
     Dir["#{base_dir}/.resultset-*.json"]
   end
 
@@ -58,6 +58,7 @@ class SimpleCovMerger
     results.gsub(ci_project_path, project_path)
   end
 end
+
 ```
 
 To use it you'll have to be aware of a couple of parameters:
@@ -67,7 +68,7 @@ To use it you'll have to be aware of a couple of parameters:
 * project_path     - The path of the project you are generating a coverage report
 
 ```ruby
-SimpleCovMerger.report_coverage(base_dir: "./base_dir", ci_project_path: "/home/ubuntu/the_project/", project_path: "/Users/bronzdoc/projects/fastruby/the_project/)
+SimpleCovMerger.report_coverage(base_dir: "./resultsets", ci_project_path: "/home/ubuntu/the_project/", project_path: "/Users/bronzdoc/projects/fastruby/the_project/)
 ```
 
 # Conclusion
