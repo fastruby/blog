@@ -1760,20 +1760,33 @@ pagination prev/next links */
 
 #sidebar {
 	.formkit-form {
-		.formkit-powered-by {
-			display: none !important;
-		}
 		.formkit-submit {
 			border-radius: 8px !important;
 		}
-		.formkit-subheader {
-			background-color: #b5e0c3;
-			padding: 1.5rem;
-			border-radius: 8px;
-			p {
-				margin-bottom: 0;
-			}
-		}
+    .formkit-subheader,
+    .formkit-guarantee,
+    .formkit-powered-by {
+      display: none !important;
+    }
+    .formkit-header {
+      margin-top: 0;
+      h1 {
+        margin-bottom: 0;
+      }
+    }
+    .formkit-alert-error {
+      margin-top: 0;
+      background: none;
+      border: 0;
+      padding: 0;
+      li {
+        font-size: 13px;
+        font-weight: 400;
+      }
+    }
+    .formkit-field:last-of-type input {
+      padding: 15px 12px;
+    }
 	}
 	@media (max-width: 992px) {
 		display: none;
