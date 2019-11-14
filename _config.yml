@@ -68,8 +68,14 @@ authors:
     twitter:
     github: cleivianecosta
   bronzdoc:
-      display_name: "Luis Sagastume"
-      gravatar: a223b4e7d8ec959c9aa6668cddcfa605
-      email: luis@ombulabs.com
-      twitter: bronzdoc
-      github: bronzdoc
+    display_name: "Luis Sagastume"
+    gravatar: a223b4e7d8ec959c9aa6668cddcfa605
+    email: luis@ombulabs.com
+    twitter: bronzdoc
+    github: bronzdoc
+  abizzinotto:
+    display_name: "Amanda Bizzinotto"
+    gravatar: 31e0846e316c552502506d6cc998fbd1
+    email: amanda@ombulabs.com
+    twitter: AmandaBizzinot2
+    github: ABizzinotto
