@@ -1755,7 +1755,65 @@ pagination prev/next links */
 }
 
 /* ==========================================================================
-12. Animations
+12. Convertkit form
+========================================================================== */
+
+#sidebar {
+	.formkit-form {
+		.formkit-submit {
+			border-radius: 8px !important;
+		}
+    .formkit-subheader,
+    .formkit-guarantee,
+    .formkit-powered-by {
+      display: none !important;
+    }
+    .formkit-header {
+      margin-top: 0;
+      h1 {
+        margin-bottom: 0;
+      }
+    }
+    .formkit-alert-error {
+      margin-top: 0;
+      background: none;
+      border: 0;
+      padding: 0;
+      li {
+        font-size: 13px;
+        font-weight: 400;
+      }
+    }
+    .formkit-field:last-of-type input {
+      padding: 15px 12px;
+    }
+	}
+	@media (max-width: 992px) {
+		display: none;
+	}
+}
+
+.cta{
+	display: none;
+	@media (max-width: 992px) {
+		display: block;
+		bottom: 0rem;
+	}
+}
+
+.formkit-slide-in {
+  display: none;
+  @media (max-width: 992px) {
+		display: block;
+    .formkit-column:first-of-type {
+      height: 132px;
+    }
+	}
+}
+
+
+/* ==========================================================================
+13. Animations
 ========================================================================== */
 
 /* Used to fade in title/desc on the home page */
