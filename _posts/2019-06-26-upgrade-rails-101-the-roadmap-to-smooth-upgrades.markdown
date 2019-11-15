@@ -72,3 +72,5 @@ you can read all of our articles from our [Rails Upgrades series](https://fastru
 This workshop is a by-product of our productized service: [The Roadmap](https://fastruby.io/roadmap).
 I wouldn't have been able to conduct it without the support by the team at
 [Ombu Labs](https://www.ombulabs.com). Thank you all!
+
+If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).

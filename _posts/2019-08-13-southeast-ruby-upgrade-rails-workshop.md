@@ -156,3 +156,5 @@ The slides for my presentation are over here:
 Are you using Docker to simplify your [Rails upgrades](https://fastruby.io/blog/tags/upgrades)?
 If not, what are you using to normalize environments in your team? I hope you
 found this article useful and I look forward to reading your comments below!
+
+If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).

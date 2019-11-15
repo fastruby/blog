@@ -23,3 +23,5 @@ According to Marcus, the Ombu Labs team was responsive and self-sufficient, whic
 On a final note, Marcus also states he found the OmbuLabs team "pleasant to work with and knowledgeable". Working with OmbuLabs allowed Amitree to continue to focus on growth while ensuring a high level of security standards for their customers.
 
 For more information about upgrading your Rails application, check out our "[Upgrade Rails Series](https://fastruby.io/blog/tags/upgrades)", a series of do-it-yourself guides to upgrading Rails.
+
+If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).

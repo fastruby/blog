@@ -21,3 +21,5 @@ You will leave this workshop with a roadmap to upgrade your Rails application.
 If you're going to Rails Conf and are interested in attending our workshop, you can book your place [here](https://www.eventbrite.com/e/workshop-upgrade-rails-101-the-roadmap-to-smooth-upgrades-tickets-60333391799). In that link there are a few notes to help you be prepared for the workshop. So make sure to check it out.
 
 Hope to see you there!
+
+If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
