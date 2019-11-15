@@ -16,7 +16,7 @@ Some of the applications we upgrade are outdated and setting them up can be diff
 
 So, we recently decided to take a different approach for this problem. Instead of executing the tests locally and generating the report, we rely on our client's CI configuration to get the coverage data and move on. After all, the coverage report is just a metric to give us an idea on how much effort it will take us to complete the upgrade.
 
-Not everything is rosy, we found a problem with this approach too. Continuous integration services (like Circle CI) allow you to parallelize the execution of any command and a common pattern is to execute different parts of your test suite in different containers. This will make it faster, since now you'll spread the load of your test in different containers. The problem with this is that if you are running [SimpleCov](https://github.com/colszowka/simplecov) it will generate a result for each of your containers. So, to have the full coverage report you'll have to merge all results to generate one final coverage result.
+Not everything is rosy, we found a problem with this approach too. Continuous integration services (like [CircleCI](https://circleci.com/)) allow you to parallelize the execution of any command and a common pattern is to execute different parts of your test suite in different containers. This will make it faster, since now you'll spread the load of your test in different containers. The problem with this is that if you are running [SimpleCov](https://github.com/colszowka/simplecov) it will generate a result for each of your containers. So, to have the full coverage report you'll have to merge all results to generate one final coverage result.
 
 We want to share a little script on how to do the merging and generate a complete coverage.
 
@@ -71,5 +71,6 @@ To use it you'll have to be aware of a couple of parameters:
 SimpleCovMerger.report_coverage(base_dir: "./resultsets", ci_project_path: "/home/ubuntu/the_project/", project_path: "/Users/bronzdoc/projects/fastruby/the_project/)
 ```
 
-# Conclusion
+## Conclusion
+
 We hope you'll find this code snippet helpful for your purposes. Please let us know if you have a better way or any ideas for improving it.
