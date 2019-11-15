@@ -138,3 +138,5 @@ end
 ## Conclusion
 
 These suggestions are what we recommend and don't apply to all cases. Different projects need different things, but we hope you find this list of recommendations helpful.
+
+If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
