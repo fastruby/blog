@@ -24,4 +24,4 @@ On a final note, Marcus also states he found the OmbuLabs team "pleasant to work
 
 For more information about upgrading your Rails application, check out our "[Upgrade Rails Series](https://fastruby.io/blog/tags/upgrades)", a series of do-it-yourself guides to upgrading Rails.
 
-If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
+If you're not on Rails 5.2 yet, or if you are and would like to upgrade to 6.0, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
