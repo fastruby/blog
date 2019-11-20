@@ -96,4 +96,4 @@ which you can use as a guideline as explained very clearly in
 to get rid of unnecessary code or monkey-patches, especially if your Rails 3
 app was previously running on Rails 2.
 
-If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
+If you're not on Rails 4.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
