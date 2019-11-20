@@ -72,4 +72,4 @@ Rails 3.2 deprecates `vendor/plugins`, and it's the last Rails version that supp
 <h2 id="next-steps">7. Next steps</h2>
 After you get your application properly running in Rails 3.2, you will probably want to keep working on this Rails upgrade journey. So don't forget to check our complete [Rails upgrade series](https://fastruby.io/blog/tags/upgrades) to make that easy.
 
-If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
+If you're not on Rails 3.2 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
