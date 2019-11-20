@@ -161,4 +161,4 @@ sanitizer.
 
 If you successfully followed all of these steps, you should now be running Rails 4.2! Do you have any other useful tips or recommendations? Share them with us in the comments section.
 
-If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
+If you're not on Rails 4.2 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
