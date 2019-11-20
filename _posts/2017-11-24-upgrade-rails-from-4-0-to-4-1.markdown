@@ -239,4 +239,4 @@ flash.to_hash.except("notify")
 
 If you successfully followed all of these steps, you should now be running Rails 4.1! Do you have any other tips? Share it with us in the comments section.
 
-If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
+If you're not on Rails 4.1 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
