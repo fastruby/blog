@@ -113,5 +113,4 @@ Rails will know which credential file should use based on the format of the file
 
 If you successfully followed all of these steps, you should now be running Rails 6.0! Do you have any other useful tips or recommendations? Did we miss anything important? Share them with us in the comments section.
 
-If you don't have the time to upgrade your Rails app, check out our Ruby on Rails
-upgrade service: [FastRuby.io](https://fastruby.io)
+If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).

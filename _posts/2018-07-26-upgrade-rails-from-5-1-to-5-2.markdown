@@ -89,5 +89,4 @@ they use `Hash#dig` to configure per-environment credentials.
 
 If you successfully followed all of these steps, you should now be running Rails 5.2! Do you have any other useful tips or recommendations? Did we miss anything? Share them with us in the comments section.
 
-If you don't have the time to upgrade your Rails app, check out our Ruby on Rails
-upgrade service: [FastRuby.io](https://fastruby.io)
+If you're not on Rails 5.2 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).

@@ -162,5 +162,4 @@ need to update those tests to use [`Rack::Test::UploadedFile`](http://www.rubydo
 
 If you successfully followed all of these steps, you should now be running Rails 5.0! Do you have any other useful tips or recommendations? Share them with us in the comments section.
 
-If you don't have the time to upgrade your Rails app, check out our [Ruby on Rails
-upgrade](https://fastruby.io) service: [FastRuby.io](https://fastruby.io)
+If you're not on Rails 5.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).

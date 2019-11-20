@@ -95,3 +95,5 @@ which you can use as a guideline as explained very clearly in
 [this post](http://thomasleecopeland.com/2015/08/06/running-rails-update.html)
 to get rid of unnecessary code or monkey-patches, especially if your Rails 3
 app was previously running on Rails 2.
+
+If you're not on Rails 4.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
