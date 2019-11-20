@@ -213,4 +213,4 @@ If you successfully followed all of these steps, by now you should be running Ra
 To fine-tune your app, check out [FastRuby.io](https://fastruby.io), and feel
 free to tell us how your upgrade went.
 
-If you're not on Rails 6.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
+If you're not on Rails 4.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
