@@ -4,6 +4,7 @@ title:  "Getting Ready for Rails 6.0: How to Dual Boot"
 date: 2019-04-24 10:00:00
 categories: ["upgrade-rails", "dual-boot"]
 author: "etagwerker"
+published: false
 ---
 
 [RailsConf 2019](https://railsconf.com) is right around the corner. That means
