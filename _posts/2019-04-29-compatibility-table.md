@@ -4,6 +4,7 @@ title:  "Ruby & Rails Compatibility Table"
 date: 2019-04-29 13:00:00
 categories: ["ruby", "rails", "versions"]
 author: "etagwerker"
+published: false
 ---
 
 This is a short post to show the compatibility between [Ruby on Rails](https://rubyonrails.org)
