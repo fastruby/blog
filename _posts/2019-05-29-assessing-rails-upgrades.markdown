@@ -4,6 +4,7 @@ title: "Is This Rails Upgrade Project a Good Fit?"
 date: 2019-05-29 15:00:00
 categories: ["rails", "upgrades"]
 author: "emily"
+published: false
 ---
 
 Over the years we have seen a significant increase in the  demand for [Ruby on Rails](http://rubyonrails.org/) upgrades. That's why a few years ago we decided to launch [FastRuby.io](https://fastruby.io), our Ruby on Rails upgrade service.
