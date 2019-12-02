@@ -4,6 +4,7 @@ title: "Cleaning up: ActiveRecord::Dirty 5.2 API Changes"
 date: 2018-02-14 10:20:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
+published: false
 ---
 
 With the release of Rails 5.2 just around the corner
