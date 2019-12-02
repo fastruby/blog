@@ -4,6 +4,7 @@ title:  "Legacy Rails: Silently Judging You"
 date: 2019-04-01 10:00:00
 categories: ["upgrade-rails"]
 author: "etagwerker"
+published: false
 ---
 
 I had to come up with a clever title because this article is about legacy
