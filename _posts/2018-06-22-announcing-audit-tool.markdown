@@ -4,6 +4,7 @@ title:  "Announcing Gemfile.lock Audit Tool"
 date: 2018-06-22 11:10:00
 categories: ["rails", "ruby", "rubygems"]
 author: "emily"
+published: false
 ---
 
 Today we are happy to announce the launch of our new microsite: [Gemfile.lock Audit Tool](https://audit.fastruby.io) - a tool created to allow users to check their Gemfile.lock for vulnerabilities in a quick and secure manner.
