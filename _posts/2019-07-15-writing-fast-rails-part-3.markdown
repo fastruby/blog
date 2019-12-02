@@ -4,6 +4,7 @@ title:  "Tips for Writing Fast Rails: Part 3"
 date: 2019-07-15 08:00
 categories: ["rails", "performance"]
 author: "luciano"
+published: false
 ---
 
 Here we continue with the [series](https://fastruby.io/blog/tags/performance) of articles where we talk about how minor adjustments in the code can lead to major performance improvements.
