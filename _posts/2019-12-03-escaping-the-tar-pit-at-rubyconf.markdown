@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Escaping The Tar Pit at RubyConf 2019"
+title: "Escaping The Tar Pit: Introducing Skunk v0.3.2 at RubyConf 2019"
 date: 2019-12-03 10:00:00
-categories: ["quality"]
+categories: ["code-quality"]
 author: etagwerker
 ---
 
 This year I had the honor to speak at [RubyConf](https://rubyconf.org) in Nashville.
 It was my second time attending the conference and first time as a speaker. I
-talked about `skunk`, a library to [calculate the StinkScore](https://github.com/fastruby/skunk)
+talked about `skunk`, a gem to [calculate the StinkScore](https://github.com/fastruby/skunk)
 of a module or set of modules.
 
 Since its inception, `skunk` has changed quite a bit based on real usage in
@@ -137,6 +137,11 @@ If we are using version 0.3.1, this is what the `stink_score` looks like:
 
 Now the stink score average makes more sense. 🤓
 
+Fortunately I managed to fix my slides in time for my talk! You can watch my
+presentation at RubyConf over here:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZyU6K6eR-_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Conclusion
 
 I believe there is a lot of value in comparing stink scores between one branch
@@ -152,6 +157,17 @@ will know there is something wrong with your team.
 In order to keep improving the tool, I plan to run it using well-established,
 open source, Ruby and Rails codebases. Which stink score do you want to see
 first? Let me know in the comments below! ❤️
+
+## SolidusConf
+
+The presentation I gave at [SolidusConf](https://conf.solidus.io) was based on
+Skunk v0.3.0, so there is a mistake in this presentation:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/am-oVaAkDNw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+I'm sorry about that, [@SolidusConf](https://twitter.com/SolidusIO) and attendees!
+The good news is that it is a small mistake. It doesn't change much about the
+core of my talk.
 
 ## Resources
 
