@@ -14,7 +14,7 @@ Migrating from `Protected Attributes` to `Strong Parameters` in a [Rails](https:
 
 To give you a bit of context, let's recap what `Protected Attributes` and [Strong Parameters](https://guides.rubyonrails.org/action_controller_overview.html#strong-parameters) actually are. They are two different Rails implementations for protecting attributes from end-user injection (a.k.a. [Mass Assignment](https://owasp.org/www-project-cheat-sheets/cheatsheets/Mass_Assignment_Cheat_Sheet.html))
 
-To understand what are the benefits of `Strong Parameters` over `Protected Attributes`, I recommend you checking [this RailsCasts episode](http://railscasts.com/episodes/371-strong-parameters?autoplay=true).
+To understand what are the benefits of `Strong Parameters` over `Protected Attributes`, I recommend checking [this RailsCasts episode](http://railscasts.com/episodes/371-strong-parameters?autoplay=true).
 
 `Protected Attributes` was part of the Rails core since the beginning of it until Rails 3.2. In Rails 4.0 they introduced `Strong Parameters` as a replacement of it, and it has been part of the core since then. Before that it was possible to use it through the [strong_parameters](https://github.com/rails/strong_parameters) gem.
 
@@ -22,11 +22,11 @@ After Rails 4.0 came out with the implementation of `Strong Parameters`, we were
 
 That gem was supported by the Rails team until the release of Rails 5.0. After that we were forced to migrate to `Strong Parameters`. Once that happened we started to get unofficial forks of `protected_attributes` that support the latest version of Rails, like [protected_attributes_continued](https://github.com/westonganger/protected_attributes_continued).
 
-At this point we strongly recommend to fully migrate to `Strong Parameters`, since the available options to keep `Protected Attributes` alive, have very limited support and can encounter security issues.
+At this point we strongly recommend fully migrating to `Strong Parameters`, since the available options to keep `Protected Attributes` alive have very limited support and can encounter security issues.
 
 ### Migration
 
-The migration consists in moving the Mass Assignment restrictions from the models to the controllers. That means removing the `attr_accessible` and `attr_protected` calls from your models and add a new method to your models' controllers to handle the parameters.
+The migration consists in moving the Mass Assignment restrictions from the models to the controllers. That means removing the `attr_accessible` and `attr_protected` calls from your models and adding a new method to your models' controllers to handle the parameters.
 
 In a simple example, this is how a model and controller look using `Protected Attributes`:
 
@@ -80,7 +80,7 @@ class UsersController < ApplicationController
 end
 ```
 
-Sometimes you'll find that the logic is more complex than that, but most of the time it's straightforward to move the parameters. The main issue is that it takes a lot of time when you have a big number of models. That's why we created [rails_upgrader](https://github.com/fastruby/rails_upgrader). This gem will help you speed up the migration process by automating some of it.
+Sometimes you'll find that the logic is more complex than that; but most of the time moving the parameters is straightforward. The main issue is that it takes a lot of time when you have a large number of models. That's why we created [rails_upgrader](https://github.com/fastruby/rails_upgrader). This gem will help you speed up the migration process by automating some of it.
 
 Once you install the gem in your project you can run any of these commands in the console:
 
@@ -88,10 +88,10 @@ Once you install the gem in your project you can run any of these commands in th
 - `rails_upgrader dry-run` (write strong parameter migrations in the terminal)
 - `rails_upgrader dry-run --file` (write strong parameter migrations to `all_strong_params.rb` file)
 
-Another useful gem is [moderate_parameters](https://github.com/hintmedia/moderate_parameters). This gem can be handy to determine what data is originating from within the app and what is coming from the internet. I recommend you to take a look at it as well.
+Another useful gem is [moderate_parameters](https://github.com/hintmedia/moderate_parameters). This gem can be handy to determine what data is originating from within the app and what is coming from the internet. I recommend taking a look at it as well.
 
 ### Conclusion
 
-Migrating to `Strong Parameters` can be a tedious process, but with the tools and resources that we presented here, it can be a lot easier.
+Migrating to `Strong Parameters` can be a tedious process but with the tools and resources that we presented here, it can be a lot easier.
 
-If you need some more guidance about upgrading your Rails application check out our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/)
+If you need some more guidance on upgrading your Rails application check out our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/)
