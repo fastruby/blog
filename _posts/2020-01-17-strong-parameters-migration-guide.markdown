@@ -6,7 +6,7 @@ categories: ["rails", "upgrades"]
 author: luciano
 ---
 
-Migrating from `Protected Attributes` to `Strong Parameters` in a [Rails](https://rubyonrails.org/) project can be a huge step of the upgrade process. Specially when we are [upgrading a large application](https://www.fastruby.io/blog/rails/upgrades/case-study/upgrading-a-large-rails-application-from-4.2-to-5.2.html). This guide is meant to help you tackle that step faster and with a lot less pain.
+Migrating from `Protected Attributes` to `Strong Parameters` in a [Rails](https://rubyonrails.org/) project can be a huge step of the upgrade process. Especially when we are [upgrading a large application](https://www.fastruby.io/blog/rails/upgrades/case-study/upgrading-a-large-rails-application-from-4.2-to-5.2.html). This guide is meant to help you tackle that step faster and with a lot less pain.
 
 <!--more-->
 
@@ -14,7 +14,7 @@ Migrating from `Protected Attributes` to `Strong Parameters` in a [Rails](https:
 
 To give you a bit of context, let's recap what `Protected Attributes` and [Strong Parameters](https://guides.rubyonrails.org/action_controller_overview.html#strong-parameters) actually are. They are two different Rails implementations for protecting attributes from end-user injection (a.k.a. [Mass Assignment](https://owasp.org/www-project-cheat-sheets/cheatsheets/Mass_Assignment_Cheat_Sheet.html))
 
-To understand what are the benefits of `Strong Parameters` over `Protected Attributes`, I recommend checking [this RailsCasts episode](http://railscasts.com/episodes/371-strong-parameters?autoplay=true).
+To understand what the benefits are of `Strong Parameters` over `Protected Attributes`, I recommend checking [this RailsCasts episode](http://railscasts.com/episodes/371-strong-parameters?autoplay=true).
 
 `Protected Attributes` was part of the Rails core since the beginning of it until Rails 3.2. In Rails 4.0 they introduced `Strong Parameters` as a replacement of it, and it has been part of the core since then. Before that it was possible to use it through the [strong_parameters](https://github.com/rails/strong_parameters) gem.
 
@@ -26,7 +26,7 @@ At this point we strongly recommend fully migrating to `Strong Parameters`, sinc
 
 ### Migration
 
-The migration consists in moving the Mass Assignment restrictions from the models to the controllers. That means removing the `attr_accessible` and `attr_protected` calls from your models and adding a new method to your models' controllers to handle the parameters.
+The migration consists of moving the Mass Assignment restrictions from the models to the controllers. That means removing the `attr_accessible` and `attr_protected` calls from your models and adding a new method to your models' controllers to handle the parameters.
 
 In a simple example, this is how a model and controller look using `Protected Attributes`:
 
