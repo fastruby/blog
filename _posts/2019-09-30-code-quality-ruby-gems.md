@@ -4,7 +4,7 @@ title: "Three Awesome Libraries to Assess Code Quality in Ruby"
 date: 2019-09-30 10:56:00
 categories: ["ruby", "quality"]
 author: etagwerker
-
+published: false
 ---
 
 As part of our [Rails upgrade](https://fastruby.io) business we get to evaluate
