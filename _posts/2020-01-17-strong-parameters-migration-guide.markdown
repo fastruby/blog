@@ -20,7 +20,7 @@ To understand what the benefits are of `Strong Parameters` over `Protected Attri
 
 After Rails 4.0 came out with the implementation of `Strong Parameters`, we were able to have backwards compatibility with `Protected Attributes` by using the [protected_attributes](https://github.com/rails/protected_attributes) gem. That way you could have the latest version of Rails without migrating to `Strong Parameters`.
 
-That gem was supported by the Rails team until the release of Rails 5.0. After that we were forced to migrate to `Strong Parameters`. Once that happened we started to get unofficial forks of `protected_attributes` that support the latest version of Rails, like [protected_attributes_continued](https://github.com/westonganger/protected_attributes_continued).
+That gem was supported by the Rails team until the release of Rails 5.0. After that we were forced to migrate to `Strong Parameters`. Once that happened we started to get unofficial forks of `protected_attributes` that support the latest version of Rails, like [`protected_attributes_continued`](https://github.com/westonganger/protected_attributes_continued).
 
 At this point we strongly recommend fully migrating to `Strong Parameters`, since the available options to keep `Protected Attributes` alive have very limited support and can encounter security issues.
 
