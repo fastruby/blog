@@ -5,8 +5,7 @@ date: 2020-01-31 13:00:00
 categories: ["rails", "upgrades"]
 author: abizzinotto
 ---
-
-Technology evolves quickly. When you first created your Rails application, it's likely you did it using the latest version of Rails. As time passes, however, new Rails versions come out and your application becomes more and more out of touch with the latest version. But why is this important? Why does it matter?
+Technology evolves quickly. When you first created your Rails application, it's likely you did it using the latest version of [Rails](https://rubyonrails.org). As time passes, however, new [Rails](https://rubyonrails.org) versions come out and your application becomes more and more out of touch with the latest version. But why is this important? Why does it matter?
 
 There are several different reasons to [upgrade your Rails application](https://www.fastruby.io/blog/rails/upgrades/southeast-ruby-upgrade-rails-workshop.html). In this article, I’ll list what we consider to be the most important ones.
 
