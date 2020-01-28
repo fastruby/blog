@@ -14,7 +14,7 @@ There are several different reasons to [upgrade your Rails application](https://
 
 ## Security
 
-Security is a big issue. You want your application to be as safe as possible and, to accomplish that, one of the pivotal things to do is to make sure Ruby on Rails is up to date. Ruby on Rails is the application framework underlying everything your web application does. 
+[Security](https://www.fastruby.io/security-risks) is a big issue. You want your application to be as safe as possible and, to accomplish that, one of the pivotal things to do is to make sure Ruby on Rails is up to date. Ruby on Rails is the application framework underlying everything your web application does. 
 
 As new threats arise, new versions contain security patches to protect you against them. Being up to date on your Rails version allows you to rapidly apply the newest security patches to your application.
 
