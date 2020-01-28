@@ -19,7 +19,7 @@ As new threats arise, new versions contain security patches to protect you again
 
 For example, if your application is on Rails 4.2, then you're probably exposed to the vulnerabilities [described here](https://www.fastruby.io/rails-4-2-vulnerabilities).
 
-Additionally, a great service you can use is [Dependabot](https://dependabot.com/). It will help you keep your dependecies secure and up-to-date. 
+Additionally, a great service you can use is [Dependabot](https://dependabot.com/). It will help you keep your dependencies secure and up-to-date. 
 
 ## Improved Performance
 
