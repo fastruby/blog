@@ -17,6 +17,10 @@ There are several different reasons to [upgrade your Rails application](https://
 
 As new threats arise, new versions contain security patches to protect you against them. Being up to date on your Rails version allows you to rapidly apply the newest security patches to your application.
 
+For example, if your application is on Rails 4.2, then you're probably exposed to the vulnerabilities [described here](https://www.fastruby.io/rails-4-2-vulnerabilities).
+
+Additionally, a great service you can use is [Dependabot](https://dependabot.com/). It will help you keep your dependecies secure and up-to-date. 
+
 ## Improved Performance
 
 This is another big point. Users want to be able to do things and they want to be able to do it fast. Websites and applications are getting bigger and bigger. This creates a big demand for speed.
