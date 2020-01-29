@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Why Is It Important to Upgrade Your Rails Application?"
-date: 2020-01-31 13:00:00
+date: 2020-01-29 13:00:00
 categories: ["rails", "upgrades"]
 author: abizzinotto
 ---
+
 Technology evolves quickly. When you first created your Rails application, it's likely you did it using the latest version of [Rails](https://rubyonrails.org). As time passes, however, new [Rails](https://rubyonrails.org) versions come out and your application becomes more and more out of touch with the latest version. But why is this important? Why does it matter?
 
 There are several different reasons to [upgrade your Rails application](https://www.fastruby.io/blog/rails/upgrades/southeast-ruby-upgrade-rails-workshop.html). In this article, I’ll list what we consider to be the most important ones.
@@ -13,13 +14,13 @@ There are several different reasons to [upgrade your Rails application](https://
 
 ## Security
 
-[Security](https://www.fastruby.io/security-risks) is a big issue. You want your application to be as safe as possible and, to accomplish that, one of the pivotal things to do is to make sure Ruby on Rails is up to date. Ruby on Rails is the application framework underlying everything your web application does. 
+[Security](https://www.fastruby.io/security-risks) is a big issue. You want your application to be as safe as possible and, to accomplish that, one of the pivotal things to do is to make sure Ruby on Rails is up to date. Ruby on Rails is the application framework underlying everything your web application does.
 
 As new threats arise, new versions contain security patches to protect you against them. Being up to date on your Rails version allows you to rapidly apply the newest security patches to your application.
 
 For example, if your application is on Rails 4.2, then you're probably exposed to the vulnerabilities [described here](https://www.fastruby.io/rails-4-2-vulnerabilities).
 
-Additionally, a great service you can use is [Dependabot](https://dependabot.com/). It will help you keep your dependencies secure and up-to-date. 
+Additionally, a great service you can use is [Dependabot](https://dependabot.com/). It will help you keep your dependencies secure and up-to-date.
 
 ## Improved Performance
 
@@ -33,9 +34,9 @@ Of course you want your application to be stable. But your app's stability takes
 
 Upgrading your Rails application ensures you apply those bug fixes to your app.
 
-## Improvements to the Ruby Language 
+## Improvements to the Ruby Language
 
-Rails is a framework. Ruby is the underlying programming language. You can think of it as Ruby being the bricks and Rails being prefabricated houses. You need the bricks to build the houses. So you need bricks that will allow your prefabricated houses to be built. 
+Rails is a framework. Ruby is the underlying programming language. You can think of it as Ruby being the bricks and Rails being prefabricated houses. You need the bricks to build the houses. So you need bricks that will allow your prefabricated houses to be built.
 
 It is the same with programming languages and frameworks. You want to take advantage of the evolution of the programming language as it gets more powerful and flexible. Upgrading your Rails application ensures you can also take advantage of the latest improvements to the Ruby language.
 
