@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Gemifying your style guide to DRY your CSS"
-date: 2020-02-04 10:30:00
+date: 2020-02-05 10:30:00
 categories: ["gems", "dry", "ruby"]
 author: "cleiviane"
 ---
@@ -20,7 +20,7 @@ In this article, I'll show you how we did it!
 
 The first step is to create the gem. Bundler has a command to create the skeleton of the Gem.
 
-  `bundle gem fastruby-styleguide`
+`bundle gem fastruby-styleguide`
 
 Go to the created `.gemspec` file and add the info about the new gem and also a few dependencies:
 
@@ -110,4 +110,5 @@ You can see our style guide code in this GitHub repository: [https://github.com/
 As developers, we are always thinking about the best way to organize our code and follow good practices, so here is our solution to share the same assets code amongst our several products. If you're facing the same issue, I hope that this is useful.
 
 ## Extra
+
 Want to see our style guide applied? We're proud to present our projects: [Fastruby.io](https://www.fastruby.io) and [Audit Tool](https://audit.fastruby.io).
