@@ -4,7 +4,7 @@ title: "Introducing Skunk: Combine Code Quality and Coverage to Calculate a Stin
 date: 2019-11-04 10:00:00
 categories: ["code-quality"]
 author: etagwerker
-
+published: false
 ---
 
 Two weeks ago I had the opportunity to speak at [Solidus Conf 2019](https://conf.solidus.io).
