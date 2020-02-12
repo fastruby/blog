@@ -2,13 +2,13 @@
 layout: post
 title: "How to Calculate Tech Debt Using Skunk on GitHub Actions"
 date: 2020-02-10 16:16:00
-categories: ["tech-debt"]
+categories: ["code-quality"]
 author: etagwerker
 ---
 
 In preparation for my talk at [RubyConf Australia](https://www.rubyconf.org.au/) this
-month, I've been working on a way to make it easy for anyone to run `skunk` on their
-Ruby projects. In order to do that I decided to use GitHub Actions. It's a powerful
+month, I've been working on a way to make it easy for anyone to run [`skunk`](https://www.fastruby.io/blog/code-quality/intruducing-skunk-stink-score-calculator.html) on 
+their Ruby projects. In order to do that I decided to use GitHub Actions. It's a powerful
 service by GitHub and it's quite easy to set up.
 
 This is an article about the process that I followed and how you can use it in your own
@@ -110,8 +110,8 @@ steps synchronously, from top to bottom. If you want to run `skunk` for a Rails
 application, you can change the last step to `skunk app/`
 
 The next thing I wanted to do is run `skunk` on a pull request in order to
-compare the _Stink Score_ between the pull request and `master`. This will help
-us answer this question:
+compare the [_Stink Score_](https://github.com/fastruby/skunk#what-is-the-stinkscore) 
+between the pull request and `master`. This will help us answer this question:
 
 > Are we increasing or decreasing the tech debt average in our project?
 
@@ -147,9 +147,9 @@ jobs:
           fi
 ```
 
-There is some `bash` _magic_ in there. The GitHub Action will do one thing if
-you are within the context of a pull request (compare action), and another thing
-if it is running a commit pushed to the `master` branch.
+There is some `bash` logic in there: The GitHub Action will [compare your branch vs. master](https://github.com/fastruby/skunk#comparing-one-branch-vs-another) if
+it is running within the context of a pull request, or [generate a tech debt report](https://github.com/fastruby/skunk#getting-a-sorted-list-of-stinkiest-files) if 
+it is running a commit pushed to the `master` branch.
 
 One last thing I had to add was a step to generate [SimpleCov](https://github.com/colszowka/simplecov)'s
 resultset JSON file. Skunk is most useful when it considers code coverage data.
