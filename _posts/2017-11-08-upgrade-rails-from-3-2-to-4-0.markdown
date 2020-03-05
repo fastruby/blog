@@ -4,6 +4,7 @@ title: "Upgrade Rails from 3.2 to 4.0"
 date: 2017-11-08 12:42:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
+published: false
 ---
 
 _This article is part of our Upgrade Rails series. To see more of them, [click here](https://fastruby.io/blog/tags/upgrades)_.
