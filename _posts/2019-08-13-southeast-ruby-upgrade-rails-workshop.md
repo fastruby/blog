@@ -4,6 +4,7 @@ title:  "How to Upgrade Any Rails Application Using Docker"
 date: 2019-08-13 12:00
 categories: ["rails", "upgrades"]
 author: "etagwerker"
+published: false
 ---
 
 Every time we start a new [Rails upgrade project](https://fastruby.io/roadmap),
