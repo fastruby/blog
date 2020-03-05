@@ -2,6 +2,7 @@
 layout: post
 title:  "Tips for Writing Fast Rails: Part 2"
 date: 2018-11-13 09:10:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "performance"]
 author: "luciano"
 ---

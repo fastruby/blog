@@ -2,6 +2,7 @@
 layout: post
 title:  "Ruby & Rails Compatibility Table"
 date: 2019-04-29 13:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["ruby", "rails", "versions"]
 author: "etagwerker"
 ---

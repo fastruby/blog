@@ -2,6 +2,7 @@
 layout: post
 title: "Upgrade Rails from 5.2 to 6.0"
 date: 2019-04-30 15:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "upgrades"]
 author: "luciano"
 ---

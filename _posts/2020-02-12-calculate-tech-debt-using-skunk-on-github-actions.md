@@ -2,6 +2,7 @@
 layout: post
 title: "How to Calculate Tech Debt Using Skunk on GitHub Actions"
 date: 2020-02-12 9:16:00
+reviewed: 2020-03-05 10:00:00
 categories: ["code-quality"]
 author: etagwerker
 ---

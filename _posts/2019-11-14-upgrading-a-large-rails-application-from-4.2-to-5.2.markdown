@@ -2,6 +2,7 @@
 layout: post
 title: "Upgrading a Fairly Large Rails Application from 4.2 to 5.2"
 date: 2019-11-14 12:30:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "upgrades", "case-study"]
 author: "abizzinotto"
 ---

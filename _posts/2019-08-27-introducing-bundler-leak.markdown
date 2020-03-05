@@ -2,6 +2,7 @@
 layout: post
 title: "Introducing bundler-leak: A simple way to find known memory leaks in your dependencies"
 date: 2019-08-27 13:56:00
+reviewed: 2020-03-05 10:00:00
 categories: ["bundler", "memory-leaks"]
 author: bronzdoc
 

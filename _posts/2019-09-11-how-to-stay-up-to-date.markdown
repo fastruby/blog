@@ -2,6 +2,7 @@
 layout: post
 title: How to Stay Up to Date with Your Rails Application
 date: 2019-09-25 13:56:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "upgrades"]
 author: bronzdoc
 ---

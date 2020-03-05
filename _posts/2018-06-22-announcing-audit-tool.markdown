@@ -2,7 +2,7 @@
 layout: post
 title:  "Announcing Gemfile.lock Audit Tool"
 date: 2018-06-22 11:10:00
-reviewed: 2020-02-06 9:37:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "ruby", "rubygems"]
 author: "emily"
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: "Upgrade Rails 101: The Roadmap to Smooth Upgrades"
 date: 2019-06-26 10:01
+reviewed: 2020-03-05 10:00:00
 categories: ["RailsConf"]
 authors: ["etagwerker"]
 ---

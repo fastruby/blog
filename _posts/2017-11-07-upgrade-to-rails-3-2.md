@@ -2,6 +2,7 @@
 layout: post
 title:  "Upgrade Rails from 3.1 to 3.2"
 date: 2017-11-07 09:30:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "upgrades"]
 author: "luciano"
 ---

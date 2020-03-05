@@ -2,6 +2,7 @@
 layout: post
 title: "Escaping The Tar Pit: Introducing Skunk v0.3.2 at RubyConf 2019"
 date: 2019-12-10 10:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["code-quality"]
 author: etagwerker
 ---
