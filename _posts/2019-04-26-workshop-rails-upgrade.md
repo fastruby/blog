@@ -4,6 +4,7 @@ title: "Workshop - Upgrade Rails 101: The Roadmap to Smooth Upgrades"
 date: 2019-04-26 10:00:00
 categories: ["upgrade-rails", "workshop"]
 author: "luciano"
+published: false
 ---
 
 Next week the [Rails](https://rubyonrails.org/) community is having the biggest event of the year, the [Rails Conf 2019](https://railsconf.com/). We participated in previous editions of this conference but this time we have the honor to be on the speakers side of it. We'll be teaching you what we're best at: [Rails Upgrades](https://fastruby.io/blog/tags/upgrades).
