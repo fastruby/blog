@@ -4,6 +4,7 @@ title: "Upgrading a Fairly Large Rails Application from 4.2 to 5.2"
 date: 2019-11-14 12:30:00
 categories: ["rails", "upgrades", "case-study"]
 author: "abizzinotto"
+published: false
 ---
 
 We recently collaborated with [Amitree](https://www.home.amitree.com/) on a [Rails upgrade](https://fastruby.io) for their application which "is an AI assistant for email, integrated deeply within Google and Microsoft’s products and is in heavy use by real estate professionals" and were able to speak to them about their experience with [Ombu Labs](https://www.ombulabs.com).
