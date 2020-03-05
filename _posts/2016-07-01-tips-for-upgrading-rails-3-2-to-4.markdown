@@ -4,6 +4,7 @@ title: "Tips for upgrading from Rails 3.2 to 4.0"
 date: 2016-07-01 18:37:00
 categories: ["rails"]
 author: "mauro-oto"
+published: false
 ---
 
 There are already quite a few guides in the wild to help with the upgrade of
