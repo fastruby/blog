@@ -4,6 +4,7 @@ title: "Upgrade Rails from 4.2 to 5.0"
 date: 2018-03-06 10:53:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
+published: false
 ---
 
 _This article is part of our Upgrade Rails series. To see more of them, [click here](https://fastruby.io/blog/tags/upgrades)_.
