@@ -4,6 +4,7 @@ title: "Upgrade Rails from 5.0 to 5.1"
 date: 2018-07-18 10:05:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
+published: false
 ---
 
 _This article is part of our Upgrade Rails series. To see more of them, [click here](https://fastruby.io/blog/tags/upgrades)_.
