@@ -4,6 +4,7 @@ title: "Merging Multiple SimpleCov Coverage Results"
 date: 2019-11-15 10:00:00
 categories: ["rails", "simplecov", "upgrades"]
 author: bronzdoc
+published: false
 ---
 
 As part of our [Roadmap](https://www.fastruby.io/roadmap) service at [FastRuby.io](https://fastruby.io), we have to analyze the test suite of the application we are upgrading to give a proper estimate on how long it will take us to upgrade. We use [SimpleCov](https://github.com/colszowka/simplecov) for this.
