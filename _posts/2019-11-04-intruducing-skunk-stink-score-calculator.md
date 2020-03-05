@@ -2,6 +2,7 @@
 layout: post
 title: "Introducing Skunk: Combine Code Quality and Coverage to Calculate a Stink Score"
 date: 2019-11-04 10:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["code-quality"]
 author: etagwerker
 
