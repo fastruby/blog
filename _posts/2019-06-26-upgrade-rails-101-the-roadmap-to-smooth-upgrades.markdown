@@ -4,6 +4,7 @@ title: "Upgrade Rails 101: The Roadmap to Smooth Upgrades"
 date: 2019-06-26 10:01
 categories: ["RailsConf"]
 authors: ["etagwerker"]
+published: false
 ---
 
 This year's [RailsConf](https://railsconf.com) was a special conference for me.
