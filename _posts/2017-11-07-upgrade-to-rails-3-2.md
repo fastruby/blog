@@ -4,6 +4,7 @@ title:  "Upgrade Rails from 3.1 to 3.2"
 date: 2017-11-07 09:30:00
 categories: ["rails", "upgrades"]
 author: "luciano"
+published: false
 ---
 
 This is the third article of our [Upgrade Rails series](https://fastruby.io/blog/tags/upgrades). We will be covering the most important aspects that you need to know to update your [Ruby on Rails](http://rubyonrails.org/) application from [version 3.1](http://guides.rubyonrails.org/3_1_release_notes.html) to [3.2](http://guides.rubyonrails.org/3_2_release_notes.html).
