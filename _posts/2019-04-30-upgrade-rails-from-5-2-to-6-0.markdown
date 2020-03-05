@@ -4,6 +4,7 @@ title: "Upgrade Rails from 5.2 to 6.0"
 date: 2019-04-30 15:00:00
 categories: ["rails", "upgrades"]
 author: "luciano"
+published: false
 ---
 
 _This article is part of our Upgrade Rails series. To see more of them, [click here](https://fastruby.io/blog/tags/upgrades)_.
