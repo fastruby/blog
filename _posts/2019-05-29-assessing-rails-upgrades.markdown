@@ -2,7 +2,7 @@
 layout: post
 title: "Is This Rails Upgrade Project a Good Fit?"
 date: 2019-05-29 15:00:00
-reviewed: 2020-02-06 9:40:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "upgrades"]
 author: "emily"
 ---

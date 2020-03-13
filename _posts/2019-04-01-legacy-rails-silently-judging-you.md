@@ -2,6 +2,7 @@
 layout: post
 title:  "Legacy Rails: Silently Judging You"
 date: 2019-04-01 10:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["upgrade-rails"]
 author: "etagwerker"
 ---

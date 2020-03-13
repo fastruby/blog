@@ -2,6 +2,7 @@
 layout: post
 title: "Workshop - Upgrade Rails 101: The Roadmap to Smooth Upgrades"
 date: 2019-04-26 10:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["upgrade-rails", "workshop"]
 author: "luciano"
 ---

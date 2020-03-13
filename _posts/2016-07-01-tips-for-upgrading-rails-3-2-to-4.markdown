@@ -2,6 +2,7 @@
 layout: post
 title: "Tips for upgrading from Rails 3.2 to 4.0"
 date: 2016-07-01 18:37:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails"]
 author: "mauro-oto"
 ---

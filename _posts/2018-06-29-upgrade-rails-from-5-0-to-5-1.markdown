@@ -2,6 +2,7 @@
 layout: post
 title: "Upgrade Rails from 5.0 to 5.1"
 date: 2018-07-18 10:05:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
 ---

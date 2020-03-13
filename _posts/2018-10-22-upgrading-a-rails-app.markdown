@@ -2,6 +2,7 @@
 layout: post
 title:  "Upgrading a Rails Application from 2.3 to 4.2 with Neomind Labs"
 date: 2018-10-22 11:10:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "upgrades", "case-study"]
 author: "emily"
 ---

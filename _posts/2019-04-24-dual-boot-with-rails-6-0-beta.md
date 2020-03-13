@@ -2,6 +2,7 @@
 layout: post
 title:  "Getting Ready for Rails 6.0: How to Dual Boot"
 date: 2019-04-24 10:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["upgrade-rails", "dual-boot"]
 author: "etagwerker"
 ---

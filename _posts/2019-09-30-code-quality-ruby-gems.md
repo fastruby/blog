@@ -2,6 +2,7 @@
 layout: post
 title: "Three Awesome Libraries to Assess Code Quality in Ruby"
 date: 2019-09-30 10:56:00
+reviewed: 2020-03-05 10:00:00
 categories: ["ruby", "quality"]
 author: etagwerker
 

@@ -2,6 +2,7 @@
 layout: post
 title: "Upgrade Rails from 4.0 to 4.1"
 date: 2017-12-06 16:31:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
 ---
