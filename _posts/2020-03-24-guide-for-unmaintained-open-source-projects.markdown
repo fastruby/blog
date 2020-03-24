@@ -1,7 +1,7 @@
 --
 layout: post
 title: "Our Guide for Unmaintained Open Source Projects"
-date: 2020-03-11 9:16:00
+date: 2020-03-24 9:16:00
 categories: ["open-source"]
 author: etagwerker
 ---
