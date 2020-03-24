@@ -36,7 +36,7 @@ To help us switch between the current Rails version and the new one, we usually 
 
 After shipping all deprecation warnings fixes to the master branch and setup the dual boot, it's time for us to handle with the project dependencies.
 
-Sometimes dependencies are backwards compatible with the current version of Rails. They will have a code like:
+Sometimes dependencies are backwards compatible with the current version of Rails. Within the libraries, you will find code that looks like this:
 
 ```
 if Rails::VERSION >= 5.1
