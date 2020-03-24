@@ -19,6 +19,8 @@ The first thing that we do is to search for deprecation warnings in the applicat
 
 You might find these deprecation warnings by searching at the `production.log` or tracking then down in your Log Management Software, such as [Sentry](https://sentry.io/) or [Splunk](https://www.splunk.com).
 
+You can also search for deprecation warnings in the `test.log`, so you can find them in your CI service as well.
+
 For each different deprecation warning that we find, we create one story in our backlog software (at Ombu Labs we use [Pivotal Tracker](pivotaltracker.com) to help us with that). This will make things easier to code review and to test in QA.
 
 ## Step 2: Fixing all deprecation warnings
@@ -27,10 +29,19 @@ After create all stories for the deprecation warnings, is time to address them o
 
 A good examples is the deprecation warnings caused by the changes in `ActiveRecord::Dirty` in the Rails 5.2 version. We wrote [this article](https://www.fastruby.io/blog/rails/upgrades/active-record-5-1-api-changes.html) while ago showing how to address them.
 
+Ideally, you will have a test suite that exercises the code that you are changing. Then you can be sure that the changes don’t break existing behavior. If you don’t have tests, you will have to manually execute the code that you’re changing. That is when it can become a tedious process.
+
 ## Step 3: Add dual boot for the Rails version
 
 To help us switch between the current Rails version and the new one, we usually create a dual boot mechanism. The fastest way is to install the handful gem [next_rails](https://github.com/fastruby/next_rails). Please, [visit this article](https://www.fastruby.io/blog/upgrade-rails/dual-boot/dual-boot-with-rails-6-0-beta.html) where we showed how you can install and setup the gem in your local environment and your CI server.
 
+Dual booting is helpful strategy that you can use in all environments:
+
+- development: we can quickly switch between one version and the other and debug unexpected behavior
+- test: we can run two versions of the test suite (one with current version, another with target version)
+- production: we can gradually deploy the changes to production, that way we can deliver a small percentage at a time. It’s not trivial but it is possible (as explained [here](http://recursion.org/incremental-rails-upgrade)).
+
+There are some caveats with the dual boot though. If your test suite takes three hours to run, for example, it will double your test suite run time to 6 hours. So then it is not a great idea to run both versions every time. In those cases, we usually run a nightly build with both versions (master and rails-next-version branches).
 
 ## Step 4: Assessing whether we can upgrade a dependency or not
 
@@ -38,7 +49,7 @@ After shipping all deprecation warnings fixes to the master branch and setup the
 
 Sometimes dependencies are backwards compatible with the current version of Rails. They will have a code like:
 
-```
+```ruby
 if Rails::VERSION >= 5.1
   # does X
 else
@@ -48,15 +59,34 @@ end
 
 If that is the case, then you might be able to just upgrade the dependency using `bundle update`.
 
-If the dependency does not have backwards compatible code, then, using the next_rails gem, you can add something like this to your application's Gemfile:
+If the dependency does not have backwards compatible code, then, using the next_rails gem, we add something like this to your application's Gemfile:
 
-```
+```ruby
 if next?
   gem "dep", "~> 1.2.3"
 else
   gem "dep", "~> 0.9"
 end
 ```
+
+This is the method definition for `next?`
+
+```ruby
+def next?
+  File.basename(__FILE__) == "Gemfile.next"
+end
+```
+
+And all it does is to use a symlink called `Gemfile.next` in order to keep a separate lockfile for the new Rails version: `Gemfile.next.lock`
+
+In cases when we can't just update the gem's version, we have four alternatives:
+
+- Find an alternative library
+- Write our own code to address the library’s function and remove the library dependency
+- Submit a contribution to the library to add support for the version of Rails that we need
+- If the contribution is never merged, we consider start maintaining a fork of the library
+
+You can learn more about that in this other article that we recently released: <LINK HERE>
 
 ## Step 5: Create the rails upgrade branch and submit a Pull request
 
@@ -69,6 +99,16 @@ This help us to deliver small testable changes during the upgrade and keep a sta
 For every story that we're working on, we create a new pull request. If the change is not backwards compatible the PR will target to the `rails-next-version` branch, if it is, it will target to the `master` branch.
 
 At this point if we run the test suite using the Rails 5.2 changes, it's probably that a bunch of tests will fail. It's time to address them and open a pull request to each one or for each file or feature, depending of the complexity of the changes.
+
+When addressing these failures, we recommend that you create one story per root cause. There may be 100s of failures for one root cause. So, we recommend that you start with the root causes that fix the most amount of tests.
+
+Sometimes there will be little snippets of code that you can write to make the changes backwards compatible, they are called [rails upgrade shims](https://medium.com/@ujjawal.dixit/what-is-a-shim-72d9ac5d8620)
+
+## Step 7: Making sure that everything works
+
+When updating the application we always we didn't break any behavior, and even with a reliable test suite, we know that normally there are visual issues that only come up when you do a "real integration testing". That's why we always do quality assurance deploy the code to a QA environment.
+
+That work usually is done with the help of someone from our client's team or by their own QA team.
 
 ## Last Step:  Merge the rails upgrade branch
 
