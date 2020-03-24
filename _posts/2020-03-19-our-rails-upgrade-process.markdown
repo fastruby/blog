@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Our Rails Upgrade Process"
+title: "Our Rails Upgrade Process: How to bundle update rails"
 date: 2020-03-17 10:30:00
 reviewed: 2020-03-19 10:00:00
 categories: ["rails", "upgrade"]
@@ -47,7 +47,7 @@ There are some caveats with the dual boot though. If your test suite takes three
 
 After shipping all deprecation warnings fixes to the master branch and setup the dual boot, it's time for us to handle with the project dependencies.
 
-Sometimes dependencies are backwards compatible with the current version of Rails. They will have a code like:
+Sometimes dependencies are backwards compatible with the current version of Rails. Within the libraries, you will find code that looks like this:
 
 ```ruby
 if Rails::VERSION >= 5.1
