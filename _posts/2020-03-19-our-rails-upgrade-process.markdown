@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Our Rails Upgrade Process"
+title: "Our Rails Upgrade Process: How to bundle update rails"
 date: 2020-03-17 10:30:00
 reviewed: 2020-03-19 10:00:00
 categories: ["rails", "upgrade"]
