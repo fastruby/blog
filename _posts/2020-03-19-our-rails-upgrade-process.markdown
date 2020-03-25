@@ -25,7 +25,7 @@ For each different deprecation warning that we find, we create one story in our 
 
 ## Step 2: Fixing all deprecation warnings
 
-After create all stories for the deprecation warnings, is time to address them one by one. Deprecation warnings are usually pretty straightforward, the messages are clear about what needs to change. They are also backwards compatible which means that you can fix them and merge directly to the current version of Rails.
+After creating all the stories for the deprecation warnings, it is time to address them one by one. Deprecation warnings are usually pretty straightforward, the messages are clear about what needs to change. They are also backwards compatible which means that you can fix them and merge directly to the current version of Rails.
 
 A good examples is the deprecation warnings caused by the changes in `ActiveRecord::Dirty` in the Rails 5.2 version. We wrote [this article](https://www.fastruby.io/blog/rails/upgrades/active-record-5-1-api-changes.html) while ago showing how to address them.
 
