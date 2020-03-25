@@ -17,7 +17,7 @@ The good news is that here at [Ombu Labs](https://www.ombulabs.com/), we have be
 
 The first thing that we do is to search for deprecation warnings in the application, which are log messages suggesting things that you will need to change when moving for the next version of Rails. That can be because something will either be removed from the source code or the code will work in a different way.
 
-You might find these deprecation warnings by searching at the `production.log` or tracking then down in your Log Management Software, such as [Sentry](https://sentry.io/) or [Splunk](https://www.splunk.com).
+You might find these deprecation warnings by searching in the `production.log` or tracking them down in your Log Management Software, such as [Sentry](https://sentry.io/) or [Splunk](https://www.splunk.com).
 
 You can also search for deprecation warnings in the `test.log`, so you can find them in your CI service as well.
 
