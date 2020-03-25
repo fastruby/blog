@@ -106,7 +106,7 @@ Sometimes there will be little snippets of code that you can write to make the c
 
 ## Step 7: Making sure that everything works
 
-When updating the application we always we didn't break any behavior, and even with a reliable test suite, we know that normally there are visual issues that only come up when you do a "real integration testing". That's why we always do quality assurance deploy the code to a QA environment.
+When updating the application we always  hope that we didn't break any behavior, and even with a reliable test suite, we know that normally there are visual issues that only come up when you do a "real integration testing". That's why we always do quality assurance and deploy the code to a QA environment.
 
 That work usually is done with the help of someone from our client's team or by their own QA team.
 
