@@ -7,7 +7,7 @@ categories: ["rails", "upgrade"]
 author: "cleiviane"
 ---
 
-We know that there are many challenges involving a Rails upgrade project. Depending on how big is your application, how old is your Rails version and how well structured your code is, it can be difficult to perform that job and keep your sanity. If you don't find a reliable and trustable process to guide you from version X to version Y, you can end-up in a nightmare.
+We know that there are many challenges involved in a Rails upgrade project. Depending on how big your application is, how old your Rails version is and how well structured your code is, it can be difficult to perform that job and keep your sanity. If you don't find a reliable and trustable process to guide you from version X to version Y, you can end-up in a nightmare.
 
 The good news is that here at [Ombu Labs](https://www.ombulabs.com/), we have been upgrading Rails applications for over 10 years now and this gave us a know-how to define a process that has proven to be very effective. And today I want to share Our Rails Upgrade Process with you.
 
