@@ -98,7 +98,7 @@ This helps us deliver small testable changes during the upgrade and keep a stabl
 
 For every story that we're working on, we create a new pull request. If the change is not backwards compatible the PR will target to the `rails-next-version` branch, if it is, it will target to the `master` branch.
 
-At this point if we run the test suite using the Rails 5.2 changes, it's probably that a bunch of tests will fail. It's time to address them and open a pull request to each one or for each file or feature, depending of the complexity of the changes.
+At this point if we run the test suite using the Rails 5.2 changes, it's a probability that a bunch of tests will fail. It's time to address them and open a pull request for each one or for each file or feature, depending of the complexity of the changes.
 
 When addressing these failures, we recommend that you create one story per root cause. There may be 100s of failures for one root cause. So, we recommend that you start with the root causes that fix the most amount of tests.
 
