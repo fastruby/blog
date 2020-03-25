@@ -90,7 +90,7 @@ You can learn more about that in this other article that we recently released: <
 
 ## Step 5: Create the rails upgrade branch and submit a Pull request
 
-After adjust all the dependencies in the application for the both Rails versions, we create the `rails-next-version` branch with all the dual boot code and open a PR that will target to master. The idea is that from now one, every PR that we create and we can't merged to master directly, will target to this `rails-next-version` branch. As you can imagine, this big PR won't be merged until all necessary changes to the upgrade are done.
+After adjusting all the dependencies in the application for the both Rails versions, we create the `rails-next-version` branch with all the dual boot code and open a PR that will target to master. The idea is that from now on, every PR that we create and we can't merge to master directly, will target to this `rails-next-version` branch. As you can imagine, this big PR won't be merged until all necessary changes to the upgrade are done.
 
 This help us to deliver small testable changes during the upgrade and keep a stable branch that we can use as base.
 
