@@ -117,7 +117,7 @@ It's time to merge the rails upgrade PR and celebrate.
 
 <iframe src="https://giphy.com/embed/KYElw07kzDspaBOwf9" width="480" height="234" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/the-office-dunder-mifflin-KYElw07kzDspaBOwf9">via GIPHY</a></p>
 
-## And this is it!
+## And that is it!
 
 If you want to understand more about our upgrade process, please visit [our FastRuby page](https://www.fastruby.io).
 And if you have any question we would love to reply to you here in the comments section!
