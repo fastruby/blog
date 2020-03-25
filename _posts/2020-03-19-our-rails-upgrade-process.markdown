@@ -35,7 +35,7 @@ Ideally, you will have a test suite that exercises the code that you are changin
 
 To help us switch between the current Rails version and the new one, we usually create a dual boot mechanism. The fastest way is to install the handful gem [next_rails](https://github.com/fastruby/next_rails). Please, [visit this article](https://www.fastruby.io/blog/upgrade-rails/dual-boot/dual-boot-with-rails-6-0-beta.html) where we showed how you can install and setup the gem in your local environment and your CI server.
 
-Dual booting is helpful strategy that you can use in all environments:
+Dual booting is a helpful strategy that you can use in all environments:
 
 - development: we can quickly switch between one version and the other and debug unexpected behavior
 - test: we can run two versions of the test suite (one with current version, another with target version)
