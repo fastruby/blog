@@ -86,7 +86,7 @@ In cases when we can't just update the gem's version, we have four alternatives:
 - Submit a contribution to the library to add support for the version of Rails that we need
 - If the contribution is never merged, we consider start maintaining a fork of the library
 
-You can learn more about that in this other article that we recently released: <LINK HERE>
+You can learn more about that in this other article that we recently released about [Unmaintained Open Source Projects](https://www.fastruby.io/blog/open-source/guide-for-unmaintained-open-source-projects.html).
 
 ## Step 5: Create the rails upgrade branch and submit a Pull request
 
