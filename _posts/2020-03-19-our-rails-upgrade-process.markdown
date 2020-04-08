@@ -119,5 +119,5 @@ It's time to merge the rails upgrade PR and celebrate.
 
 ## And that is it!
 
-If you want to understand more about our upgrade process, please visit [our FastRuby page](https://www.fastruby.io).
+If you want to understand more about our upgrade process, please visit [FastRuby.io](https://www.fastruby.io).
 And if you have any question we would love to reply to you here in the comments section!
