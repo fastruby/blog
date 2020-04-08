@@ -3,7 +3,7 @@ layout: post
 title: "Our Rails Upgrade Process: How to bundle update rails"
 date: 2020-04-08 15:00:00
 reviewed: 2020-04-08 15:00:00
-categories: ["rails", "upgrade"]
+categories: ["rails", "upgrades"]
 author: "cleiviane"
 ---
 
