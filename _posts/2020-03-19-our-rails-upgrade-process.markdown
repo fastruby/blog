@@ -38,7 +38,7 @@ To help us switch between the current Rails version and the new one, we usually 
 Dual booting is a helpful strategy that you can use in all environments:
 
 - development: we can quickly switch between one version to the other and debug unexpected behavior.
-- test: we can run two versions of the test suite (one with the current version, another with the target version)
+- test: we can run two versions of the test suite (one with the current version, another with the target version).
 - production: we can gradually deploy the changes to production, that way we can deliver a small percentage at a time. It’s not so simple but it is possible (as explained [here](http://recursion.org/incremental-rails-upgrade)).
 
 There are some caveats with the dual boot though. If your test suite takes three hours to run, for example, it will double your test suite run time to 6 hours. So then it is not a great idea to run both versions every time. In those cases, we usually run a nightly build with both versions (master and rails-next-version branches).
