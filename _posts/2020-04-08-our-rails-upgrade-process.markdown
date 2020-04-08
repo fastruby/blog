@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Our Rails Upgrade Process: How to bundle update rails"
-date: 2020-03-17 10:30:00
-reviewed: 2020-03-19 10:00:00
+date: 2020-04-08 15:00:00
+reviewed: 2020-04-08 15:00:00
 categories: ["rails", "upgrade"]
 author: "cleiviane"
 ---
@@ -106,11 +106,11 @@ Sometimes there will be little snippets of code that you can write to make the c
 
 ## Step 7: Making sure that everything works
 
-When updating the application we always  hope that we didn't break any behavior, and even with a reliable test suite, we know that normally there are visual issues that only come up when you do a "real integration testing". That's why we always do quality assurance and deploy the code to a QA environment.
+When updating the application we always hope that we didn't break any behavior, and even with a reliable test suite, we know that normally there are visual issues that only come up when you do a "real integration testing". That's why we always do quality assurance and deploy the code to a QA environment.
 
 That work usually is done with the help of someone from our client's team or by their own QA team.
 
-## Last Step:  Merge the rails upgrade branch
+## Last Step: Merge the rails upgrade branch
 
 If all changes are done and we have everything working in the `rails-next-version` branch, you can finally take a breath!
 It's time to merge the rails upgrade PR and celebrate.
