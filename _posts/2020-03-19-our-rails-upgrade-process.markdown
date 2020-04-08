@@ -45,7 +45,7 @@ There are some caveats with the dual boot though. If your test suite takes three
 
 ## Step 4: Assessing whether we can upgrade a dependency or not
 
-After shipping all deprecation warnings fixes to the master branch and setup the dual boot, it's time for us to handle with the project dependencies.
+After shipping all deprecation warnings fixes to the master branch and setting up the dual boot, it's time for us to work on the project dependencies.
 
 Sometimes dependencies are backwards compatible with the current version of Rails. Within the libraries, you will find code that looks like this:
 
