@@ -6,7 +6,7 @@ categories: ["rails", "upgrades"]
 author: luciano
 ---
 
-Deprecation warnings are a common thing in our industry. They are warnings that notify us that a specific feature (e.g. a method) will be removed soon (usually in the next [minor](https://semver.org/) or major version) and should be replaced with something else.
+Deprecation warnings are a common thing in our industry. They are warnings that notify us that a specific feature (e.g. a method) will be removed soon (usually in the next [minor or major](https://semver.org/) version) and should be replaced with something else.
 Features are deprecated rather than immediately removed, in order to provide backward compatibility (a solution that works in both the current and the future version), and to give programmers time to implement the code in a way that follows the new standard.
 
 In this guide we'll show you what's the workflow that we use at [FastRuby.io](https://www.fastruby.io) to address deprecation warnings when we [upgrade Rails applications](https://www.fastruby.io/blog/tags/upgrades).
@@ -46,12 +46,12 @@ end
 
 See [this link](https://guides.rubyonrails.org/active_support_instrumentation.html#subscribing-to-an-event) for more details about `ActiveSupport::Notifications.subscribe`.
 
-You can also set `config.active_support.deprecation` to `:log` and look at the `log/production.log` file, but it won't be as straightforward as the first option. Depending on the traffic your application gets, your `production.log` might have a lot of noise. 
+You can also set `config.active_support.deprecation` to `:log` and look at the `log/production.log` file, but it won't be as straightforward as the first option. Depending on the traffic your application gets, your `production.log` might have a lot of noise.
 
 ## Tracking
 
 Once you have all the deprecation warnings (or most of them) from your application, it is a good a idea to track them as if they were issues.
-You can use the project management tool of your preference (we use [Pivotal Tracker](https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html)) and create a story in the backlog for each of the deprecation warnings. That way it makes things a lot easier when it comes to code review and organization in general.
+You can use the project management tool of your preference (we use [Pivotal Tracker](https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html)) and create a story in the backlog for each root cause of the deprecation warnings. That way it makes things a lot easier when it comes to code review and organization in general.
 
 <img src="/assets/images/deprecation-warning-story.png" alt="Deprecation Warning Story for Rails Upgrade" />
 
@@ -62,7 +62,7 @@ That way, you make sure you first work on the ones that fix the largest amount o
 
 At this point you can grab a story from the top of the backlog and work on it. Most of the deprecation warnings are very clear on what needs to be updated. If that's not the case, a quick google search will provide more answers. Usually you will have to apply the same fix across many files, so make sure you search for all occurrences in the project folder.
 
-Once the changes are done, run the appropriate specs or manually test the parts that were modified to make sure that everything works normal. Remember that the changes should be backwards compatible.
+Once the changes are done, run the appropriate specs or manually test the parts that were modified to make sure that everything works normal.
 
 After that, you can create a new [pull request](https://www.ombulabs.com/blog/agile/learning/pull-requests/submitting-prs.html) and move on to the next deprecation warning on your backlog.
 
@@ -81,7 +81,7 @@ After you fix a deprecation warning in the project, you want to make sure that n
 
 #### Rubocop
 
-If you are using [Rubocop](https://github.com/rubocop-hq/rubocop), you can write a cops that check for deprecated code. Take a look at [Lint/DeprecatedClassMethods](https://github.com/rubocop-hq/rubocop/blob/master/lib/rubocop/cop/lint/deprecated_class_methods.rb) for some reference on that.
+If you are using [Rubocop](https://github.com/rubocop-hq/rubocop), you can write a cop to check for deprecated code. Take a look at [Lint/DeprecatedClassMethods](https://github.com/rubocop-hq/rubocop/blob/master/lib/rubocop/cop/lint/deprecated_class_methods.rb) for some reference on that.
 
 #### Disallowed deprecations in ActiveSupport
 
