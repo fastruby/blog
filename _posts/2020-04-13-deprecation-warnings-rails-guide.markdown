@@ -9,7 +9,7 @@ author: luciano
 Deprecation warnings are a common thing in our industry. They are warnings that notify us that a specific feature (e.g. a method) will be removed soon (usually in the next [minor or major](https://semver.org/) version) and should be replaced with something else.
 Features are deprecated rather than immediately removed, in order to provide backward compatibility (a solution that works in both the current and the future version), and to give programmers time to implement the code in a way that follows the new standard.
 
-In this guide we'll show you what's the workflow that we use at [FastRuby.io](https://www.fastruby.io) to address deprecation warnings when we [upgrade Rails applications](https://www.fastruby.io/blog/tags/upgrades).
+In this guide we'll show you what the workflow is that we use at [FastRuby.io](https://www.fastruby.io) to address deprecation warnings when we [upgrade Rails applications](https://www.fastruby.io/blog/tags/upgrades).
 
 <!--more-->
 
@@ -17,11 +17,11 @@ In this guide we'll show you what's the workflow that we use at [FastRuby.io](ht
 
 There are a few different ways to find deprecation warnings in your application.
 
-If you have good test coverage, you can run the whole test suite and look at the logs that were generated. If you are using a CI service (like [CircleCI](https://circleci.com/) or [Travis CI](https://travis-ci.org/)) you can easily see the logs once the build finished running. Otherwise, if you run the tests locally, you can look at the output on the console or in the `log/test.log` file.
+If you have good test coverage, you can run the whole test suite and look at the logs that were generated. If you are using a CI service (like [CircleCI](https://circleci.com/) or [Travis CI](https://travis-ci.org/)) you can easily see the logs once the build finishes running. Otherwise, if you run the tests locally, you can look at the output in the console or in the `log/test.log` file.
 
 In Rails, all deprecation warnings start with `DEPRECATION WARNING:`, so you can search for that string in your logs.
 
-When it comes to production, the easier way to collect deprecation warnings is by using a monitoring tool (like [Honeybadger](https://www.honeybadger.io/) or [Airbrake](https://airbrake.io/)).
+When it comes to production, the easiest way to discover deprecation warnings is by using a monitoring tool (like [Honeybadger](https://www.honeybadger.io/) or [Airbrake](https://airbrake.io/)).
 
 This is not standard behavior, but it is quite useful. In order to send deprecation warnings to one of these tools, you would have to do something like this:
 
@@ -50,7 +50,7 @@ You can also set `config.active_support.deprecation` to `:log` and look at the `
 
 ## Tracking
 
-Once you have all the deprecation warnings (or most of them) from your application, it is a good a idea to track them as if they were issues.
+Once you have all the deprecation warnings (or most of them) from your application, it is a good idea to track them as if they were issues.
 You can use the project management tool of your preference (we use [Pivotal Tracker](https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html)) and create a story in the backlog for each root cause of the deprecation warnings. That way it makes things a lot easier when it comes to code review and organization in general.
 
 <img src="/assets/images/deprecation-warning-story.png" alt="Deprecation Warning Story for Rails Upgrade" />
@@ -62,7 +62,7 @@ That way, you make sure you first work on the ones that fix the largest amount o
 
 At this point you can grab a story from the top of the backlog and work on it. Most of the deprecation warnings are very clear on what needs to be updated. If that's not the case, a quick google search will provide more answers. Usually you will have to apply the same fix across many files, so make sure you search for all occurrences in the project folder.
 
-Once the changes are done, run the appropriate specs or manually test the parts that were modified to make sure that everything works normal.
+Once the changes are done, run the appropriate specs or manually test the parts that were modified to make sure that everything works normally.
 
 After that, you can create a new [pull request](https://www.ombulabs.com/blog/agile/learning/pull-requests/submitting-prs.html) and move on to the next deprecation warning on your backlog.
 
@@ -81,7 +81,7 @@ After you fix a deprecation warning in the project, you want to make sure that n
 
 #### Rubocop
 
-If you are using [Rubocop](https://github.com/rubocop-hq/rubocop), you can write a cop to check for deprecated code. Take a look at [Lint/DeprecatedClassMethods](https://github.com/rubocop-hq/rubocop/blob/master/lib/rubocop/cop/lint/deprecated_class_methods.rb) for some reference on that.
+If you are using [Rubocop](https://github.com/rubocop-hq/rubocop), you can write a cop to check for deprecated code. Take a look at [Lint/DeprecatedClassMethods](https://github.com/rubocop-hq/rubocop/blob/master/lib/rubocop/cop/lint/deprecated_class_methods.rb) for some references on that.
 
 #### Disallowed deprecations in ActiveSupport
 
@@ -98,10 +98,10 @@ ActiveSupport::Deprecation.disallowed_warnings = [
 ]
 ```
 
-Check out at [this PR](https://github.com/rails/rails/pull/37940) for more details about this new feature.
+Check out [this PR](https://github.com/rails/rails/pull/37940) for more details about this new feature.
 
 ## Conclusion
 
-Depending of the size of your application, addressing all deprecation warnings can take quite some time. But hopefully this guide will help you to do it faster.
+Depending on the size of your application, addressing all deprecation warnings can take quite some time. But hopefully this guide will help you to do it faster.
 
 If you need some more guidance on upgrading your Rails application check out our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/)
