@@ -3,8 +3,11 @@ layout: post
 title: "Our Rails Upgrade Process: How to bundle update rails"
 date: 2020-04-08 15:00:00
 reviewed: 2020-04-08 15:00:00
-categories: ["rails", "upgrade"]
+categories: ["rails", "upgrades"]
 author: "cleiviane"
+redirect_from:
+  - /rails/upgrade/our-rails-upgrade-process.html
+  - /rails/upgrades/our-rails-upgrade-process.html
 ---
 
 We know that there are many challenges involved in a Rails upgrade project. Depending on how big your application is, how old your Rails version is and how well structured your code is, it can be difficult to perform that job and keep your sanity. If you don't find a reliable and trustable process to guide you from version X to version Y, you can end-up in a nightmare.

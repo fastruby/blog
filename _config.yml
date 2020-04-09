@@ -24,6 +24,7 @@ exclude: [vendor]
 plugins:
   - jekyll-paginate
   - jekyll-feed
+  - jekyll-redirect-from
 
 sass:
   style: compressed
