@@ -14,7 +14,7 @@
     {%- for category in list -%}
         <h3 class="tag-name">
           <a href="{{ site.baseurl }}/tags/{{ category | downcase | replace: ' ','-' }}"
-             title="Articles about {{ category | titleize | replace: '-',' ' }}">{{ category | titleize  | replace: '-',' ' }}</a>
+             title="Articles on {{ category | titleize | replace: '-',' ' }}">{{ category | titleize  | replace: '-',' ' }}</a>
         </h3>
     {%- endfor -%}
 </div>

@@ -4,7 +4,7 @@ layout: default
 
 <main id="content" class="content category col-xs-12 order-xs-2 col-md-8">
 	<div class="category-tag">
-  	<h2 class="category-name">Articles about <strong>{{ page.category | titleize | replace: '-',' ' }}</strong></h2>
+  	<h2 class="category-name">Articles on  <strong>{{ page.category | titleize | replace: '-',' ' }}</strong></h2>
 	</div>
   {%- for post in site.categories[page.category] -%}
     {%- include post_excerpt.html -%}

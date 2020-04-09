@@ -1,5 +1,5 @@
-name: Fast Ruby Blog
-description: Ruby on Rails Upgrades
+name: "The Rails Tech Debt Blog"
+description: "FastRuby.io | Rails Upgrade Service"
 meta_description: "It's about time you upgrade your Rails version"
 
 markdown: redcarpet
