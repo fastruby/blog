@@ -25,7 +25,7 @@ RSpec.describe 'Fast Ruby Blog' do
       end
       expect(data['twitter:card']).to eq 'summary'
       expect(data['twitter:site']).to eq '@fastrubyio'
-      expect(data['twitter:title']).to eq 'Upgrading a Huge Monolith From Rails 4.0 to Rails 5.1 - Ruby on Rails Upgrades'
+      expect(data['twitter:title']).to eq 'Upgrading a Huge Monolith From Rails 4.0 to Rails 5.1 - FastRuby.io | Rails Upgrade Service'
       expect(data['twitter:description']).to start_with('We recently collaborated with Power Home Remodeling on a Rails upgrade')
       expect(data['twitter:image:src']).to eq 'https://fastruby.io/blog/assets/images/profile.png'
     end
