@@ -24,7 +24,7 @@ You might find these deprecation warnings by searching in the `production.log` o
 
 You can also search for deprecation warnings in the `test.log`, so you can find them in your CI service as well.
 
-For each different deprecation warning that we find, we create one story in our backlog software (at Ombu Labs we use [Pivotal Tracker](pivotaltracker.com) to help us with that). This will make things easier to code review and to test in QA.
+For each different deprecation warning that we find, we create one story in our backlog software (at Ombu Labs we use Pivotal Tracker as we explained [here](https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html) to help us with that). This will make things easier to code review and to test in QA.
 
 ## Step 2: Fixing all deprecation warnings
 
