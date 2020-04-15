@@ -53,7 +53,7 @@ You can also set `config.active_support.deprecation` to `:log` and look at the `
 Once you have all the deprecation warnings (or most of them) from your application, it is a good idea to track them as if they were issues.
 You can use the project management tool of your preference (we use [Pivotal Tracker](https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html)) and create a story in the backlog for each root cause of the deprecation warnings. That way it makes things a lot easier when it comes to code review and organization in general.
 
-<img src="/assets/images/deprecation-warning-story.png" alt="Deprecation Warning Story for Rails Upgrade" />
+<img src="/blog/assets/images/deprecation-warning-story.png" alt="Deprecation Warning Story for Rails Upgrade" />
 
 Also, it is a good idea to prioritize the deprecation warnings based on the frequency that they occur.
 That way, you make sure you first work on the ones that fix the largest amount of errors for the next Rails version. You will clearly see that if you are using [dual booting](https://www.fastruby.io/blog/upgrade-rails/dual-boot/dual-boot-with-rails-6-0-beta.html) in your app.
