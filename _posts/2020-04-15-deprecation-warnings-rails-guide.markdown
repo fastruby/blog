@@ -62,6 +62,8 @@ That way, you make sure you first work on the ones that fix the largest amount o
 
 At this point you can grab a story from the top of the backlog and work on it. Most of the deprecation warnings are very clear on what needs to be updated. If that's not the case, a quick google search will provide more answers. Usually you will have to apply the same fix across many files, so make sure you search for all occurrences in the project folder.
 
+Keep in mind that sometimes deprecation warnings can also happen inside gems. That usually happens when the gem has `rails` as a dependency and uses deprecated code in it. If that's the case you should consider upgrading that gem.
+
 Once the changes are done, run the appropriate specs or manually test the parts that were modified to make sure that everything works normally.
 
 After that, you can create a new [pull request](https://www.ombulabs.com/blog/agile/learning/pull-requests/submitting-prs.html) and move on to the next deprecation warning on your backlog.
