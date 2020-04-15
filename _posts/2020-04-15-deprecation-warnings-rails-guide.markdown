@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Complete Guide for Deprecation Warnings in Rails"
-date: 2020-04-13 12:00:00
+date: 2020-04-15 12:00:00
 categories: ["rails", "upgrades"]
 author: luciano
 ---
