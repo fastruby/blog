@@ -39,41 +39,45 @@ defaults:
 
 authors:
   etagwerker:
-    display_name: Ernesto Tagwerker
+    display_name: "Ernesto Tagwerker"
     gravatar: 9299203e7e9b9ae35e39eb66f3155f15
     email: ernesto@ombulabs.com
     twitter: etagwerker
     github: etagwerker
+    bio: "Software engineer and open source maintainer. He is a lean practitioner and entrepreneur working on software since 2004."
   mauro-oto:
-    display_name: Mauro Otonelli
+    display_name: "Mauro Otonelli"
     gravatar: 350875eb8fce8553e12040c5a1f5d5d0
     email: mauro@ombulabs.com
     twitter: mauro_oto
     github: mauro-oto
   luciano:
-    display_name: Luciano Becerra
+    display_name: "Luciano Becerra"
     gravatar: 9219f1f8634fafcbed16e72a0bb5a414
     email: luciano@ombulabs.com
     twitter: lubc32
     github: lubc
+    bio: "Passionate about programming, entrepreneurship, startups, and all things related to technology."
   emily:
-    display_name: Emily Cohen
+    display_name: "Emily Cohen"
     gravatar: 1abbc4d93954d2df607cc3ec7fa9f418
     email: emily@ombulabs.com
     twitter:
     github: ercohen14
   cleiviane:
-    display_name: Cleiviane Costa
+    display_name: "Cleiviane Costa"
     gravatar: db42db5ca02074d39438c612433f2209
     email: cleiviane@ombulabs.com
     twitter:
     github: cleivianecosta
+    bio: "A Brazilian Software Engineer passionate about code and technology. Rubik's Cube Fan, LoL player and coffee lover."
   bronzdoc:
     display_name: "Luis Sagastume"
     gravatar: a223b4e7d8ec959c9aa6668cddcfa605
     email: luis@ombulabs.com
     twitter: bronzdoc
     github: bronzdoc
+    bio: "Software Engineer based in Guatemala city. Passionate about open source, learning new technologies and building cool stuff. People haved called him 'Doc' since fourth grade."
   abizzinotto:
     display_name: "Amanda Bizzinotto"
     gravatar: 31e0846e316c552502506d6cc998fbd1
