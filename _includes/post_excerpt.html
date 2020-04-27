@@ -3,11 +3,9 @@
       <h1>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h1>
-      <div class="date-info">
-        <time datetime="{{ post.date | date:'%Y-%m-%d' }}">
-          Created at: {{ post.date | date: '%B %-d, %Y' }}
-        </time>
-      </div>
+      {%- assign published_at = post.date -%}
+      {%- assign reviewed_at = post.reviewed -%}
+      {%- include timestamp.html -%}
     </div>
     <div class="post-meta">
       {%- include post_meta.html -%}

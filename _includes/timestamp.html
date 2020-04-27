@@ -1,0 +1,5 @@
+<div class="date-info">
+  <time datetime="{{ published_at | date:'%Y-%m-%d' }}">
+    Published on {{ published_at | date: '%B %-d, %Y' }}{% if reviewed_at > published_at %}. Updated on {{reviewed_at | date: '%B %-d, %Y'}}.{% endif %}
+  </time>
+</div>
