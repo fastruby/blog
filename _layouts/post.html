@@ -32,9 +32,6 @@ post_class: post-template
         </ul>
       </section>
     {%- endif -%}
-    <div>
-      {%- include tag_list.html -%}
-    </div>
     <div class="post-footer">
       {%- if page.author -%}
         {%- assign author = site.authors[page.author] -%}
@@ -61,7 +58,9 @@ post_class: post-template
 
       <!-- Disqus comments -->
       {%- include disqus.html -%}
-
+    </div>
+    <div>
+      {%- include tag_list.html -%}
     </div>
 
   </article>
