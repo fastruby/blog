@@ -2,7 +2,7 @@
 layout: post
 title:  "Ruby & Rails Compatibility Table"
 date: 2019-04-29 13:00:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-04-24 10:00:00
 categories: ["ruby", "rails", "versions"]
 author: "etagwerker"
 ---
@@ -26,25 +26,46 @@ Rails we have ran into a lot of these combinations.
   </thead>
   <tbody>
     <tr>
-      <td>6.0.0</td>
+      <td>6.1.0</td>
       <td>&gt;= 2.5.0</td>
       <td></td>
       <td>&gt;= 1.8.11</td>
-      <td>RC</td>
+      <td>Alpha</td>
     </tr>
     <tr>
-      <td>5.0.0 to 5.2.x</td>
-      <td>&gt;= 2.2.2</td>
+      <td>6.0.x</td>
+      <td>&gt;= 2.5.0</td>
       <td></td>
       <td>&gt;= 1.8.11</td>
       <td>Maintained</td>
     </tr>
     <tr>
+      <td>5.2.x</td>
+      <td>&gt;= 2.2.2</td>
+      <td></td>
+      <td>&gt;= 1.8.11</td>
+      <td>Maintained for Security Issues</td>
+    </tr>
+    <tr class="eol">
+      <td>5.1.x</td>
+      <td>&gt;= 2.2.2</td>
+      <td></td>
+      <td>&gt;= 1.8.11</td>
+      <td><a href="https://weblog.rubyonrails.org/2019/8/15/Rails-6-0-final-release/" style="color:white">EOL</a></td>
+    </tr>
+    <tr class="eol">
+      <td>5.0.x</td>
+      <td>&gt;= 2.2.2</td>
+      <td></td>
+      <td>&gt;= 1.8.11</td>
+      <td><a href="https://weblog.rubyonrails.org/2019/8/15/Rails-6-0-final-release/" style="color:white">EOL</a></td>
+    </tr>
+    <tr class="eol">
       <td>4.2.x</td>
       <td>&gt;= 1.9.3</td>
       <td>2.2</td>
       <td>&gt;= 1.8.11</td>
-      <td>Maintained</td>
+      <td><a href="https://weblog.rubyonrails.org/2019/8/15/Rails-6-0-final-release/" style="color:white">EOL</a></td>
     </tr>
     <tr class="eol">
       <td>4.1.x to 4.2.0</td>
@@ -90,6 +111,12 @@ Rails we have ran into a lot of these combinations.
     </tr>
   </tbody>
 </table>
+
+## Need to Upgrade Rails?
+
+If you want to upgrade Rails, check out our series of articles that cover from Rails 2.3 to Rails 6.0: [Articles by FastRuby.io about Rails upgrades](https://www.fastruby.io/blog/tags/upgrades)
+
+If you don't have the time to do it yourself and you have a budget to hire our team, send us a message over here: [Contact FastRuby.io](https://www.fastruby.io/#contactus)
 
 ## Feedback Wanted: Updates
 
