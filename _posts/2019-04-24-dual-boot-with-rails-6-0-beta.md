@@ -2,47 +2,44 @@
 layout: post
 title:  "Getting Ready for Rails 6.0: How to Dual Boot"
 date: 2019-04-24 10:00:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-05-02 10:00:00
 categories: ["upgrade-rails", "dual-boot"]
 author: "etagwerker"
 ---
 
-[RailsConf 2019](https://railsconf.com) is right around the corner. That means
-[Rails 6.0](https://edgeguides.rubyonrails.org/6_0_release_notes.html) is right
-around the corner! [Rails 6.0's beta](https://weblog.rubyonrails.org/2019/1/22/this-week-in-rails-rails-6-0-0-beta1-and-more/) has been available since January 18, 2019. [Rails 6.0.0.rc1
-was released today](https://weblog.rubyonrails.org/2019/4/24/Rails-6-0-rc1-released/)! 🎉
-
 In this article I will explain how you can _dual boot_ your application in your
-local environment and your CI server. I hope that this will help you get ready
-for the next stable release of Rails.
+local environment and your continuous integration (CI) service. I hope that this 
+will help you get ready for the next stable release of Rails.
 
 <!--more-->
 
-Even though my example assumes you are running [Rails 5.2](https://fastruby.io/blog/rails/upgrades/upgrade-rails-from-5-1-to-5-2.html) and want to migrate to Rails 6.0, these tips
-work for any two versions of Rails.
+Even though my example assumes you are running [Rails 5.2](https://fastruby.io/blog/rails/upgrades/upgrade-rails-from-5-1-to-5-2.html) and want to 
+[migrate to Rails 6.0](https://www.fastruby.io/blog/rails/upgrades/upgrade-rails-from-5-2-to-6-0.html), these tips work for any two versions of Rails.
 
-## Create a Gemfile.next File
+<h2 id="Gemfile.next">Create a Gemfile.next File</h2>
 
 At RailsConf 2018, [Jordan Raine](https://twitter.com/jnraine) talked about
 Clio's process to upgrade Rails over the years. If you missed his talk, you can
 watch it over here: [Ten Years of Rails Upgrades](https://www.youtube.com/watch?v=6aCfc0DkSFo)
 
-In his talk he mentioned quite a handy companion gem: [`ten_years_rails`](https://rubygems.org/gems/ten_years_rails). I'm going to use that gem to get my project ready for dual
-booting. First, I need to install it in my local environment.
+In his talk he mentioned quite a handy companion gem: [`ten_years_rails`](https://rubygems.org/gems/ten_years_rails). At [FastRuby.io](https://www.fastruby.io) we decided to fork 
+it and call it [`next_rails`](https://rubygems.org/gems/next_rails). I'm going 
+to use that gem to get my project ready for dual booting. First, I need to 
+install it in my local environment.
 
 ```
-$ gem install ten_years_rails
-Successfully installed ten_years_rails-0.2.0
-Parsing documentation for ten_years_rails-0.2.0
-Installing ri documentation for ten_years_rails-0.2.0
-Done installing documentation for ten_years_rails after 0 seconds
+$ gem install next_rails
+Successfully installed next_rails-1.0.2
+Parsing documentation for next_rails-1.0.2
+Installing ri documentation for next_rails-1.0.2
+Done installing documentation for next_rails after 0 seconds
 1 gem installed
 ```
 
-**Warning**: `ten_years_rails` requires Ruby 2.3 or higher. You can find a manual
+**Warning**: `next_rails` requires Ruby 2.3 or higher. You can find a manual
 workaround [below](#workaround).
 
-Now that I can use that gem, I will initialize my `Gemfile.next` file like this:
+Assuming I can use that gem, I will initialize my `Gemfile.next` file like this:
 
 ```
 $ next --init
@@ -61,8 +58,8 @@ else
 end
 ```
 
-That command creates a `Gemfile.next` symlink to my `Gemfile` and adds an util
-method to my `Gemfile`:
+That command creates a `Gemfile.next` [symlink](https://wiki.c2.com/?SymbolicLink) 
+to my `Gemfile` and adds a handy method called `next?` to my `Gemfile`:
 
 <div id="workaround" />
 
@@ -76,7 +73,7 @@ source 'https://rubygems.org'
 # ...
 ```
 
-If you have any problems installing `ten_years_rails`, you can manually add the
+If you have any problems installing `next_rails`, you can manually add the
 `next?` method to your `Gemfile` and create a symlink like this:
 
 ```
@@ -84,11 +81,11 @@ $ cd path/to/project
 $ ln -s Gemfile Gemfile.next
 ```
 
-## Bump Rails (Gemfile.next)
+<h2 id="bump-rails-version">Bump Rails (Gemfile.next)</h2>
 
 In this simple example, I only need to upgrade `rails` (from Rails 5.2 to Rails
-6.0). It's _very likely_ that you will have to upgrade more dependencies. My
-`Gemfile` now looks like this:
+6.0). It's _very likely_ that you will have to upgrade more dependencies. The
+first step is to get my `Gemfile` to look like this:
 
 ```ruby
 def next?
@@ -107,35 +104,47 @@ end
 ```
 
 Now I can install my current dependencies with `bundle install` and my _future_
-dependencies with `next bundle install`. If `next bundle install` doesn't work
+dependencies with `next bundle update`. If `next bundle update` doesn't work
 for you, you can just run `BUNDLE_GEMFILE=Gemfile.next bundle install`. As a
 general rule, if `next <command>` doesn't work in your environment you can
 replace it with `BUNDLE_GEMFILE=Gemfile.next <command>`.
 
-## Run Tests
+`next bundle <command>` might not work because you are using an old version of 
+[Bundler](https://bundler.io). So, you should try using Bundler 2.0 or higher.
 
-After running `next bundle install`, I have a brand new `Gemfile.next.lock` file.
-That means that my dependencies are ready to run my test. So I can run them like
-this:
+<h2 id="run-test-suite">Run Tests</h2>
+
+After running `next bundle update`, I have a brand new `Gemfile.next.lock` file.
+That means that my dependencies are ready to run my test suite. So I can run 
+them like this:
 
 ```
 $ next bundle exec rake
 ```
 
-The main advantage of using _dual booting_ your Rails application is that you
-can run your tests with two different versions of Rails. Running `bundle exec rake`
-still works thanks to the conditionals in your `Gemfile`.
+There are many advantages to using _dual booting_ in your Rails application. In
+no particular order: 
 
-## Setup Continuous Integration
+- You can run your test suite with two different versions of Rails. Running `bundle exec rake`
+still works thanks to the conditionals in your `Gemfile`.
+- You can run your application in development with two different versions of 
+Rails. Simply prepend `next` to `bundle exec rails server`.
+- You can even run your application in staging using the next version of Rails.
+Simply make sure that you set this environment variable: `BUNDLE_GEMFILE`
+- You can quickly debug issues between your current version of Rails and the 
+next one. Dual booting plus `debugger` is a powerful combo for finding bugs
+between versions.
+
+<h2 id="continuous-integration">Setup Continuous Integration</h2>
 
 Depending on the type of project, we like to use [Travis CI](https://travis-ci.com)
-or [Circle CI](https://circleci.com). So below you will find a couple of sample
-configuration files that you could use.
+for open source projects and [Circle CI](https://circleci.com) for client projects. 
+Below you will find a couple of sample configuration files that you could use.
 
 Both samples will require you to commit and push `Gemfile.next` to your repository;
 will run a build matrix; and might need some tweaking.
 
-## Circle CI
+<h2 id="circle-ci">Circle CI</h2>
 
 For all of our client projects we prefer this continuous integration service.
 Here is the configuration that you could use for dual booting in Circle CI:
@@ -159,7 +168,7 @@ workflows:
       - "build-rails-6-0"
 ```
 
-## Travis CI
+<h2 id="travis-ci">Travis CI</h2>
 
 For all of our open source projects we prefer this continuous integration service.
 Here is the configuration that you could use for dual booting in Travis CI:
@@ -181,7 +190,7 @@ gemfile:
 - Gemfile.next
 ```
 
-## Start Fixing The Rails 6.0 Test Suite
+<h2 id="fix-tests">Start Fixing The Rails 6.0 Test Suite</h2>
 
 Now that you have your test suite running in both Rails 5.2 and Rails 6.0, you
 can start tweaking your code and dependencies to work with both gemfiles. There
@@ -190,11 +199,10 @@ will be two big hurdles:
 1. Getting Bundler to bundle your dependencies
 2. Getting your test suite to pass
 
-## Final Remarks
+<h2 id="summary">Summary</h2>
 
-This has been quite a useful technique for us at [fastruby.io](https://fastruby.io).
+This has been quite a useful technique for us at [FastRuby.io](https://fastruby.io).
 We have used it with client projects, internal projects, and open source
 applications.
 
-I hope that you will find it useful in getting ready for the upcoming Rails 6.0
-stable release.
+I hope that you will find it useful in getting ready for the next version of Rails!
