@@ -61,6 +61,26 @@ end
 That command creates a `Gemfile.next` [symlink](https://wiki.c2.com/?SymbolicLink) 
 to my `Gemfile` and adds a handy method called `next?` to my `Gemfile`:
 
+<h3 id="why-gemfile-next">Why to use a symlink</h3>
+
+I see three main benefits to using a symlink: 
+
+1. The way Bundler works it will generate one `.lock` file per Gemfile. If you 
+manage all your dependencies logic in your Gemfile (without `Gemfile.next`) and
+your `Gemfile.lock` is checked in to your Git repository, then you will have to
+constantly resolve conflicts between your long running upgrade branch and 
+`master`. This will become tedious if you have a really active `master` branch
+and your upgrade project lasts months (not weeks)
+
+1. By making it a symlink to `Gemfile`, you can keep all your logic inside one
+file. That means that you can quickly see what are the main difference between
+your current version of Rails and the next version.
+
+1. You can use Bundler's `BUNDLE_GEMFILE` environment variable. Because a
+symlink is transparent to Bundler, it assumes that you have two physical files.
+You can later switch between one version of Rails or the other by just adding
+one environment variable to your command line.
+
 <div id="workaround" />
 
 ```ruby
@@ -93,7 +113,6 @@ def next?
 end
 
 source 'https://rubygems.org'
-
 if next?
   gem 'rails', '~> 6.0.0'
 else
