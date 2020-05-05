@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Churn vs. Complexity vs. Code Coverage"
-date: 2020-04-30 2:25:00
+date: 2020-05-05 2:25:00
 categories: ["code-quality"]
 author: etagwerker
 ---
