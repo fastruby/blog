@@ -6,25 +6,25 @@ categories: ["code-quality"]
 author: etagwerker
 ---
 
-Churn vs. Complexity analysis is a great way to find insights about the maintainability 
-of a project. Two of my favorite authors have written great articles written about 
+Churn vs. Complexity analysis is a great way to find insights about the maintainability
+of a project. Two of my favorite authors have written great articles about
 the Churn vs. Complexity graph:
 
 - [Getting Empirical about Refactoring](https://www.agileconnection.com/article/getting-empirical-about-refactoring) by Michael Feathers
 - [Breaking up the Beheamoth](https://www.sandimetz.com/blog/2017/9/13/breaking-up-the-behemoth) by Sandi Metz
 
-This two-dimensional graph can be very useful in finding the files that are the 
+This two-dimensional graph can be very useful in finding the files that are the
 hardest to maintain in your application. In this article I will explain:
 
 1. How you can calculate these metrics and use them in your legacy project
-1. How code coverage metrics can guide your technical debt's collection efforts 
+1. How code coverage metrics can guide your technical debt's collection efforts
 
 <!--more-->
 
 <h2 id="churn">Churn</h2>
 
-Churn by itself is a useful metric. It will tell you which files are the ones 
-that are constantly changing. Change takes time, so they are costing you and 
+Churn by itself is a useful metric. It will tell you which files are the ones
+that are constantly changing. Change takes time, so they are costing you and
 your team money.
 
 It will make you wonder:
@@ -34,7 +34,7 @@ It will make you wonder:
 - Are we truly understanding business rules correctly?
 - Is our application poorly designed?
 
-If your legacy application is written in Ruby, you can use a gem called `churn`
+If your legacy application is written in Ruby, you can use a gem called [`churn`](https://github.com/danmayer/churn)
 to find the files that are constantly changing.
 
 <h3 id="calculating-churn">Calculating Churn in Ruby</h3>
@@ -47,7 +47,7 @@ Then call it like this:
 
     churn -e rb --start_date "10 years ago" lib -i spec
 
-This will show you a list of files sorted by their churn count (number of times 
+This will show you a list of files sorted by their churn count (number of times
 that the file has changed in the SCM that you are using)
 
 ```
@@ -83,39 +83,39 @@ churn are super complex or super simple.
 
 <h2 id="complexity">Complexity</h2>
 
-As you go about making your changes, you will introduce complexity. There is no 
-way around it. The best way to have no complexity is to have no code. 
+As you go about making your changes, you will introduce complexity. There is no
+way around it. The best way to have no complexity is to have no code.
 
-It doesn't matter whether you are a rockstar object-oriented architect or a 
+It doesn't matter whether you are a rockstar object-oriented architect or a
 novice programmer. You will introduce complexity into a project.
 
-"Complexity" should not be considered a negative term. "Extreme complexity" 
-might be considered an anti-pattern. Good object-oriented programming calls 
+"Complexity" should not be considered a negative term. "Extreme complexity"
+might be considered an anti-pattern. Good object-oriented programming calls
 for [loose coupling and high cohesion](https://wiki.c2.com/?CouplingAndCohesion).
 
 You want modules that follow [SOLID](http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) 
-principles. When you notice your module is becoming extremely complex, you will 
-want to refactor it into two or more modules. These modules will send and receive 
+principles. When you notice your module is becoming extremely complex, you will
+want to refactor it into two or more modules. These modules will send and receive
 messages between each other, which will increase coupling and improve cohesion
 per module.
 
-As you go about submitting pull request to ship new features, change existing 
+As you go about submitting pull request to ship new features, change existing
 ones, or patch bugs, the maintainability of your project will vary according
 to the modules you introduce or change.
 
-The bigger the project, the more complexity, the harder it will be to maintain it, 
+The bigger the project, the more complexity, the harder it will be to maintain it,
 because there will be more moving pieces and loosely coupled modules.
 
 If you refactor a huge module, into two smaller modules, you will notice that
 [cognitive complexity](https://docs.codeclimate.com/docs/cognitive-complexity)
-per module will (hopefully) get better. You won't have one huge, complex module 
+per module will (hopefully) get better. You won't have one huge, complex module
 anymore, you will have two or more modules that are easier to understand.
 
-Modules that have one and only one responsibility will be easier to maintain 
-and test. Future changes will be easier because you will be able to quickly 
+Modules that have one and only one responsibility will be easier to maintain
+and test. Future changes will be easier because you will be able to quickly
 understand what the module is doing.
 
-In the next section I will explain how you can calculate complexity for all 
+In the next section I will explain how you can calculate complexity for all
 your Ruby modules.
 
 <h3 id="calculating-complexity">Calculating Complexity in Ruby</h3>
@@ -136,16 +136,16 @@ priority when it's time to refactor code.
 
 <h2 id="churn-vs-complexity">Churn vs. Complexity</h2>
 
-In his article, Michael Feathers, states the following: 
+In his article, Michael Feathers, states the following:
 
 <img src="/blog/assets/images/churn-vs-complexity-graph-by-michael-feathers.jpg" alt="Churn vs Complexity by Michael Feathers">
 
-> These diagrams give us quite a bit of information. The upper right quadrant is 
-particularly important. These files have a high degree of complexity, and they 
-change quite frequently. [...] These classes are particularly ripe for a 
+> These diagrams give us quite a bit of information. The upper right quadrant is
+particularly important. These files have a high degree of complexity, and they
+change quite frequently. [...] These classes are particularly ripe for a
 refactoring investment
 
-I agree that this graph is great for finding _refactoring candidates_. The 
+I agree that this graph is great for finding _refactoring candidates_. The
 problem is that sometimes these candidates have no tests to verify their behavior.
 So sometimes we don't have time to:
 
@@ -157,15 +157,12 @@ to include another metric into our analysis: Code Coverage.
 
 <h2 id="code-coverage">Code Coverage</h2>
 
-I believe the churn vs. complexity graph could be enhanced by adding a new 
-dimension: Code Coverage.
-
 When we start maintaining a module, we don't usually just look at its churn and
 complexity. We also look at the tests that describe its expected behavior.
 
 Usually a module that has a decent test suite (basic code coverage) will be
 easier to understand than one without tests. We will have one more resource to
-learn about a module's behavior. 
+learn about a module's behavior.
 
 > Code coverage metrics don't tell whether the test suite is good or bad. It 
 tells you how many statements of your application are exercised by your test
@@ -195,7 +192,7 @@ to gather new insights about your modules:
 
 - Should I refactor this module? 
 - Should I increase test coverage before I refactor this module?
-- Do I have time to do both this week? 
+- Do I have time to do both this week?
 
 <h3 id="calculating-complexity">Calculating a Churn vs. Complexity vs. Code Coverage Graph in Ruby</h3>
 
@@ -229,13 +226,19 @@ debt):
 | lib/skunk/cli/commands/base.rb                      | 29.52                      | 0.2952                     | 3                          | 0.0984                     | 0                          |
 | lib/skunk/cli/commands/status_reporter.rb           | 8.0                        | 7.9956                     | 3                          | 2.6652                     | 100.0                      |
 | test/lib/skunk/rubycritic/analysed_module_test.rb   | 2.63                       | 2.6312                     | 2                          | 1.3156                     | 100.0                      |
-| lib/skunk.rb                                        | 0.0                        | 0.0                        | 2                          | 0.0                        | 0                          |
-| lib/skunk/cli/options.rb                            | 0.0                        | 0.0                        | 2                          | 0.0                        | 0                          |
-| lib/skunk/version.rb                                | 0.0                        | 0.0                        | 2                          | 0.0                        | 0                          |
-| lib/skunk/cli/commands/help.rb                      | 0.0                        | 0.0                        | 2                          | 0.0                        | 0                          |
 +-----------------------------------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+
-
 ```
+
+The [SkunkScore](https://github.com/fastruby/skunk#what-is-the-skunkscore) is a function
+of complexity and code coverage.
+
+Let's say that your application has two extremely complex modules: `user` and `product`.
+Let's assume that both of them have changed a lot (churn count at 100) and are extremely
+complex (1,000 flog points).
+
+In this example, if `user` has more tests than `product`, `user`'s SkunkScore will be
+lower than `product`'s. Next week you could start refactoring `user` or increasing
+code coverage for `product`
 
 By looking at this chart you will be able to quickly decide about what to do:
 You might want to write tests for a complex module, refactor a complex module
@@ -248,5 +251,5 @@ of the Churn vs. Complexity graph. You might ask yourself: What do I do first?
 Do I write a test for module User? Do I refactor module Product?
 
 I strongly believe that Code Coverage is a great signal for complementing churn
-and complexity metrics. I hope you can use it in your next legacy project to 
+and complexity metrics. I hope you can use it in your next legacy project to
 gradually pay off technical debt!
