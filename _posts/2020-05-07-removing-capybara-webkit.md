@@ -8,7 +8,7 @@ author: arielj
 
 We all know testing is important. We have our unit tests and integration tests to make sure everything is working.
 
-In Ombulabs, we use [capybara](https://github.com/teamcapybara/capybara) for our integration tests so we can interact with the app as a real user would.
+In OmbuLabs, we use [capybara](https://github.com/teamcapybara/capybara) for our integration tests so we can interact with the app as a real user would.
 
 Capybara by default uses `rack-test` as the driver, but `rack-test` does not support Javascript so to test some things we need a web browser with Javascript capabilities. Having the browser show up while the tests are running is not that practical, now we can use the headless feature on browsers like Chrome or Firefox (even Edge), but a few years ago the available options were mainly PhantomJS or capybara-webkit (through QtWebKit). Those options were deprecated in favor of the major browsers' headless mode.
 
@@ -24,7 +24,7 @@ This is the process we used to replaced `capybara-webit` gem in a legacy project
 
 ## Process
 
-We will devide this change into 4 different steps:
+We will divide this change into 4 different steps:
 1. Replace `capybara-webkit`
 1. Make sure specs passes locally
 2. Make sure specs passes inside the Docker container
@@ -80,7 +80,7 @@ We first make sure tests are working locally so we are sure we don't have errors
 
 This application uses an old version of [Chosen](https://harvesthq.github.io/chosen/) to customize the `select` tags. The test suite includes a helper method so the driver can select options from that custom select and that helper method started failing.
 
-We were using a helper method from this [gist](https://gist.github.com/thijsc/1391107/699d65defed793eed0f04ead33c35737c641be53) that relied too much on `page.execute_script` and `page.evaluate_script`. The solution for this was to use a different method calling anly capybara methods to actually mimic the user interactions.
+We were using a helper method from this [gist](https://gist.github.com/thijsc/1391107/699d65defed793eed0f04ead33c35737c641be53) that relied too much on `page.execute_script` and `page.evaluate_script`. The solution for this was to use a different method calling only capybara methods to actually mimic the user interactions.
 
 ```diff
   def select_from_chosen(item_text, options)
@@ -97,7 +97,7 @@ We were using a helper method from this [gist](https://gist.github.com/thijsc/13
   end
 ```
 
-So we not only updated the gem, we also improved the test suit by not doing obscure Javascript calls.
+So we not only updated the gem, we also improved the test suite by not doing obscure Javascript calls.
 
 # Updating Docker Container
 
