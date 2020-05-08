@@ -8,17 +8,17 @@ author: arielj
 
 We all know testing is important. We have our unit tests and integration tests to make sure everything is working.
 
-In OmbuLabs, we use [capybara](https://github.com/teamcapybara/capybara) for our integration tests so we can interact with the app as a real user would.
+At OmbuLabs, we use [capybara](https://github.com/teamcapybara/capybara) for our integration tests so that we can interact with the app as a real user would.
 
 Capybara by default uses `rack-test` as the driver, but `rack-test` does not support Javascript so to test some things we need a web browser with Javascript capabilities. Having the browser show up while the tests are running is not that practical, now we can use the headless feature on browsers like Chrome or Firefox (even Edge), but a few years ago the available options were mainly PhantomJS or capybara-webkit (through QtWebKit). Those options were deprecated in favor of the major browsers' headless mode.
 
-This is the process we used to replaced `capybara-webit` gem in a legacy project with a more modern approach using the `webdrivers` gem and headless browser.
+This is the process we used to replace the `capybara-webkit` gem in a legacy project with the more modern approach of the `webdrivers` gem and headless browser.
 
 <!--more-->
 
 ## Issues With Capybara-webkit
 
-- Development was officially suspended on March. [commit](https://github.com/thoughtbot/capybara-webkit/commit/f429d668568ff7349f5e23a085df7fcf1c431fa7#diff-04c6e90faac2675aa89e2176d2eec7d8)
+- Development was officially suspended in March. [commit](https://github.com/thoughtbot/capybara-webkit/commit/f429d668568ff7349f5e23a085df7fcf1c431fa7#diff-04c6e90faac2675aa89e2176d2eec7d8)
 - Depends on QT so it requires the developer to install extra libraries on the system adding an extra step to make a project run locally, inside docker, or in our CI system.
 - It's difficult to update the webkit engine that's run in the background so you can't have all the new features you would have on the actual browsers
 
@@ -32,7 +32,7 @@ We will divide this change into 4 different steps:
 
 ## Replacing
 
-The first thing we did was to remove the gem from the Gemfile and then added the `webdrivers` gem (which is already included in any new Rails project).
+The first thing we did was to remove the gem from the Gemfile and then add the `webdrivers` gem (which is already included in any new Rails project).
 
 ```diff
 - gem "capybara-webkit"
@@ -70,7 +70,7 @@ And now we tell capybara to use one of those drivers for all the tests that requ
 Capybara.javascript_driver = :headless_chrome # or :headless_firefox
 ```
 
-> We had an extra step here because a lot of specs had the drivers specified on the actual test `describe` block like this: `describe "Do something", js: true, driver: :webkit do`. Instead of replacing the driver there, we just removed that option on all the tests so it uses the base config we set above.
+We had an extra step here because a lot of specs had the drivers specified on the actual test `describe` block like this: `describe "Do something", js: true, driver: :webkit do`. Instead of replacing the driver there, we just removed that option on all the tests so it uses the base config we set above.
 
 And lastly, before you run your test, make you you have no references to capybara-webkit in your code (search for `capybara-webkit`, `Capybara::Webkit` and `:webkit` strings).
 
@@ -115,7 +115,7 @@ Now our tests can be run inside Docker and we are all green.
 
 # Updating CircleCI Config
 
-The last part of the process was to make sure the test passes on the CI system. We only needed to make sure Firefox was available when running the test, so the easiest solution for this was to use a CircleCI Ruby image and use the correct [variant](https://circleci.com/docs/2.0/circleci-images/#language-image-variants) so it also includes most used browsers:
+The last part of the process was to make sure the tests pass on the CI system. We only needed to make sure Firefox was available when running the test, so the easiest solution for this was to use a CircleCI Ruby image and use the correct [variant](https://circleci.com/docs/2.0/circleci-images/#language-image-variants) so it also includes most used browsers:
 
 ```diff
 - - image: circleci/ruby:2.4.10-buster-node
