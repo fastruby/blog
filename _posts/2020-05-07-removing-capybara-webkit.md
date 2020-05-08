@@ -130,4 +130,6 @@ We finally got an old dependency removed (QT) replacing `capybara-webkit` with a
 
 It makes it easier for new developers to join the project now that it has less extra requirements. It will also help when updating the Rails version, since newer Rails versions adds `webdrivers` gem when creating new apps by default.
 
-We also improved the test suite. When writing a feature spec (or system spec as introduced in Rails 5.2) you want to mimic the user interactions. If we don't test that the user can actually click an element and we trigger the `click` event using plain javascript, we may break something for the end user without noticing on the tests.
+Another advantage of replacing QtWebKit with a major browser like Chrome and Firefox is that it helped us to find a bug in our current test suite. We had not been properly testing the interactions of the user in those tests related to Chose, but now we fixed that.
+
+And finally, we can run the complete test suite using different browsers (`webdrivers` support Firefox, Chrome, IE and Edge) just changing one configuration if we need to.
