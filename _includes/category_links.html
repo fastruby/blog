@@ -1,0 +1,7 @@
+{%- if categories.size > 0 -%}
+  <span> on</span> 
+  {% for category in categories %}
+    <a class="btn-link" href="{{ site.baseurl }}/tags/{{ category | downcase | replace: ' ','-' }}" title="Articles on {{ category | titleize | replace: '-',' ' }}">{{ category | titleize | replace: '-',' ' }}</a>
+    {%- unless forloop.last -%},{%- endunless -%}
+  {% endfor %}
+{%- endif -%}
