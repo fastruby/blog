@@ -1,20 +1,24 @@
 ---
 layout: post
-title: "Removing capybara-webkit"
+title: "How to Migrate from Capybara Webkit to Webdrivers"
 date: 2020-04-15 12:00:00
 categories: ["rails", "upgrades"]
 author: arielj
 ---
 
-We all know testing is important. We have our unit tests and integration tests to make sure everything is working as expected. At OmbuLabs, we use [capybara](https://github.com/teamcapybara/capybara) for our integration tests so that we can interact with the app as a real user would.
+We all know testing is important. We have our unit tests and integration tests to make sure everything is working as expected. At [OmbuLabs](https://www.ombulabs.com), we use [Capybara](https://github.com/teamcapybara/capybara) for our integration tests so that we can interact with the app as a real user would.
 
-Capybara by default uses `rack-test` as the driver, but this driver does not support JavaScript. So, in order to test some features we need a web browser with JavaScript capabilities. A few years ago we had two options: use a browser like Firefox that showed up while tests were running, or use an alternative headless browser like PhantomJS or QtWebKit (through capybara-webkit). Now, some major browsers provide a headless feature (Chrome, Firefox and even Edge), PhantomJS was deprecated and capybara-webkit development was suspended.
-
-This is the process we used to replace the `capybara-webkit` gem in a legacy project with the more modern approach of the `webdrivers` gem and headless browser.
+This is the process we used to replace the `capybara-webkit` gem in a legacy project with a more modern approach that uses the [`webdrivers`](https://github.com/titusfortner/webdrivers) gem and a headless browser.
 
 <!--more-->
 
-## Issues With Capybara-webkit
+## Why Capybara-webkit
+
+By default, Capybara uses [`rack-test`](https://github.com/rack/rack-test) as the driver. Unfortunately `rack-test` does not support JavaScript. If we want to test things that rely on JavaScript, we need a driver with JS capabilities. Some of these drivers open up a web browser and show us all the activity.
+
+Having the browser show up while the tests are running is not that practical and usually quite slow. The good news is that we can use headless features on browsers like Chrome or Firefox (even Edge). A few years ago the available options were mainly [PhantomJS](https://phantomjs.org) or `capybara-webkit` (which uses [QtWebKit](https://wiki.qt.io/Qt_WebKit)), but these options had its development suspended.
+
+## Issues with Capybara Webkit
 
 - Development was officially suspended in March. [commit](https://github.com/thoughtbot/capybara-webkit/commit/f429d668568ff7349f5e23a085df7fcf1c431fa7#diff-04c6e90faac2675aa89e2176d2eec7d8)
 - Depends on QT so it requires the developer to install extra libraries on the system adding an extra step to make a project run locally, inside docker, or in our CI system.
@@ -30,14 +34,14 @@ We will divide this change into 4 different steps:
 
 ## Replacing
 
-The first thing we did was to remove the gem from the Gemfile and then add the `webdrivers` gem (which is already included in any new Rails project).
+First of all we remove `capybara-webkit` from the Gemfile and then replace it with the `webdrivers` gem (which is already included in any new Rails project).
 
 ```diff
 - gem "capybara-webkit"
 + gem 'webdrivers'
 ```
 
-This project was old so it also had an old capybara version that won't automatically register the browser drivers that we want so we had to register the headless browsers' drivers on our capybara config:
+This project was old so it also had an old capybara version that won't automatically register the browser drivers that we want so we had to register the headless browsers' drivers in our capybara config:
 
 ```ruby
 # from https://github.com/teamcapybara/capybara/blob/c7c22789b7aaf6c1515bf6e68f00bfe074cf8fc1/lib/capybara/registrations/drivers.rb
@@ -62,15 +66,21 @@ end
 ```
 > You'll need Chrome or Firefox versions that supports headless mode
 
-And now we tell capybara to use one of those drivers for all the tests that require javascript:
+Then we can tell Capybara to use one of those drivers for all the tests that require JavaScript:
 
 ```ruby
 Capybara.javascript_driver = :headless_chrome # or :headless_firefox
 ```
 
-We had an extra step here because a lot of specs had the drivers specified on the actual test `describe` block like this: `describe "Do something", js: true, driver: :webkit do`. Instead of replacing the driver there, we just removed that option on all the tests so it uses the base config we set above.
+We had an extra step here because a lot of specs had the drivers specified on the actual test `describe` block like this:
 
-And lastly, before you run your test, make sure you have no references to capybara-webkit in your code (search for `capybara-webkit`, `Capybara::Webkit` and `:webkit` strings).
+```ruby
+describe "Do something", js: true, driver: :webkit do
+```
+
+Instead of replacing the driver there, we just removed that option on all the tests so it uses the base config we set above.
+
+Finally, before you run your test suite, make sure you have no references to capybara-webkit in your code (search for `capybara-webkit`, `Capybara::Webkit` and `:webkit` strings).
 
 # Fixing Specs
 
@@ -124,7 +134,7 @@ The last part of the process was to make sure the tests pass on the CI system. W
 
 ## Conclusion
 
-We finally got an old dependency removed (QT) replacing `capybara-webkit` with a more modern solution.
+To sum up we got rid of an outdated dependency (`capybara-webkit`) which depended on QT and replaced it with `webdrivers` which depends on modern web browsers (e.g. Firefox). And we highly recommend you do it in your legacy Rails applications!
 
 It makes it easier for new developers to join the project now that it has less extra requirements. It will also help when updating the Rails version, since newer Rails versions adds `webdrivers` gem when creating new apps by default.
 
