@@ -6,11 +6,9 @@ categories: ["rails", "upgrades"]
 author: arielj
 ---
 
-We all know testing is important. We have our unit tests and integration tests to make sure everything is working.
+We all know testing is important. We have our unit tests and integration tests to make sure everything is working as expected. At OmbuLabs, we use [capybara](https://github.com/teamcapybara/capybara) for our integration tests so that we can interact with the app as a real user would.
 
-At OmbuLabs, we use [capybara](https://github.com/teamcapybara/capybara) for our integration tests so that we can interact with the app as a real user would.
-
-Capybara by default uses `rack-test` as the driver, but `rack-test` does not support Javascript so to test some things we need a web browser with Javascript capabilities. Having the browser show up while the tests are running is not that practical, now we can use the headless feature on browsers like Chrome or Firefox (even Edge), but a few years ago the available options were mainly PhantomJS or capybara-webkit (through QtWebKit). Those options were deprecated in favor of the major browsers' headless mode.
+Capybara by default uses `rack-test` as the driver, but this driver does not support JavaScript. So, in order to test some features we need a web browser with JavaScript capabilities. A few years ago we had two options: use a browser like Firefox that showed up while tests were running, or use an alternative headless browser like PhantomJS or QtWebKit (through capybara-webkit). Now, some major browsers provide a headless feature (Chrome, Firefox and even Edge), PhantomJS was deprecated and capybara-webkit development was suspended.
 
 This is the process we used to replace the `capybara-webkit` gem in a legacy project with the more modern approach of the `webdrivers` gem and headless browser.
 
@@ -20,15 +18,15 @@ This is the process we used to replace the `capybara-webkit` gem in a legacy pro
 
 - Development was officially suspended in March. [commit](https://github.com/thoughtbot/capybara-webkit/commit/f429d668568ff7349f5e23a085df7fcf1c431fa7#diff-04c6e90faac2675aa89e2176d2eec7d8)
 - Depends on QT so it requires the developer to install extra libraries on the system adding an extra step to make a project run locally, inside docker, or in our CI system.
-- It's difficult to update the webkit engine that's run in the background so you can't have all the new features you would have on the actual browsers
+- It's difficult to update the webkit engine that runs in the background so you can't have all the new features you would have on the actual browsers
 
 ## Process
 
 We will divide this change into 4 different steps:
 1. Replace `capybara-webkit`
-1. Make sure specs passes locally
-2. Make sure specs passes inside the Docker container
-3. Make sure specs passes in CircleCI
+1. Make sure specs pass locally
+1. Make sure specs pass inside the Docker container
+1. Make sure specs pass in CircleCI
 
 ## Replacing
 
@@ -72,13 +70,13 @@ Capybara.javascript_driver = :headless_chrome # or :headless_firefox
 
 We had an extra step here because a lot of specs had the drivers specified on the actual test `describe` block like this: `describe "Do something", js: true, driver: :webkit do`. Instead of replacing the driver there, we just removed that option on all the tests so it uses the base config we set above.
 
-And lastly, before you run your test, make you you have no references to capybara-webkit in your code (search for `capybara-webkit`, `Capybara::Webkit` and `:webkit` strings).
+And lastly, before you run your test, make sure you have no references to capybara-webkit in your code (search for `capybara-webkit`, `Capybara::Webkit` and `:webkit` strings).
 
 # Fixing Specs
 
-We first make sure tests are working locally so we are sure we don't have errors due to a misconfigured container.
+We first make sure tests are working locally so we don't have errors due to a misconfigured container.
 
-This application uses an old version of [Chosen](https://harvesthq.github.io/chosen/) to customize the `select` tags. The test suite includes a helper method so the driver can select options from that custom select and that helper method started failing.
+This application uses an old version of [Chosen](https://harvesthq.github.io/chosen/) to customize the `select` tags. The test suite includes a helper method so the driver can select options from that custom `select` and that helper method started failing.
 
 We were using a helper method from this [gist](https://gist.github.com/thijsc/1391107/699d65defed793eed0f04ead33c35737c641be53) that relied too much on `page.execute_script` and `page.evaluate_script`. The solution for this was to use a different method calling only capybara methods to actually mimic the user interactions.
 
@@ -97,7 +95,7 @@ We were using a helper method from this [gist](https://gist.github.com/thijsc/13
   end
 ```
 
-So we not only updated the gem, we also improved the test suite by not doing obscure Javascript calls.
+On top of updating the gem, we improved the test suite by avoiding obscure JavaScript calls.
 
 # Updating Docker Container
 
@@ -115,7 +113,7 @@ Now our tests can be run inside Docker and we are all green.
 
 # Updating CircleCI Config
 
-The last part of the process was to make sure the tests pass on the CI system. We only needed to make sure Firefox was available when running the test, so the easiest solution for this was to use a CircleCI Ruby image and use the correct [variant](https://circleci.com/docs/2.0/circleci-images/#language-image-variants) so it also includes most used browsers:
+The last part of the process was to make sure the tests pass on the CI system. We only needed to make sure Firefox was available when running the test, so the easiest solution for this was to use a CircleCI's Ruby image and use the correct [variant](https://circleci.com/docs/2.0/circleci-images/#language-image-variants) so it also includes the most used browsers:
 
 ```diff
 - - image: circleci/ruby:2.4.10-buster-node
@@ -130,6 +128,6 @@ We finally got an old dependency removed (QT) replacing `capybara-webkit` with a
 
 It makes it easier for new developers to join the project now that it has less extra requirements. It will also help when updating the Rails version, since newer Rails versions adds `webdrivers` gem when creating new apps by default.
 
-Another advantage of replacing QtWebKit with a major browser like Chrome and Firefox is that it helped us to find a bug in our current test suite. We had not been properly testing the interactions of the user in those tests related to Chose, but now we fixed that.
+Another advantage of replacing QtWebKit with a major browser like Chrome and Firefox is that it helped us to find a bug in our current test suite. We had not been properly testing the interactions of the user in those tests related to Chosen, but now we fixed that.
 
-And finally, we can run the complete test suite using different browsers (`webdrivers` support Firefox, Chrome, IE and Edge) just changing one configuration if we need to.
+And finally, we can run the complete test suite using different browsers (`webdrivers` support Firefox, Chrome, IE and Edge) just by changing one configuration if we need to.
