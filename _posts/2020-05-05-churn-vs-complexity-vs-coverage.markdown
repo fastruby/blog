@@ -6,9 +6,9 @@ categories: ["code-quality"]
 author: etagwerker
 ---
 
-Churn vs. Complexity analysis is a great way to find insights about the maintainability
-of a project. Two of my favorite authors have written great articles about
-the Churn vs. Complexity graph:
+Churn vs. Complexity analysis is a great way to find insights about the 
+maintainability of a project. Two of my favorite authors have written great 
+articles about the Churn vs. Complexity graph:
 
 - [Getting Empirical about Refactoring](https://www.agileconnection.com/article/getting-empirical-about-refactoring) by Michael Feathers
 - [Breaking up the Beheamoth](https://www.sandimetz.com/blog/2017/9/13/breaking-up-the-behemoth) by Sandi Metz
@@ -24,8 +24,8 @@ hardest to maintain in your application. In this article I will explain:
 <h2 id="churn">Churn</h2>
 
 Churn by itself is a useful metric. It will tell you which files are the ones
-that are constantly changing. Change takes time, so they are costing you and
-your team money.
+that are constantly changing. Change takes time, so files that are constantly
+changing are costing you time and money.
 
 It will make you wonder:
 
@@ -89,15 +89,15 @@ way around it. The best way to have no complexity is to have no code.
 It doesn't matter whether you are a rockstar object-oriented architect or a
 novice programmer. You will introduce complexity into a project.
 
-"Complexity" should not be considered a negative term. "Extreme complexity"
+"Complexity" should not be considered a negative term. "Unnecessary complexity"
 might be considered an anti-pattern. Good object-oriented programming calls
 for [loose coupling and high cohesion](https://wiki.c2.com/?CouplingAndCohesion).
 
 You want modules that follow [SOLID](http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) 
 principles. When you notice your module is becoming extremely complex, you will
 want to refactor it into two or more modules. These modules will send and receive
-messages between each other, which will increase coupling and improve cohesion
-per module.
+messages between each other, which will increase coupling (as loosely as possible)
+and hopefully improve cohesion per module.
 
 As you go about submitting pull request to ship new features, change existing
 ones, or patch bugs, the maintainability of your project will vary according
