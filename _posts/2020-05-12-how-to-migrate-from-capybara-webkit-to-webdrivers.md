@@ -12,7 +12,7 @@ This is the process we used to replace the `capybara-webkit` gem in a legacy pro
 
 <!--more-->
 
-## Why Capybara-webkit
+## Why Capybara Webkit
 
 By default, Capybara uses [`rack-test`](https://github.com/rack/rack-test) as the driver. Unfortunately `rack-test` does not support JavaScript. If we want to test things that rely on JavaScript, we need a driver with JS capabilities. Some of these drivers open up a web browser and show us all the activity.
 
@@ -136,7 +136,9 @@ The last part of the process was to make sure the tests pass on the CI system. W
 
 To sum up we got rid of an outdated dependency (`capybara-webkit`) which depended on QT and replaced it with `webdrivers` which depends on modern web browsers (e.g. Firefox). And we highly recommend you do it in your legacy Rails applications!
 
-It makes it easier for new developers to join the project now that it has less extra requirements. It will also help when updating the Rails version, since newer Rails versions adds `webdrivers` gem when creating new apps by default.
+It makes it easier for new developers to join the project, installing QT is quite complicated on some OSs (https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit) and Firefox (or Chrome) are usually already installed in any web developer's environment.
+
+It also makes it easier to maintain our Rails application and it gets us closer to "the Rails way". It will help us when upgrading Rails because more recent versions of Rails uses the `webdrivers` gem by default.
 
 Another advantage of replacing QtWebKit with a major browser like Chrome and Firefox is that it helped us to find a bug in our current test suite. We had not been properly testing the interactions of the user in those tests related to Chosen, but now we fixed that.
 
