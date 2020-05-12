@@ -240,7 +240,7 @@ In this example, if `user` has more tests than `product`, `user`'s SkunkScore wi
 lower than `product`'s. Next week you could start refactoring `user` or increasing
 code coverage for `product`
 
-By looking at this chart you will be able to quickly decide about what to do:
+By looking at this table you will be able to quickly decide about what to do:
 You might want to write tests for a complex module, refactor a complex module
 that is well covered by integration tests, or both!
 
