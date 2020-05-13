@@ -1,35 +1,48 @@
 {%- if author -%}
-  {%- if author.gravatar -%}
-  <p class="author-info">
-    <img class="author-thumb" src="//2.gravatar.com/avatar/{{ author.gravatar }}?s=50" alt="{{ author.display_name }}" nopin="nopin" />
+
+  <div class="author-photo">
+    {%- if author.gravatar -%}
+      <img class="author-thumb" src="//2.gravatar.com/avatar/{{ author.gravatar }}?s=50" alt="{{ author.display_name }}"
+      nopin="nopin" />
     {%- else -%}
-    <img class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
+      <img class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture"
+      nopin="nopin" />
     {%- endif -%}
-    <a class="btn-link" href="{{ site.baseurl }}/authors/{{ post.author }}"
-       title="Articles by {{ author.display_name}}">{{ author.display_name }}</a>
-  </p>
+  </div>
+
+  <div class="author-info">
+    <a class="btn-link" href="{{ site.baseurl }}/authors/{{ post.author }}" title="Articles by {{ author.display_name}}">{{ author.display_name }}</a>
+    {%- include category_links.html -%}
+  </div>
+
 {%- endif -%}
 
 {%- if authors -%}
   {% for author in authors %}
     {%- assign author_info = site.authors[author] -%}
-    {%- if author_info.gravatar -%}
-      <p class="author-info">
-        <img class="author-thumb" src="//2.gravatar.com/avatar/{{ author_info.gravatar }}?s=50" alt="{{ author_info.display_name }}" nopin="nopin" />
-    {%- else -%}
+
+    <div class="author-photo">
+      {%- if author_info.gravatar -%}
+       <img class="author-thumb" src="//2.gravatar.com/avatar/{{ author_info.gravatar }}?s=50" alt="{{ author_info.display_name }}" nopin="nopin" />
+      {%- else -%}
         <img class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
-    {%- endif -%}
-        <a class="btn-link" href="{{ site.baseurl }}/authors/{{ author }}"
-        title="Articles by {{ author_info.display_name}}">{{ author_info.display_name }}</a>
-      </p>
+      {%- endif -%}
+    </div>
+
+    <div class="author-info">
+      <a class="btn-link" href="{{ site.baseurl }}/authors/{{ author }}" title="Articles by {{ author_info.display_name}}">{{ author_info.display_name }}</a>
+      {%- include category_links.html -%}
+    </div>
+
     {%- if authors.size == 2 -%}
-      {%- unless forloop.last -%}<p>and </p>{%- endunless -%}
+      {%- unless forloop.last -%}<div>and </div>{%- endunless -%}
     {%- else -%}
       {% if forloop.first == true %}
-        {%- unless forloop.last -%}<p>, </p>{%- endunless -%}
+        {%- unless forloop.last -%}<div>, </div>{%- endunless -%}
       {%- else -%}
-        {%- unless forloop.last -%}<p>and </p>{%- endunless -%}
+        {%- unless forloop.last -%}<div>and </div>{%- endunless -%}
       {%- endif -%}
     {%- endif -%}
+
   {% endfor %}
 {%- endif -%}
