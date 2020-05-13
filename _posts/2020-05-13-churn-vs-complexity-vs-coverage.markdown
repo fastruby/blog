@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Churn vs. Complexity vs. Code Coverage"
-date: 2020-05-05 2:25:00
+date: 2020-05-13 2:25:00
 categories: ["code-quality"]
 author: etagwerker
 ---
 
-Churn vs. Complexity analysis is a great way to find insights about the 
-maintainability of a project. Two of my favorite authors have written great 
+Churn vs. Complexity analysis is a great way to find insights about the
+maintainability of a project. Two of my favorite authors have written great
 articles about the Churn vs. Complexity graph:
 
 - [Getting Empirical about Refactoring](https://www.agileconnection.com/article/getting-empirical-about-refactoring) by Michael Feathers
@@ -93,7 +93,7 @@ novice programmer. You will introduce complexity into a project.
 might be considered an anti-pattern. Good object-oriented programming calls
 for [loose coupling and high cohesion](https://wiki.c2.com/?CouplingAndCohesion).
 
-You want modules that follow [SOLID](http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) 
+You want modules that follow [SOLID](http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
 principles. When you notice your module is becoming extremely complex, you will
 want to refactor it into two or more modules. These modules will send and receive
 messages between each other, which will increase coupling (as loosely as possible)
@@ -121,11 +121,11 @@ your Ruby modules.
 <h3 id="calculating-complexity">Calculating Complexity in Ruby</h3>
 
 There are many tools out there (e.g. [three awesome libraries to assess code quality](https://www.fastruby.io/blog/ruby/quality/code-quality-ruby-gems.html))
-that can help you find the most complex files in your project. One of the most 
+that can help you find the most complex files in your project. One of the most
 popular tools in the Ruby world is [`flog`](https://github.com/seattlerb/flog).
 
-[Attractor](https://github.com/julianrubisch/attractor) uses `flog` to calculate 
-complexity for each module. I really like the report that it generates. You can 
+[Attractor](https://github.com/julianrubisch/attractor) uses `flog` to calculate
+complexity for each module. I really like the report that it generates. You can
 see all the modules in one page:
 
 <img src="/blog/assets/images/attractor.png" alt="Attractor Report for MetricFu Ruby gem">
@@ -164,7 +164,7 @@ Usually a module that has a decent test suite (basic code coverage) will be
 easier to understand than one without tests. We will have one more resource to
 learn about a module's behavior.
 
-> Code coverage metrics don't tell whether the test suite is good or bad. It 
+> Code coverage metrics don't tell whether the test suite is good or bad. It
 tells you how many statements of your application are exercised by your test
 suite. You should not blindly trust code coverage percentages without doing a
 quick code review of the tests that are present.
@@ -174,7 +174,7 @@ behavior of its public API?
 
 <h2 id="churn-vs-complexity-vs-coverage">Churn vs. Complexity vs. Code Coverage</h2>
 
-When I look at all the modules in the project, I want to know: 
+When I look at all the modules in the project, I want to know:
 
 - How many times has this file changed since the beginning of the project? (Churn)
 - How complex is this module? (Complexity)
@@ -190,14 +190,14 @@ production. And you probably don't want to test all your changes manually.
 By adding a third dimension to the churn vs complexity graph, you will be able
 to gather new insights about your modules:
 
-- Should I refactor this module? 
+- Should I refactor this module?
 - Should I increase test coverage before I refactor this module?
 - Do I have time to do both this week?
 
 <h3 id="calculating-complexity">Calculating a Churn vs. Complexity vs. Code Coverage Graph in Ruby</h3>
 
 Last year I published a library that can help you take all these metrics into
-account: [Skunk](https://github.com/fastruby/skunk). It relies on [RubyCritic](https://github.com/whitesmith/rubycritic) 
+account: [Skunk](https://github.com/fastruby/skunk). It relies on [RubyCritic](https://github.com/whitesmith/rubycritic)
 and [SimpleCov](https://github.com/colszowka/simplecov) to get all the metrics
 it needs.
 
