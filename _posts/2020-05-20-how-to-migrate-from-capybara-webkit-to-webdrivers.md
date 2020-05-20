@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to Migrate from Capybara Webkit to Webdrivers"
-date: 2020-04-15 12:00:00
+date: 2020-04-20 11:00:00
 categories: ["rails", "upgrades"]
 author: arielj
 ---
@@ -27,6 +27,7 @@ Having the browser show up while the tests are running is not that practical and
 ## Process
 
 We will divide this change into 4 different steps:
+
 1. Replace `capybara-webkit`
 1. Make sure specs pass locally
 1. Make sure specs pass inside the Docker container
@@ -64,6 +65,7 @@ Capybara.register_driver :headless_chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options)
 end
 ```
+
 > You'll need Chrome or Firefox versions that supports headless mode
 
 Then we can tell Capybara to use one of those drivers for all the tests that require JavaScript:
