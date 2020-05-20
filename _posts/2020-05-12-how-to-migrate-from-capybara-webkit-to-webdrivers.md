@@ -21,8 +21,8 @@ Having the browser show up while the tests are running is not that practical and
 ## Issues with Capybara Webkit
 
 - Development was officially suspended in March. [commit](https://github.com/thoughtbot/capybara-webkit/commit/f429d668568ff7349f5e23a085df7fcf1c431fa7#diff-04c6e90faac2675aa89e2176d2eec7d8)
-- Depends on QT so it requires the developer to install extra libraries on the system adding an extra step to make a project run locally, inside docker, or in our CI system.
-- It's difficult to update the webkit engine that runs in the background so you can't have all the new features you would have on the actual browsers
+- Depends on QT so it requires the developer to install extra libraries on the system, adding an extra step to make a project run locally, inside docker, or in our CI system.
+- It's difficult to update the webkit engine that runs in the background so you can't have all the new features you would have on the actual browsers.
 
 ## Process
 
@@ -138,7 +138,7 @@ To sum up we got rid of an outdated dependency (`capybara-webkit`) which depende
 
 It makes it easier for new developers to join the project, installing QT is quite complicated on some OSs (https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit) and Firefox (or Chrome) are usually already installed in any web developer's environment.
 
-It also makes it easier to maintain our Rails application and it gets us closer to "the Rails way". It will help us when upgrading Rails because more recent versions of Rails uses the `webdrivers` gem by default.
+It also makes it easier to maintain our Rails application and it gets us closer to "the Rails way". It will help us when upgrading Rails because more recent versions of Rails use the `webdrivers` gem by default.
 
 Another advantage of replacing QtWebKit with a major browser like Chrome and Firefox is that it helped us to find a bug in our current test suite. We had not been properly testing the interactions of the user in those tests related to Chosen, but now we fixed that.
 
