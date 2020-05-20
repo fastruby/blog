@@ -3,7 +3,7 @@ layout: post
 title: "How to Migrate from Capybara Webkit to Webdrivers"
 date: 2020-05-20 11:00:00
 categories: ["rails", "upgrades"]
-author: arielj
+author: arieljuod
 ---
 
 We all know testing is important. We have our unit tests and integration tests to make sure everything is working as expected. At [OmbuLabs](https://www.ombulabs.com), we use [Capybara](https://github.com/teamcapybara/capybara) for our integration tests so that we can interact with the app as a real user would.
@@ -84,7 +84,7 @@ Instead of replacing the driver there, we just removed that option on all the te
 
 Finally, before you run your test suite, make sure you have no references to capybara-webkit in your code (search for `capybara-webkit`, `Capybara::Webkit` and `:webkit` strings).
 
-# Fixing Specs
+## Fixing Specs
 
 We first make sure tests are working locally so we don't have errors due to a misconfigured container.
 
@@ -109,7 +109,7 @@ We were using a helper method from this [gist](https://gist.github.com/thijsc/13
 
 On top of updating the gem, we improved the test suite by avoiding obscure JavaScript calls.
 
-# Updating Docker Container
+## Updating Docker Container
 
 Now that our tests are passing we can update the `Dockerfile` removing the commands that installed QT's libraries `qt5-default` and `libqt5webkit5-dev` (that will depend on the OS your are using, we have a Debian image so we just removed those packes from the `apt-get` command).
 
@@ -123,7 +123,7 @@ Capybara.javascript_driver = :headless_firefox
 
 Now our tests can be run inside Docker and we are all green.
 
-# Updating CircleCI Config
+## Updating CircleCI Config
 
 The last part of the process was to make sure the tests pass on the CI system. We only needed to make sure Firefox was available when running the test, so the easiest solution for this was to use a CircleCI's Ruby image and use the correct [variant](https://circleci.com/docs/2.0/circleci-images/#language-image-variants) so it also includes the most used browsers:
 
@@ -132,7 +132,7 @@ The last part of the process was to make sure the tests pass on the CI system. W
 + - image: circleci/ruby:2.4.10-buster-node-browsers
 ```
 
-> We did have some problems related to caching, so you may want to try to retry your CI job without caching just to make sure if you see something failing
+We did have some problems related to caching, so you may want to try to retry your CI job without caching just to make sure if you see something failing.
 
 ## Conclusion
 
