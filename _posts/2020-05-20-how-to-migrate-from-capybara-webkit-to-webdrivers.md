@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to Migrate from Capybara Webkit to Webdrivers"
-date: 2020-04-20 11:00:00
+date: 2020-05-20 11:00:00
 categories: ["rails", "upgrades"]
 author: arielj
 ---
