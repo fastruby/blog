@@ -11,6 +11,7 @@ Rails upgrades can be done in many different ways. Depending on the application 
 <!--more-->
 
 One important note before starting: We highly recommend not skipping any Rails version while upgrading. If your goal is to get to Rails 6.0, and you are in 5.0, make sure to first upgrade to 5.1 and then to 5.2. Each minor version of Rails provides deprecation warnings for the next version. If you skip versions you'll find unexpected errors in your app that will be hard to debug.
+Some people have used a strategy that does many version jumps at once. This radical approach makes sense only when your Rails application is very small.
 
 ## Long-running Branch
 
@@ -29,7 +30,7 @@ Cons of this strategy:
 
 ## Dual Boot + Small Pull Requests
 
-This strategy involves running your application with two different versions of Rails, the one your application is currently running (e.g. Rails 5.0), and the one you want to upgrade to (e.g. Rails 5.1). Once that configuration is implemented, the idea is to submit small Pull Requests that fix specific things for the next version of Rails, and then gradually deploy those Pull Requests.
+This strategy involves running your application with two different versions of Rails, the one your application is currently running (e.g. Rails 5.0), and the one you want to upgrade to (e.g. Rails 5.1). Once that configuration is implemented, the idea is to submit small Pull Requests that fix specific things for the next version of Rails, and then gradually deploy those Pull Requests to staging and production.
 
 This approach is what we recommend for most Rails upgrades.
 
