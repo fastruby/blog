@@ -12,8 +12,6 @@ Rails upgrades can be done in many different ways. Depending on the application 
 
 One important note before starting: We highly recommend not skipping any Rails version while upgrading. If your goal is to get to Rails 6.0, and you are in 5.0, make sure to first upgrade to 5.1 and then to 5.2. Each minor version of Rails provides deprecation warnings for the next version. If you skip versions you'll find unexpected errors in your app that will be hard to debug.
 
-That being said, here are the strategies:
-
 ## Long-running Branch
 
 This strategy consists of having a dedicated branch (e.g. `rails-next`) that runs the version of Rails that you want to upgrade to. This branch will contain all the necessary changes for the upgrade. Once the upgrade is ready, you deploy the branch to staging to manually test everything.
@@ -31,7 +29,7 @@ Cons of this strategy:
 
 ## Dual Boot + Small Pull Requests
 
-This strategy involves running your application with two different versions of Rails, the one your application is currently running (e.g. Rails 5.0), and the one you want to upgrade to (e.g. Rails 5.1). Once that configuration is implemented, the idea is to submit small Pull Requests that fix specific things for the next version of Rails, and then gradually deploy those PRs.
+This strategy involves running your application with two different versions of Rails, the one your application is currently running (e.g. Rails 5.0), and the one you want to upgrade to (e.g. Rails 5.1). Once that configuration is implemented, the idea is to submit small Pull Requests that fix specific things for the next version of Rails, and then gradually deploy those Pull Requests.
 
 This approach is what we recommend for most Rails upgrades.
 
@@ -44,7 +42,7 @@ Pros of this strategy:
 Cons of this strategy:
 
 - It takes more work to setup.
-- Since you're creating PRs for every set of changes, the process can be slower.
+- Since you're creating Pull Requests for every set of changes, the process can be slower.
 
 Examples of successful Rails upgrades using this approach:
 
