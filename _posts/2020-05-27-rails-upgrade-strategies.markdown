@@ -16,7 +16,7 @@ That being said, here are the strategies:
 
 ## Long-running branch
 
-This strategy consists in having a dedicated branch (e.g. `rails-next`) that runs the version of Rails that you want to upgrade to. This branch will contain all the necessary changes for the upgrade. Once the upgrade is ready, you merge the branch to staging to manually test everything.
+This strategy consists in having a dedicated branch (e.g. `rails-next`) that runs the version of Rails that you want to upgrade to. This branch will contain all the necessary changes for the upgrade. Once the upgrade is ready, you deploy the branch to staging to manually test everything.
 
 This approach makes sense only if the application is relatively small. Otherwise the final Pull Request will end up being too large and hard to review. Also, the application shouldn't have a lot of activity in the master branch. Otherwise it will be hard to maintain because you would have to rebase the `rails-next` branch really frequently to avoid git conflicts.
 
@@ -31,7 +31,7 @@ Cons of this strategy:
 
 ## Dual Boot + small Pull Requests
 
-This strategy consists in being able to run your application with two different versions of Rails, the one your application is currently running (e.g. Rails 4.2), and the one you want to upgrade to (e.g. Rails 5.0). Once that configuration is implemented, the idea is to submit small Pull Requests that fix specific things for the next version of Rails.
+This strategy consists in being able to run your application with two different versions of Rails, the one your application is currently running (e.g. Rails 5.0), and the one you want to upgrade to (e.g. Rails 5.1). Once that configuration is implemented, the idea is to submit small Pull Requests that fix specific things for the next version of Rails, and then gradually deploy those PR's.
 
 This approach is what we recommend for most Rails upgrades.
 
