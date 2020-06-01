@@ -21,6 +21,10 @@ Not everything is rosy, we found a problem with this approach too. Continuous in
 
 We want to share a little script on how to do the merging and generate a complete coverage.
 
+UPDATE: Simplecov added native functionality for merging results across different machines with the use of `simplecov.collate`.
+[Learn more](https://github.com/colszowka/simplecov#merging-test-runs-under-different-execution-environments)
+
+
 ```ruby
 class SimpleCovMerger
   def self.report_coverage(base_dir:, ci_project_path:, project_path:)
