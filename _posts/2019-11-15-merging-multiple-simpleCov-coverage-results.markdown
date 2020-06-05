@@ -2,7 +2,7 @@
 layout: post
 title: "Merging Multiple SimpleCov Coverage Results"
 date: 2019-11-15 10:00:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-06-05 10:00:00
 categories: ["rails", "simplecov", "upgrades"]
 author: bronzdoc
 ---
@@ -20,6 +20,10 @@ So, we recently decided to take a different approach for this problem. Instead o
 Not everything is rosy, we found a problem with this approach too. Continuous integration services (like [CircleCI](https://circleci.com/)) allow you to parallelize the execution of any command and a common pattern is to execute different parts of your test suite in different containers. This will make it faster, since now you'll spread the load of your test in different containers. The problem with this is that if you are running [SimpleCov](https://github.com/colszowka/simplecov) it will generate a result for each of your containers. So, to have the full coverage report you'll have to merge all results to generate one final coverage result.
 
 We want to share a little script on how to do the merging and generate a complete coverage.
+
+UPDATE: Simplecov added native functionality for merging results across different machines with the use of `SimpleCov.collate`.
+[Learn more](https://github.com/colszowka/simplecov#merging-test-runs-under-different-execution-environments)
+
 
 ```ruby
 class SimpleCovMerger
