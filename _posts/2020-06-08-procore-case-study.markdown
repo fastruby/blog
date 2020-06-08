@@ -2,7 +2,7 @@
 layout: post
 title: "Upgrading a Large Rails Application from Rails 5.0 to 5.1"
 date: 2020-06-08 12:00:00
-categories: ["rails", "upgrades", "case study"]
+categories: ["rails", "upgrades", "case-study"]
 author: abizzinotto
 ---
 
