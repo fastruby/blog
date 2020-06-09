@@ -5,6 +5,7 @@ date: 2020-02-05 10:30:00
 reviewed: 2020-03-05 10:00:00
 categories: ["gems", "dry", "ruby"]
 author: "cleiviane"
+published: false
 ---
 
 At Ombu Labs we like to follow a style guide to drive our own products. A style guide is a document that provides guidelines for the way your brand should be presented from both a graphic and language perspective. You can see Fast Ruby's style guide at [this link](https://fastruby.github.io/styleguide).
