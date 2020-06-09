@@ -2,10 +2,9 @@
 layout: post
 title: "Why Is It Important to Upgrade Your Rails Application?"
 date: 2020-01-29 13:00:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-06-09 10:00:00
 categories: ["rails", "upgrades"]
 author: abizzinotto
-published: false
 ---
 
 Technology evolves quickly. When you first created your Rails application, it's likely you did it using the latest version of [Rails](https://rubyonrails.org). As time passes, however, new [Rails](https://rubyonrails.org) versions come out and your application becomes more and more out of touch with the latest version. But why is this important? Why does it matter?
