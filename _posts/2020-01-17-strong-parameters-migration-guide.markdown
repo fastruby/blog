@@ -5,6 +5,7 @@ date: 2020-01-21 13:00:00
 reviewed: 2020-03-05 10:00:00
 categories: ["rails", "upgrades"]
 author: luciano
+published: false
 ---
 
 Migrating from `Protected Attributes` to `Strong Parameters` in a [Rails](https://rubyonrails.org/) project can be a huge step of the upgrade process. Especially when we are [upgrading a large application](https://www.fastruby.io/blog/rails/upgrades/case-study/upgrading-a-large-rails-application-from-4.2-to-5.2.html). This guide is meant to help you tackle that step faster and with a lot less pain.
