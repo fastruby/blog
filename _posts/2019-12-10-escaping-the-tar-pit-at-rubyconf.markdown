@@ -5,6 +5,7 @@ date: 2019-12-10 10:00:00
 reviewed: 2020-03-05 10:00:00
 categories: ["code-quality"]
 author: etagwerker
+published: false
 ---
 
 This year I had the honor to speak at [RubyConf](https://rubyconf.org) in Nashville.
