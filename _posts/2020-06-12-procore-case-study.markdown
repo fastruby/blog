@@ -16,7 +16,7 @@ Initially, [Procore](https://www.procore.com/) reached out to [Ombu Labs](https:
 
 With the success of the initial engagement, Ombu renewed its partnership with [Procore](https://www.procore.com/) and continued to work on Procore’s Rails upgrade project for another 5 weeks. During this time, we helped move the project along and added value by moving Procore’s application closer to the next Rails version while causing minimal disruption to their internal teams and regular operation.
 
-On a final note, Maltun stated that "this project was an unmitigated success" and we hope to be able to work with [Procore](https://www.procore.com/) again on future Rails upgrades.
+On a final note, Maltun stated that "this project was an unmitigated success" and we hope to be able to work with Ombu again on future Rails upgrades.
 
 For more information about upgrading your Rails application, check out our "[Upgrade Rails Series](https://fastruby.io/blog/tags/upgrades)", a series of do-it-yourself guides to upgrade Rails.
 
