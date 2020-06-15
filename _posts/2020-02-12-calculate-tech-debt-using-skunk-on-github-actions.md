@@ -2,16 +2,15 @@
 layout: post
 title: "How to Calculate Tech Debt Using Skunk on GitHub Actions"
 date: 2020-02-12 9:16:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-06-15 10:00:00
 categories: ["code-quality"]
 author: etagwerker
-published: false
 ---
 
-In preparation for my talk at [RubyConf Australia](https://www.rubyconf.org.au/) this
-month, I've been working on a way to make it easy for anyone to run [`skunk`](https://www.fastruby.io/blog/code-quality/intruducing-skunk-stink-score-calculator.html) on 
-their Ruby projects. In order to do that I decided to use GitHub Actions. It's a powerful
-service by GitHub and it's quite easy to set up.
+Right before my talk at [RubyConf Australia](https://www.rubyconf.org.au/), 
+I worked on a way to make it easy for anyone to run [`skunk`](https://www.fastruby.io/blog/code-quality/intruducing-skunk-stink-score-calculator.html)
+in their Ruby projects. In order to do that I decided to use [GitHub Actions](https://github.com/features/actions). 
+It's a powerful service by GitHub and it's quite easy to set up.
 
 This is an article about the process that I followed and how you can use it in your own
 application.
@@ -21,7 +20,7 @@ application.
 [GitHub Actions have been around for more than a year](https://github.blog/2018-10-17-action-demos/)
 and I had been meaning to play around with them to incorporate some automation to
 our workflows at [FastRuby.io](https://fastruby.io). The good news is that [GoRails](https://gorails.com)
-already published an article about setting up CI in your Rails app:
+already published an article about setting up continuous integration in your Rails app:
 [Continuous Integration with GitHub Actions](https://gorails.com/episodes/github-actions-continuous-integration-ruby-on-rails)
 
 After following those steps, I ended up with a copy/pasted YAML file that looked like this:
@@ -73,7 +72,8 @@ jobs:
 
 Considering that [`skunk`](https://github.com/fastruby/skunk) is a Ruby gem (it
 doesn't need Rails, Redis, nor Postgres) and I didn't need all the steps I copied
-from the GoRails tutorial, I thought it was best to simplify it to look like this:
+from the [GoRails](https://gorails.com) tutorial, I thought it was best to 
+simplify it to look like this:
 
 ```yaml
 # .github/workflows/skunk.yml
@@ -98,8 +98,9 @@ jobs:
 ```
 
 This tells [GitHub](https://github.com) to run the [`skunk`](https://github.com/fastruby/skunk)
-action every time there is any push to GitHub. To see an entire list
-of events that you can configure: [Webhook Events](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#webhook-events)
+action every time there is a new push to the GitHub remote. To see an entire list
+of events that you can configure: 
+[Webhook Events](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#webhook-events)
 
 There are only two steps:
 
@@ -107,15 +108,15 @@ There are only two steps:
 1. Install the `skunk` gem and run it on the `lib/` directory.
 
 I really like that the configuration file is easy to read and understand. The
-order of the steps defined in the `steps` section is **important**. It will run
+**order of the steps** defined in the `steps` section is **important**. It will run
 steps synchronously, from top to bottom. If you want to run `skunk` for a Rails
-application, you can change the last step to `skunk app/`
+application, you can change the last step to do this: `skunk app/`
 
 The next thing I wanted to do is run `skunk` on a pull request in order to
-compare the [_Stink Score_](https://github.com/fastruby/skunk#what-is-the-stinkscore) 
+compare the [_SkunkScore_](https://github.com/fastruby/skunk#what-is-the-skunkscore) 
 between the pull request and `master`. This will help us answer this question:
 
-> Are we increasing or decreasing the tech debt average in our project?
+> Are we increasing or decreasing the technical debt average in our project?
 
 In order to do this, I had to tweak the call to `skunk` to use the `--branch`
 option:
@@ -219,5 +220,6 @@ hot spots!
 
 - You can see all the trial and error that went into writing this article:
 [https://github.com/fastruby/skunk/actions?query=workflow%3ASkunk](https://github.com/fastruby/skunk/actions?query=workflow%3ASkunk)
+
 - A new update to GitHub Actions adds even more features to it:
 [https://github.blog/2020-02-06-manage-secrets-and-more-with-the-github-actions-api/](https://github.blog/2020-02-06-manage-secrets-and-more-with-the-github-actions-api/)
