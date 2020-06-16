@@ -12,7 +12,7 @@ I worked on a way to make it easy for anyone to run [`skunk`](https://www.fastru
 in their Ruby projects. In order to do that I decided to use [GitHub Actions](https://github.com/features/actions). 
 It's a powerful service by GitHub and it's quite easy to set up.
 
-This is an article about the process that I followed and how you can use it in your own
+This article is about the process that I followed and how you can use it in your own
 application.
 
 <!--more-->
