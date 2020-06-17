@@ -2,7 +2,7 @@
 layout: post
 title: "The Complete Guide to Migrate to Strong Parameters"
 date: 2020-01-21 13:00:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-06-17 10:00:00
 categories: ["rails", "upgrades"]
 author: luciano
 ---
