@@ -14,7 +14,7 @@ Migrating from `Protected Attributes` to `Strong Parameters` in a [Rails](https:
 
 ### Protected Attributes & Strong Parameters
 
-To give you a bit of context, let's recap what `Protected Attributes` and [Strong Parameters](https://guides.rubyonrails.org/action_controller_overview.html#strong-parameters) actually are. They are two different Rails implementations for protecting attributes from end-user injection (a.k.a. [Mass Assignment](https://owasp.org/www-project-cheat-sheets/cheatsheets/Mass_Assignment_Cheat_Sheet.html))
+To give you a bit of context, let's recap what `Protected Attributes` and [Strong Parameters](https://guides.rubyonrails.org/action_controller_overview.html#strong-parameters) actually are. They are two different Rails implementations for protecting attributes from end-user injection (a.k.a. [Mass Assignment](https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html))
 
 To understand what the benefits are of `Strong Parameters` over `Protected Attributes`, I recommend checking [this RailsCasts episode](http://railscasts.com/episodes/371-strong-parameters?autoplay=true).
 

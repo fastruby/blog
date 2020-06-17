@@ -2,7 +2,7 @@
 layout: post
 title: "Why Is It Important to Upgrade Your Rails Application?"
 date: 2020-01-29 13:00:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-06-09 10:00:00
 categories: ["rails", "upgrades"]
 author: abizzinotto
 ---
