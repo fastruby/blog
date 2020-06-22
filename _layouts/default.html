@@ -8,9 +8,33 @@
 
   <title>{{ page_title }}</title>
 
-  {%- capture description -%}{%if page.meta.description -%}{{page.meta.description}}{%- elsif page.category -%}Articles on {{page.category | titleize | replace: '-',' '}} in the {{site.description}} blog.{%- elsif page -%}{{ page.excerpt | strip_html }}{%- else -%}{{ site.meta_description }}{%- endif -%}{%- endcapture -%}
-  {%- capture social_description -%}{{ description | truncatewords: 50 }}{%- endcapture -%}
-  {%- capture social_title -%}{%- if page -%}{{ page.title }}{% if page.author and site.authors[page.author].twitter %} by @{{ site.authors[page.author].twitter }}{% endif %}{%- else -%}{{ page_title }}{%- endif -%}{%- endcapture -%}
+  {%- capture page_number -%}
+    {%- if paginator -%}
+      {%- if paginator.page > 1 -%}
+        // Page {{ paginator.page }}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endcapture -%}
+
+  {%- capture description -%}
+    {% if page.meta.description -%} {{page.meta.description}} {{page_number}}
+    {%- elsif page.is_post -%} {{ page.title }}
+    {%- elsif page.category -%} Articles on {{page.category | titleize | replace: '-',' '}} in the {{site.description}} blog. {{page_number}}
+    {%- elsif page.author -%} List of articles by {{ site.authors[page.author].display_name }} {{page_number}}
+    {%- elsif page -%} {{ page.excerpt | strip_html }} {{page_number}}
+    {%- else -%} {{ site.meta_description }} {{page_number}}
+    {%- endif -%}
+  {%- endcapture -%}
+
+  {%- capture social_description -%}
+    {{ description | truncatewords: 50 }}
+  {%- endcapture -%}
+
+  {%- capture social_title -%}
+    {%- if page -%}{{ page.title }}
+    {% if page.author and site.authors[page.author].twitter %} by @{{ site.authors[page.author].twitter }}{% endif %}{%- else -%}{{ page_title }}{%- endif -%}
+  {%- endcapture -%}
+  
   <meta name="description" content="{{ description | strip_newlines | truncate: 150 | strip_html }}" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
