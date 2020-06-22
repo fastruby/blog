@@ -4,7 +4,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-  {%- capture page_title -%}{%- if page.category -%}Articles on {{page.category | titleize | replace: '-',' '}} at {{site.description}}{%- elsif page -%}{{ page.title | titleize}} - {{ site.description }}{%- else -%}{{ site.description }} - {{ page.title | titleize }}{%- endif -%}{%- endcapture -%}
+  {%- capture page_title -%}
+    {%- if page.category -%}Articles on {{page.category | titleize | replace: '-',' '}} at {{site.description}}
+    {%- elsif page -%}{{ page.title | titleize}} - {{ site.description }}
+    {%- else -%}{{ site.description }} - {{ page.title | titleize }}
+    {%- endif -%}
+  {%- endcapture -%}
 
   <title>{{ page_title }}</title>
 
@@ -18,9 +23,8 @@
 
   {%- capture description -%}
     {% if page.meta.description -%} {{page.meta.description}} {{page_number}}
-    {%- elsif page.is_post -%} {{ page.title }}
     {%- elsif page.category -%} Articles on {{page.category | titleize | replace: '-',' '}} in the {{site.description}} blog. {{page_number}}
-    {%- elsif page.author -%} List of articles by {{ site.authors[page.author].display_name }} {{page_number}}
+    {%- elsif page.is_authors_index -%} Articles by {{ site.authors[page.author].display_name }} {{page_number}}
     {%- elsif page -%} {{ page.excerpt | strip_html }} {{page_number}}
     {%- else -%} {{ site.meta_description }} {{page_number}}
     {%- endif -%}
