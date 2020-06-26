@@ -4,6 +4,7 @@ title: "Our Guide for Unmaintained Open Source Projects"
 date: 2020-03-26 11:16:00
 categories: ["open-source"]
 author: etagwerker
+published: false
 ---
 
 There are some really [great guides for starting a new open source projects](https://opensource.guide/starting-a-project/),
