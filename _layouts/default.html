@@ -5,18 +5,13 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-  {%- capture page_title -%}{%- if page.category -%}Articles on {{page.category | titleize | replace: '-',' '}} at
-  {{site.description}}{%- elsif page -%}{{ page.title | titleize}} -
-  {{ site.description }}{%- else -%}{{ site.description }} - {{ page.title | titleize }}{%- endif -%}{%- endcapture -%}
+  {%- capture page_title -%}{%- if page.category -%}Articles on {{page.category | titleize | replace: '-',' '}} at {{site.description}}{%- elsif page -%}{{ page.title | titleize}} - {{ site.description }}{%- else -%}{{ site.description }} - {{ page.title | titleize }}{%- endif -%}{%- endcapture -%}
 
   <title>{{ page_title }}</title>
 
-  {%- capture description -%}{%if page.meta.description -%}{{page.meta.description}}{%- elsif page.category -%}Articles
-  on {{page.category | titleize | replace: '-',' '}} in the {{site.description}}
-  blog.{%- elsif page -%}{{ page.excerpt | strip_html }}{%- else -%}{{ site.meta_description }}{%- endif -%}{%- endcapture -%}
+  {%- capture description -%}{%if page.meta.description -%}{{page.meta.description}}{%- elsif page.category -%}Articles on {{page.category | titleize | replace: '-',' '}} in the {{site.description}} blog.{%- elsif page -%}{{ page.excerpt | strip_html }}{%- else -%}{{ site.meta_description }}{%- endif -%}{%- endcapture -%}
   {%- capture social_description -%}{{ description | truncatewords: 50 }}{%- endcapture -%}
-  {%- capture social_title -%}{%- if page -%}{{ page.title }}{% if page.author and site.authors[page.author].twitter %}
-  by @{{ site.authors[page.author].twitter }}{% endif %}{%- else -%}{{ page_title }}{%- endif -%}{%- endcapture -%}
+  {%- capture social_title -%}{%- if page -%}{{ page.title }}{% if page.author and site.authors[page.author].twitter %} by @{{ site.authors[page.author].twitter }}{% endif %}{%- else -%}{{ page_title }}{%- endif -%}{%- endcapture -%}
   <meta name="description" content="{{ description | strip_newlines | truncate: 150 | strip_html }}" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
