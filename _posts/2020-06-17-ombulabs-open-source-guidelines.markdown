@@ -10,7 +10,7 @@ author: bronzdoc
 
 At OmbuLabs we dedicate some of our work hours to open source every week. Also some of us contribute to open source during our spare time.
 
-Here are a few tips to that help us keep OSS contributions organized
+Here are a few tips to help us keep our OSS contributions organized and encourage people to contribute
 
 <!--more-->
 
@@ -34,7 +34,7 @@ As a company we get these benefits:
 
 \- None of our references will point to a person’s repository. They will point to one of our company’s fork.
 
-As an individual we get to keep the benefits too.
+As an individual we get these benefits too.
 
 \- Display the user in the PR page
 
@@ -44,7 +44,29 @@ As an individual we get to keep the benefits too.
 
 # README
 
-When creating a new OSS project it is good to have a good README. The readme should include steps on how to install the project, if you want to contribute it should have steps on how to contribute to their projects and a code of conduct
+When creating a new OSS project these are some important things it should have.
+- Description of the project
+- Steps on how to setup the project
+- A contributing guide
+- A code of conduct
+
+We cannot miss this four things in every of our OS projetcs.
+
+# Steps on how to setup the project
+
+In this section you should describe the steps needed to get project up and running, some of the common things are:
+- External Dependencies of your project
+- Any task runner command to setup external services
+- Setup configuration files
+- Environment variables
+
+# A contributing guide
+In this section you should document standards and steps to contribute to your project, some common things to include are:
+- Branch naming
+- What is the main branch where feature and hotfix branches should branch of
+- The git flow that you choosed for the project
+- If you are using an issue tracker, how would you link the PR with a story or issue
+
 
 # Sponsorship
 
@@ -54,7 +76,7 @@ In projects that we create and we dedicate time on it we include the following b
 
 # Code Of Conduct
 
-We want a welcoming, inclusive and harassment free space to contribute, thats why we decided to include the \[code covenant\](https://www.contributor-covenant.org/) in all our projects.
+We want a welcoming, inclusive and harassment free space to contribute, thats why we decided to include the \[code of conduct\](https://www.contributor-covenant.org/) in all our projects.
 
 # Licence
 
