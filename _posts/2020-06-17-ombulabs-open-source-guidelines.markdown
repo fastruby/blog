@@ -44,7 +44,7 @@ As an individual we get these benefits too.
 
 # README
 
-When creating a new OSS project these are some important things it should have.
+When creating a new OSS project these are some important things it should have:
 - Description of the project
 - Steps on how to setup the project
 - A contributing guide
