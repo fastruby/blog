@@ -34,7 +34,7 @@ As a company we get these benefits:
 
 \- None of our references will point to a person’s repository. They will point to one of our company’s fork.
 
-As an individual we get these benefits too.
+As an individual, we get these benefits:
 
 \- Display the user in the PR page
 
