@@ -64,7 +64,7 @@ In this section you should describe the steps needed to get project up and runni
 In this section you should document standards and steps to contribute to your project, some common things to include are:
 - Branch naming
 - What is the main branch where feature and hotfix branches should branch of
-- The git flow that you choosed for the project
+The git flow that you chose for the project
 - If you are using an issue tracker, how would you link the PR with a story or issue
 
 
