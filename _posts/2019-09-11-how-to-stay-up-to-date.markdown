@@ -45,7 +45,7 @@ You can use `bundle outdated` to check outdated gems in your current bundle. Whi
 You can still install Dependabot from the Github Marketplace until it's integrated into GitHub
 
 <div style="text-align: center; width: 500px;">
-  <img src="/blog/assets/images/dependabot/dependabot.png">
+  <img src="/blog/assets/images/dependabot/dependabot.png" alt="Dependabot screenshot">
 </div>
 
 We know not all of you use Github but if it happens that you do use it, dependabot would be a really nice addition to your tools to keep you up to date.
