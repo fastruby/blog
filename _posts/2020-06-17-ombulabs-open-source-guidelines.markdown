@@ -22,13 +22,13 @@ As a company we get these benefits:
 
 \- We use OSS projects and we want them to be better
 
-\- We want our brand to be associated with these OSS projects
+\- Our brand to be associated with these OSS projects
 
-\- We want our teammates to learn more about these projects
+\- Our teammates to learn more about these projects
 
-\- We want our contributions to be noticed
+\- Our contributions to be noticed
 
-\- We want to use our contributions in the future
+\- To use our contributions in the future
 
 \- Sometimes contributions take a long time to be merged into the main OSS project. This way we make sure that we include references to our company’s organization.
 
@@ -44,28 +44,28 @@ As an individual, we get these benefits:
 
 # README
 
-When creating a new OSS project these are some important things it should have:
+When creating a new OSS project these are some important things it must have:
 - Description of the project
 - Steps on how to setup the project
 - A contributing guide
 - A code of conduct
 
-We cannot miss this four things in every of our OS projetcs.
-
 # Steps on how to setup the project
 
-In this section you should describe the steps needed to get project up and running, some of the common things are:
-- External Dependencies of your project
+In this section we should describe the steps needed to get project up and running, some of the common things are:
+- External Dependencies of the project
 - Any task runner command to setup external services
+- Instructions to run automated tests
 - Setup configuration files
 - Environment variables
 
+
 # A contributing guide
-In this section you should document standards and steps to contribute to your project, some common things to include are:
+In this section we should document standards and steps to contribute to our project, some common things to include are:
 - Branch naming
 - What is the main branch where feature and hotfix branches should branch of
-The git flow that you chose for the project
-- If you are using an issue tracker, how would you link the PR with a story or issue
+The git flow that we chose for the project
+- If we are using an issue tracker, how would we link the PR with a story or issue
 
 
 # Sponsorship
