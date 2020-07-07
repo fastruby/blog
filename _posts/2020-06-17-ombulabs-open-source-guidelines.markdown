@@ -18,7 +18,7 @@ From now on every-time we contribute to an OSS project in working hours, we fork
 
 This way we can keep track of the contributions we made as a company, also the branches created in the project are accessible to the rest of the team.
 
-As a company we get these benefits:
+As a company we get these benefits from forking our Open Source projects to one of our organizations:
 
 \- We use OSS projects and we want them to be better
 
