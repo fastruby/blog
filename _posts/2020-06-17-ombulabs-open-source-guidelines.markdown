@@ -22,7 +22,7 @@ As a company we get these benefits:
 
 \- We use OSS projects and we want them to be better
 
-\- Our brand to be associated with these OSS projects
+\- Our brand becomes associated with these OSS projects
 
 \- Our teammates to learn more about these projects
 
