@@ -63,7 +63,7 @@ In this section we should describe the steps needed to get project up and runnin
 # A contributing guide
 In this section we should document standards and steps to contribute to our project, some common things to include are:
 - Branch naming
-- What is the main branch where feature and hotfix branches should branch of
+- What is the main branch where feature and hotfix branches should branch off of
 The git flow that we chose for the project
 - If we are using an issue tracker, how would we link the PR with a story or issue
 
