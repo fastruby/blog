@@ -24,7 +24,7 @@ As a company we get these benefits from forking our Open Source projects to one 
 
 \- Our brand becomes associated with these OSS projects
 
-\- Our teammates to learn more about these projects
+\- Our teammates learn more about these projects
 
 \- Our contributions to be noticed
 
