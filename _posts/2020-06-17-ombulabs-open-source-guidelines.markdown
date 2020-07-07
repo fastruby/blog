@@ -70,7 +70,7 @@ The git flow that we chose for the project
 
 # Sponsorship
 
-In projects that we create and we dedicate time on it we include the following banners.
+In projects that we create and we dedicate time to, we include the following banners:
 
 ![Jb4DM1iJjQM1ExSS4SDlw5ICjCwWWGo8BSstu4L4.png](https://tettra-production.s3.us-west-2.amazonaws.com/0d6efb4f154041e899af17bdcd19c1b5/ce8d5f452da02a88554d80c256162a35/d822b155a4112474fdb7aea5ee22465e/d28647d6b4d6e5842508679707ee21a7/Jb4DM1iJjQM1ExSS4SDlw5ICjCwWWGo8BSstu4L4.png)![UXzPMzwGmoZrz6RfXPs7MYiMA9sQPaS8pUn6xLlM.png](https://tettra-production.s3.us-west-2.amazonaws.com/0d6efb4f154041e899af17bdcd19c1b5/ce8d5f452da02a88554d80c256162a35/d822b155a4112474fdb7aea5ee22465e/d28647d6b4d6e5842508679707ee21a7/UXzPMzwGmoZrz6RfXPs7MYiMA9sQPaS8pUn6xLlM.png)
 
