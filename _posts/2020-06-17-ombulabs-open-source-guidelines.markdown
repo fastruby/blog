@@ -28,7 +28,7 @@ As a company we get these benefits:
 
 \- Our contributions to be noticed
 
-\- To use our contributions in the future
+\- We can use our contributions in the future
 
 \- Sometimes contributions take a long time to be merged into the main OSS project. This way we make sure that we include references to our company’s organization.
 
