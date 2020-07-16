@@ -2,7 +2,7 @@
 layout: post
 title: "OmbuLabs Open Source Guidelines"
 date: 2020-06-17 11:16:00
-categories: ["open-source", "guideline"]
+categories: ["open-source"]
 author: bronzdoc
 ---
 
