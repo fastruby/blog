@@ -76,7 +76,7 @@ In projects that we create and we dedicate time to, we include the following ban
 
 # Code Of Conduct
 
-We want a welcoming, inclusive and harassment free space to contribute, thats why we decided to include the \[code of conduct\](https://www.contributor-covenant.org/) in all our projects.
+We want a welcoming, inclusive and harassment free space to contribute, that's why we decided to include the [code of conduct](https://www.contributor-covenant.org/) in all our projects.
 
 # Licence
 
