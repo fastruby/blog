@@ -82,4 +82,4 @@ We want a welcoming, inclusive and harassment free space to contribute, that's w
 
 We choose the MIT license for our projects becuase is open source friendly and bussiness friendly.
 
-It allows us to use our code for comercial purposes but is also very permessive so other people can also take advantage of what we build.
+It allows us to use our code for comercial purposes but it's also very permissive so other people can also take advantage of what we build.
