@@ -10,7 +10,7 @@ author: bronzdoc
 
 At OmbuLabs we dedicate some of our work hours to open source every week. Also some of us contribute to open source during our spare time.
 
-Here are a few tips to help us keep our OSS contributions organized and encourage people to contribute
+Here are a few tips that help us keep our OSS contributions organized and encourage people to contribute:
 
 <!--more-->
 
