@@ -6,41 +6,39 @@ categories: ["open-source"]
 author: bronzdoc
 ---
 
-![goHbayOl3PPzk7yYgEEOzF8q9zqRurIwZexM1ge8.jpg](https://tettra-production.s3.us-west-2.amazonaws.com/0d6efb4f154041e899af17bdcd19c1b5/ce8d5f452da02a88554d80c256162a35/d822b155a4112474fdb7aea5ee22465e/d28647d6b4d6e5842508679707ee21a7/goHbayOl3PPzk7yYgEEOzF8q9zqRurIwZexM1ge8.jpg)
-
-At OmbuLabs we dedicate some of our work hours to open source every week. Also some of us contribute to open source during our spare time.
+At [OmbuLabs](https://www.ombulabs.com/) some of our time is spent working on open source projects. Also some of us contribute to open source during our spare time.
 
 Here are a few tips that help us keep our OSS contributions organized and encourage people to contribute:
 
 <!--more-->
 
-From now on every-time we contribute to an OSS project in working hours, we fork it to the [FastRuby.io organization](https://github.com/fastruby).
+When we contribute to an OSS project we fork it into our FastRuby organization., we fork it to the [FastRuby.io organization](https://github.com/fastruby).
 
 This way we can keep track of the contributions we made as a company, also the branches created in the project are accessible to the rest of the team.
 
-As a company we get these benefits from forking our Open Source projects to one of our organizations:
+### These are the benefits that we get from forking our Open Source projects to one of our organizations:
 
-\- We use OSS projects and we want them to be better
+- We use OSS projects and we want them to be better
 
-\- Our brand becomes associated with these OSS projects
+- Our brand becomes associated with these OSS projects
 
-\- Our teammates learn more about these projects
+- Our teammates learn more about these projects
 
-\- Our contributions to be noticed
+- Our contributions to be noticed
 
-\- We can use our contributions in the future
+- We can use our contributions in the future
 
-\- Sometimes contributions take a long time to be merged into the main OSS project. This way we make sure that we include references to our company’s organization.
+- Sometimes contributions take a long time to be merged into the main OSS project. This way we make sure that we include references to our company’s organization.
 
-\- None of our references will point to a person’s repository. They will point to one of our company’s fork.
+- None of our references will point to a person’s repository. They will point to one of our company’s fork.
 
-As an individual, we get these benefits:
+### As an individual, we get these benefits:
 
-\- Display the user in the PR page
+- Display the user in the PR page
 
-\- Display the contribution in the user's contribution graph
+- Display the contribution in the user's contribution graph
 
-\- Display commits authored by the original user
+- Display commits authored by the original user
 
 # README
 
