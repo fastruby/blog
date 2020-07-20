@@ -12,7 +12,7 @@ This article will show you some tips that help us keep our OSS contributions org
 
 <!--more-->
 
-When we contribute to an OSS project we fork it into our FastRuby organization., we fork it to the [FastRuby.io organization](https://github.com/fastruby).
+When we contribute to an OSS project we fork it to the [FastRuby.io organization](https://github.com/fastruby).
 
 This way we can keep track of the contributions we made as a company, also the branches created in the project are accessible to the rest of the team.
 
