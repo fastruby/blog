@@ -8,7 +8,7 @@ author: bronzdoc
 
 At [OmbuLabs](https://www.ombulabs.com/) some of our time is spent working on open source projects. Also some of us contribute to open source during our spare time.
 
-Here are a few tips that help us keep our OSS contributions organized and encourage people to contribute:
+This article will show you some tips that help us keep our OSS contributions organized and encourage people to contribute.
 
 <!--more-->
 
