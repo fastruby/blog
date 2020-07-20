@@ -14,7 +14,7 @@ This article will show you some tips that help us keep our OSS contributions org
 
 When we contribute to an OSS project we fork it to the [FastRuby.io organization](https://github.com/fastruby). This way we can keep track of the contributions we made as a company, also the branches created in the project are accessible to the rest of the team.
 
-### These are the benefits that we get from forking our Open Source projects to one of our organizations:
+### These are the benefits that we get from forking Open Source projects to one of our organizations:
 
 - We use OSS projects and we want them to be better
 
