@@ -6,76 +6,66 @@ categories: ["open-source"]
 author: bronzdoc
 ---
 
-At [OmbuLabs](https://www.ombulabs.com/) some of our time is spent working on open source projects. Also some of us contribute to open source during our spare time.
 
-This article will show you some tips that help us keep our OSS contributions organized and encourage people to contribute.
+Contributing to open source projects is a big part of our philosophy at [OmbuLabs](https://www.ombulabs.com/). It’s even written into our [values](https://www.ombulabs.com/blog/values/our-values.html). Some of us like to contribute to open source even in our spare time!
+
+Recently we have been thinking about what guidelines we should follow when starting a new open source project, and also about how to organize and keep track of the ones we contribute to.
+
+This article will give you some tips on keeping those open source projects organized, and also how to start them off on the right foot.
 
 <!--more-->
 
-When we contribute to an OSS project we fork it to the [FastRuby.io organization](https://github.com/fastruby). This way we can keep track of the contributions we made as a company, also the branches created in the project are accessible to the rest of the team.
+#Creating new Open Source projects.
 
-### These are the benefits that we get from forking Open Source projects to one of our organizations:
+When creating a new OSS project these are some important things to include in the README.
 
-- We use OSS projects and we want them to be better
+## Description of the Project
+A good description of the project can help users quickly decide if the project would be a helpful addition to their toolset.
 
-- Our brand becomes associated with these OSS projects
-
-- Our teammates learn more about these projects
-
-- Our contributions to be noticed
-
-- We can use our contributions in the future
-
-- Sometimes contributions take a long time to be merged into the main OSS project. This way we make sure that we include references to our company’s organization.
-
-- None of our references will point to a person’s repository. They will point to one of our company’s fork.
-
-### As an individual, we get these benefits:
-
-- Display the user in the PR page
-
-- Display the contribution in the user's contribution graph
-
-- Display commits authored by the original user
-
-# README
-
-When creating a new OSS project these are some important things it must have:
-- Description of the project
-- Steps on how to setup the project
-- A contributing guide
-- A code of conduct
-
-# Steps on how to setup the project
-
-In this section we should describe the steps needed to get project up and running, some of the common things are:
+## Steps on how to Setup the Project.
+In this section we should describe the steps needed to get a project up and running. This could include:
 - External Dependencies of the project
 - Any task runner command to setup external services
 - Instructions to run automated tests
 - Setup configuration files
 - Environment variables
 
-
-# A contributing guide
-In this section we should document standards and steps to contribute to our project, some common things to include are:
+## A contributing guide.
+In this section we should document standards and steps to contribute to the project, some common things to include are:
 - Branch naming
-- What is the main branch where feature and hotfix branches should branch off of
-the git flow that we chose for the project
-- If we are using an issue tracker, how would we link the PR with a story or issue
+- What the main branch is; where feature and hotfix branches should branch off of
+- If we are using an issue tracker, how we link the PR with a story or issue
 
 
-# Sponsorship
-
+## Sponsorship
 In projects that we create and we dedicate time to, we include the following banners:
 
-![Jb4DM1iJjQM1ExSS4SDlw5ICjCwWWGo8BSstu4L4.png](https://tettra-production.s3.us-west-2.amazonaws.com/0d6efb4f154041e899af17bdcd19c1b5/ce8d5f452da02a88554d80c256162a35/d822b155a4112474fdb7aea5ee22465e/d28647d6b4d6e5842508679707ee21a7/Jb4DM1iJjQM1ExSS4SDlw5ICjCwWWGo8BSstu4L4.png)![UXzPMzwGmoZrz6RfXPs7MYiMA9sQPaS8pUn6xLlM.png](https://tettra-production.s3.us-west-2.amazonaws.com/0d6efb4f154041e899af17bdcd19c1b5/ce8d5f452da02a88554d80c256162a35/d822b155a4112474fdb7aea5ee22465e/d28647d6b4d6e5842508679707ee21a7/UXzPMzwGmoZrz6RfXPs7MYiMA9sQPaS8pUn6xLlM.png)
+<img src="/blog/assets/images/fastruby_banner.png">
+<img src="/blog/assets/images/fastruby_banner2.png">
 
-# Code Of Conduct
-
+## Code of Conduct
 We want a welcoming, inclusive and harassment free space to contribute, that's why we decided to include the [code of conduct](https://www.contributor-covenant.org/) in all our projects.
 
-# Licence
+## Licence
+We choose the MIT license for our projects because it is open source friendly and business friendly.
 
-We choose the MIT license for our projects becuase is open source friendly and bussiness friendly.
+It allows us to use our code for commercial purposes but it's also very permissive so other people can also take advantage of what we build.
 
-It allows us to use our code for comercial purposes but it's also very permissive so other people can also take advantage of what we build.
+
+# Contributing to Existing Open Source Projects
+Recently we decided it was a good idea to keep most of our open source projects within one of our organizations on Github. Now when we contribute to an OSS project we always fork it to the [FastRuby.io organization](https://github.com/fastruby). One of the reasons we chose our FastRuby organization is that everything on it is open source, and therefore we don’t incur any fees when people not on our team contribute to the projects.
+
+## These are the benefits that we get from forking Open Source projects to one of our organizations:
+
+- Our brand becomes associated with these OSS projects.
+
+- Our teammates learn more about these projects, and are more aware when we open pull requests or work on them.
+
+- We can keep track of, and use our contributions in the future.
+
+- Sometimes contributions take a long time to be merged into the main OSS project. This way we make sure that we include references to our company’s organization.
+
+- None of our references will point to a person’s private repository. They will point to one of our company’s forks, this allows employees to work on pull requests with the support of our company.
+
+# Summary
+Starting our Open Source projects off on the right foot with well written READMES, and also keeping our projects organized within our organizations on Github allows us to be sure that we will have ease in contributing to, finding, and keeping track of our OSS projects in the future.
