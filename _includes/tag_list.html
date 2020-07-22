@@ -10,7 +10,7 @@
       {%- endfor -%}
     {%- endfor -%}
 
-    {%- assign list = tags | split: ';' | sort -%}
+    {%- assign list = tags | split: ';' | sort | shift -%}
     {%- for category in list -%}
         <h3 class="tag-name">
           <a href="{{ site.baseurl }}/tags/{{ category | downcase | replace: ' ','-' }}"
