@@ -10,11 +10,13 @@
       {%- endfor -%}
     {%- endfor -%}
 
-    {%- assign list = tags | split: ';' | sort | shift -%}
+    {%- assign list = tags | split: ';' | sort -%}
     {%- for category in list -%}
+      {% if category != '' %}
         <h3 class="tag-name">
           <a href="{{ site.baseurl }}/tags/{{ category | downcase | replace: ' ','-' }}"
-             title="Articles on {{ category | titleize | replace: '-',' ' }}">{{ category | titleize  | replace: '-',' ' }}</a>
+            title="Articles on {{ category | titleize | replace: '-',' ' }}">{{ category | titleize  | replace: '-',' ' }}</a>
         </h3>
+      {%- endif -%}
     {%- endfor -%}
 </div>
