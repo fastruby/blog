@@ -14,7 +14,7 @@ This article will give you some tips on keeping those open source projects organ
 
 <!--more-->
 
-# Creating new Open Source projects.
+## Creating new Open Source projects.
 
 When creating a new OSS project these are some important things to include in the README.
 
@@ -57,7 +57,7 @@ We choose the MIT license for our projects because it is open source friendly an
 
 It allows us to use our code for commercial purposes but it's also very permissive so other people can also take advantage of what we build.
 
-# Contributing to Existing Open Source Projects
+## Contributing to Existing Open Source Projects
 
 Recently we decided it was a good idea to keep most of our open source projects within one of our organizations on Github. Now when we contribute to an OSS project we always fork it to the [FastRuby.io organization](https://github.com/fastruby). One of the reasons we chose our FastRuby organization is that everything on it is open source, and therefore we don’t incur any fees when people not on our team contribute to the projects.
 
@@ -73,6 +73,6 @@ Recently we decided it was a good idea to keep most of our open source projects 
 
 - None of our references will point to a person’s private repository. They will point to one of our company’s forks, this allows employees to work on pull requests with the support of our company.
 
-# Summary
+## Summary
 
 Starting our Open Source projects off on the right foot with well written READMES, and also keeping our projects organized within our organizations on Github allows us to be sure that we will have ease in contributing to, finding, and keeping track of our OSS projects in the future.
