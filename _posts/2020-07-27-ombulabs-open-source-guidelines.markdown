@@ -3,7 +3,7 @@ layout: post
 title: "OmbuLabs Open Source Guidelines"
 date: 2020-07-27 10:00:00
 categories: ["open-source"]
-authors: ["bronzdoc", "fionadl"]
+author: bronzdoc
 ---
 
 Contributing to open source projects is a big part of our philosophy at [OmbuLabs](https://www.ombulabs.com/). It’s even written into our [values](https://www.ombulabs.com/blog/values/our-values.html). Some of us like to contribute to open source even in our spare time!
