@@ -32,32 +32,65 @@ post_class: post-template
         </ul>
       </section>
     {%- endif -%}
-    <div class="post-footer">
+
       {%- if page.author -%}
         {%- assign author = site.authors[page.author] -%}
-        <figure class="author-image">
-          {%- if author.gravatar -%}
-            <a class="img" href="{{ page.baseurl }}" style="background-image: url(//2.gravatar.com/avatar/{{ author.gravatar }}?s=50)">
-            <span class="hidden">{{author.display_name}}'s Picture</span></a>
-          {%- else -%}
-            <a class="img" href="{{ page.baseurl }}" style="background-image: url({{ page.baseurl }}/assets/images/profile.png)">
-            <span class="hidden"></span></a>
-          {%- endif -%}
-        </figure>
-        <section class="col-x-12 col-md-7">
-          <h2> {{ author.display_name }} </h2>
-          <p>
-            {% if author.bio %}
-              {{ author.bio }}
-            {% else %}
-            If you need help with your Rails upgrade project, contact us! 
-            <a href="https://www.fastruby.io" title="Upgrade Rails">FastRuby.io provides a top-notch Rails upgrade service</a> so you can focus on features.
-            {% endif %}
-            {%- if author.twitter -%}If you enjoyed this article, <a href="https://twitter.com/{{ author.twitter }}" title="Follow {{ author.name }} on Twitter" target="_blank">follow me on Twitter!</a>{%- endif -%}
-          </p>
-        </section>
+        <div class="post-footer">
+          <figure class="author-image">
+            {%- if author.gravatar -%}
+              <a class="img" href="{{ page.baseurl }}" style="background-image: url(//2.gravatar.com/avatar/{{ author.gravatar }}?s=50)">
+              <span class="hidden">{{author.display_name}}'s Picture</span></a>
+            {%- else -%}
+              <a class="img" href="{{ page.baseurl }}" style="background-image: url({{ page.baseurl }}/assets/images/profile.png)">
+              <span class="hidden"></span></a>
+            {%- endif -%}
+          </figure>
+          <section class="col-x-12">
+            <h2> {{ author.display_name }} </h2>
+            <p>
+              {% if author.bio %}
+                {{ author.bio }}
+              {% else %}
+              If you need help with your Rails upgrade project, contact us! 
+              <a href="https://www.fastruby.io" title="Upgrade Rails">FastRuby.io provides a top-notch Rails upgrade service</a> so you can focus on features.
+              {% endif %}
+              {%- if author.twitter -%}If you enjoyed this article, <a href="https://twitter.com/{{ author.twitter }}" title="Follow {{ author.name }} on Twitter" target="_blank">follow me on Twitter!</a>{%- endif -%}
+            </p>
+          </section>
+        </div>
       {%- endif -%}
 
+
+      {%- if page.authors -%} 
+        {% for author in page.authors %} 
+          {%- assign author_info = site.authors[author] -%}
+          <div class="post-footer">
+            <figure class="author-image">
+              {%- if author_info.gravatar -%}
+                <a class="img" href="{{ page.baseurl }}" style="background-image: url(//2.gravatar.com/avatar/{{ author_info.gravatar }}?s=50)">
+                <span class="hidden">{{author_info.display_name}}'s Picture</span></a>
+              {%- else -%}
+                <a class="img" href="{{ page.baseurl }}" style="background-image: url({{ page.baseurl }}/assets/images/profile.png)">
+                <span class="hidden"></span></a>
+              {%- endif -%}
+            </figure>
+            <section class="col-x-12">
+              <h2> {{ author_info.display_name }} </h2>
+              <p>
+                {% if author_info.bio %}
+                  {{ author_info.bio }}
+                {% else %}
+                If you need help with your Rails upgrade project, contact us! 
+                <a href="https://www.fastruby.io" title="Upgrade Rails">FastRuby.io provides a top-notch Rails upgrade service</a> so you can focus on features.
+                {% endif %}
+                {%- if author_info.twitter -%}If you enjoyed this article, <a href="https://twitter.com/{{ author_info.twitter }}" title="Follow {{ author_info.name }} on Twitter" target="_blank">follow me on Twitter!</a>{%- endif -%}
+              </p>
+            </section>
+          </div>
+        {% endfor %} 
+      {%- endif -%}
+
+    <div class="post-footer">
       <!-- Share links section -->
       {%- include share.html -%}
 
