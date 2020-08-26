@@ -293,3 +293,9 @@ value in knowing how well covered our beloved framework really is.
 As you can see, some components have a solid test suite that shows up with 
 great code coverage percentages. Only one or two components could use more tests:
 Maybe this could be your next OSS contribution? <3
+
+## Resources
+
+If you want to see the changes that would be necessary for Rails to generate 
+code coverage reports in Buildkite, you can review this branch: 
+[https://github.com/rails/rails/compare/master...fastruby:simplecov](https://github.com/rails/rails/compare/master...fastruby:simplecov)
