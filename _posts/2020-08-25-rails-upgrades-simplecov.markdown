@@ -83,7 +83,7 @@ To generate the report you will need to install the gem and run the tests inside
 
 Once the CI finishes running, the report should be visible in the files section (e.g. [artifacts](https://circleci.com/docs/2.0/artifacts/)) of your CI service.
 
-The `SimpleCov.collate` method is fairly [recent](https://github.com/simplecov-ruby/simplecov/pull/780). In the past we had to do that manually. We wrote an [article](https://www.fastruby.io/blog/rails/simplecov/upgrades/merging-multiple-simpleCov-coverage-results.html) about that if you want to check it out.
+The `SimpleCov.collate` method is fairly [recent](https://github.com/simplecov-ruby/simplecov/pull/780). In the past we had to do it manually. We wrote an [article](https://www.fastruby.io/blog/rails/simplecov/upgrades/merging-multiple-simpleCov-coverage-results.html) about it if you want to check it out.
 
 ## Conclusion
 
