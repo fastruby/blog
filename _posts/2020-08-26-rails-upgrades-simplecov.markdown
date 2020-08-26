@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to check if your test suite is ready for a Rails Upgrade"
-date: 2020-08-25 09:00:00
+date: 2020-08-26 11:00:00
 categories: ["rails", "upgrades", "simplecov"]
 author: luciano
 ---
@@ -11,6 +11,8 @@ Having a clear idea of how much test coverage your Rails application has is real
 At [FastRuby](https://www.fastruby.io/), we recommend having at least 80% of your application covered before attempting to upgrade. A number lower than that would require you to make a lot more manual testing to ensure that the application is properly working after the upgrade. If your application doesn't meet that number, we suggest to first spend some time improving the test suite before starting the upgrade.
 
 In this article, I'll show you how you can measure your test coverage using [SimpleCov](https://github.com/simplecov-ruby/simplecov).
+
+_A quick note before starting: SimpleCov doesn't work in projects with Ruby `1.8.7` or lower. If that's your case, you can try [rcov](https://github.com/relevance/rcov)._
 
 <!--more-->
 
