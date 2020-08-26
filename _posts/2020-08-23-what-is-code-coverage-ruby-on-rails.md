@@ -6,19 +6,35 @@ categories: ["rails"]
 authors: ["etagwerker"]
 ---
 
-At FastRuby.io we are constantly looking at code coverage metrics for Ruby on Rails applications. It's a key indicator for us. We even use that information to decide [whether we work on a Rails upgrade project or not](https://www.fastruby.io/blog/rails/upgrades/assessing-rails-upgrades.html).
+At FastRuby.io we are constantly looking at code coverage metrics for Ruby on
+Rails applications. It's a key indicator for us. We even use that information 
+to decide [whether we work on a Rails upgrade project or not](https://www.fastruby.io/blog/rails/upgrades/assessing-rails-upgrades.html).
 
-So, I was interested in seeing code coverage metrics for the [Ruby on Rails framework](https://github.com/rails/rails). I couldn't find any information about this online, so I decided to generate a few reports for each component.
+So, I was interested in seeing code coverage metrics for the [Ruby on Rails framework](https://github.com/rails/rails). 
+I couldn't find any information about this online, so I decided to generate a 
+few reports for each component.
+
+This is an article about my process and my findings.
 
 <!--more-->
 
 ## Process
 
-In order to calculate code coverage, I used [SimpleCov](https://github.com/simplecov-ruby/simplecov) and analyzed Rails at [f22dd39](https://github.com/rails/rails/commit/f22dd39cb2adf85d3deeca61f9465206f7bd8df3).
+In order to calculate code coverage, I used [SimpleCov](https://github.com/simplecov-ruby/simplecov) and 
+analyzed Rails at [f22dd39](https://github.com/rails/rails/commit/f22dd39cb2adf85d3deeca61f9465206f7bd8df3).
 
-I didn't run the entire test suite from Rails's root directory, I went into each component and I run the test suite for it.
+I didn't run the entire test suite from Rails's root directory, I went into 
+each component and I run the test suite for that component. I found that this 
+was a good idea because each component had its quirks. You can't just run 
+`rake test` on each component and expect it to work.
 
-Before running it, I went ahead and added this snippet at the beginning of their helper files:
+One thing that could be improved in Rails's documentation: It would be nice to 
+have clear documentation on running the test suite for each component. For example:
+When you run ActionCable you will need to increase your `ulimit` and you will 
+need to have Redis running in your environment.
+
+Before running each test suite, I went ahead and added this snippet at the 
+beginning of the helper file:
 
 ```
 require "simplecov"
@@ -31,96 +47,122 @@ SimpleCov.start do
 end
 ```
 
-I had to add the `SimpleCov.command_name` to make sure that all the test rake tasks are considered and automatically merged by `SimpleCov`.
+I had to add the `SimpleCov.command_name` to make sure that all the test rake 
+tasks are considered and automatically merged by `SimpleCov`. Without that line 
+I was getting unexpected results when running more than one _test_ rake task (e.g. 
+running `rake test` and `rake test:system` -- the last process would override
+the coverage calculation from the first process)
+
+I used Ruby v2.5.7, Node v12.18.3, Rails master, and SimpleCov v0.19.0 to run 
+all my tests.
 
 ## ActionCable
 
-The average code coverage percentage for ActionCable is 93.86%.
+This one was a little tricky because I had to change my `ulimit` value. I ran 
+into [this issue](https://discuss.rubyonrails.org/t/how-do-i-run-the-test-suite-for-actioncable-im-getting-an-errno-emfile-error/76100) in 
+two different MacBooks:
+
+```
+Error:
+ClientTest#test_many_clients:
+Errno::EMFILE: Too many open files - socket(2) for "127.0.0.1" port 3099
+    /Users/etagwerker/.rvm/gems/ruby-2.5.7/bundler/gems/websocket-client-simple-e161305f1a46/lib/websocket-client-simple/client.rb:20:in `initialize'
+    /Users/etagwerker/.rvm/gems/ruby-2.5.7/bundler/gems/websocket-client-simple-e161305f1a46/lib/websocket-client-simple/client.rb:20:in `new'
+    /Users/etagwerker/.rvm/gems/ruby-2.5.7/bundler/gems/websocket-client-simple-e161305f1a46/lib/websocket-client-simple/client.rb:20:in `connect'
+    /Users/etagwerker/.rvm/gems/ruby-2.5.7/bundler/gems/websocket-client-simple-e161305f1a46/lib/websocket-client-simple/client.rb:8:in `connect'
+    /Users/etagwerker/Projects/fastruby/rails/actioncable/test/client_test.rb:113:in `initialize'
+    /Users/etagwerker/Projects/fastruby/rails/actioncable/test/client_test.rb:200:in `new'
+    /Users/etagwerker/Projects/fastruby/rails/actioncable/test/client_test.rb:200:in `websocket_client'
+    /Users/etagwerker/Projects/fastruby/rails/actioncable/test/client_test.rb:244:in `block (2 levels) in test_many_clients'
+    /Users/etagwerker/Projects/fastruby/rails/actioncable/test/client_test.rb:204:in `block (2 levels) in concurrently'
+```
+
+By following these steps I managed to solve that problem: 
+[https://medium.com/mindful-technology/too-many-open-files-limit-ulimit-on-mac-os-x-add0f1bfddde](https://medium.com/mindful-technology/too-many-open-files-limit-ulimit-on-mac-os-x-add0f1bfddde)
+
+Also, I had to make sure that Redis was running because one of its tests depends
+on it.
+
+The average code coverage percentage for ActionCable is 80.85%.
 
 <img src="/blog/assets/images/action-cable-coverage.png" alt="Code Coverage Report for ActionCable" class="half-img">
 
-You can find SimpleCov's detailed report over here: [Code Coverage Report for ActionCable](https://fastruby.github.io/coverage/#action-cable)
+You can find SimpleCov's detailed report over here: 
+[Code Coverage Report for ActionCable](https://fastruby.github.io/coverage/#action-cable)
 
 ## ActionMailbox
 
-The average code coverage percentage for ActionMailbox is 97.1%.
+The average code coverage percentage for ActionMailbox is 91.94%.
 
 <img src="/blog/assets/images/action-mailbox-coverage.png" alt="Code Coverage Report for ActionMailbox" class="half-img">
 
-You can find SimpleCov's detailed report over here: [Code Coverage Report for ActionMailbox](https://fastruby.github.io/coverage/#action-mailbox)
+You can find SimpleCov's detailed report over here: 
+[Code Coverage Report for ActionMailbox](https://fastruby.github.io/coverage/#action-mailbox)
 
 ## ActionMailer
 
-The average code coverage percentage for ActionMailer is 95.07%.
+The average code coverage percentage for ActionMailer is 83.05%.
 
 <img src="/blog/assets/images/action-mailer-coverage.png" alt="Code Coverage Report for ActionMailer" class="half-img">
 
-You can find SimpleCov's detailed report over here: [Code Coverage Report for ActionMailer](https://fastruby.github.io/coverage/#action-mailer)
+You can find SimpleCov's detailed report over here: 
+[Code Coverage Report for ActionMailer](https://fastruby.github.io/coverage/#action-mailer)
 
 ## ActionPack
 
-The average code coverage percentage for ActionPack is 53.86%.
+The average code coverage percentage for ActionPack is 48.67%.
 
 <img src="/blog/assets/images/action-pack-coverage.png" alt="Code Coverage Report for ActionPack" class="half-img">
 
-You can find SimpleCov's detailed report over here: [Code Coverage Report for ActionPack](https://fastruby.github.io/coverage/#action-pack)
+You can find SimpleCov's detailed report over here: 
+[Code Coverage Report for ActionPack](https://fastruby.github.io/coverage/#action-pack)
 
 ## ActionText
 
-The average code coverage percentage for ActionText is 95.64%.
+This one was a little tricky. I noticed there were two test suites:
+
+```
+$ rake -T | grep test
+rake test             # Run tests
+rake test:system      # Run tests for test:system
+```
+
+I managed to run `rake test` successfully, but when trying to run `rake test:system` I 
+encountered an issue: [https://gist.github.com/etagwerker/370c4d4f48d777ce22cf704443bd7502](https://gist.github.com/etagwerker/370c4d4f48d777ce22cf704443bd7502)
+
+I tried to fix things inside the `test/dummy` directory by doing this: 
+
+```
+cd test/dummy
+rake yarn:install
+rake assets:precompile
+```
+
+Then I ran into [another issue](https://gist.github.com/etagwerker/75f5eb3139e70aa103ddc20ff9c37a83). 
+Unfortunately I didn't manage to run `rake test:system` so the coverage report 
+was generated with `rake test`.
+
+The average code coverage percentage for ActionText is 81.33%.
 
 <img src="/blog/assets/images/action-text-coverage.png" alt="Code Coverage Report for ActionText" class="half-img">
 
-You can find SimpleCov's detailed report over here: [Code Coverage Report for ActionText](https://fastruby.github.io/coverage/#action-text)
+You can find SimpleCov's detailed report over here: 
+[Code Coverage Report for ActionText](https://fastruby.github.io/coverage/#action-text)
 
 ## ActionView
 
-The average code coverage percentage for ActionView is 40.63%.
+The average code coverage percentage for ActionView is 29.57%. I believe that
+average coverage for this component is higher than that, but I had a hard time
+running all the tests.
 
 <img src="/blog/assets/images/action-view-coverage.png" alt="Code Coverage Report for ActionView" class="half-img">
 
-This one was a little bit tricky because `rake test` will run the test suite for ActionView plus the integrations with ActionPack and ActiveRecord.
+This one was a little bit tricky because `rake test` will only run 3 test suites 
+for ActionView: [ActionView's rake test output](https://gist.github.com/etagwerker/ee1c9a9e751df6057a4f1a62bb07329d)
 
-So initially it was misreporting the code coverage percentage:
-
-```
-[etagwerker@luft actionview (master)]$ bundle exec rake
-/Users/etagwerker/.rvm/rubies/ruby-2.5.7/bin/ruby -w -I"lib:test" -I"/Users/etagwerker/.rvm/gems/ruby-2.5.7/gems/rake-13.0.1/lib" "/Users/etagwerker/.rvm/gems/ruby-2.5.7/gems/rake-13.0.1/lib/rake/rake_test_loader.rb" "test/template/active_model_helper_test.rb" "test/template/asset_tag_helper_test.rb" "test/template/atom_feed_helper_test.rb" "test/template/capture_helper_test.rb" "test/template/compiled_templates_test.rb" "test/template/controller_helper_test.rb" "test/template/csp_helper_test.rb" "test/template/csrf_helper_test.rb" "test/template/date_helper_i18n_test.rb" "test/template/date_helper_test.rb" "test/template/dependency_tracker_test.rb" "test/template/digestor_test.rb" "test/template/erb/erbubi_test.rb" "test/template/erb/form_for_test.rb" "test/template/erb/tag_helper_test.rb" "test/template/erb_util_test.rb" "test/template/fallback_file_system_resolver_test.rb" "test/template/file_system_resolver_test.rb" "test/template/form_collections_helper_test.rb" "test/template/form_helper/form_with_test.rb" "test/template/form_helper_test.rb" "test/template/form_options_helper_i18n_test.rb" "test/template/form_options_helper_test.rb" "test/template/form_tag_helper_test.rb" "test/template/html_test.rb" "test/template/javascript_helper_test.rb" "test/template/log_subscriber_test.rb" "test/template/lookup_context_test.rb" "test/template/number_helper_test.rb" "test/template/optimized_file_system_resolver_test.rb" "test/template/output_safety_helper_test.rb" "test/template/partial_iteration_test.rb" "test/template/record_identifier_test.rb" "test/template/render_test.rb" "test/template/resolver_cache_test.rb" "test/template/resolver_patterns_test.rb" "test/template/sanitize_helper_test.rb" "test/template/streaming_render_test.rb" "test/template/tag_helper_test.rb" "test/template/template_error_test.rb" "test/template/template_test.rb" "test/template/test_case_test.rb" "test/template/test_test.rb" "test/template/testing/fixture_resolver_test.rb" "test/template/testing/null_resolver_test.rb" "test/template/text_helper_test.rb" "test/template/text_test.rb" "test/template/translation_helper_test.rb" "test/template/url_helper_test.rb"
-/Users/etagwerker/.rvm/gems/ruby-2.5.7/gems/simplecov-0.19.0/lib/simplecov/configuration.rb:203: warning: instance variable @enable_for_subprocesses not initialized
-Run options: --seed 9896
-
-# Running:
-
-.............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-
-Finished in 11.675124s, 183.3813 runs/s, 432.3723 assertions/s.
-2141 runs, 5048 assertions, 0 failures, 0 errors, 0 skips
-Coverage report generated for Unit Tests to /Users/etagwerker/Projects/fastruby/rails/actionview/coverage. 1578 / 3884 LOC (40.63%) covered.
-/Users/etagwerker/.rvm/rubies/ruby-2.5.7/bin/ruby -w -I"lib:test" -I"/Users/etagwerker/.rvm/gems/ruby-2.5.7/gems/rake-13.0.1/lib" "/Users/etagwerker/.rvm/gems/ruby-2.5.7/gems/rake-13.0.1/lib/rake/rake_test_loader.rb" "test/actionpack/abstract/abstract_controller_test.rb" "test/actionpack/abstract/helper_test.rb" "test/actionpack/abstract/layouts_test.rb" "test/actionpack/abstract/render_test.rb" "test/actionpack/controller/capture_test.rb" "test/actionpack/controller/layout_test.rb" "test/actionpack/controller/render_test.rb" "test/actionpack/controller/view_paths_test.rb"
-/Users/etagwerker/.rvm/gems/ruby-2.5.7/gems/simplecov-0.19.0/lib/simplecov/configuration.rb:203: warning: instance variable @enable_for_subprocesses not initialized
-Run options: --seed 26645
-
-# Running:
-
-.............................................................................................................................................................................................................................................
-
-Finished in 0.833418s, 284.3711 runs/s, 397.1596 assertions/s.
-237 runs, 331 assertions, 0 failures, 0 errors, 0 skips
-Coverage report generated for Unit Tests to /Users/etagwerker/Projects/fastruby/rails/actionview/coverage. 1113 / 2843 LOC (39.15%) covered.
-/Users/etagwerker/.rvm/rubies/ruby-2.5.7/bin/ruby -w -I"lib:test" -I"/Users/etagwerker/.rvm/gems/ruby-2.5.7/gems/rake-13.0.1/lib" "/Users/etagwerker/.rvm/gems/ruby-2.5.7/gems/rake-13.0.1/lib/rake/rake_test_loader.rb" "test/activerecord/controller_runtime_test.rb" "test/activerecord/debug_helper_test.rb" "test/activerecord/form_helper_activerecord_test.rb" "test/activerecord/multifetch_cache_test.rb" "test/activerecord/polymorphic_routes_test.rb" "test/activerecord/relation_cache_test.rb" "test/activerecord/render_partial_with_record_identification_test.rb"
-/Users/etagwerker/.rvm/gems/ruby-2.5.7/gems/simplecov-0.19.0/lib/simplecov/configuration.rb:203: warning: instance variable @enable_for_subprocesses not initialized
-Run options: --seed 7235
-
-# Running:
-
-..........................................................................................................................................................................
-
-Finished in 2.969481s, 57.2491 runs/s, 101.7013 assertions/s.
-170 runs, 302 assertions, 0 failures, 0 errors, 0 skips
-Coverage report generated for Unit Tests to /Users/etagwerker/Projects/fastruby/rails/actionview/coverage. 1163 / 2993 LOC (38.86%) covered.
-```
-
-It was telling me that the coverage percentage for ActionView was 38.86% which is not totally accurate.
+So initially it was misreporting the code coverage percentage. It was 
+telling me that the coverage percentage for ActionView was 29.57% which is not 
+totally accurate.
 
 I took a closer look at all the tests that are present in the component:
 
@@ -139,17 +181,20 @@ rake ujs:server                      # Starts the test server
 
 In order to generate this coverage report, I decided to use `rake test:template`.
 
-ActionView has tests for its JavaScript code. However, this code coverage report was generated considering only its Ruby code.
+ActionView has tests for its JavaScript code. However, this code coverage report 
+was generated considering only its Ruby code.
 
-You can find SimpleCov's detailed report over here: [Code Coverage Report for ActionView](https://fastruby.github.io/coverage/#action-view)
+You can find SimpleCov's detailed report over here: 
+[Code Coverage Report for ActionView](https://fastruby.github.io/coverage/#action-view)
 
 ## ActiveJob
 
-The average code coverage percentage for ActiveJob is 75.04%.
+The average code coverage percentage for ActiveJob is 91.42%.
 
 <img src="/blog/assets/images/active-job-coverage.png" alt="Code Coverage Report for ActiveJob" class="half-img">
 
-It's very interesting that the test suite has to test different _adapters_, so you can see that there are many rake tasks available to test each adapter:
+It's very interesting that the test suite has to test different _adapters_, so 
+you can see that there are many rake tasks available to test each adapter:
 
 ```
 [etagwerker@luft activejob (master)] $ rake -T
@@ -195,10 +240,12 @@ You can find SimpleCov's detailed report over here: [Code Coverage Report for Ac
 ## ActiveRecord
 
 I approximate that the average code coverage percentage for ActiveRecord is higher 
+than 87.23%. 
 
-<img src="/blog/assets/images/active-record-coverage.png" alt="Code Coverage Report for ActiveRecord" class="half-img">than 87.23%.
+<img src="/blog/assets/images/active-record-coverage.png" alt="Code Coverage Report for ActiveRecord" class="half-img">
 
-I didn't get to run all the test rake tasks because I ran into a couple of issues with MySQL and Oracle, so I ended up running only three rake tasks:
+I didn't get to run all the test rake tasks because I ran into a couple of issues
+with MySQL and Oracle, so I ended up running only three rake tasks:
 
 ```
 bundle exec rake test:postgresql test:sqlite3 test:sqlite3_mem
@@ -206,7 +253,8 @@ bundle exec rake test:postgresql test:sqlite3 test:sqlite3_mem
 
 Here is the passing test suite: [https://gist.github.com/etagwerker/f4233a95be711b5bfe37e22a081bfb62](https://gist.github.com/etagwerker/f4233a95be711b5bfe37e22a081bfb62)
 
-You can find SimpleCov's detailed report over here: [Code Coverage Report for ActiveRecord](https://fastruby.github.io/coverage/#active-record)
+You can find SimpleCov's detailed report over here: 
+[Code Coverage Report for ActiveRecord](https://fastruby.github.io/coverage/#active-record)
 
 ## ActiveStorage
 
@@ -232,8 +280,16 @@ You can find SimpleCov's detailed report over here: [Code Coverage Report for Ac
 
 ## Summary
 
-Calculating code coverage for a project as big as Ruby on Rails is not trivial. Some components are quite tricky to test (e.g. ActiveRecord and ActiveStorage) because you need a bunch of external services (an Oracle database or a GCS account).
+Calculating code coverage for a project as big as Ruby on Rails is not trivial. 
+Some components are quite tricky to test (e.g. ActiveRecord and ActiveStorage) 
+because you need a bunch of external services (an Oracle database or a 
+[GCS](https://cloud.google.com) account).
 
-When I started writing this article I set out to run the entire test suite in my local environment (Macbook Air), but after hours of trying, I decided to run only a few tests for some of Rails's components. Hopefully you will find value in knowing how well covered our beloved framework really is.
+When I started writing this article I set out to run the entire test suite in 
+my local environment (Macbook Air), but after hours of trying, I decided to 
+run only a few tests for some of Rails's components. Hopefully you will find 
+value in knowing how well covered our beloved framework really is.
 
-As you can see, some components have a solid test suite that shows up with great code coverage percentages. Only one or two components could use more tests.
+As you can see, some components have a solid test suite that shows up with 
+great code coverage percentages. Only one or two components could use more tests:
+Maybe this could be your next OSS contribution? <3
