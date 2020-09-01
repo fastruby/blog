@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What are the Code Coverage Metrics for Ruby on Rails?"
-date: 2020-08-23 10:00:00
+date: 2020-09-01 10:00:00
 categories: ["rails"]
 authors: ["etagwerker"]
 ---
@@ -20,10 +20,11 @@ This is an article about my process and my findings.
 
 ## Process
 
-In order to calculate code coverage, I used [SimpleCov](https://github.com/simplecov-ruby/simplecov) and 
+In order to [calculate code coverage](https://www.fastruby.io/blog/rails/upgrades/simplecov/rails-upgrades-simplecov.html), 
+I used [SimpleCov](https://github.com/simplecov-ruby/simplecov) and 
 analyzed Rails at [f22dd39](https://github.com/rails/rails/commit/f22dd39cb2adf85d3deeca61f9465206f7bd8df3).
 
-I didn't run the entire test suite from Rails's root directory, I went into 
+I didn't run the entire test suite from its root directory, I went into 
 each component and I run the test suite for that component. I found that this 
 was a good idea because each component had its quirks. You can't just run 
 `rake test` on each component and expect it to work.
@@ -33,8 +34,8 @@ have clear documentation on running the test suite for each component. For examp
 When you run ActionCable you will need to increase your `ulimit` and you will 
 need to have Redis running in your environment.
 
-Before running each test suite, I went ahead and added this snippet at the 
-beginning of the helper file:
+Before running each test suite, I added this snippet at the beginning of the 
+helper file:
 
 ```
 require "simplecov"
@@ -49,8 +50,8 @@ end
 
 I had to add the `SimpleCov.command_name` to make sure that all the test rake 
 tasks are considered and automatically merged by `SimpleCov`. Without that line 
-I was getting unexpected results when running more than one _test_ rake task (e.g. 
-running `rake test` and `rake test:system` -- the last process would override
+I was getting unexpected results when running more than one _test_ rake task 
+(e.g. running `rake test` and `rake test:system` -- the last process would override
 the coverage calculation from the first process)
 
 I used Ruby v2.5.7, Node v12.18.3, Rails master, and SimpleCov v0.19.0 to run 
@@ -299,3 +300,7 @@ Maybe this could be your next OSS contribution? <3
 If you want to see the changes that would be necessary for Rails to generate 
 code coverage reports in Buildkite, you can review this branch: 
 [https://github.com/rails/rails/compare/master...fastruby:simplecov](https://github.com/rails/rails/compare/master...fastruby:simplecov)
+
+There has been some discussion about adding code coverage to the test suite in 
+the past: [https://github.com/rails/rails/pull/24148](https://github.com/rails/rails/pull/24148).
+At the moment, Rails does not calculate code coverage on every pull request.
