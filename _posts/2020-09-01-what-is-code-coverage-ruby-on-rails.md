@@ -24,8 +24,13 @@ In order to [calculate code coverage](https://www.fastruby.io/blog/rails/upgrade
 I used [SimpleCov](https://github.com/simplecov-ruby/simplecov) and 
 analyzed Rails at [f22dd39](https://github.com/rails/rails/commit/f22dd39cb2adf85d3deeca61f9465206f7bd8df3).
 
+<<<<<<< HEAD:_posts/2020-09-01-what-is-code-coverage-ruby-on-rails.md
 I didn't run the entire test suite from its root directory, I went into 
 each component and I run the test suite for that component. I found that this 
+=======
+I didn't run the entire test suite from Rails's root directory, I went into 
+each component and ran the test suite for that component. I found that this 
+>>>>>>> 562603c017e87bcd28efb0f57c65b600a81b549e:_posts/2020-08-23-what-is-code-coverage-ruby-on-rails.md
 was a good idea because each component had its quirks. You can't just run 
 `rake test` on each component and expect it to work.
 
@@ -300,7 +305,10 @@ Maybe this could be your next OSS contribution? <3
 If you want to see the changes that would be necessary for Rails to generate 
 code coverage reports in Buildkite, you can review this branch: 
 [https://github.com/rails/rails/compare/master...fastruby:simplecov](https://github.com/rails/rails/compare/master...fastruby:simplecov)
+<<<<<<< HEAD:_posts/2020-09-01-what-is-code-coverage-ruby-on-rails.md
 
 There has been some discussion about adding code coverage to the test suite in 
 the past: [https://github.com/rails/rails/pull/24148](https://github.com/rails/rails/pull/24148).
 At the moment, Rails does not calculate code coverage on every pull request.
+=======
+>>>>>>> 562603c017e87bcd28efb0f57c65b600a81b549e:_posts/2020-08-23-what-is-code-coverage-ruby-on-rails.md
