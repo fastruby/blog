@@ -24,7 +24,7 @@ In order to calculate code coverage, I used [SimpleCov](https://github.com/simpl
 analyzed Rails at [f22dd39](https://github.com/rails/rails/commit/f22dd39cb2adf85d3deeca61f9465206f7bd8df3).
 
 I didn't run the entire test suite from Rails's root directory, I went into 
-each component and I run the test suite for that component. I found that this 
+each component and ran the test suite for that component. I found that this 
 was a good idea because each component had its quirks. You can't just run 
 `rake test` on each component and expect it to work.
 
