@@ -4,7 +4,7 @@
       {%- if author.gravatar -%}
       <img
         class="author-thumb"
-        src="http://2.gravatar.com/avatar/{{ author.gravatar }}?s=50"
+        src="https://secure.gravatar.com/avatar/{{ author.gravatar }}?s=50"
         alt="{{ author.display_name }}"
         nopin="nopin"
       />
@@ -29,17 +29,17 @@
     </div>
   </div>
 
-{%- endif -%} 
+{%- endif -%}
 
-{%- if authors -%} 
-  {% for author in authors %} 
+{%- if authors -%}
+  {% for author in authors %}
     {%- assign author_info = site.authors[author] -%}
     <div class="author-block">
       <div class="author-photo">
         {%- if author_info.gravatar -%}
         <img
           class="author-thumb"
-          src="http://2.gravatar.com/avatar/{{ author_info.gravatar }}?s=50"
+          src="https://secure.gravatar.com/avatar/{{ author_info.gravatar }}?s=50"
           alt="{{ author_info.display_name }}"
           nopin="nopin"
         />
@@ -63,23 +63,23 @@
       </div>
     </div>
 
-    {%- if authors.size == 2 -%} 
+    {%- if authors.size == 2 -%}
       {%- unless forloop.last -%}
         <div class="author-and">and</div>
-      {%- endunless -%} 
-    {%- else -%} 
-      {% if forloop.first == true %} 
+      {%- endunless -%}
+    {%- else -%}
+      {% if forloop.first == true %}
         {%- unless forloop.last -%}
           <div>,</div>
-        {%- endunless -%} 
-      {%- else -%} 
+        {%- endunless -%}
+      {%- else -%}
         {%- unless forloop.last -%}
           <div class="author-and">and</div>
-        {%- endunless -%} 
-      {%- endif -%} 
-    {%- endif -%} 
-  {% endfor %} 
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endif -%}
+  {% endfor %}
   <div class="author-info">
     {%- include category_links.html -%}
   </div>
-{%- endif -%} 
+{%- endif -%}
