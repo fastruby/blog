@@ -16,6 +16,11 @@
         $(".scroll-down").arctic_scroll();
     });
 
+     document.getElementById('search-button').addEventListener('click', (e) => {
+       e.preventDefault()
+       document.getElementById('search-input-wrapper').classList.toggle('show')
+     })
+
     // Arctic Scroll by Paul Adam Davis
     // https://github.com/PaulAdamDavis/Arctic-Scroll
     $.fn.arctic_scroll = function (options) {
