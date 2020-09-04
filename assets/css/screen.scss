@@ -8,19 +8,18 @@ Table of Contents
 /*
 
 0.  Normalize
-1.  Icons
-2.  General
-3.  Utilities
-4.  General
-5.  Single Post
-6.  Tag Archive
-7.  Third Party Elements
-8.  Pagination
-9.  Footer
-10. Media Queries (Tablet)
-11. Media Queries (Mobile)
-12. Animations
-13. Categories List
+1.  General
+2.  Utilities
+3.  General
+4.  Single Post
+5.  Tag Archive
+6.  Third Party Elements
+7.  Pagination
+8.  Footer
+9. Media Queries (Tablet)
+10. Media Queries (Mobile)
+11. Animations
+12. Categories List
 
 */
 
@@ -103,71 +102,9 @@ textarea { overflow: auto; vertical-align: top; }
 table { border-collapse: collapse; border-spacing: 0; }
 
 
-/* ==========================================================================
-1. Icons - Sets up the icon font and respective classes
-========================================================================== */
-
-/* Import the font file with the icons in it */
-@font-face {
-  font-family: "casper-icons";
-  src:url("../fonts/casper-icons.eot");
-  src:url("../fonts/casper-icons.eot?#iefix") format("embedded-opentype"),
-  url("../fonts/casper-icons.woff") format("woff"),
-  url("../fonts/casper-icons.ttf") format("truetype"),
-  url("../fonts/casper-icons.svg#icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Apply these base styles to all icons */
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "casper-icons", "Open Sans", sans-serif;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  text-decoration: none !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Each icon is created by inserting the correct character into the
-content of the :before pseudo element. Like a boss. */
-.icon-ghost:before {
-  content: "\f600";
-}
-.icon-feed:before {
-  content: "\f601";
-}
-.icon-twitter:before {
-  content: "\f602";
-  font-size: 1.1em;
-}
-.icon-google-plus:before {
-  content: "\f603";
-}
-.icon-facebook:before {
-  content: "\f604";
-}
-.icon-arrow-left:before {
-  content: "\f605";
-}
-.icon-stats:before {
-  content: "\f606";
-}
-.icon-location:before {
-  content: "\f607";
-  margin-left: -3px; /* Tracking fix */
-}
-.icon-link:before {
-  content: "\f608";
-}
-
 
 /* ==========================================================================
-2. General - Setting up some base styles
+1. General - Setting up some base styles
 ========================================================================== */
 
 html {
@@ -435,9 +372,83 @@ margin on the iframe, cause it breaks stuff. */
   margin: 0;
 }
 
+.blog-nav {
+  display: flex;
+  align-items: center;
+  .btn-link {
+    font-size: 20px;
+    flex-basis: 100%;
+    text-align: center;
+  }
+  form {
+    display: flex;
+    margin-right: 5px;
+    position: relative;
+    button#search-button {
+      display: flex;
+      padding: 18px;
+      font-size: 20px;
+      color: white;
+      background-color: #00d242;
+      border: none;
+      align-items: center;
+      z-index: 2;
+      position: relative;
+      &:hover {
+        background-color: #009f32;
+      }
+    }
+  }
+  .rss-button {
+    display: flex;
+    padding: 18px;
+    font-size: 20px;
+    color: white;
+    background-color: #00d242;
+    border: none;
+    align-items: center;
+    align-self: stretch;
+    &:hover {
+      background-color: #009f32;
+    }
+  }
+
+}
+
+
+/* search bar */
+
+#search-input-wrapper {
+  z-index: 1;
+  transition: .7s ease-out;
+  right: 0;
+  position: absolute;
+  background-color: rgba(218,218,218,0.58);
+  border-bottom: 3px solid #00d242;
+  &.show {
+    right: 100%;
+    width: 250px;
+    height: 100%;
+    padding: 0px 20px;
+    transition: .7s ease-out;
+  }
+  #search-input {
+    padding: 18px 9px;
+    width: 100%;
+    margin: 0;
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    background: none;
+  }
+}
+
+
+
 
 /* ==========================================================================
-3. Utilities - These things get used a lot
+2. Utilities - These things get used a lot
 ========================================================================== */
 
 /* Clears shit */
@@ -472,7 +483,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-4. General - The main styles for the the theme
+3. General - The main styles for the the theme
 ========================================================================== */
 
 /* Big cover image on the home page */
@@ -864,7 +875,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-5. Single Post - When you click on an individual post
+4. Single Post - When you click on an individual post
 ========================================================================== */
 
 .post-template .post-header {
@@ -1089,7 +1100,7 @@ links remain at a fixed width the whole time */
 }
 
 /* ==========================================================================
-6. Author profile
+5. Author profile
 ========================================================================== */
 
 .post-head.main-header {
@@ -1223,7 +1234,7 @@ pagination prev/next links */
 }
 
 /* ==========================================================================
-7. Third Party Elements - Embeds from other services
+6. Third Party Elements - Embeds from other services
 ========================================================================== */
 
 /* Github */
@@ -1238,7 +1249,7 @@ pagination prev/next links */
 
 
 /* ==========================================================================
-8. Pagination - Tools to let you flick between pages
+7. Pagination - Tools to let you flick between pages
 ========================================================================== */
 
 /* The main wrapper for our pagination links */
@@ -1326,7 +1337,7 @@ pagination prev/next links */
 
 
 /* ==========================================================================
-9. Footer - The bottom of every page
+8. Footer - The bottom of every page
 ========================================================================== */
 
 .site-footer {
@@ -1369,7 +1380,7 @@ pagination prev/next links */
 
 
 /* ==========================================================================
-10. Media Queries - Smaller than 900px
+9. Media Queries - Smaller than 900px
 ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -1493,7 +1504,7 @@ pagination prev/next links */
 
 
 /* ==========================================================================
-11. Media Queries - Smaller than 500px
+10. Media Queries - Smaller than 500px
 ========================================================================== */
 
 @media only screen and (max-width: 500px) {
@@ -1755,7 +1766,7 @@ pagination prev/next links */
 }
 
 /* ==========================================================================
-12. Convertkit form
+11. Convertkit form
 ========================================================================== */
 
 #sidebar {
@@ -1813,7 +1824,7 @@ pagination prev/next links */
 
 
 /* ==========================================================================
-13. Animations
+12. Animations
 ========================================================================== */
 
 /* Used to fade in title/desc on the home page */
