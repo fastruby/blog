@@ -11,15 +11,17 @@
       <span></span>
       <span></span>
     </button>
-    <div class="blog-nav">
+    <div class="blog-nav navbar-collapse collapse" id="navbarNavAltMarkup">
       <a class="nav-item nav-link btn-link" href="{{site.baseurl}}"><strong>FastRuby</strong>  Blog</a>
       <form class="nav-item nav-link" action='/search' method='GET'>
         <div id='search-input-wrapper'>
           <input type="search" name="query" aria-label="Search blog posts" placeholder="Search blog posts..." required id="search-input"/>
-          <button type='submit' hidden></button>
-          <!-- <button class='close icon-cross'></button> -->
+          <button type='submit'></button>
         </div>
-        <button id="search-button" class='search-button'><i class="icon-search"></i></button>
+        <div id="search-close">
+          <button id="search-button"><i class="icon-search"></i></button>
+          <button id="close-button"<i class="icon-cross"></button>
+        </div>
       </form>
       <a class="nav-item nav-link rss-button icon-rss" href="https://fastruby.io/blog/rss.xml"></a>
     </div>

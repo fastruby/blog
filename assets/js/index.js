@@ -18,7 +18,16 @@
 
      document.getElementById('search-button').addEventListener('click', (e) => {
        e.preventDefault()
+       document.querySelector('.blog-nav').classList.toggle('show-search')
        document.getElementById('search-input-wrapper').classList.toggle('show')
+       document.getElementById('search-close').classList.toggle('close')
+     })
+
+     document.getElementById('close-button').addEventListener('click', (e) => {
+       e.preventDefault()
+       document.querySelector('.blog-nav').classList.toggle('show-search')
+       document.getElementById('search-input-wrapper').classList.toggle('show')
+       document.getElementById('search-close').classList.toggle('close')
      })
 
     // Arctic Scroll by Paul Adam Davis

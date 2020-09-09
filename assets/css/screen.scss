@@ -373,6 +373,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .blog-nav {
+  visibility: visible;
   display: flex;
   align-items: center;
   .btn-link {
@@ -384,7 +385,12 @@ margin on the iframe, cause it breaks stuff. */
     display: flex;
     margin-right: 5px;
     position: relative;
-    button#search-button {
+    #search-input-wrapper {
+      button {
+      display: none;
+      }
+    }
+    button#search-button, #close-button{
       display: flex;
       padding: 18px;
       font-size: 20px;
@@ -396,6 +402,19 @@ margin on the iframe, cause it breaks stuff. */
       position: relative;
       &:hover {
         background-color: #009f32;
+      }
+    }
+    div#search-close {
+      button#close-button {
+        display: none;
+      }
+      &.close {
+        button#search-button {
+          display: none;
+        }
+        button#close-button {
+          display: flex;
+        }
       }
     }
   }
@@ -423,7 +442,7 @@ margin on the iframe, cause it breaks stuff. */
   transition: .7s ease-out;
   right: 0;
   position: absolute;
-  background-color: rgba(218,218,218,0.58);
+  background-color: rgba(218,218,218,1);
   border-bottom: 3px solid #00d242;
   &.show {
     right: 100%;
@@ -1378,6 +1397,16 @@ pagination prev/next links */
   float: left;
 }
 
+/* ==========================================================================
+9. Media Queries - Smaller than 1200px
+========================================================================== */
+@media only screen and (max-width: 1200px) {
+  .blog-nav.show-search {
+  a.btn-link {
+    visibility: hidden;
+  }
+}
+}
 
 /* ==========================================================================
 9. Media Queries - Smaller than 900px
@@ -1502,9 +1531,80 @@ pagination prev/next links */
 
 }
 
+/* ==========================================================================
+10. Media Queries - Smaller than 768px
+========================================================================== */
+@media only screen and (min-width: 768px) {
+  .blog-nav.navbar-collapse.collapse {
+    display: flex !important;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .blog-nav.show, .blog-nav.collapsing {
+    display: flex !important;
+    flex-direction: column;
+  }
+  .blog-nav .btn-link {
+    padding: 0;
+    flex-basis: 0%;
+  }
+  .blog-nav .rss-button {
+    align-self: center;
+  }
+  form.nav-item.nav-link {
+    margin: 30px 0px;
+  }
+  #search-input-wrapper {
+    position: static;
+  }
+  #search-button {
+    pointer-events: none;
+    margin: 0;
+  }
+  // header{
+  //   .blog-navbar-toggler{
+  //     display: block;
+  //   }
+  //   .blog-navbar-collapse.collapse{
+  //     height: 0 !important;
+  //     overflow: hidden !important;
+  //   }
+  //   .navbar-toggler{
+  //     transform: scale(1.5);
+  //     margin-top: 22px;
+  //     margin-right: 7px;
+  //   }
+  //   .blog-navbar-collapse{
+  //     &.collapse.in, &.collapsing{
+  //       display: block !important;
+  //       position: absolute;
+  //       width: 100vw;
+  //       height: 100vh !important;
+  //       left: -50px;
+  //       background-color: white;
+  //       top: 53px;
+  //       .blog-navbar-nav{
+  //         float: none;
+  //         width: 200px;
+  //         margin: 3rem auto;
+  //         a{
+  //           display: block;
+  //           &.btn-link{
+  //             padding: 1rem 0;
+  //           }
+  //           &.btn{
+  //             margin-top: 1rem;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}
 
 /* ==========================================================================
-10. Media Queries - Smaller than 500px
+11. Media Queries - Smaller than 500px
 ========================================================================== */
 
 @media only screen and (max-width: 500px) {
