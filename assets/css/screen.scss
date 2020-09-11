@@ -381,43 +381,48 @@ margin on the iframe, cause it breaks stuff. */
     flex-basis: 100%;
     text-align: center;
   }
-  form {
-    display: flex;
-    margin-right: 5px;
+  #search-form-wrapper {
     position: relative;
-    #search-input-wrapper {
-      button {
+    display: flex;
+  }
+
+  form#search-input-wrapper {
+    display: flex;
+    button {
       display: none;
-      }
-    }
-    button#search-button, #close-button{
-      display: flex;
-      padding: 18px;
-      font-size: 20px;
-      color: white;
-      background-color: #00d242;
-      border: none;
-      align-items: center;
-      z-index: 2;
-      position: relative;
-      &:hover {
-        background-color: #009f32;
-      }
-    }
-    div#search-close {
-      button#close-button {
-        display: none;
-      }
-      &.close {
-        button#search-button {
-          display: none;
-        }
-        button#close-button {
-          display: flex;
-        }
-      }
     }
   }
+
+  button#search-button, #close-button{
+    display: flex;
+    margin-right: 5px;
+    padding: 18px;
+    height: 58px;
+    font-size: 20px;
+    color: white;
+    background-color: #00d242;
+    border: none;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    &:hover {
+      background-color: #009f32;
+    }
+  }
+
+  button#close-button {
+    display: none;
+  }
+
+  &.show-search {
+    button#search-button {
+      display: none;
+    }
+    button#close-button {
+      display: flex;
+    }
+  }
+
   .rss-button {
     display: flex;
     padding: 18px;
@@ -437,33 +442,30 @@ margin on the iframe, cause it breaks stuff. */
 
 /* search bar */
 
-#search-input-wrapper {
-  z-index: 1;
-  transition: .7s ease-out;
-  right: 0;
-  position: absolute;
-  background-color: rgba(218,218,218,1);
-  border-bottom: 3px solid #00d242;
-  &.show {
-    right: 100%;
-    width: 250px;
+form#search-input-wrapper {
+  align-self: stretch;
+  input#search-input {
+    right: 0;
+    position: absolute;
+    border: 0;
+    border-bottom: 3px solid #00d242;
+    background-color: rgba(218,218,218,1);
     height: 100%;
-    padding: 0px 20px;
-    transition: .7s ease-out;
-  }
-  #search-input {
-    padding: 18px 9px;
-    width: 100%;
+    width: 0;
     margin: 0;
+    margin-bottom: 10px;
+    padding: 0px;
+    transition: .7s ease-out;
     display: block;
     box-sizing: border-box;
     outline: none;
-    border: none;
-    background: none;
+    &.show {
+      right: 100%;
+      width: 250px;
+      padding: 0px 20px;
+    }
   }
 }
-
-
 
 
 /* ==========================================================================
@@ -1400,12 +1402,12 @@ pagination prev/next links */
 /* ==========================================================================
 9. Media Queries - Smaller than 1200px
 ========================================================================== */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) and (min-width: 768px){
   .blog-nav.show-search {
-  a.btn-link {
-    visibility: hidden;
+    a.btn-link {
+      visibility: hidden;
+    }
   }
-}
 }
 
 /* ==========================================================================
@@ -1540,7 +1542,7 @@ pagination prev/next links */
   }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 767px) {
   .blog-nav.show, .blog-nav.collapsing {
     display: flex !important;
     flex-direction: column;
@@ -1552,55 +1554,20 @@ pagination prev/next links */
   .blog-nav .rss-button {
     align-self: center;
   }
-  form.nav-item.nav-link {
+  #search-form-wrapper {
     margin: 30px 0px;
   }
-  #search-input-wrapper {
-    position: static;
+
+  form#search-input-wrapper {
+    input#search-input {
+      position: relative;
+      width: 250px;
+      padding: 0px 20px;
+    }
   }
   #search-button {
     pointer-events: none;
-    margin: 0;
   }
-  // header{
-  //   .blog-navbar-toggler{
-  //     display: block;
-  //   }
-  //   .blog-navbar-collapse.collapse{
-  //     height: 0 !important;
-  //     overflow: hidden !important;
-  //   }
-  //   .navbar-toggler{
-  //     transform: scale(1.5);
-  //     margin-top: 22px;
-  //     margin-right: 7px;
-  //   }
-  //   .blog-navbar-collapse{
-  //     &.collapse.in, &.collapsing{
-  //       display: block !important;
-  //       position: absolute;
-  //       width: 100vw;
-  //       height: 100vh !important;
-  //       left: -50px;
-  //       background-color: white;
-  //       top: 53px;
-  //       .blog-navbar-nav{
-  //         float: none;
-  //         width: 200px;
-  //         margin: 3rem auto;
-  //         a{
-  //           display: block;
-  //           &.btn-link{
-  //             padding: 1rem 0;
-  //           }
-  //           &.btn{
-  //             margin-top: 1rem;
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 }
 
 /* ==========================================================================

@@ -16,18 +16,28 @@
         $(".scroll-down").arctic_scroll();
     });
 
+    const blogNav = document.querySelector('.blog-nav');
+    const searchInput = document.getElementById('search-input');
+
      document.getElementById('search-button').addEventListener('click', (e) => {
        e.preventDefault()
-       document.querySelector('.blog-nav').classList.toggle('show-search')
-       document.getElementById('search-input-wrapper').classList.toggle('show')
-       document.getElementById('search-close').classList.toggle('close')
+       blogNav.classList.add('show-search')
+       searchInput.classList.add('show')
      })
 
      document.getElementById('close-button').addEventListener('click', (e) => {
        e.preventDefault()
-       document.querySelector('.blog-nav').classList.toggle('show-search')
-       document.getElementById('search-input-wrapper').classList.toggle('show')
-       document.getElementById('search-close').classList.toggle('close')
+       blogNav.classList.remove('show-search')
+       searchInput.classList.remove('show')
+       searchInput.value = ''
+     })
+
+     document.getElementById('search-input').addEventListener('input', (e) => {
+       if (e.target.value !== '') {
+         blogNav.classList.add('show-search')
+       } else {
+         blogNav.classList.remove('show-search')
+       }
      })
 
     // Arctic Scroll by Paul Adam Davis
