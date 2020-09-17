@@ -2,9 +2,9 @@
 layout: post
 title: "Upgrade Rails from 5.0 to 5.1"
 date: 2018-07-18 10:05:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-09-17 10:00:00
 categories: ["rails", "upgrades"]
-author: "mauro-oto"
+authors: ["etagwerker", "mauro-oto"]
 ---
 
 _This article is part of our Upgrade Rails series. To see more of them, [click here](https://fastruby.io/blog/tags/upgrades)_.
@@ -27,11 +27,14 @@ your [Ruby on Rails](http://rubyonrails.org/) application from [version 5.0](htt
 
 Like Rails 5.0, [Rails 5.1](https://weblog.rubyonrails.org/2017/4/27/Rails-5-1-final/) requires [Ruby 2.2.2](https://www.ruby-lang.org/en/news/2015/04/13/ruby-2-2-2-released/) or later.
 
+If you want to know more about the Ruby versions that you could use, check out our
+[Ruby & Rails Compatibility Table](https://www.fastruby.io/blog/ruby/rails/versions/compatibility-table.html).
+
 <h2 id="gems">2. Gems</h2>
 
 - Make sure the gems you use are compatible with Rails 5.1, you can check this
-using [Ready4Rails](http://www.ready4rails.net). If a gem is missing on
-Ready4Rails, you'll need to manually check the Github page for the project to
+using [RailsBump](https://www.railsbump.org). If a gem is missing on
+RailsBump, you'll need to manually check the Github page for the project to
 find out its status. In case you own the gem, you'll need to make sure it
 supports Rails 5.1 and if it doesn't, update it.
 
@@ -41,7 +44,32 @@ Rails includes the `rails app:update` [task](http://edgeguides.rubyonrails.org/u
 You can use this task as a guideline as explained thoroughly in
 [this post](http://thomasleecopeland.com/2015/08/06/running-rails-update.html).
 
-As an alternative, check out [RailsDiff](http://railsdiff.org/5.0.7/5.1.6),
+You might run into an error trying to run that command:
+
+```
+$ bundle exec rails app:update
+rails aborted!
+LoadError: cannot load such file -- rails/commands/server
+/Users/etagwerker/.rvm/gems/ruby-2.4.9@ombu/gems/bootsnap-1.4.8/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:34:in `require'
+/Users/etagwerker/.rvm/gems/ruby-2.4.9@ombu/gems/activesupport-5.1.7/lib/active_support/dependencies.rb:292:in `block in require'
+/Users/etagwerker/.rvm/gems/ruby-2.4.9@ombu/gems/activesupport-5.1.7/lib/active_support/dependencies.rb:258:in `load_dependency'
+/Users/etagwerker/.rvm/gems/ruby-2.4.9@ombu/gems/activesupport-5.1.7/lib/active_support/dependencies.rb:292:in `require'
+/Users/etagwerker/Projects/ombulabs/ombushop/config/application.rb:5:in `<main>'
+```
+
+If that is the case, you will need to change this require statement:
+
+```ruby
+require 'rails/commands/server'
+```
+
+To:
+
+```ruby
+require 'rails/commands/server/server_command'
+```
+
+As an alternative, check out [RailsDiff](http://railsdiff.org/5.0.7.2/5.1.7),
 which provides an overview of the changes in a basic Rails app between 5.0.x and
 5.1.x (or any other source/target versions). Always target your upgrade to the
 latest patch version (e.g: 5.1.6 instead of 5.1.0).
