@@ -2,9 +2,9 @@
 layout: post
 title: "Upgrade Rails from 5.1 to 5.2"
 date: 2018-08-14 12:42:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-09-17 10:00:00
 categories: ["rails", "upgrades"]
-author: "mauro-oto"
+authors: ["etagwerker", "mauro-oto"]
 ---
 
 _This article is part of our Upgrade Rails series. To see more of them, [click here](https://fastruby.io/blog/tags/upgrades)_.
@@ -30,7 +30,7 @@ Like Rails 5.0 and 5.1, [Rails 5.2](https://weblog.rubyonrails.org/2018/4/9/Rail
 
 At the time of writing, the Rails 5.2 release is relatively recent, which
 means that some gems may still not be fully compatible, or contain deprecation
-warnings if you're not using their latest version. [Ready4Rails](http://www.ready4rails.net)
+warnings if you're not using their latest version. [RailsBump](https://www.railsbump.org)
 can help you check if the gem is compatible with Rails 5.0, but it may have
 annoying bugs/deprecation warnings on 5.2. Some (popular) gem examples are:
 
