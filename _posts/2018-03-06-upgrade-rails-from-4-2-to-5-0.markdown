@@ -2,9 +2,9 @@
 layout: post
 title: "Upgrade Rails from 4.2 to 5.0"
 date: 2018-03-06 10:53:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-09-17 10:00:00
 categories: ["rails", "upgrades"]
-author: "mauro-oto"
+authors: ["etagwerker", "mauro-oto"]
 ---
 
 _This article is part of our Upgrade Rails series. To see more of them, [click here](https://fastruby.io/blog/tags/upgrades)_.
@@ -40,12 +40,12 @@ to your `Gemfile`.
 
 <h2 id="gems">2. Gems</h2>
 
-- It's recommended that you check your `Gemfile` against [Ready4Rails](http://www.ready4rails.net)
+- It's recommended that you check your `Gemfile` against [RailsBump](https://www.railsbump.org)
 to ensure all your gems are compatible with Rails 5.
 As of the release of this blog post, there are only a few gems which don't
 support Rails 5 yet. This is more of a problem when you're upgrading early on.
 
-If any of the gems are missing on Ready4Rails, you'll need to manually check the
+If any of the gems are missing on RailsBump, you'll need to manually check the
 Github page for the project to find out its status. In case you own the gem,
 you'll need to make sure it works on Rails 5 or update it.
 
