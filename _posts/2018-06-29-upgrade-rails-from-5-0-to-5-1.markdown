@@ -32,9 +32,18 @@ If you want to know more about the Ruby versions that you could use, check out o
 
 <h2 id="gems">2. Gems</h2>
 
-- Make sure the gems you use are compatible with Rails 5.1, you can check this
-using [RailsBump](https://www.railsbump.org). If a gem is missing on
-RailsBump, you'll need to manually check the Github page for the project to
+Make sure the gems you use are compatible with Rails 5.1, you can check this
+using [RailsBump](https://www.railsbump.org).
+
+If you can't find the gem in RailsBump, you could try using `next_rails` to
+find incompatibilities in your dependencies:
+
+```
+gem install next_rails
+bundle_report compatibility --rails-version=5.1.0
+```
+
+If that does not work, you'll need to manually check the GitHub page for the project to
 find out its status. In case you own the gem, you'll need to make sure it
 supports Rails 5.1 and if it doesn't, update it.
 
@@ -88,7 +97,9 @@ After:
 
 ```ruby
 config.public_file_server.enabled = false
-config.public_file_server.headers = "public, max-age=3600"
+config.public_file_server.headers = {
+  'Cache-Control' => "public, max-age=3600"
+}
 ```
 
 <h2 id="application-code">4. Application code</h2>
