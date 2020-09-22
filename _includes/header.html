@@ -1,8 +1,8 @@
 <header>
   <nav class="navbar navbar-expand-md">
-    <a class="navbar-brand" href="{{ site.baseurl }}">
+    <a class="navbar-brand" href="{{ site.domain_name }}">
       <img src="{{site.baseurl}}/assets/images/fastruby-logo.svg" alt="FastRuby.io Logo">
-      <span><strong>Fast</strong>Ruby Blog</span>
+      <span></span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,11 +11,19 @@
       <span></span>
       <span></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link btn-link" href="{{ site.domain_name }}">Go to FastRuby.io</a>
-        <a class="nav-item nav-link btn icon-feed" href="{{ site.domain_name }}/blog/rss.xml"></a>
+    <div class="blog-nav navbar-collapse collapse" id="navbarNavAltMarkup">
+      <a class="nav-item nav-link btn-link" href="{{site.baseurl}}"><strong>FastRuby</strong>  Blog</a>
+      <div id="search-form-wrapper">
+        <form class="nav-item nav-link" id='search-input-wrapper' action='/search' method='GET'>
+          <input type="search" name="query" aria-label="Search blog posts" placeholder="Search blog posts..." required id="search-input"/>
+          <button type='submit'></button>
+        </form>
+        <div id="search-close">
+          <button id="search-button"><i class="icon-search"></i></button>
+          <button id="close-button"><i class="icon-cross"></i></button>
+        </div>
       </div>
+      <a class="nav-item nav-link rss-button icon-rss" href="https://fastruby.io/blog/rss.xml"></a>
     </div>
   </nav>
 </header>
