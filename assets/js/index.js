@@ -16,23 +16,16 @@
         $(".scroll-down").arctic_scroll();
     });
 
-    const searchForm = document.querySelector('search-form-wrapper');
-    const searchInput = document.getElementById('search-input');
+    const searchForm = document.getElementById('search-form-wrapper-sidebar');
+    const searchInput = document.getElementById('search-input-sidebar');
 
-     document.getElementById('search-button').addEventListener('click', (e) => {
+     document.getElementById('close-button-sidebar').addEventListener('click', (e) => {
        e.preventDefault()
-       blogNav.classList.add('show-search')
-       searchInput.classList.add('show')
-     })
-
-     document.getElementById('close-button').addEventListener('click', (e) => {
-       e.preventDefault()
-       blogNav.classList.remove('show-search')
-       searchInput.classList.remove('show')
+       searchForm.classList.remove('show-search')
        searchInput.value = ''
      })
 
-     document.getElementById('search-input').addEventListener('input', (e) => {
+     document.getElementById('search-input-sidebar').addEventListener('input', (e) => {
        if (e.target.value !== '') {
          searchForm.classList.add('show-search')
        } else {

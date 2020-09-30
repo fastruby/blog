@@ -1,12 +1,12 @@
 <div id="sidebar" class="col-xs-12 col-md-4 sidebar-container">
-  <div id="search-form-wrapper">
-    <form class="nav-item nav-link" id='search-input-wrapper' action='/search' method='GET'>
-      <input type="search" name="query" aria-label="Search blog posts" placeholder="Search blog posts..." required id="search-input"/>
+  <div id="search-form-wrapper-sidebar">
+    <form class="nav-item nav-link" id='search-input-wrapper-sidebar' action='/search' method='GET'>
+      <input type="search" name="query" aria-label="Search blog posts" placeholder="Search blog posts..." required id="search-input-sidebar"/>
       <button type='submit'></button>
     </form>
     <div id="search-close">
       <button id="search-button"><i class="icon-search"></i></button>
-      <button id="close-button"><i class="icon-cross"></i></button>
+      <button id="close-button-sidebar" onclick="clear"><i class="icon-cross"></i></button>
     </div>
   </div>
   <script async data-uid="{{ site.convert_kit_form_uid_desktop }}" src="{{ site.convert_kit_js_code_desktop }}"></script>

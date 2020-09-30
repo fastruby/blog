@@ -398,22 +398,23 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 div#sidebar {
-  #search-form-wrapper {
+  #search-form-wrapper-sidebar {
     display: flex;
-    form#search-input-wrapper {
+    &.show-search {
+      button#search-button {
+        display: none;
+      }
+      button#close-button-sidebar {
+        display: flex;
+        pointer-events: auto;
+      }
+    }
+    form#search-input-wrapper-sidebar {
       flex-basis: 100%;
       button {
         display: none;
       }
-      &.show-search {
-        button#search-button {
-          display: none;
-        }
-        button#close-button {
-          display: flex;
-        }
-      }
-      input#search-input {
+      input#search-input-sidebar {
         border: 0;
         border-bottom: 3px solid #00d242;
         background-color: rgba(218,218,218, .58);
@@ -426,22 +427,22 @@ div#sidebar {
         outline: none;
       }
     }
-    button#search-button, #close-button {
+    button#search-button, #close-button-sidebar {
       display: flex;
       margin-right: 5px;
       margin-bottom: 5px;
       padding: 18px;
       height: 58px;
       font-size: 20px;
-      pointer-events: none;
       color: white;
       background-color: #00d242;
+      pointer-events: none;
       border: none;
       align-items: center;
       z-index: 2;
       position: relative;
     }
-    button#close-button {
+    button#close-button-sidebar {
       display: none;
     }
   }
@@ -1538,7 +1539,7 @@ pagination prev/next links */
     margin: 30px 0px;
   }
 
-  form#search-input-wrapper {
+  form#search-input-wrapper-sidebar {
     input#search-input {
       position: relative;
       width: 250px;
