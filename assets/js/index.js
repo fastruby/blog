@@ -18,6 +18,8 @@
 
     const searchForm = document.getElementById('search-form-wrapper-sidebar');
     const searchInput = document.getElementById('search-input-sidebar');
+    const searchFormNav = document.getElementById('search-form-wrapper-nav');
+    const searchInputNav = document.getElementById('search-input-nav');
 
      document.getElementById('close-button-sidebar').addEventListener('click', (e) => {
        e.preventDefault()
@@ -25,11 +27,25 @@
        searchInput.value = ''
      })
 
+     document.getElementById('close-button-nav').addEventListener('click', (e) => {
+       e.preventDefault()
+       searchFormNav.classList.remove('show-search')
+       searchInputNav.value = ''
+     })
+
      document.getElementById('search-input-sidebar').addEventListener('input', (e) => {
        if (e.target.value !== '') {
          searchForm.classList.add('show-search')
        } else {
          searchForm.classList.remove('show-search')
+       }
+     })
+
+     document.getElementById('search-input-nav').addEventListener('input', (e) => {
+       if (e.target.value !== '') {
+         searchFormNav.classList.add('show-search')
+       } else {
+         searchFormNav.classList.remove('show-search')
        }
      })
 

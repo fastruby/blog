@@ -373,9 +373,11 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .navbar-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  @media (min-width: 992px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
   a.nav-item.nav-link.btn.icon-rss {
     margin-left: 5px;
   }
@@ -1383,18 +1385,17 @@ pagination prev/next links */
 9. Media Queries - Smaller than 1200px
 ========================================================================== */
 @media only screen and (max-width: 1200px) and (min-width: 768px){
-  .blog-nav.show-search {
-    a.btn-link {
-      visibility: hidden;
-    }
+  .blog-nav.show, .blog-nav.collapsing {
+    display: flex !important;
+    flex-direction: column;
   }
 }
 
 /* ==========================================================================
-9. Media Queries - Smaller than 900px
+9. Media Queries - Smaller than 992px
 ========================================================================== */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 992px) {
 
   .main-nav {
     padding: 15px;
@@ -1511,43 +1512,62 @@ pagination prev/next links */
     padding: 0;
   }
 
-}
-
-/* ==========================================================================
-10. Media Queries - Smaller than 768px
-========================================================================== */
-@media only screen and (min-width: 768px) {
-  .blog-nav.navbar-collapse.collapse {
-    display: flex !important;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .blog-nav.show, .blog-nav.collapsing {
-    display: flex !important;
-    flex-direction: column;
-  }
-  .blog-nav .btn-link {
-    padding: 0;
-    flex-basis: 0%;
-  }
-  .blog-nav .rss-button {
-    align-self: center;
-  }
-  .navbar-nav#search-form-wrapper-nav {
-    display: flex;
-    margin: 30px 0px;
-  }
-
-  form#search-input-wrapper-sidebar {
-    input#search-input {
-      position: relative;
-      width: 250px;
-      padding: 0px 20px;
+  .navbar-nav#nav {
+    text-align: center;
+    width: 250px;
+    a.nav-item.nav-link.btn {
+      display: inline-block;
+      margin-left: 0px;
+      align-self: center;
     }
-  }
-  #search-button {
-    pointer-events: none;
+    #search-form-wrapper-nav {
+      display: flex;
+      &.show-search {
+        button#search-button {
+          display: none;
+        }
+        button#close-button-nav {
+          display: flex;
+          pointer-events: auto;
+        }
+      }
+      form#search-input-wrapper-nav {
+        flex-basis: 100%;
+        button {
+          display: none;
+        }
+        input#search-input-nav {
+          border: 0;
+          border-bottom: 3px solid #00d242;
+          background-color: rgba(218,218,218, .58);
+          height: 58px;
+          width: 100%;
+          margin: 0;
+          padding: 10px;
+          display: block;
+          box-sizing: border-box;
+          outline: none;
+        }
+      }
+      button#search-button, #close-button-nav {
+        display: flex;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        padding: 18px;
+        height: 58px;
+        font-size: 20px;
+        color: white;
+        background-color: #00d242;
+        pointer-events: none;
+        border: none;
+        align-items: center;
+        z-index: 2;
+        position: relative;
+      }
+      button#close-button-nav {
+        display: none;
+      }
+    }
   }
 }
 
@@ -1847,7 +1867,7 @@ pagination prev/next links */
       padding: 15px 12px;
     }
 	}
-	@media (max-width: 992px) {
+	@media (max-width: 991px) {
 		display: none;
 	}
 }
