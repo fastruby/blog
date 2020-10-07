@@ -11,14 +11,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav" id="nav">
-        <div id="search-form-wrapper-nav">
+        <div id="search-form-wrapper-nav" class="search-form-wrapper">
           <form class="nav-item nav-link" id='search-input-wrapper-nav' action='/search' method='GET'>
             <input type="search" name="query" aria-label="Search blog posts" placeholder="Search blog posts" required id="search-input-nav"/>
             <button type='submit'></button>
           </form>
           <div id="search-close">
             <button id="search-button"><i class="icon-search"></i></button>
-            <button id="close-button-nav"><i class="icon-cross"></i></button>
+            <button id="close-button-nav" class="close-button"><i class="icon-cross"></i></button>
           </div>
         </div>
         <a class="nav-item nav-link btn-link" href="{{site.domain_name}}/team" >Our Team</a>
