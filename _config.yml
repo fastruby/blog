@@ -7,16 +7,16 @@ highlighter: pygments
 logo: true
 paginate: 15
 baseurl: /blog
-domain_name: 'https://fastruby.io'
+domain_name: "https://fastruby.io"
 permalink: none
-category_dir: 'tags'
+category_dir: "tags"
 excerpt_separator: "<!--more-->"
 author_title_prefix: "Articles by "
 timezone: America/New_York
 
 # Details for the RSS feed generator
-url:            'https://fastruby.io'
-author:         'OmbuLabs'
+url: "https://fastruby.io"
+author: "OmbuLabs"
 feed:
   path: rss.xml
 
@@ -30,8 +30,7 @@ sass:
   style: compressed
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: posts
     values:
@@ -98,3 +97,8 @@ authors:
     email: fiona@ombulabs.com
     twitter: fiona4661
     github: fionadl
+  noahgibbs:
+    display_name: "Noah Gibbs"
+    gravatar: 5e8107f48d4471a40de325151d589b6d
+    twitter: codefolio
+    github: noahgibbs
