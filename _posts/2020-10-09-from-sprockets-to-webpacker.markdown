@@ -26,7 +26,7 @@ There are a few key differences on how Sprockets and Webpack works:
 
 ### FastRuby.io Styleguide
 
-We use our styleguide for the base style of our projects, but it works either as a Ruby gem or as static files. In order to use it with Webpack, we need to add support to be used as a node module (we'll use Yarn since it's the default node modules manager for Rails applications -like bundler for gems management-).
+We use our styleguide for the base style of our projects, but it works either as a Ruby gem or as static files. In order to use it with Webpack, we need to add support to be used as a node module (we'll use [Yarn](https://yarnpkg.com) since it's the default node modules manager for Rails applications -like bundler for gems management-).
 
 ### Webpack Only for JavaScript
 
@@ -34,7 +34,7 @@ While it is possible to use Webpack for all kind of assets (images, styles, font
 
 ### 3rd Party Assets in Gems
 
-Some assets are added by gems, but, similar to the styleguide, it's easier to integrate them with Webpack if we use an equivalent Yarn package.
+Some assets are added by gems, but, similar to the styleguide, it's easier to integrate them with Webpack if we use an equivalent Yarn package. For example, the `rails-ujs` JavaScript module is provided by the `rails` gem, but it's easier to integrate it with Webpack using the `@rails/ujs` [package](https://yarnpkg.com/package/@rails/ujs) instead.
 
 ### Reorganization and Reconfiguration
 
@@ -181,9 +181,9 @@ There are a few more new files that we'll use to add more configuration later.
 
 ## Linking the JavaScript
 
-`Sprocket-rails` gem provides the `javascript_include_tag` helper to add the `<script>` tag in the head. `Webpacker` gem provides a similar helper: `javascript_pack_tag`.
+`sprocket-rails` gem provides the `javascript_include_tag` helper to add the `<script>` tag in the head. `Webpacker` gem provides a similar helper: `javascript_pack_tag`.
 
-We'll use both files simultaneously while migrating and remove the previous one at the end, we we do incremental changes.
+We'll use both files simultaneously while migrating. At the end we will remove the previous one, that way we test incremental changes.
 
 ```erb
 = javascript_include_tag 'application' 
@@ -227,7 +227,7 @@ global.renderValue = function(value) {
 ...
 ```
 
-### Third-party Code
+### 3rd Party Code
 
 We use rails-ujs to handle the remote form submission and other Rails event. Instead of moving files, for this case we have to add the `@rails/ujs` package and initialize it inside our `application.js`.
 
@@ -240,7 +240,7 @@ $ yarn add @rails/ujs
 require('@rails/ujs').start()
 ```
 
-Each third-party package that you use can have its own way to use it with Webpack.
+Each 3rd party package that you use can have its own way to use it with Webpack.
 
 ### Moving The Styleguide
 
