@@ -38,7 +38,7 @@ Some assets are added by gems, but, similar to the styleguide, it's easier to in
 
 ### Reorganization and Reconfiguration
 
-The Webpacker gem expects files in different locations than Sprockets, and the configuration is different with different concepts an options.
+The Webpacker gem expects files in different locations than Sprockets, and the configuration is different with different concepts and options.
 
 ## The Styleguide
 
@@ -165,7 +165,7 @@ And this is the new `index.scss` file:
 @import "vendor/assets/stylesheets/fastruby/styleguide-core.scss";
 ```
 
-This is really similar, just replaced the new package's names and locations for each file we need.
+This is really similar, we just replaced the new packages' names and locations for each file we need.
 
 ## Installing Webpacker for FastRuby.io
 
@@ -294,16 +294,18 @@ Now all our tests are green.
 
 ### Remove `app/assets/javascript`
 
-Now that our original `application.js` file is empty, we can remove it, but we need to fix Sprockets' config at `app/assets/config/manifest.js` removing the line: `//= link_directory ../javascript .js` so it doesn't search for a js directory that doesn't exist anymore.
+Now that our original `application.js` file is empty, we can remove it, but we need to fix Sprockets' config at `app/assets/config/manifest.js`. Remove the line: `//= link_directory ../javascript .js` so it doesn't search for a javascript directory that doesn't exist anymore.
 
 Finally, we can remove the `<script>` tag in the head of our layout by removing the old `javascript_include_tag 'application'` call.
 
 ## Configure CircleCI
 
-Since we are using CircleCI as a continuos integration service an we were not using Yarn to handle 3rd party node modules, we need to fix the configuration so CircleCI install all Yarn packages before the tests.
+Since we are using CircleCI as a continuos integration service an we were not using Yarn to handle 3rd party node modules before, we need to fix the configuration so CircleCI installs all Yarn packages before running the tests.
 
-Look for your `bundle install` call in the `.circle/config.yml` config file and add the `yarn install` command after that.
+Look for your `bundle install` call in the `.circle/config.yml` config file and add the `yarn install` command after it.
 
 ## Conclusion
 
-It takes some time and a bit of a mindset change since Sprockets and Webpack works differently, but now are using the current Rails standard to handle assets and we can use modern JS features, frameworks, and tools more easily.
+It takes some time and a bit of a mindset change since Sprockets and Webpack works differently, but now we are using the current Rails standard to handle assets. Thanks to this and Webpack's popularity, we can now use modern JS features, frameworks, and tools more easily.
+
+Do you need help migrating to Webpack? [Contact us](https://www.fastruby.io/#contactus)
