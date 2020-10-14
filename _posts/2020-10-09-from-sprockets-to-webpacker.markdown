@@ -167,6 +167,8 @@ And this is the new `index.scss` file:
 
 This is really similar, we just replaced the new packages' names and locations for each file we need.
 
+> For more details of the Styleguide changes, you can check [this Pull Request](https://github.com/fastruby/styleguide/pull/23)
+
 ## Installing Webpacker for FastRuby.io
 
 The first step is easy, we have to follow the [official guide](https://github.com/rails/webpacker#installation). We don't need any special config since we are not using JS frameworks like React or Node, so the default install and config works.
@@ -307,5 +309,7 @@ Look for your `bundle install` call in the `.circle/config.yml` config file and 
 ## Conclusion
 
 It takes some time and a bit of a mindset change since Sprockets and Webpack works differently, but now we are using the current Rails standard to handle assets. Thanks to this and Webpack's popularity, we can now use modern JS features, frameworks, and tools more easily.
+
+
 
 Do you need help migrating to Webpack? [Contact us](https://www.fastruby.io/#contactus)
