@@ -39,7 +39,7 @@
     {%- if page -%}{{ page.title }}
     {% if page.author and site.authors[page.author].twitter %} by @{{ site.authors[page.author].twitter }}{% endif %}{%- else -%}{{ page_title }}{%- endif -%}
   {%- endcapture -%}
-  
+
   <meta name="description" content="{{ description | strip_newlines | truncate: 150 | strip_html }}" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -107,7 +107,6 @@
 
   {%- include header.html -%}
   <div id="wrapper">
-    {%- include sidebar.html -%}
     {{ content }}
     {%- include sidebar.html -%}
   </div>

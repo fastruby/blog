@@ -16,29 +16,24 @@
         $(".scroll-down").arctic_scroll();
     });
 
-    const blogNav = document.querySelector('.blog-nav');
-    const searchInput = document.getElementById('search-input');
+    document.querySelectorAll('.search-form-wrapper').forEach((formWrapper) => {
+      const closeButton = formWrapper.querySelector('.close-button')
+      const searchInput = formWrapper.querySelector('[name="query"]')
 
-     document.getElementById('search-button').addEventListener('click', (e) => {
-       e.preventDefault()
-       blogNav.classList.add('show-search')
-       searchInput.classList.add('show')
-     })
+      closeButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        formWrapper.classList.remove('show-search')
+        searchInput.value = ''
+      })
 
-     document.getElementById('close-button').addEventListener('click', (e) => {
-       e.preventDefault()
-       blogNav.classList.remove('show-search')
-       searchInput.classList.remove('show')
-       searchInput.value = ''
-     })
-
-     document.getElementById('search-input').addEventListener('input', (e) => {
-       if (e.target.value !== '') {
-         blogNav.classList.add('show-search')
-       } else {
-         blogNav.classList.remove('show-search')
-       }
-     })
+      searchInput.addEventListener('input', (e) => {
+        if (e.target.value !== '') {
+          formWrapper.classList.add('show-search')
+        } else {
+          formWrapper.classList.remove('show-search')
+        }
+      })
+    })
 
     // Arctic Scroll by Paul Adam Davis
     // https://github.com/PaulAdamDavis/Arctic-Scroll
