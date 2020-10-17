@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Introducing Skunk: Combine Code Quality and Coverage to Calculate a Stink Score"
+title: "Introducing Skunk: Combine Code Quality and Coverage to Calculate Your Project's SkunkScore"
 date: 2019-11-04 10:00:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-10-16 10:00:00
 categories: ["code-quality"]
 author: etagwerker
 
@@ -14,7 +14,7 @@ for the first time and I got to talk about a few metrics that we can use to
 quickly [assess code quality](https://www.fastruby.io/blog/ruby/quality/code-quality-ruby-gems.html)
 in any Ruby project.
 
-In this article I'd like to talk about [Skunk: A Stink Score Calculator](https://github.com/fastruby/skunk)!
+In this article I'd like to talk about [Skunk: A SkunkScore Calculator](https://github.com/fastruby/skunk)!
 I'll explain why we need it, how it works, and the roadmap for this new tool.
 
 <!--more-->
@@ -42,7 +42,7 @@ Rails application. We want to answer these questions:
 quality metrics from [Reek](https://github.com/troessner/reek);
 [Flay](https://github.com/seattlerb/flay);
 [Flog](https://github.com/seattlerb/flog); and
-[SimpleCov](https://github.com/colszowka/simplecov) to calculate a Stink Score
+[SimpleCov](https://github.com/colszowka/simplecov) to calculate a SkunkScore
 for a file or set of files.
 
 [Skunk](https://rubygems.org/gems/skunk) is a library built on top of
@@ -70,34 +70,34 @@ by multiplying their cost by a factor directly related to the lack of coverage:
 
 ```ruby
 module RubyCritic
-  # Monkey-patches RubyCritic::AnalysedModule to add a stink_score method
+  # Monkey-patches RubyCritic::AnalysedModule to add a skunk_score method
   class AnalysedModule
     PERFECT_COVERAGE = 100
 
-    # Returns a numeric value that represents the stink_score of a module:
+    # Returns a numeric value that represents the skunk_score of a module:
     #
-    # If module is perfectly covered, stink score is the same as the
+    # If module is perfectly covered, skunk score is the same as the
     # `churn_times_cost`
     #
-    # If module has no coverage, stink score is a penalized value of
+    # If module has no coverage, skunk score is a penalized value of
     # `churn_times_cost`
     #
-    # For now the stink_score is calculated by multiplying `churn_times_cost`
+    # For now the skunk_score is calculated by multiplying `churn_times_cost`
     # times the lack of coverage.
     #
     # For example:
     #
     # When `churn_times_cost` is 100 and module is perfectly covered:
-    # stink_score => 100
+    # skunk_score => 100
     #
     # When `churn_times_cost` is 100 and module is not covered at all:
-    # stink_score => 100 * 100 = 10_000
+    # skunk_score => 100 * 100 = 10_000
     #
     # When `churn_times_cost` is 100 and module is covered at 75%:
-    # stink_score => 100 * 25 (percentage uncovered) = 2_500
+    # skunk_score => 100 * 25 (percentage uncovered) = 2_500
     #
     # @return [Float]
-    def stink_score
+    def skunk_score
       return churn_times_cost.round(2) if coverage == PERFECT_COVERAGE
 
       (churn_times_cost * (PERFECT_COVERAGE - coverage.to_i)).round(2)
@@ -106,7 +106,7 @@ module RubyCritic
 end
 ```
 
-After doing all these calculations, we get a Stink Score for the files we are evaluating:
+After doing all these calculations, we get a Skunk Score for the files we are evaluating:
 
 ```bash
 $ skunk
@@ -126,7 +126,7 @@ running simple_cov
 .............
 New critique at file:////skunk/tmp/rubycritic/overview.html
 +-----------------------------------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+
-| file                                                | stink_score                | churn_times_cost           | churn                      | cost                       | coverage                   |
+| file                                                | skunk_score                | churn_times_cost           | churn                      | cost                       | coverage                   |
 +-----------------------------------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+
 | lib/skunk/cli/commands/default.rb                   | 166.44                     | 1.6643999999999999         | 3                          | 0.5548                     | 0                          |
 | lib/skunk/cli/application.rb                        | 139.2                      | 1.392                      | 3                          | 0.46399999999999997        | 0                          |
@@ -143,25 +143,25 @@ New critique at file:////skunk/tmp/rubycritic/overview.html
 | lib/skunk/cli/commands/help.rb                      | 0.0                        | 0.0                        | 2                          | 0.0                        | 0                          |
 +-----------------------------------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+
 
-Stink Score Total: 612.31
+Skunk Score Total: 612.31
 Modules Analysed: 13
-Stink Score Average: 0.47100769230769230769230769231e2
-Worst Stink Score: 166.44 (lib/skunk/cli/commands/default.rb)
+Skunk Score Average: 0.47100769230769230769230769231e2
+Worst Skunk Score: 166.44 (lib/skunk/cli/commands/default.rb)
 ```
 
 The most important _signals_ here are:
 
-- Average Stink Score per module
+- Average Skunk Score per module
 - Most complex files with little to no code coverage
 
 We now know where we stand. We can clearly see the state of the application in
 terms of code coverage and project complexity. We can now answer this question:
 **"Which are the most complex files with the least coverage?"**
 
-We can use the Stink Score to guide us in our refactoring efforts:
+We can use the Skunk Score to guide us in our refactoring efforts:
 
 - How can I pay off technical debt and invest in the future of my application?
-- If I were to write tests to decrease the stink score, which files could I
+- If I were to write tests to decrease the Skunk Score, which files could I
 write tests for?
 - If I were to refactor some of the most complex files, which files with good
 code coverage could I refactor?
@@ -175,50 +175,50 @@ to calculate the code coverage percentage for each module.
 That means that you will have to run your test suite with SimpleCov enabled
 **before you call `skunk`**.
 
-Total Stink Score is not a useful metric within a single project, as the total
+Total Skunk Score is not a useful metric within a single project, as the total
 will continue to grow as you add more features to your application. It is
 certainly a useful metric if you use it to _compare two projects_.
 
 ## Known Issues
 
-The calculation of the Stink Score is not 100% accurate. It is comparing a
+The calculation of the Skunk Score is not 100% accurate. It is comparing a
 module's code coverage and a module's complexity. It should be a method-based
 calculation: It should calculate the complexity of a method, the code coverage
-of the same method, then calculate the Stink Score per method.
+of the same method, then calculate the Skunk Score per method.
 
-Finally, the Stink Score of a module should be the sum of all the Stink Scores
+Finally, the Skunk Score of a module should be the sum of all the Skunk Scores
 in the module.
 
 ## Roadmap
 
 Assessing code quality for an application shouldn't stop at the application
-level. The Stink Score of our application is composed by two Stink Scores:
+level. The Skunk Score of our application is composed by two Skunk Scores:
 
-- Stink Score of your application
-- Stink Score of your dependencies
+- Skunk Score of your application
+- Skunk Score of your dependencies
 
-Right now Skunk will only calculate Stink Score for your application code. In
-the future it should consider your dependencies as well, generating a Stink
+Right now Skunk will only calculate Skunk Score for your application code. In
+the future it should consider your dependencies as well, generating a Skunk
 Score for each individual dependency.
 
-The best way to assess progress in your project is to keep track of the Stink
+The best way to assess progress in your project is to keep track of the Skunk
 Score average over time. Is that number going up? Is it going down? How much
-does your pull request change the Stink Score average? Right now Skunk does
+does your pull request change the Skunk Score average? Right now Skunk does
 not support this, so you will have to do it manually.
 
 ## Final Thoughts
 
 I know that "stink" is a negative word to judge an application's technical debt
-and it might lead you down a negative path. By all means I don't want the Stink
+and it might lead you down a negative path. By all means I don't want the Skunk
 Score to be used in a witch hunt, to point fingers at code authors, or in a
 negative way in your team.
 
-I seriously hope that you can use the Stink Score as the compass to move your
-team in the right direction. You should be able to use the Stink Score as a
+I seriously hope that you can use the Skunk Score as the compass to move your
+team in the right direction. You should be able to use the Skunk Score as a
 compass to gradually pay off technical debt:
 
-- Writing tests which increase code coverage will improve the Stink Score
-- Refactoring complex files will improve the Stink Score
+- Writing tests which increase code coverage will improve the Skunk Score
+- Refactoring complex files will improve the Skunk Score
 
 Skunk will show you your location in _the map of technical debt_. It will also
 show you a few paths to take to get to a better place. You will be able to
@@ -227,6 +227,7 @@ prioritize the paths and pick one to pay off technical debt.
 What do you think about this new metric for technical debt? Would you use it
 next time you need to evaluate legacy code?
 
-Please let me know in the comments below or come talk to me at
-[RubyConf 2019](https://www.rubyconf.org) (I'll be speaking about
-[this topic at the conference](https://www.rubyconf.org/program#session-876))
+Please let me know in the comments below. If you want to watch my talk at
+RubyConf 2019, here it is:
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZyU6K6eR-_A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
