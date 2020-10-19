@@ -7,9 +7,9 @@ categories: ["code-quality"]
 author: etagwerker
 ---
 
-Right before my talk at [RubyConf Australia](https://www.rubyconf.org.au/), 
+Right before my talk at [RubyConf Australia](https://www.rubyconf.org.au/),
 I worked on a way to make it easy for anyone to run [`skunk`](https://www.fastruby.io/blog/code-quality/intruducing-skunk-stink-score-calculator.html)
-in their Ruby projects. In order to do that I decided to use [GitHub Actions](https://github.com/features/actions). 
+in their Ruby projects. In order to do that I decided to use [GitHub Actions](https://github.com/features/actions).
 It's a powerful service by GitHub and it's quite easy to set up.
 
 This article is about the process that I followed and how you can use it in your own
@@ -72,7 +72,7 @@ jobs:
 
 Considering that [`skunk`](https://github.com/fastruby/skunk) is a Ruby gem (it
 doesn't need Rails, Redis, nor Postgres) and I didn't need all the steps I copied
-from the [GoRails](https://gorails.com) tutorial, I thought it was best to 
+from the [GoRails](https://gorails.com) tutorial, I thought it was best to
 simplify it to look like this:
 
 ```yaml
@@ -99,7 +99,7 @@ jobs:
 
 This tells [GitHub](https://github.com) to run the [`skunk`](https://github.com/fastruby/skunk)
 action every time there is a new push to the GitHub remote. To see an entire list
-of events that you can configure: 
+of events that you can configure:
 [Webhook Events](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#webhook-events)
 
 There are only two steps:
@@ -113,7 +113,7 @@ steps synchronously, from top to bottom. If you want to run `skunk` for a Rails
 application, you can change the last step to do this: `skunk app/`
 
 The next thing I wanted to do is run `skunk` on a pull request in order to
-compare the [_SkunkScore_](https://github.com/fastruby/skunk#what-is-the-skunkscore) 
+compare the [_SkunkScore_](https://github.com/fastruby/skunk#what-is-the-skunkscore)
 between the pull request and `master`. This will help us answer this question:
 
 > Are we increasing or decreasing the technical debt average in our project?
@@ -151,12 +151,12 @@ jobs:
 ```
 
 There is some `bash` logic in there: The GitHub Action will [compare your branch vs. master](https://github.com/fastruby/skunk#comparing-one-branch-vs-another) if
-it is running within the context of a pull request, or [generate a tech debt report](https://github.com/fastruby/skunk#getting-a-sorted-list-of-stinkiest-files) if 
+it is running within the context of a pull request, or [generate a tech debt report](https://github.com/fastruby/skunk#getting-a-sorted-list-of-stinkiest-files) if
 it is running a commit pushed to the `master` branch.
 
 One last thing I had to add was a step to generate [SimpleCov](https://github.com/colszowka/simplecov)'s
 resultset JSON file. Skunk is most useful when it considers code coverage data.
-[The StinkScore is a combination of code smells; complexity; and code coverage data](https://github.com/fastruby/skunk#what-is-the-stinkscore).
+[The SkunkScore is a combination of code smells; complexity; and code coverage data](https://github.com/fastruby/skunk#what-is-the-skunkscore).
 
 I tweaked the steps configuration to look like this:
 
@@ -189,8 +189,8 @@ Now you can see the difference in tech debt between `master` and your pull
 request:
 
 ```
-Base branch (master) average stink score: 13.42
-Feature branch ((HEAD detached at 0315f34)) average stink score: 13.42
+Base branch (master) average skunk score: 13.42
+Feature branch ((HEAD detached at 0315f34)) average skunk score: 13.42
 Score: 13.42
 ```
 
