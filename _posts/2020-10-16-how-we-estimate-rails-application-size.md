@@ -2,7 +2,7 @@
 layout: post
 title: "How We Estimate The Size of a Rails Application"
 date: 2020-10-16 10:00:00
-categories: ["code-quality"]
+categories: ["rails", "code-quality"]
 author: "etagwerker"
 ---
 
