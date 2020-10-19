@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How We Estimate The Size of a Rails Application"
-date: 2020-10-16 10:00:00
+date: 2020-10-19 10:00:00
 categories: ["code-quality"]
 author: "etagwerker"
 ---
@@ -112,13 +112,22 @@ annoying, especially when you are trying to size up a really, really old
 application which requires a very specific set of dependencies (think a very
 specific version of Ruby, Rails, Bundler, and Rubygems)
 
-You will need a `Rakefile` in the directory where you call `rake stats` and you
+You can install it:
+
+```
+gem install rails_stats
+```
+
+Then you will need a `Rakefile` in the directory where you call `rake stats` and you
 will need to require `rails_stats` within that file:
 
 ```ruby
 # Rakefile
 require "rails_stats"
 ```
+
+You need to do this because `rails_stats` only provides a rake task and rake
+requires a `Rakefile` to find your task definitions.
 
 Then you can call it:
 
@@ -156,6 +165,10 @@ Directory: /Users/etagwerker/Projects/fastruby/dash
 You now know that this project has **2,038 lines of code** (both Ruby and
 JavaScript files) in the application directory and **487 lines of code** in
 its test directory.
+
+This is a small application. It is not tiny and it is not medium. It is
+somewhere in the middle. You can find the source code over here:
+[Dash on GitHub](https://github.com/fastruby/dash)
 
 ## Next Steps
 
