@@ -146,7 +146,7 @@ Also, as the linked article and these numbers imply: if you're optimising smalli
 
 ## Conclusions
 
-If you're just here for the conclusion: use the m5 series of EC2 instances. I like m5.2xlarge for number of vCPUs and amount of RAM. But you can scale up or down with your needs and get the same ratio of vCPUs to RAM. There are unsual special cases where you might consider m6g (ARM processors, difficult porting, fast CPUs), c5 (less RAM per CPU) or t4 (CPU-burstable).
+If you're just here for the conclusion: use the m5 series of EC2 instances. I like m5.2xlarge for number of vCPUs and amount of RAM. But you can scale up or down with your needs and get the same ratio of vCPUs to RAM. There are unusual special cases where you might consider m6g (ARM processors, difficult porting, fast CPUs), c5 (less RAM per CPU) or t4 (CPU-burstable).
 
 But for normal Rails app use cases, m5 is your friend. If you're thinking, "but cheap m4 spot instances," keep in mind that they should be at least 36% cheaper than m5 ***just to break even*** on price-for-performance. Use them carefully if you use them.
 
