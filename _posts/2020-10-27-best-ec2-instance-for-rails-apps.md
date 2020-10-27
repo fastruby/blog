@@ -56,7 +56,7 @@ For my final measurement I've used four EC2 instances of each type, testing Ruby
 
 RRB is also nicely-optimised for stable numbers. It performs the same requests generated using the same random seeds over and over. Its requests are reasonably small and quick. And it doesn't use the hardware network at all &mdash; its requests are all localhost. In a virtualised environment like EC2 that's an ***enormous*** source of instability that it simply skips. Of course, not every instance is the same speed. But the variation is a lot smaller than it otherwise would be.
 
-EC2 also permits instaces with "dedicated" placement where you can be sure nobody else is sharing the same physical hardware. I've used those and tested with them over the years. While they ***do*** avoid some hour-to-hour variance, there are still faster and slower dedicated instances in my experience. So they wouldn't provide a big advantage for this specific set of measurements.
+EC2 also permits instances with "dedicated" placement where you can be sure nobody else is sharing the same physical hardware. I've used those and tested with them over the years. While they ***do*** avoid some hour-to-hour variance, there are still faster and slower dedicated instances in my experience. So they wouldn't provide a big advantage for this specific set of measurements.
 
 ## The Baseline: m4
 
