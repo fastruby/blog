@@ -44,7 +44,7 @@ EC2 has [standard-price](https://aws.amazon.com/ec2/pricing/on-demand/) On-Deman
 
 So it's useful to know ***how much*** faster the new infrastructure (m5) is and then you can bid on it proportionately at appropriate prices.
 
-Amazon would like you to migrate off of m4, but there might be m4 spot instances available cheaply, depending. How does the price/performance compare? When would that be a good idea?
+Amazon would like you to migrate off of m4. But there might be m4 spot instances available cheaply, depending on when you check. How does the price/performance compare? When would that be a good idea?
 
 ## Is it Simple?
 
