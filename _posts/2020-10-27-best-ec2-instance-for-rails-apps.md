@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What's the Best EC2 Instance Type for Rails Apps?"
-date: 2020-10-27 10:00:00
+date: 2020-10-28 10:00:00
 categories: ["rails", "performance", "ruby"]
 author: "noahgibbs"
 ---
