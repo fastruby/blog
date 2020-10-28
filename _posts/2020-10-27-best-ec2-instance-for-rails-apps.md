@@ -6,8 +6,6 @@ categories: ["rails", "performance", "ruby"]
 author: "noahgibbs"
 ---
 
-<img src="/blog/assets/images/ec2_instance_pricing.png" style="max-width: 400px; float:right;" alt="EC2 us-east-1 on-demand instance prices - a huge grid of annoying numbers." />
-
 Do you ever [look at the list of Amazon EC2 instance types?](https://aws.amazon.com/ec2/instance-types). Those are sizes of virtual machine you can rent to run your code on. Well, okay, they're <i>groups of sizes</i>, since each one of those headings has a bunch of different sizes of VM...
 
 So ***what type of EC2 instances should you run your Rails app on***?
@@ -153,3 +151,7 @@ But for normal Rails app use cases, m5 is your friend. If you're thinking, "but 
 ## I Don't Believe You
 
 Not convinced? That's fair. Hey, did you know [all my code is public?](https://github.com/noahgibbs/rails_ruby_bench). You can [read the docs to run it yourself](https://engineering.appfolio.com/appfolio-engineering/2019/11/28/how-do-i-use-rails-ruby-bench) and/or [give me a holler](https://twitter.com/codefolio) if you'd like to re-run for yourself, maybe with more instances, and see how well my results replicate for you. I'd happily show you exactly how I did this and all the code is already online. [So is my data](https://codefol.io/links/ec2_inst_types_full_data.tar.bz2), which is cheaper than renting your own EC2 instances.
+
+## By the Way...
+
+Looking for more on performance? The [FastRuby blog has a tag for that](https://www.fastruby.io/blog/tags/performance)...
