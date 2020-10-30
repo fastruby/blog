@@ -4,7 +4,7 @@ title: "From Sprockets to Webpacker"
 date: 2020-10-09 11:00:00
 reviewed: 2020-10-09 11:00:00
 categories: ["rails", "webpack"]
-author: "arielj"
+author: "arieljuod"
 ---
 
 Back in 2011, [Rails 3.1 introduced The Assets Pipeline](https://guides.rubyonrails.org/3_1_release_notes.html#assets-pipeline) feature using the [Sprockets gem](https://github.com/rails/sprockets). This made it really easy to handle assets (images, fonts, JavaScript, CSS and more), solving many of the issues that developers had to face everyday.
@@ -46,7 +46,7 @@ For this project to support being used as a node module, we need to add some con
 
 ### Init a Yarn Package
 
-Inside the Styleguide's project folder, we run the command `yarn init`. This starts a wizard to setup the metadata of the project (name, git repository, author, license, and many more). At the end, creates a `package.json` file where we can configure this projects.
+Inside the Styleguide's project folder, we run the command `yarn init`. This starts a wizard to set up the metadata of the project (name, git repository, author, license, and many more). At the end, creates a `package.json` file where we can configure this project.
 
 ```json
 {
@@ -121,7 +121,7 @@ You can see some names changes because gems and packages are not providing the s
 
 ### CSS Entry Point
 
-Sprockets can find assets inside the node modules folder, so we are going to provide the SASS entry point.
+Sprockets can find assets inside the node_modules folder, so we are going to provide the SASS entry point.
 
 We first have to tell webpack what's the entry point of the SASS style:
 
@@ -231,7 +231,7 @@ global.renderValue = function(value) {
 
 ### 3rd Party Code
 
-We use rails-ujs to handle the remote form submission and other Rails event. Instead of moving files, for this case we have to add the `@rails/ujs` package and initialize it inside our `application.js`.
+We use rails-ujs to handle the remote form submission and other Rails events. Instead of moving files, for this case we have to add the `@rails/ujs` package and initialize it inside our `application.js`.
 
 ```sh
 $ yarn add @rails/ujs
@@ -302,13 +302,13 @@ Finally, we can remove the `<script>` tag in the head of our layout by removing 
 
 ## Configure CircleCI
 
-Since we are using CircleCI as a continuos integration service an we were not using Yarn to handle 3rd party node modules before, we need to fix the configuration so CircleCI installs all Yarn packages before running the tests.
+Since we are using CircleCI as a continuous integration service and we were not using Yarn to handle 3rd party node modules before, we need to fix the configuration so CircleCI installs all Yarn packages before running the tests.
 
 Look for your `bundle install` call in the `.circle/config.yml` config file and add the `yarn install` command after it.
 
 ## Conclusion
 
-It takes some time and a bit of a mindset change since Sprockets and Webpack works differently, but now we are using the current Rails standard to handle assets. Thanks to this and Webpack's popularity, we can now use modern JS features, frameworks, and tools more easily.
+It takes some time and a bit of a mindset change since Sprockets and Webpack work differently, but now we are using the current Rails standard to handle assets. Thanks to this and Webpack's popularity, we can now use modern JS features, frameworks, and tools more easily.
 
 
 
