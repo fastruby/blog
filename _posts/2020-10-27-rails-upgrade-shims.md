@@ -8,7 +8,7 @@ author: "luciano"
 
 When upgrading a Rails application, you might find that sometimes functionality is extracted from Rails and moved into a new gem. These gems are called [shims](https://medium.com/@ujjawal.dixit/what-is-a-shim-72d9ac5d8620), and basically allow you to keep using an old functionality, once the core API takes that out.
 
-In this article I will list most of the shims that happened in the past versions of Rails.
+In this article I will list most of the shims that happened to in the past versions of Rails.
 
 <!--more-->
 
