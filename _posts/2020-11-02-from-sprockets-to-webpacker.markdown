@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "How to Migrate your JavaScript from Sprockets to Webpacker"
-date: 2020-10-09 11:00:00
-reviewed: 2020-10-09 11:00:00
+date: 2020-11-02 11:00:00
 categories: ["rails", "webpack"]
 author: "arieljuod"
 ---
@@ -18,6 +17,7 @@ In this article I'll explain the steps we took to migrate to Webpack to handle o
 ## Main Differences
 
 There are a few key differences on how Sprockets and Webpack works:
+
 - Sprockets adds the content of required files into a one big file with all the code running globally and sequentially, Webpack creates a bundle that isolates each module following ES6 modules specs.
 - Sprockets uses `app/assets`, `vendor/assets` (also from gems) and `node_modules` folders to look for assets, while Webpacker uses the `app/javascript` and the `node_modules` folder.
 - Since the `// require ...` syntax is specific for Sprockets, it's not recognized by linters, while the `import` syntax of Webpack is the ES6 syntax so more tools understand that.
@@ -110,11 +110,12 @@ This is the original (`vendor/assets/javascript/fastruby/styleguide.js`) using s
 ```
 
 This is our new `index.js` file using `import`:
+
 ```js
-require("jquery")
-import "bootstrap-sass"
-import "material-design-lite"
-import "./vendor/assets/javascript/fastruby/custom.js"
+require("jquery");
+import "bootstrap-sass";
+import "material-design-lite";
+import "./vendor/assets/javascript/fastruby/custom.js";
 ```
 
 You can see some names changes because gems and packages are not providing the same names.
@@ -188,7 +189,7 @@ There are a few more new files that we'll use to add more configuration later.
 We'll use both files simultaneously while migrating. At the end we will remove the previous one, that way we test incremental changes.
 
 ```erb
-= javascript_include_tag 'application' 
+= javascript_include_tag 'application'
 = javascript_pack_tag 'application'
 ```
 
@@ -212,8 +213,8 @@ We started by moving custom local files, since it requires less work. Most of th
 ```js
 // app/javascript/packs/application.js
 
-import "../src/contact"
-import "../src/form"
+import "../src/contact";
+import "../src/form";
 ```
 
 The `form.js` file includes a function that should be global, so we have to fix that (webpack runs code isolated, so functions don't populate the global space by default).
@@ -239,7 +240,7 @@ $ yarn add @rails/ujs
 
 ```js
 // app/javascript/packs/application.js
-require('@rails/ujs').start()
+require("@rails/ujs").start();
 ```
 
 Each 3rd party package that you use can have its own way to use it with Webpack.
@@ -264,7 +265,7 @@ Now we have to change how we import the assets in both the SCSS and the JS files
 ```js
 // app/javascript/packs/application.js
 // added at the top
-import "fastruby-io-styleguide"
+import "fastruby-io-styleguide";
 ```
 
 And we can finally clear the previous `application.js` at `app/assets/javascript/application.js`.
@@ -276,18 +277,18 @@ This last change created a few issues related to jQuery: the `jQuery` object was
 To fix the `undefined jQuery` error, we need to configure Webpack to expose it using this config at `config/webpack/environment.js`:
 
 ```js
-const { environment } = require('@rails/webpacker')
+const { environment } = require("@rails/webpacker");
 
-const webpack = require('webpack')
+const webpack = require("webpack");
 environment.plugins.prepend(
-  'Provide',
+  "Provide",
   new webpack.ProvidePlugin({
-    $: 'jquery/src/jquery',
-    jQuery: 'jquery/src/jquery'
+    $: "jquery/src/jquery",
+    jQuery: "jquery/src/jquery"
   })
-)
+);
 
-module.exports = environment
+module.exports = environment;
 ```
 
 To fix the issue with jQuery's `ready` callback not triggered, we fixed it by just replacing all `$(document).on('ready', ...)` calls (and similar ones) to `document.addEventListener('DOMContentLoaded', ...)`.
@@ -309,7 +310,5 @@ Look for your `bundle install` call in the `.circle/config.yml` config file and 
 ## Conclusion
 
 It takes some time and a bit of a mindset change since Sprockets and Webpack work differently, but now we are using the current Rails standard to handle assets. Thanks to this and Webpack's popularity, we can now use modern JS features, frameworks, and tools more easily.
-
-
 
 Do you need help migrating to Webpack? [Contact us](https://www.fastruby.io/#contactus)
