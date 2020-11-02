@@ -59,7 +59,7 @@ It allows us to use our code for commercial purposes but it's also very permissi
 
 ## Contributing to Existing Open Source Projects
 
-Recently we decided it was a good idea to keep most of our open source projects within one of our organizations on Github. Now when we contribute to an OSS project we always fork it to the [FastRuby.io organization](https://github.com/fastruby). One of the reasons we chose our FastRuby organization is that everything on it is open source, and therefore we don’t incur any fees when people not on our team contribute to the projects.
+Recently we decided it was a good idea to keep most of our open source projects within one of our organizations on Github. Now when we contribute to an OSS project we always fork it to the [FastRuby.io organization](https://github.com/fastruby). One of the reasons we chose our FastRuby.io organization is that everything on it is open source, and therefore we don’t incur any fees when people not on our team contribute to the projects.
 
 ## These are the benefits that we get from forking Open Source projects to one of our organizations:
 

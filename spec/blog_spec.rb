@@ -2,7 +2,7 @@ require 'rspec'
 require 'nokogiri'
 
 # Adapted from https://gist.github.com/thbar/10be2ea924b81f78d24ab800461bfee3
-RSpec.describe 'Fast Ruby Blog' do
+RSpec.describe 'FastRuby.io Blog' do
   describe 'tests' do
     let(:post) { '/rails/upgrades/case-study/upgrading-a-monolith.html' }
     let(:file_path) { "_site/#{post}" }

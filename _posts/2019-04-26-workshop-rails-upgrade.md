@@ -13,7 +13,7 @@ Next week the [Rails](https://rubyonrails.org/) community is having the biggest 
 
 <img src="/blog/assets/images/workshop-rails-conf.png" alt="Workshop Rails Conf">
 
-At [Fast Ruby](https://fastruby.io/) we have been doing Rails Upgrades for many years. This has allowed us to work on all kind of projects. From tiny [MVP's](https://fastruby.io/minimum-viable-product) to huge [monolith](https://fastruby.io/monolith) applications.
+At [FastRuby.io](https://fastruby.io/) we have been doing Rails Upgrades for many years. This has allowed us to work on all kind of projects. From tiny [MVP's](https://fastruby.io/minimum-viable-product) to huge [monolith](https://fastruby.io/monolith) applications.
 
 During the 2-hour [workshop](https://railsconf.com/program/workshops#session-776) you will learn a proven Rails upgrade process for major and minor version changes of Rails.
 We will teach you how you can [evaluate](https://fastruby.io/blog/upgrade-rails/legacy-rails-silently-judging-you.html) a Rails application before considering upgrading it. What tools you should use to make the upgrade easier. What the main things are that you should address on every upgrade. And much more.

@@ -7,7 +7,7 @@ categories: ["gems", "dry", "ruby"]
 author: "cleiviane"
 ---
 
-At Ombu Labs we like to follow a style guide to drive our own products. A style guide is a document that provides guidelines for the way your brand should be presented from both a graphic and language perspective. You can see Fast Ruby's style guide at [this link](https://fastruby.github.io/styleguide).
+At Ombu Labs we like to follow a style guide to drive our own products. A style guide is a document that provides guidelines for the way your brand should be presented from both a graphic and language perspective. You can see FastRuby.io's style guide at [this link](https://fastruby.github.io/styleguide).
 
 Since we have a few applications in place and it's important to make sure that they all use the same style, we need to ensure that they will all inherit the same CSS files. One way to do this is to copy the above style guide and paste it inside all of our apps, but this would end up causing a lot of duplicated code. If we decided to change the font-style, for example, we would need to change it in all apps individually.
 
@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.authors        = ['OmbuLabs']
   spec.email          = ['hello@ombulabs.com']
 
-  spec.summary        = 'Style Guide for all Fast Ruby products'
+  spec.summary        = 'Style Guide for all FastRuby.io products'
   spec.homepage       = 'https://github.com/fastruby/styleguide'
 
   # Rails
