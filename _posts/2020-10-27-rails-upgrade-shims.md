@@ -96,6 +96,6 @@ Official Rails Guides: [https://guides.rubyonrails.org](https://guides.rubyonrai
 
 # Conclusion
 
-I hope this list of gems comes handy when upgrading your Rails application. Let me know if I miss any important one.
+I hope this list of gems comes in handy when upgrading your Rails application. Let me know if I missed any important ones.
 
 Finally, if you want more details on how to upgrade each version of Rails, you can download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
