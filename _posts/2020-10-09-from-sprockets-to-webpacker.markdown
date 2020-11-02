@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "From Sprockets to Webpacker"
+title: "How to Migrate your JavaScript from Sprockets to Webpacker"
 date: 2020-10-09 11:00:00
 reviewed: 2020-10-09 11:00:00
 categories: ["rails", "webpack"]
