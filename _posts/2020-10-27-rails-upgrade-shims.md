@@ -6,9 +6,10 @@ categories: ["rails", "upgrades"]
 author: "luciano"
 ---
 
-When upgrading a Rails application, you might find that sometimes functionality is extracted from Rails and moved into a new gem. These gems are called [shims](https://medium.com/@ujjawal.dixit/what-is-a-shim-72d9ac5d8620), and basically allow you to keep using an old functionality, once the core API takes that out.
+When upgrading a Rails application, you might find that sometimes functionality is extracted from Rails and moved into a new gem. These gems are called [shims](https://medium.com/@ujjawal.dixit/what-is-a-shim-72d9ac5d8620), and they will basically allow you to keep using an old functionality, once the core API takes that out.
+You can also find shims in form of monkey patches. In this case it's functionality that you develop to make your migration easier.
 
-In this article I will list most of the shims that happened to be useful in past Rails upgrade projects.
+In this article I will list some of the functionality of past versions of Rails that was extracted into gems.
 
 <!--more-->
 
@@ -59,6 +60,9 @@ Changes:
 ## Rails 4.0
 
 ### [`protected_attributes`](https://github.com/rails/protected_attributes) ([See changes](https://github.com/rails/rails/pull/7251))
+
+This gem was supported by the Rails team until the release of Rails 5.0.
+We created a gem ([rails_upgrader](https://github.com/fastruby/rails_upgrader)) to make the migration to Strong Parameters easier. We also wrote a dedicated article on that: [The Complete Guide to Migrate to Strong Parameters](https://www.fastruby.io/blog/rails/upgrades/strong-parameters-migration-guide.html).
 
 ### [`activeresource`](https://github.com/rails/activeresource) ([See changes](https://github.com/rails/rails/pull/572))
 
