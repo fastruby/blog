@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Shims that you might encounter during a Rails Upgrade"
-date: 2020-10-27 10:00:00
+date: 2020-11-04 09:00:00
 categories: ["rails", "upgrades"]
 author: "luciano"
 ---
