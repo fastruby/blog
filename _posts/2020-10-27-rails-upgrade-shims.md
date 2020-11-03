@@ -20,7 +20,7 @@ In this article I will list most of the shims that happened to be useful in past
 
 ### [`rails-controller-testing`](https://github.com/rails/rails-controller-testing) ([See changes](https://github.com/rails/rails/pull/20138))
 
-`assigns` and `assert_template` were extracted to the `rails-controller-testing` gem.
+`assigns` and `assert_template` were extracted to the `rails-controller-testing` gem. To continue using these methods, you will need this gem in your Gemfile.
 
 ### [`activemodel-serializers-xml`](https://github.com/rails/activemodel-serializers-xml) ([See changes](https://github.com/rails/rails/pull/21161))
 
