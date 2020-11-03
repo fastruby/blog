@@ -94,6 +94,10 @@ We created a gem ([rails_upgrader](https://github.com/fastruby/rails_upgrader)) 
 
 All delivery methods from Action Mailer were abstracted out to the `mail` gem.
 
+### [`dynamic_form`](https://github.com/rails/dynamic_form)
+
+Helper methods like `error_message_on` and `error_messages_for` were extracted into the `dynamic_form` gem.
+
 # Resources
 
 Official Rails Guides: [https://guides.rubyonrails.org](https://guides.rubyonrails.org)
