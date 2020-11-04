@@ -12,7 +12,7 @@ redirect_from:
 
 We know that there are many challenges involved in a Rails upgrade project. Depending on how big your application is, how old your Rails version is and how well structured your code is, it can be difficult to perform that job and keep your sanity. If you don't find a reliable and trustable process to guide you from version X to version Y, you can end-up in a nightmare.
 
-The good news is that here at [Ombu Labs](https://www.ombulabs.com/), we have been upgrading Rails applications for over 10 years now and this gave us a know-how to define a process that has proven to be very effective. And today I want to share Our Rails Upgrade Process with you.
+The good news is that here at [OmbuLabs](https://www.ombulabs.com/), we have been upgrading Rails applications for over 10 years now and this gave us a know-how to define a process that has proven to be very effective. And today I want to share Our Rails Upgrade Process with you.
 
 <!--more-->
 
@@ -24,7 +24,7 @@ You might find these deprecation warnings by searching in the `production.log` o
 
 You can also search for deprecation warnings in the `test.log`, so you can find them in your CI service as well.
 
-For each different deprecation warning that we find, we create one story in our backlog software (at Ombu Labs we use Pivotal Tracker as we explained [here](https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html) to help us with that). This will make things easier to code review and to test in QA.
+For each different deprecation warning that we find, we create one story in our backlog software (at OmbuLabs we use Pivotal Tracker as we explained [here](https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html) to help us with that). This will make things easier to code review and to test in QA.
 
 ## Step 2: Fixing all deprecation warnings
 

@@ -38,7 +38,7 @@ We even wrote a [blog post](https://www.fastruby.io/blog/upgrade-rails/dual-boot
 
 ### Check for outdated gems
 
-You can use `bundle outdated` to check outdated gems in your current bundle. While `bundle outdated` is quite useful it doesn't give us details relative to our own `Gemfile`. In Ombu Labs we like to use  [next_rails](https://rubygems.org/gems/next_rails/versions/1.0.0) because this gem will give us a set of tools to check for outdated gems, check incompatibilities, and even bootstrap an upgrade project.
+You can use `bundle outdated` to check outdated gems in your current bundle. While `bundle outdated` is quite useful it doesn't give us details relative to our own `Gemfile`. At OmbuLabs we like to use  [next_rails](https://rubygems.org/gems/next_rails/versions/1.0.0) because this gem will give us a set of tools to check for outdated gems, check incompatibilities, and even bootstrap an upgrade project.
 
 ### Automated updates
 [Dependabot](https://dependabot.com/) is a bot that will open a PR in your Github repository whenever a dependency is outdated. Dependabot was acquired by Github and it's now free of charge.
