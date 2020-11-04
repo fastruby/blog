@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Shims that you might encounter during a Rails Upgrade"
+title: "The Complete Guide to Rails Shims"
 date: 2020-11-04 09:00:00
 categories: ["rails", "upgrades"]
 author: "luciano"
