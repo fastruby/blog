@@ -8,7 +8,7 @@ author: luciano
 
 Having a clear idea of how much test coverage your Rails application has is really important. Especially if you are planning to upgrade to a newer version of Rails. A good test suite will tell you if your application is working as it did before the upgrade.
 
-At [FastRuby](https://www.fastruby.io/), we recommend having at least 80% of your application covered before attempting to upgrade. A number lower than that would require you to make a lot more manual testing to ensure that the application is properly working after the upgrade. If your application doesn't meet that number, we suggest to first spend some time improving the test suite before starting the upgrade.
+At [FastRuby.io](https://www.fastruby.io/), we recommend having at least 80% of your application covered before attempting to upgrade. A number lower than that would require you to make a lot more manual testing to ensure that the application is properly working after the upgrade. If your application doesn't meet that number, we suggest to first spend some time improving the test suite before starting the upgrade.
 
 In this article, I'll show you how you can measure your test coverage using [SimpleCov](https://github.com/simplecov-ruby/simplecov).
 

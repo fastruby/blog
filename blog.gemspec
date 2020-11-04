@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = "blog"
   s.version     = "1.0.0"
-  s.summary     = "Fast Ruby Blog"
+  s.summary     = "FastRuby.io Blog"
   s.email       = ["hello@ombulabs.com"]
   s.authors     = ["OmbuLabs"]
   s.files       = Dir["_site/**/*"]

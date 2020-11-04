@@ -1,6 +1,6 @@
-# Fast Ruby Blog
+# FastRuby.io Blog
 
-Blog for the Fast Ruby using Jekyll as the blog-engine.
+Blog for the FastRuby.io using Jekyll as the blog-engine.
 
 ## Installation
 
@@ -40,4 +40,3 @@ To edit a post, simply edit the content for one of the markdown files and the HT
 ## Deleting a post
 
 To delete a post, you can unpublish it by setting a `published` flag under the post's YAML variables, see: http://jekyllrb.com/docs/frontmatter/
-
