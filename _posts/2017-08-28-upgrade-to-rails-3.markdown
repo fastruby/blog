@@ -20,6 +20,7 @@ This article is the first of our [Upgrade Rails series](https://fastruby.io/blog
 7. [Deprecations](#deprecations)
   - [Active Record](#active-record)
   - [Action Mailer](#action-mailer)
+  - [ERB syntax](#erb-syntax)
   - [Metal](#metal)
   - [Railties](#railties)
 8. [Next steps](#next-steps)
@@ -54,7 +55,7 @@ AppName::Application.routes do
   resources :products
 end
 ```
-You can go to [this article](https://blog.engineyard.com/2010/the-lowdown-on-routes-in-rails-3) to read an in-depth article about this topic.
+If you installed the plugin mentioned in step 3, you can run 'rake rails:upgrade:routes" to generate a new set of routes. You can go to [this article](https://blog.engineyard.com/2010/the-lowdown-on-routes-in-rails-3) to read an in-depth article about this topic.
 
 <h2 id="gems">6. Gems</h2>
 [Bundler](https://bundler.io/) is the default way to manage Gem dependencies in Rails 3 applications. You will need to add a [Gemfile](https://bundler.io/v1.15/gemfile_man.html) in the root of your app, define all you gems there, and then get rid of the config.gem statements.
@@ -146,6 +147,24 @@ def welcome_email(user)
 end
 ```
 - Mailers should now be in app/mailers instead of app/models.
+
+<h3 id="erb-syntax">ERB Syntax</h3>
+ Block helpers that use concat (e.g., form_for, form_tag) will need to replace `<%` with `<%=`. The current syntax will continue to work for now, but you will get deprecation warnings since it will go away in the future. 
+ 
+<h3 id="ajax-helpers">AJAX Helpers</h3>
+AJAX JavaScript helpers have moved to be unobtrusive and use `:remote => true`. Depending on the helper call some unobtrusive JavaScript may need to be added. For example:
+```
+link_to_remote ("Update Example", 
+                        :update => 'example',
+                        :url => {:action => 'example'})
+```
+Will need to change to:
+```
+link_to "Update Example", { :action => 'example' }, remote => true 
+```
+and unobtrusive JavaScript will need to be added for the what "update" is doing.
+
+More information: http://blog.jordanwest.me/modest-rubyist-archive/rails-3-ujs-and-csrf-meta-tags
 
 <h3 id="metal">Metal</h3>
 Since Rails 3 is closer to [Rack](http://guides.rubyonrails.org/rails_on_rack.html), the [Metal](http://weblog.rubyonrails.org/2008/12/17/introducing-rails-metal/) abstraction is no longer needed.
