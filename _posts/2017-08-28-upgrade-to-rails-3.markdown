@@ -162,7 +162,7 @@ Will need to change to:
 ```
 link_to "Update Example", { :action => 'example' }, remote => true 
 ```
-and unobtrusive JavaScript will need to be added for the what "update" is doing.
+and a JavaScript event listener will need to be added for what "update" is doing.
 
 More information: http://blog.jordanwest.me/modest-rubyist-archive/rails-3-ujs-and-csrf-meta-tags
 
