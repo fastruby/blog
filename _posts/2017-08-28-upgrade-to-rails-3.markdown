@@ -2,7 +2,7 @@
 layout: post
 title:  "Upgrade Rails from 2.3 to 3.0"
 date: 2017-08-28 16:06:00
-reviewed: 2020-03-05 10:00:00
+reviewed: 2020-11-05 10:00:00
 categories: ["rails", "upgrades"]
 author: "luciano"
 ---
@@ -163,6 +163,13 @@ Will need to change to:
 link_to "Update Example", { :action => 'example' }, remote => true 
 ```
 and a JavaScript event listener will need to be added for what "update" is doing.
+
+Example:
+```
+$("example1").on('ajax:success', function(response, status) {
+  $("example2").html(response.responseText)
+})
+```
 
 More information: http://blog.jordanwest.me/modest-rubyist-archive/rails-3-ujs-and-csrf-meta-tags
 
