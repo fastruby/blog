@@ -21,6 +21,7 @@ This article is the first of our [Upgrade Rails series](https://fastruby.io/blog
   - [Active Record](#active-record)
   - [Action Mailer](#action-mailer)
   - [ERB syntax](#erb-syntax)
+  - [AJAX helpers](#ajax-helpers)
   - [Metal](#metal)
   - [Railties](#railties)
 8. [Next steps](#next-steps)
