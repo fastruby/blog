@@ -7,11 +7,11 @@ categories: ["gems", "dry", "ruby"]
 author: "cleiviane"
 ---
 
-At Ombu Labs we like to follow a style guide to drive our own products. A style guide is a document that provides guidelines for the way your brand should be presented from both a graphic and language perspective. You can see FastRuby.io's style guide at [this link](https://fastruby.github.io/styleguide).
+At OmbuLabs we like to follow a style guide to drive our own products. A style guide is a document that provides guidelines for the way your brand should be presented from both a graphic and language perspective. You can see FastRuby.io's style guide at [this link](https://fastruby.github.io/styleguide).
 
 Since we have a few applications in place and it's important to make sure that they all use the same style, we need to ensure that they will all inherit the same CSS files. One way to do this is to copy the above style guide and paste it inside all of our apps, but this would end up causing a lot of duplicated code. If we decided to change the font-style, for example, we would need to change it in all apps individually.
 
-Something else we are super fans of at Ombu Labs is to follow good code and development practices. One of our favorites is the [DRY (Don’t Repeat Yourself)](https://wiki.c2.com/?DontRepeatYourself) principle, which states that duplication in logic should be eliminated via abstraction. So to avoid the duplicated code here, we decided to create a gem to encapsulate our style guide and to be bundled in all of our products.
+Something else we are super fans of at OmbuLabs is to follow good code and development practices. One of our favorites is the [DRY (Don’t Repeat Yourself)](https://wiki.c2.com/?DontRepeatYourself) principle, which states that duplication in logic should be eliminated via abstraction. So to avoid the duplicated code here, we decided to create a gem to encapsulate our style guide and to be bundled in all of our products.
 
 In this article, I'll show you how we did it!
 

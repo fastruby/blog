@@ -9,7 +9,7 @@ author: "etagwerker"
 
 [Rails](http://rubyonrails.org/) is a powerful framework. You can write a lot of features in a short period of time. In the process you can easily write code that **performs poorly**.
 
-At [Ombu Labs](https://www.ombulabs.com) we like to [maintain Ruby on Rails
+At [OmbuLabs](https://www.ombulabs.com) we like to [maintain Ruby on Rails
 applications](https://www.ombulabs.com/blog/tags/maintenance). In the process
 of maintaining them, adding features and fixing bugs, we like to improve
 the code and its performance (because we are [good *boy scouts*](http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule)!)

@@ -28,7 +28,7 @@ projects? What's the best way to find **that one fork** everybody is using?
 Too many applications out there are using libraries that depend on people
 having enough time during nights and weekends to work on their side projects.
 Most of the maintainers out there are not paid for their work. They might have
-_some help_ from their employers (e.g. [Ombu Labs](https://www.ombulabs.com)
+_some help_ from their employers (e.g. [OmbuLabs](https://www.ombulabs.com)
 sponsors open source efforts), [Tidelift](https://tidelift.com),
 [GitHub Sponsorships](https://github.com/sponsors), [Gitcoin](https://gitcoin.co),
 or [OpenCollective](https://opencollective.com), but most projects don't have
