@@ -113,7 +113,7 @@ require "rails"
 end
 ```
 <h2 id="html-safe">9. Escaped HTML by default</h2>
-In Rails 3 you no  longer need to use the `h` helper method to escape HTML. It is now escaped by default. If you need to tell Rails to not escape the HTML you will need to call `html_safe` on that string. 
+In Rails 3 you no longer need to use the `h` helper method to escape HTML. It is now escaped by default. If you need to tell Rails to not escape the HTML you will need to call `.html_safe` on that string. 
 
 <h2 id="deprecations">10. Deprecations</h2>
 There are a bunch of deprecations that happen during this version:
