@@ -116,6 +116,22 @@ already deprecated and covered in a [previous upgrade](https://fastruby.io/blog/
 been replaced by `#distinct`. Check out https://github.com/rails/rails/pull/20198
 for the discussion.
 
+- The ordering of association statements is now significant.  In particular, you can no longer declare a `has_many :through` association before declaring the association that implements the `through`.  You must declare the joined model first.
+
+This will no longer work:
+
+```ruby
+  has_many :posts, :through => :authors
+  has_many :authors
+```
+
+Change To:
+
+```ruby
+has_many :authors
+has_many :posts, :through => :authors
+```
+
 <h3 id="controllers">4.2. Controllers</h2>
 
 - Before Rails 5.1, conditions in filters could be invoked using strings. They
