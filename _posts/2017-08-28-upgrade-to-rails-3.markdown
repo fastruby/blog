@@ -2,7 +2,7 @@
 layout: post
 title:  "Upgrade Rails from 2.3 to 3.0"
 date: 2017-08-28 16:06:00
-reviewed: 2020-11-05 10:00:00
+reviewed: 2020-11-18 10:00:00
 categories: ["rails", "upgrades"]
 author: "luciano"
 ---
@@ -17,14 +17,16 @@ This article is the first of our [Upgrade Rails series](https://fastruby.io/blog
 4. [XSS protection](#xss-protection)
 5. [Config files](#config-files)
 6. [Gems](#gems)
-7. [Deprecations](#deprecations)
+7. [RSpec](#rspec)
+8. [Ignoring Rails modules](#ignoring)
+9. [Deprecations](#deprecations)
   - [Active Record](#active-record)
   - [Action Mailer](#action-mailer)
   - [ERB syntax](#erb-syntax)
   - [AJAX helpers](#ajax-helpers)
   - [Metal](#metal)
   - [Railties](#railties)
-8. [Next steps](#next-steps)
+10. [Next steps](#next-steps)
 
 <h2 id="considerations">1. Considerations</h2>
 Before beginning with the upgrade process, we recommend that each version of your Rails app has the latest [patch version](http://semver.org) before moving to the next major/minor version. For example, in order to follow this article, your [Rails version](https://rubygems.org/gems/rails/versions) should be at 2.3.18 before updating to Rails 3.0.20
@@ -45,7 +47,7 @@ Rails 3 introduces the concept of an Application object. An application object h
 
 In terms of routes, there are a couple of changes that you need to apply to your routes.rb file. For example:
 
-```
+```ruby
 # Rails 2.3 way:
 ActionController::Routing::Routes.draw do |map|
   map.resources :products
@@ -56,12 +58,13 @@ AppName::Application.routes do
   resources :products
 end
 ```
+
 If you installed the plugin mentioned in step 3, you can run 'rake rails:upgrade:routes" to generate a new set of routes. You can go to [this article](https://blog.engineyard.com/2010/the-lowdown-on-routes-in-rails-3) to read an in-depth article about this topic.
 
 <h2 id="gems">6. Gems</h2>
 [Bundler](https://bundler.io/) is the default way to manage Gem dependencies in Rails 3 applications. You will need to add a [Gemfile](https://bundler.io/v1.15/gemfile_man.html) in the root of your app, define all you gems there, and then get rid of the config.gem statements.
 
-```
+```ruby
 # Before:
 config.gem 'aws-sdk',  :version => '1.0.0' # (config/environment.rb)
 
@@ -80,7 +83,36 @@ end
 
 Remember that if you installed the plugin mentioned in step 3, you can run `rake rails:upgrade:gems`. This task will extract your config.gem calls and generate code that you can put in your Gemfile.
 
-<h2 id="deprecations">6. Deprecations</h2>
+<h2 id="rspec">7. RSpec</h2>
+If you are using RSpec 1.x for your tests, you should update to RSpec 2.x. You may need to update some references to `Spec` with `RSpec`.
+
+<h2 id="ignoring">8. Ignoring Rails Modules</h2>
+If you don't need to load some module (let's use actionmailer as an example), in Rails 2 you would a configuration like this in your environments.rb file:
+
+```ruby
+config.frameworks -= [ :action_mailer ]
+```
+
+For Rails 3 you need to remove that and change how you require `rails` in your new application.rb file:
+
+```ruby
+require "rails"
+
+# instead of `require "rails/all"`
+%w(
+  active_record
+  action_controller
+  active_resource
+  rails/test_unit
+).each do |framework|
+  begin
+    require "#{framework}/railtie"
+  rescue LoadError
+  end
+end
+```
+
+<h2 id="deprecations">9. Deprecations</h2>
 There are a bunch of deprecations that happen during this version:
 
 <h3 id="active-record">Active Record</h3>
@@ -88,7 +120,7 @@ There are a bunch of deprecations that happen during this version:
 
 - In scope methods, you no longer pass the conditions as a hash:
 
-```
+```ruby
 # Before:
 named_scope :active, :conditions => ["active = ?", true]
 
@@ -104,7 +136,7 @@ scope :active, where("active = ?", true)
 
 - There is a new syntax for presence validations:
 
-```
+```ruby
 # Before:
 validates_presence_of :email
 
@@ -118,12 +150,12 @@ validates :email, presence: true
 - `:charset`, `:content_type`, `:mime_version`, `:implicit_parts_order` are all deprecated in favor of `ActionMailer.default :key => value` style declarations.
 - Mailer dynamic `create_method_name` and `deliver_method_name` are deprecated, just call `method_name` which now returns a `Mail::Message` object.
 
-```
+```ruby
 # Before:
 message = UserMailer.create_welcome_email(user)
 UserMailer.deliver(message)
 
-or
+# or
 
 UserMailer.deliver_welcome_email(user)
 
@@ -133,7 +165,7 @@ UserMailer.welcome_email(user).deliver
 - `template_root` is deprecated, pass options to a render call inside a proc from the `format.mime_type` method inside the mail generation block.
 - The body method to define instance variables is deprecated (`body {:ivar => value}`), just declare instance variables in the method directly and they will be available in the view.
 
-```
+```ruby
 # Before:
 def welcome_email(user)
   ...
@@ -153,26 +185,27 @@ end
  Block helpers that use concat (e.g., form_for, form_tag) will need to replace `<%` with `<%=`. The current syntax will continue to work for now, but you will get deprecation warnings since it will go away in the future. 
  
 <h3 id="ajax-helpers">AJAX Helpers</h3>
-AJAX JavaScript helpers have moved to be unobtrusive and use `:remote => true`. Depending on the helper call some unobtrusive JavaScript may need to be added. For example:
+AJAX JavaScript helpers have moved to be unobtrusive and use `:remote => true`. Depending on the helper call, some JavaScript event listeners may need to be added. For example:
+
+```js
+link_to_remote ("Update Example",
+                :update => 'result_div_id',
+                :url => {:action => 'example'})
 ```
-link_to_remote ("Update Example", 
-                        :update => 'example',
-                        :url => {:action => 'example'})
-```
+
 Will need to change to:
-```
-link_to "Update Example", { :action => 'example' }, remote => true 
+
+```js
+link_to "Update Example", { :action => 'example' }, :remote => true, :id => 'my_link'
 ```
 and a JavaScript event listener will need to be added for what "update" is doing.
 
 Example:
-```
-$("example1").on('ajax:success', function(response, status) {
-  $("example2").html(response.responseText)
+```js
+$("#my_link").on('ajax:success', function(response, status) {
+  $("#result_div_id").html(response.responseText)
 })
 ```
-
-More information: http://blog.jordanwest.me/modest-rubyist-archive/rails-3-ujs-and-csrf-meta-tags
 
 <h3 id="metal">Metal</h3>
 Since Rails 3 is closer to [Rack](http://guides.rubyonrails.org/rails_on_rack.html), the [Metal](http://weblog.rubyonrails.org/2008/12/17/introducing-rails-metal/) abstraction is no longer needed.
@@ -201,7 +234,7 @@ vendor/plugins/ombulabs_patches/tasks/s3_backup.rake
 lib/tasks/ombulabs_patches/s3_backup.rake
 ```
 
-<h2 id="next-steps">8. Next steps</h2>
+<h2 id="next-steps">10. Next steps</h2>
 After you get your application properly running in Rails 3.0, you will probably want to keep working on this Rails upgrade journey. So don't forget to check our complete [Rails upgrade series](https://fastruby.io/blog/tags/upgrades) to make that easy.
 
 If you're not on Rails 3.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
