@@ -19,14 +19,15 @@ This article is the first of our [Upgrade Rails series](https://fastruby.io/blog
 6. [Gems](#gems)
 7. [RSpec](#rspec)
 8. [Ignoring Rails modules](#ignoring)
-9. [Deprecations](#deprecations)
+9. [Escaped HTML by default](#html-safe)
+10. [Deprecations](#deprecations)
   - [Active Record](#active-record)
   - [Action Mailer](#action-mailer)
   - [ERB syntax](#erb-syntax)
   - [AJAX helpers](#ajax-helpers)
   - [Metal](#metal)
   - [Railties](#railties)
-10. [Next steps](#next-steps)
+11. [Next steps](#next-steps)
 
 <h2 id="considerations">1. Considerations</h2>
 Before beginning with the upgrade process, we recommend that each version of your Rails app has the latest [patch version](http://semver.org) before moving to the next major/minor version. For example, in order to follow this article, your [Rails version](https://rubygems.org/gems/rails/versions) should be at 2.3.18 before updating to Rails 3.0.20
@@ -111,8 +112,10 @@ require "rails"
   end
 end
 ```
+<h2 id="html-safe">9. Escaped HTML by default</h2>
+In Rails 3 you no  longer need to use the `h` helper method to escape HTML. It is now escaped by default. If you need to tell Rails to not escape the HTML you will need to call `html_safe` on that string. 
 
-<h2 id="deprecations">9. Deprecations</h2>
+<h2 id="deprecations">10. Deprecations</h2>
 There are a bunch of deprecations that happen during this version:
 
 <h3 id="active-record">Active Record</h3>
@@ -234,7 +237,7 @@ vendor/plugins/ombulabs_patches/tasks/s3_backup.rake
 lib/tasks/ombulabs_patches/s3_backup.rake
 ```
 
-<h2 id="next-steps">10. Next steps</h2>
+<h2 id="next-steps">11. Next steps</h2>
 After you get your application properly running in Rails 3.0, you will probably want to keep working on this Rails upgrade journey. So don't forget to check our complete [Rails upgrade series](https://fastruby.io/blog/tags/upgrades) to make that easy.
 
 If you're not on Rails 3.0 yet, we can help! Download our free eBook: [The Complete Guide to Upgrade Rails](https://www.fastruby.io/).
