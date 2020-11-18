@@ -88,7 +88,7 @@ Remember that if you installed the plugin mentioned in step 3, you can run `rake
 If you are using RSpec 1.x for your tests, you should update to RSpec 2.x. You may need to update some references to `Spec` with `RSpec`.
 
 <h2 id="ignoring">8. Ignoring Rails Modules</h2>
-If you don't need to load some module (let's use actionmailer as an example), in Rails 2 you would a configuration like this in your environments.rb file:
+If you don't need to load a module (let's use actionmailer as an example), in Rails 2 you would use a configuration like this in your environments.rb file:
 
 ```ruby
 config.frameworks -= [ :action_mailer ]
