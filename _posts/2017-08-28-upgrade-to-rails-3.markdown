@@ -201,7 +201,7 @@ Will need to change to:
 ```js
 link_to "Update Example", { :action => 'example' }, :remote => true, :id => 'my_link'
 ```
-and a JavaScript event listener will need to be added for what "update" is doing.
+And a JavaScript event listener will need to be added for what "update" is doing.
 
 Example:
 ```js
