@@ -2,7 +2,7 @@
 layout: post
 title:  "Upgrade Rails from 2.3 to 3.0"
 date: 2017-08-28 16:06:00
-reviewed: 2020-11-18 10:00:00
+reviewed: 2020-11-19 10:00:00
 categories: ["rails", "upgrades"]
 author: "luciano"
 ---
@@ -36,9 +36,9 @@ Before beginning with the upgrade process, we recommend that each version of you
 Rails 3.0 requires Ruby [1.8.7](https://www.ruby-lang.org/en/news/2008/05/31/ruby-1-8-7-has-been-released) or higher, but no more than [1.9.3](https://www.ruby-lang.org/en/news/2011/10/31/ruby-1-9-3-p0-is-released). If you want to use Ruby 1.9.x, we recommend you skip directly to 1.9.3. Also Ruby [1.9.1](https://www.ruby-lang.org/en/news/2009/01/30/ruby-1-9-1-released) is not usable because it has segmentation faults on Rails 3.0. That means that the compatible [Ruby versions](https://www.ruby-lang.org/en/downloads/releases/) for Rails 3.0 are 1.8.7, [1.9.2](https://www.ruby-lang.org/en/news/2010/08/18/ruby-1-9-2-released), or 1.9.3.
 
 <h2 id="tools">3. Tools</h2>
-There is an [official plugin](https://github.com/rails/rails_upgrade) that helps the upgrade process. You just need to install the script by doing `script/plugin install git://github.com/rails/rails_upgrade.git` and then run `rake rails:upgrade:check` to see most of the files you need to upgrade in your application. It also provides some other generators to upgrade specific areas in you app like routes or gems.
+There is an [official plugin](https://github.com/rails/rails_upgrade) that helps the upgrade process. You just need to install the script by doing `script/plugin install git://github.com/rails/rails_upgrade.git` and then run `rake rails:upgrade:check` to see most of the files you need to upgrade in your application. It also provides some other generators to upgrade specific areas in your app, like routes or gems.
 
-Sometimes it's also useful to check which files changed between two specifics versions of Rails. Fortunately [Rails Diff](http://railsdiff.org/2.3.18/3.0.0) makes that easy.
+Sometimes it's also useful to check which files changed between two specific versions of Rails. Fortunately [Rails Diff](http://railsdiff.org/2.3.18/3.0.0) makes that easy.
 
 <h2 id="xss-protection">4. XSS protection</h2>
 In this version, Rails automatically adds [XSS protection](http://yehudakatz.com/2010/02/01/safebuffers-and-rails-3-0/) in order to escape any content, so you will probably need to update your templates according to this. Luckily there is an [official plugin](https://github.com/rails/rails_xss) for this. We recommend you take a look at this.
@@ -63,7 +63,7 @@ end
 If you installed the plugin mentioned in step 3, you can run 'rake rails:upgrade:routes" to generate a new set of routes. You can go to [this article](https://blog.engineyard.com/2010/the-lowdown-on-routes-in-rails-3) to read an in-depth article about this topic.
 
 <h2 id="gems">6. Gems</h2>
-[Bundler](https://bundler.io/) is the default way to manage Gem dependencies in Rails 3 applications. You will need to add a [Gemfile](https://bundler.io/v1.15/gemfile_man.html) in the root of your app, define all you gems there, and then get rid of the config.gem statements.
+[Bundler](https://bundler.io/) is the default way to manage Gem dependencies in Rails 3 applications. You will need to add a [Gemfile](https://bundler.io/v1.15/gemfile_man.html) in the root of your app, define all your gems there, and then get rid of the config.gem statements.
 
 ```ruby
 # Before:
@@ -113,7 +113,7 @@ require "rails"
 end
 ```
 <h2 id="html-safe">9. Escaped HTML by default</h2>
-In Rails 3 you no longer need to use the `h` helper method to escape HTML. It is now escaped by default. If you need to tell Rails to not escape the HTML you will need to call `.html_safe` on that string. 
+In Rails 3 you no longer need to use the `h` helper method to escape HTML. It is now escaped by default. If you need to tell Rails to not escape the HTML you will need to call `.html_safe` on that string.
 
 <h2 id="deprecations">10. Deprecations</h2>
 There are a bunch of deprecations that happen during this version:
@@ -185,8 +185,8 @@ end
 - Mailers should now be in app/mailers instead of app/models.
 
 <h3 id="erb-syntax">ERB Syntax</h3>
- Block helpers that use concat (e.g., form_for, form_tag) will need to replace `<%` with `<%=`. The current syntax will continue to work for now, but you will get deprecation warnings since it will go away in the future. 
- 
+ Block helpers that use concat (e.g., form_for, form_tag) will need to replace `<%` with `<%=`. The current syntax will continue to work for now, but you will get deprecation warnings since it will go away in the future.
+
 <h3 id="ajax-helpers">AJAX Helpers</h3>
 AJAX JavaScript helpers have moved to be unobtrusive and use `:remote => true`. Depending on the helper call, some JavaScript event listeners may need to be added. For example:
 
