@@ -52,7 +52,7 @@ All results are sent back, sorted and checksummed to make sure all three benchma
 
 And I originally timed this ***on my MacBook. Here's a tip: don't***. The performance and stability are substantially worse on Mac. I was getting around a 20% crash-and-error rate for medium-size benchmarks and some ***weird*** unexpected results. While things will probably be better by the release date, right now the Mac is ***not*** good for benchmarking Ractors.
 
-I'm still checking this on an itty bitty instance, a Linode 4GB. This is a very prerelease feature. And based on the results I'm seeing, it's not ready for larger-scale benchmarking yet. That's okay, let's have a look anyway.
+I'm still checking this on an itty bitty two-core instance, a Linode 4GB. This is a very prerelease feature. And based on the results I'm seeing, it's not ready for larger-scale benchmarking yet. That's okay, let's have a look anyway.
 
 There's some setup time for these benchmarks. If I run just 5 workers with 10 messages/worker plus startup and shutdown, here are the median times in seconds it takes for each benchmark: 
 
