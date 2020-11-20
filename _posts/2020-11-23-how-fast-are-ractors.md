@@ -18,7 +18,7 @@ Great! Now how fast is the current implementation of Ractors?
 
 ## How Do Ractors Work?
 
-The idea goes like this: every Ractor in your process gets its own lock. And every Ractor can potentially hold multiple threads. So now threads hold their Ractor lock, not a single global lock. If you don't ever call Ractor.new then you'll still have one Global VM Lock just like as you always did. Or if you have six Ractors, you'll have six locks to share and you can fully use up to six cores of Ruby code all at once.
+The idea goes like this: every Ractor in your process gets its own lock. And every Ractor can potentially hold multiple threads. So now threads hold their Ractor lock, not a single global lock. If you don't ever call `Ractor.new` then you'll still have one Global VM Lock just like as you always did. Or if you have six Ractors, you'll have six locks to share and you can fully use up to six cores of Ruby code all at once.
 
 Ractors have a clear idea of which Ractor holds what chunk of memory. They're almost like sub-VMs in your VM. You can pass objects between Ractors but it's fairly slow. There are objects that can be shared between Ractors, such as anything [frozen](https://www.rubyguides.com/2016/01/ruby-mutability/).
 
