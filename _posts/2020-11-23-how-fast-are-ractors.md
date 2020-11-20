@@ -128,6 +128,6 @@ But initially, my recommendation would be that Ractors are finicky, but can give
 
 My ***best test case gave Ractors a 16% advantage on two cores over regular Ruby threads***. So right now, the overhead is still high. Ruby still likes multiprocess (fork) concurrency, and Ractors aren't going to change that overnight.
 
-But Ractors do what they say they do, at least in prerelease Ruby. Keep in mind that they're only in Ruby 3. So you'll either need to use a prerelease Ruby, or wait until Christmas of 2020.
+But Ractors do what they say they do, at least in prerelease Ruby. Keep in mind that they're only in Ruby 3. So you'll either need to use a prerelease Ruby, or wait until [the big release event on Christmas of 2020](https://rhc.connpass.com/event/195483/).
 
 If you're enjoying this post about benchmarking, you can find a [lot of performance posts on FastRuby.io](https://www.fastruby.io/blog/tags/performance) - maybe read a few more?
