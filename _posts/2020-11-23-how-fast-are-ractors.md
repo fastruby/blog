@@ -82,7 +82,7 @@ I removed the pipe and it ***was*** faster. So: ["ractor_test" is similar to Koi
 
 We would expect Ractors, at best, to be faster than existing Ruby threads because they can use all the cores available. And they would be (at best) about the same speed as multiple processes, up until all memory on the machine is used. Multiprocess concurrency in Ruby does very well, as you've [probably seen on previous benchmarks](https://appfolio-engineering.squarespace.com/appfolio-engineering/2019/9/4/benchmark-results-threads-processes-and-fibers).
 
-I originally benchmarked this on a Mac and everything else beat Ractors by a mile, plus they crashed a lot. Then I switched over to Linux and got much saner results, much more like I expected. I got literally ***one*** crash in all the Linux testing for this article rather than a literally 20% crash rate. Don't use Mac yet.
+I originally benchmarked this on a Mac and everything else beat Ractors by a mile, plus they crashed a lot. Then I switched over to Linux and got much saner results, much more like I expected. I got literally ***one*** crash in all the Linux testing for this article rather than a literally 20% crash rate. Quick reminder: Don't use Mac yet.
 
 (And the Ractor folks admit there are warts. Every time you run the Ractor benchmark you get a disclaimer: "warning: Ractor is experimental, and the behavior may change in future versions of Ruby! Also there are many implementation issues." I'm just agreeing with the disclaimer.)
 
