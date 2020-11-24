@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How Fast are Ractors?"
-date: 2020-11-04 09:00:00
+date: 2020-11-24 09:00:00
 categories: ["ruby", "performance"]
 author: "noahgibbs"
 ---
