@@ -42,7 +42,7 @@ Awhile back I [wrote some code](https://github.com/noahgibbs/fiber_basic_benchma
 
 So I [wrote a benchmark](https://github.com/noahgibbs/ractor_basic_benchmarks) with some CPU time to it. Specifically, I wrote three benchmarks &mdash; one with threads, one multiprocess and one with ractors &mdash; that each calculate whether each number in a 100-number chunk is prime. Then the 100 prime-ness calculations are turned into a bit vector with the first numbers as the highest-order bits. Here's the code:
 
-```
+```ruby
 bools = (item..(item+99)).map { |nn| nn.prime? }
 p_int = bools.inject(0) { |total, b| total * 2 + (b ? 1 : 0) }
 # return [item, p_int]
