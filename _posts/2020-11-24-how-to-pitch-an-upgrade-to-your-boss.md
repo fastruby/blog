@@ -48,7 +48,7 @@ So if you are having issues with hiring and retaining developers, upgrading Rail
 
 New Rails versions come with a set of new features that applications can be built with.
 
-Some will bring obvious benefits, such as Action Text providing text formatting controls for your users. Others can help in the background, such as Active Record which allows an application to connect to multiple databases.
+Some will bring obvious benefits, such as Action Text providing text formatting controls for your users. Others can help in the background, such as Active Storage which makes it easier to upload files to cloud based systems.
 
 By falling behind in your Rails version, you are also missing out on opportunities to improve the product experience in significant ways for your users.
 
