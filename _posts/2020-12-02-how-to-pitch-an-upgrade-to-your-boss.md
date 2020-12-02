@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "How to Pitch a Rails Upgrade to Your Boss (Without Any Tech Speak)"
-date: 2020-11-24 09:00:00
+date: 2020-12-02 09:00:00
 categories: ["rails", "upgrade"]
 author: "zach"
 ---
 
-If you’re a developer you know the reasons why you should be using the latest Rails framework. You understand the implications of performance gains, dependency issues and unsupported versions. 
+If you’re a developer you know the reasons why you should be using the latest Rails framework. You understand the implications of performance gains, dependency issues and unsupported versions.
 
 But these big picture benefits get lost in translation when talking to non-technical executives. What they need to know is the business case for an upgrade, how the work will translate into increased revenue.
 
@@ -16,7 +16,7 @@ So, here is an article to use or forward to communicate why an upgrade should be
 
 ## Old Rails = Decaying Equipment
 
-At an overall level, using an old Rails framework is like a restaurant letting its kitchen fall apart. 
+At an overall level, using an old Rails framework is like a restaurant letting its kitchen fall apart.
 
 The customers won’t see the rusted grills held together with duct tape. But orders will get delayed and grease traps will overflow, so chefs will struggle to cook quality meals and eventually quit.
 
