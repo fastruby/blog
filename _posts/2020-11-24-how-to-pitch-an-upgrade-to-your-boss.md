@@ -72,6 +72,6 @@ A strict ROI is difficult to estimate, but it certainly pays off in the long run
 
 Hopefully both you and your boss now understand why a Rails upgrade is important and they’re asking you how to get it done.
 
-If you want to upgrade your application without delaying your product development, then hire FastRuby.io.
+If you want to upgrade your application without delaying your product development, then hire [FastRuby.io](https://www.fastruby.io/).
 
-We have upgraded over 80 applications since 2012 and specialize in upgrading large applications without interrupting the development team.
+We have upgraded over 80 applications since 2012 and specialize in upgrading large applications without interrupting the development team. If you enjoyed this article, check out my [website](https://zachgoldie.com/).
