@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to Pitch a Rails Upgrade to Your Boss (Without Any Tech Speak)"
-date: 2020-12-02 09:00:00
+date: 2020-12-03 09:00:00
 categories: ["rails", "upgrade"]
 author: "zach"
 ---
