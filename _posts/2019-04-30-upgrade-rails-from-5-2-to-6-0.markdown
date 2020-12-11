@@ -14,7 +14,7 @@ your [Ruby on Rails](http://rubyonrails.org/) application from [version 5.2](htt
 
 <!--more-->
 
-1. [Considerations](#considerations)
+1. [Preparations](#preparations)
 2. [Ruby version](#ruby-version)
 3. [Gems](#gems)
 4. [Config files](#config-files)
@@ -27,9 +27,15 @@ your [Ruby on Rails](http://rubyonrails.org/) application from [version 5.2](htt
 7. [Credentials](#credentials)
 8. [Next steps](#next-steps)
 
-<h3 id="considerations">1. Considerations</h3>
+<h3 id="preparations">1. Preparations</h3>
 
-Before beginning with the upgrade process, we recommend that each version of your Rails app has the latest [patch version](http://semver.org) before moving to the next major/minor version. For example, in order to follow this article, your [Rails version](https://rubygems.org/gems/rails/versions) should be at [5.2.3](https://rubygems.org/gems/rails/versions/5.2.3) before upgrading to Rails 6.0.x
+Before beginning with the upgrade process, we have some recommended preparations:
+
+*   Your Rails app should have the latest [patch version](http://semver.org) before you move to the next major/minor version.
+*   You should have at least 80% test coverage unless you have a dedicated QA team.
+*   Follow a Git flow workflow to actively manage at least two environments: staging and production
+*   Check your Gemfile.lock for incompatibilities by using  https://railsbump.org/
+*   Create a dual boot mechanism, the fastest way to do this is installing the handy gem next_rails
 
 <h3 id="ruby-version">2. Ruby version</h3>
 
