@@ -6,7 +6,7 @@ categories: ["rails", "code-quality"]
 author: "etagwerker"
 ---
 
-When inheriting a project, it is useful to understand how big and complex the
+When inheriting a project or starting an upgrade, it is useful to understand how big and complex the
 application really is. So, what is a good way to understand whether a Rails
 application is tiny, medium, or huge?
 
@@ -170,20 +170,18 @@ This is a small application. It is not tiny and it is not medium. It is
 somewhere in the middle. You can find the source code over here:
 [Dash on GitHub](https://github.com/fastruby/dash)
 
-## Next Steps
+## Other Useful Assessments
 
-This information gives you a glimpse about the project you are inheriting. You
-can certainly dig deeper with other tools, but I didn't want to get into that
-in this article.
+This information gives you a glimpse into your codebase. Before starting on a major project such as a version upgrade there are other tools you can use to assess your codebase. We would recommend running:
 
-If you want to dig deeper into the complexity of your application, you might
-want to use [Skunk](https://github.com/fastruby/skunk) or [RubyCritic](https://github.com/whitesmith/rubycritic)
-to assess the complexity within your codebase.
+* [Skunk](https://github.com/fastruby/skunk), to identify complex files with minimal test coverage.
+* [SimpleCov](https://www.fastruby.io/blog/rails/upgrades/simplecov/rails-upgrades-simplecov.html), to measure your test coverage.
+* [bunde-outdated](https://bundler.io/man/bundle-outdated.1.html), to list all of your installed gems with new versions available.
+* [bundler-audit](https://audit.fastruby.io/), to audit your Gemfile using a database of known vulnerabilities.
 
 ## Resources
 
 If you enjoyed this article, you might like to continue reading these articles:
 
 - [Kill your dependencies](https://www.mikeperham.com/2016/02/09/kill-your-dependencies/)
-- [Combine Code Quality and Coverage to Calculate your project's SkunkScore](https://www.fastruby.io/blog/code-quality/intruducing-skunk-stink-score-calculator.html)
 - [Legacy Rails: Silently Judging You](https://www.fastruby.io/blog/upgrade-rails/legacy-rails-silently-judging-you.html)
