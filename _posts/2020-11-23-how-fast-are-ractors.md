@@ -60,7 +60,7 @@ And I originally timed this ***on my MacBook. Here's a tip: don't***. The perfor
 
 I'm still checking this on an itty bitty two-core instance, a Linode 4GB. This is a very prerelease feature. And based on the results I'm seeing, it's not ready for larger-scale benchmarking yet. That's okay, let's have a look anyway.
 
-There's some setup time for these benchmarks. If I run just 5 workers with 10 messages/worker plus startup and shutdown, here are the median times in seconds it takes for each benchmark: 
+There's some setup time for these benchmarks. If I run just 5 workers with 10 messages/worker plus startup and shutdown, here are the median times in seconds it takes for each benchmark:
 
 ### Initial Setup Overhead with Only 50 Total Reqs/Process
 
@@ -136,4 +136,8 @@ My ***best test case gave Ractors a 16% advantage on two cores over regular Ruby
 
 But Ractors do what they say they do, at least in prerelease Ruby. Keep in mind that they're only in Ruby 3. So you'll either need to use a prerelease Ruby, or wait until [the big release event on Christmas of 2020](https://rhc.connpass.com/event/195483/).
 
-If you're enjoying this post about benchmarking, you can find a [lot of performance posts on FastRuby.io](https://www.fastruby.io/blog/tags/performance) - maybe read a few more?
+## Note: Ruby 3 will require Rails 6.1
+
+You will need to be using Rails 6.1 if you want to use Ruby 3 and Ractors in your Rails application.
+
+If you need help upgrading your application to 6.1 then either check out The Complete Guide to Upgrade Rails or [contact us](https://www.fastruby.io/#contactus) to discuss your needs.
