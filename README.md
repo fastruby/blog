@@ -1,5 +1,7 @@
 # FastRuby.io Blog
 
+This repository has been archived. It was moved inside of FastRuby.io repository. Please visit https://github.com/ombulabs/fastruby.io to contribute. 
+
 Blog for the FastRuby.io using Jekyll as the blog-engine.
 
 ## Installation
